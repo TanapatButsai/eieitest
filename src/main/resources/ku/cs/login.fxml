@@ -8,7 +8,7 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="ku.cs.shop.controllers.LoginController"
+            fx:controller="ku.cs.application.controllers.LoginController"
             prefHeight="600.0" prefWidth="800.0" >
 
 </AnchorPane>
