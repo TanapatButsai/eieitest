@@ -8,12 +8,18 @@ import javafx.scene.image.ImageView;
 import java.io.IOException;
 
 public class LoginController {
-    String url = getClass().getResource("/ku/cs/login_images/ku_view.jpg").toExternalForm();
+    String url
+            = getClass().getResource("/ku/cs/login_images/ku_view.jpg").toExternalForm();
+    String url2
+            = getClass().getResource("/ku/cs/login_images/KU_SubLogo_Thai.png").toExternalForm();
     @FXML
     private ImageView image_view_login;
     @FXML
+    private ImageView image_view_ku_logo;
+    @FXML
     public void initialize() {
         image_view_login.setImage(new Image(url));
+        image_view_ku_logo.setImage(new Image(url2));
     }
 
     @FXML

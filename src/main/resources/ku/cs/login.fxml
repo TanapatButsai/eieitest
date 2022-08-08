@@ -6,18 +6,32 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-
-
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.LoginController">
+<AnchorPane fx:id="loginAnchorPane" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #D8D8D8;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.LoginController">
    <children>
       <Separator layoutX="490.0" orientation="VERTICAL" prefHeight="600.0" prefWidth="0.0" />
       <TextField layoutX="518.0" layoutY="350.0" prefHeight="26.0" prefWidth="250.0" />
       <TextField layoutX="518.0" layoutY="406.0" prefHeight="26.0" prefWidth="250.0" />
       <ImageView fx:id="image_view_login" fitHeight="600.0" fitWidth="492.0" pickOnBounds="true" preserveRatio="true" />
-      <Label layoutX="524.0" layoutY="325.0" prefHeight="18.0" prefWidth="129.0" text="Username" />
-      <Label layoutX="524.0" layoutY="388.0" prefHeight="18.0" prefWidth="129.0" text="Password" />
-      <Button layoutX="710.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleGoToHome" text="Home(test)" />
+      <Label layoutX="524.0" layoutY="325.0" prefHeight="18.0" prefWidth="58.0" text="บัญชีผู้ใช้" />
+      <Label layoutX="524.0" layoutY="388.0" prefHeight="18.0" prefWidth="52.0" text="รหัสผ่าน" />
+      <Button layoutX="710.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleGoToHome" style="-fx-background-color: #BDBDBD;" text="Home(test)" />
+      <ImageView fx:id="image_view_ku_logo" fitHeight="203.0" fitWidth="180.0" layoutX="553.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="597.0" layoutY="281.0" prefHeight="18.0" prefWidth="92.0" text="เข้าใช้งานระบบร้องเรียน">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+      <Button layoutX="597.0" layoutY="455.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="92.0" style="-fx-background-color: #BDBDBD;" text="เข้าสู่ระบบ">
+         <font>
+            <Font name="Corbel Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="726.0" layoutY="566.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="58.0" text="ลืมรหัสผ่าน">
+         <font>
+            <Font name="Corbel" size="10.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
