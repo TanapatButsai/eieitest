@@ -1,32 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.CreditController">
    <children>
-      <ImageView fx:id="image1" fitHeight="199.0" fitWidth="129.0" layoutX="100.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="image1" fitHeight="150.0" fitWidth="200.0" layoutX="26.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@creditImages/creditmember1.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="image2" fitHeight="150.0" fitWidth="200.0" layoutX="272.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="image2" fitHeight="150.0" fitWidth="154.0" layoutX="26.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@creditImages/creditmember2.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="image3" fitHeight="150.0" fitWidth="200.0" layoutX="541.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="image3" fitHeight="150.0" fitWidth="200.0" layoutX="26.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@creditImages/creditmember3.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="image4" fitHeight="150.0" fitWidth="200.0" layoutX="300.0" layoutY="320.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="image4" fitHeight="125.0" fitWidth="200.0" layoutX="20.0" layoutY="461.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@creditImages/creditmember4.jpg" />
+            <Image url="@creditImages/creditmember4.png" />
          </image>
       </ImageView>
-      <Button layoutX="365.0" layoutY="491.0" mnemonicParsing="false" onAction="#handleBackButton" text="Back" />
+      <Label layoutX="252.0" layoutY="323.0" prefHeight="32.0" prefWidth="167.0" text="พีรพัฒน์ ภักดีพงษ์">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="269.0" layoutY="53.0" text="ธนาภัทร บุตรใส">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="257.0" layoutY="181.0" text="นภกมล ปินตาพรหม">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="258.0" layoutY="217.0" text="6410451113">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="252.0" layoutY="367.0" text="6410451229">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="257.0" layoutY="477.0" text="ธนภัทร ตันเจริญ">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Button fx:id="handleBackButton" layoutX="708.0" layoutY="28.0" mnemonicParsing="false" text="Back" />
+      <Label layoutX="257.0" layoutY="524.0" text="6410451024">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
