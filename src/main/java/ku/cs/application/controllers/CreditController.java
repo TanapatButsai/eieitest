@@ -53,7 +53,7 @@ public class CreditController {
                         "ku" + File.separator +
                         "cs" + File.separator +
                         "creditImages" + File.separator +
-                        "creditmember4.jpg").toURI().toString()));
+                        "creditmember4.png").toURI().toString()));
     }
 
 
