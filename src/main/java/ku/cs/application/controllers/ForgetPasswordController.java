@@ -5,6 +5,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.fxml.FXML;
 import com.github.saacsos.FXRouter;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 import java.io.IOException;
 
@@ -30,5 +32,14 @@ public class ForgetPasswordController {
         }
 
 
+    }
+
+    @FXML
+    private ImageView kuimage;
+
+    @FXML
+    public void initialize() {
+        String url = getClass().getResource("/ku/cs/login_images/kuimage.jpeg").toExternalForm();
+        kuimage.setImage(new Image(url));
     }
 }
