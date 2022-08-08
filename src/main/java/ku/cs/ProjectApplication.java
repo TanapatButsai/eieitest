@@ -14,7 +14,6 @@ public class ProjectApplication extends Application {
         FXRouter.bind(this, stage, "DingTwoProject", 800, 600);
         configRoute();
         FXRouter.goTo("login");
-
     }
 
     private static void configRoute() {

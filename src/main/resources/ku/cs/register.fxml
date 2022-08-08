@@ -1,14 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="ku.cs.application.controllers.RegisterController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #D8D8D8;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.RegisterController">
+   <children>
+      <Separator layoutX="506.0" layoutY="-8.0" orientation="VERTICAL" prefHeight="627.0" prefWidth="19.0" />
+      <ImageView fx:id="bg" fitHeight="627.0" fitWidth="534.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
+      <Text layoutX="540.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Resgistration" underline="true">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Text layoutX="540.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Input ID">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="purchaseTextField" layoutX="540.0" layoutY="247.0" />
+      <Text layoutX="540.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="purchaseTextField1" layoutX="540.0" layoutY="330.0" />
+      <Text layoutX="540.0" layoutY="387.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Re-type Password" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="purchaseTextField11" layoutX="540.0" layoutY="404.0" />
+      <Button defaultButton="true" layoutX="710.0" layoutY="245.0" mnemonicParsing="false" style="-fx-background-color: #92efff;" text="Check" />
+      <Button defaultButton="true" layoutX="710.0" layoutY="440.0" mnemonicParsing="false" style="-fx-background-color: #92efff;" text="Sign up" />
+      <Button defaultButton="true" layoutX="735.0" layoutY="565.0" mnemonicParsing="false" onAction="#handleBackButton" style="-fx-background-color: #92efff;" text="Back" />
+      <ImageView fx:id="logo01" fitHeight="146.0" fitWidth="152.0" layoutX="572.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@reg_images/logo001.jpg" />
+         </image>
+      </ImageView>
+   </children>
 </AnchorPane>
