@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.CreditController">
+   <children>
+      <ImageView fx:id="image1" fitHeight="199.0" fitWidth="129.0" layoutX="100.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@creditImages/creditmember1.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="image2" fitHeight="150.0" fitWidth="200.0" layoutX="272.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@creditImages/creditmember2.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="image3" fitHeight="150.0" fitWidth="200.0" layoutX="541.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@creditImages/creditmember3.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="image4" fitHeight="150.0" fitWidth="200.0" layoutX="300.0" layoutY="320.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@creditImages/creditmember4.jpg" />
+         </image>
+      </ImageView>
+      <Button layoutX="365.0" layoutY="491.0" mnemonicParsing="false" onAction="#handleBackButton" text="Back" />
+   </children>
+</AnchorPane>
