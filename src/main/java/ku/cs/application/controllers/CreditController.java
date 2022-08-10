@@ -19,41 +19,20 @@ public class CreditController {
     @FXML
     private ImageView image4;
 
+        String url
+                = getClass().getResource("/ku/cs/creditImages/creditmember1.jpg").toExternalForm();
+        String url2
+                = getClass().getResource("/ku/cs/creditImages/creditmember2.jpg").toExternalForm();
+        String url3
+                = getClass().getResource("/ku/cs/creditImages/creditmember3.jpg").toExternalForm();
+        String url4
+                = getClass().getResource("/ku/cs/creditImages/creditmember4.png").toExternalForm();
     @FXML
     public void initialize() {
-
-        image1.setImage(new Image
-                (new File("src" + File.separator +
-                        "main" + File.separator +
-                        "resources" + File.separator +
-                        "ku" + File.separator +
-                        "cs" + File.separator +
-                        "creditImages" + File.separator +
-                        "creditmember1.jpg").toURI().toString()));
-        image2.setImage(new Image
-                (new File("src" + File.separator +
-                        "main" + File.separator +
-                        "resources" + File.separator +
-                        "ku" + File.separator +
-                        "cs" + File.separator +
-                        "creditImages" + File.separator +
-                        "creditmember2.jpg").toURI().toString()));
-        image3.setImage(new Image
-                (new File("src" + File.separator +
-                        "main" + File.separator +
-                        "resources" + File.separator +
-                        "ku" + File.separator +
-                        "cs" + File.separator +
-                        "creditImages" + File.separator +
-                        "creditmember3.jpg").toURI().toString()));
-        image4.setImage(new Image
-                (new File("src" + File.separator +
-                        "main" + File.separator +
-                        "resources" + File.separator +
-                        "ku" + File.separator +
-                        "cs" + File.separator +
-                        "creditImages" + File.separator +
-                        "creditmember4.png").toURI().toString()));
+        image1.setImage(new Image(url));
+        image2.setImage(new Image(url2));
+        image3.setImage(new Image(url3));
+        image4.setImage(new Image(url4));
     }
 
 
