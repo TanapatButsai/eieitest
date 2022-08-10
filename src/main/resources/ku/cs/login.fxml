@@ -2,41 +2,56 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="loginAnchorPane" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #D8D8D8;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.LoginController">
    <children>
+      <PasswordField fx:id="inputPassword" layoutX="518.0" layoutY="405.0" prefHeight="26.0" prefWidth="250.0" promptText="such as 1********" style="-fx-background-color: #fff;" />
       <Separator layoutX="490.0" orientation="VERTICAL" prefHeight="600.0" prefWidth="0.0" />
-      <TextField layoutX="518.0" layoutY="350.0" prefHeight="26.0" prefWidth="250.0" />
-      <TextField layoutX="518.0" layoutY="406.0" prefHeight="26.0" prefWidth="250.0" />
-      <ImageView fx:id="image_view_login" fitHeight="600.0" fitWidth="492.0" pickOnBounds="true" preserveRatio="true" />
-      <Label layoutX="524.0" layoutY="325.0" prefHeight="18.0" prefWidth="58.0" text="บัญชีผู้ใช้" />
-      <Label layoutX="524.0" layoutY="388.0" prefHeight="18.0" prefWidth="52.0" text="รหัสผ่าน" />
-      <Button layoutX="710.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleGoToHome" style="-fx-background-color: #BDBDBD;" text="Home(test)" />
-      <ImageView fx:id="image_view_ku_logo" fitHeight="203.0" fitWidth="180.0" layoutX="553.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true" />
-      <Label layoutX="597.0" layoutY="281.0" prefHeight="18.0" prefWidth="92.0" text="เข้าใช้งานระบบร้องเรียน">
+      <TextField fx:id="inputUsername" layoutX="518.0" layoutY="350.0" prefHeight="26.0" prefWidth="250.0" promptText="such as ta*******" style="-fx-background-color: #fff;" styleClass="t" />
+      <ImageView fx:id="image_view_login" fitHeight="600.0" fitWidth="492.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="523.0" layoutY="330.0" prefHeight="19.0" prefWidth="58.0" text="username">
          <font>
-            <Font size="10.0" />
+            <Font size="13.0" />
+         </font></Label>
+      <Label layoutX="524.0" layoutY="385.0" prefHeight="19.0" prefWidth="58.0" text="password">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <Button layoutX="710.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleGoToHome" style="-fx-background-color: #BDBDBD;" text="Home(test)" />
+      <ImageView fx:id="image_view_ku_logo" fitHeight="236.0" fitWidth="198.0" layoutX="544.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="566.0" layoutY="280.0" prefHeight="20.0" prefWidth="153.0" text="Sign in to KU Complaint">
+         <font>
+            <Font size="14.0" />
          </font>
       </Label>
-      <Button layoutX="597.0" layoutY="450.0" mnemonicParsing="false" onAction="#handleGoToHome" prefHeight="46.0" prefWidth="92.0" style="-fx-background-color: #BDBDBD;" text="เข้าสู่ระบบ">
+      <Button layoutX="597.0" layoutY="466.0" mnemonicParsing="false" onAction="#handleSignIn" prefHeight="46.0" prefWidth="92.0" style="-fx-background-color: #BDBDBD;" text="sign in">
          <font>
-            <Font name="Corbel Bold" size="12.0" />
+            <Font name="Corbel Bold" size="18.0" />
          </font>
       </Button>
-      <Button layoutX="718.0" layoutY="550.0" mnemonicParsing="false" onAction="#handleGoToForgetPassword" prefHeight="26.0" prefWidth="58.0" style="-fx-background-color: #BDBDBD;" text="ลืมรหัสผ่าน">
+      <Button layoutX="690.0" layoutY="557.0" mnemonicParsing="false" onAction="#handleGoToForgetPassword" prefHeight="19.0" prefWidth="86.0" style="-fx-background-color: #BDBDBD;" text="forget password">
          <font>
-            <Font name="Corbel" size="10.0" />
+            <Font name="Corbel Bold" size="10.0" />
          </font>
       </Button>
-      <Button layoutX="518.0" layoutY="550.0" mnemonicParsing="false" onAction="#handleGoToRegister" prefHeight="26.0" prefWidth="58.0" style="-fx-background-color: #BDBDBD;" text="ลงชื่อเข้าใช้">
+      <Button layoutX="523.0" layoutY="557.0" mnemonicParsing="false" onAction="#handleGoToRegister" prefHeight="19.0" prefWidth="86.0" style="-fx-background-color: #BDBDBD;" text="sign up">
          <font>
-            <Font name="Corbel" size="10.0" />
+            <Font name="Corbel Bold" size="10.0" />
          </font>
       </Button>
+      <Label fx:id="textError" layoutX="558.0" layoutY="438.0" prefHeight="18.0" prefWidth="170.0" textAlignment="CENTER" textFill="RED" />
+      <Label layoutX="55.0" layoutY="74.0" style="-fx-background-color: #D8D8D8;" text="ANNOUNCE">
+         <font>
+            <Font name="Calibri Bold" size="14.0" />
+         </font>
+      </Label>
+      <Pane layoutX="43.0" layoutY="64.0" opacity="0.27" prefHeight="247.0" prefWidth="404.0" style="-fx-background-color: #ffffff;" />
    </children>
 </AnchorPane>

@@ -1,14 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.HomeController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #D8D8D8;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.HomeController">
    <children>
-      <Label layoutX="61.0" layoutY="165.0" prefHeight="70.0" prefWidth="422.0" text="HOME" textFill="#991f87">
+      <Pane layoutX="165.0" prefHeight="59.0" prefWidth="635.0" style="-fx-background-color: #2FB16E;">
+         <children>
+            <Button layoutX="580.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleBackButton" prefHeight="39.0" prefWidth="47.0" style="-fx-background-color: #BDBDBD;" text="log out">
+               <font>
+                  <Font name="Cambria Bold" size="10.0" />
+               </font>
+            </Button>
+            <Label layoutX="161.0" layoutY="7.0" prefHeight="46.0" prefWidth="314.0" text="Complaint System, Kasetsart University" textFill="WHITE">
+               <font>
+                  <Font name="Cambria" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane prefHeight="600.0" prefWidth="165.0" style="-fx-background-color: #606261;" />
+      <Label layoutX="196.0" layoutY="59.0" prefHeight="46.0" prefWidth="203.0" text="Welcome to Enrollment System" textFill="#2e2e2e">
          <font>
-            <Font size="30.0" />
+            <Font name="Cambria" size="14.0" />
          </font>
       </Label>
    </children>
