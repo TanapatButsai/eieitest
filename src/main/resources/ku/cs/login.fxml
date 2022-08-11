@@ -28,12 +28,12 @@
             <Font name="Corbel Bold" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="718.0" layoutY="550.0" mnemonicParsing="false" onAction="#handleGoToForgetPassword" prefHeight="26.0" prefWidth="58.0" style="-fx-background-color: #BDBDBD;" text="ลืมรหัสผ่าน">
+      <Button layoutX="711.0" layoutY="550.0" mnemonicParsing="false" onAction="#handleGoToForgetPassword" prefHeight="26.0" prefWidth="65.0" style="-fx-background-color: #BDBDBD;" text="ลืมรหัสผ่าน">
          <font>
             <Font name="Corbel" size="10.0" />
          </font>
       </Button>
-      <Button layoutX="518.0" layoutY="550.0" mnemonicParsing="false" onAction="#handleGoToRegister" prefHeight="26.0" prefWidth="58.0" style="-fx-background-color: #BDBDBD;" text="ลงชื่อเข้าใช้">
+      <Button layoutX="518.0" layoutY="550.0" mnemonicParsing="false" onAction="#handleGoToRegister" prefHeight="26.0" prefWidth="65.0" style="-fx-background-color: #BDBDBD;" text="ลงชื่อเข้าใช้">
          <font>
             <Font name="Corbel" size="10.0" />
          </font>
