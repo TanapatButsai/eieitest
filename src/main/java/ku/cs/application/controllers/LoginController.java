@@ -75,7 +75,7 @@ public class LoginController {
 
             // เปลี่ยนการแสดงผลไปที่ route ที่ชื่อ member_card_detail
             // พร้อมส่ง reference instance john ไปด้วย
-            FXRouter.goTo("login");
+            FXRouter.goTo("register");
         } catch (IOException e) {
             System.err.println("ไปที่หน้า register");
             System.err.println("ให้ตรวจสอบการกำหนด route");
