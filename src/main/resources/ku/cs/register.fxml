@@ -36,9 +36,9 @@
          </font>
       </Text>
       <TextField fx:id="purchaseTextField11" layoutX="540.0" layoutY="404.0" />
-      <Button defaultButton="true" layoutX="710.0" layoutY="245.0" mnemonicParsing="false" style="-fx-background-color: #92efff;" text="Check" />
-      <Button defaultButton="true" layoutX="710.0" layoutY="440.0" mnemonicParsing="false" style="-fx-background-color: #92efff;" text="Sign up" />
-      <Button defaultButton="true" layoutX="735.0" layoutY="565.0" mnemonicParsing="false" onAction="#handleBackButton" style="-fx-background-color: #92efff;" text="Back" />
+      <Button defaultButton="true" layoutX="710.0" layoutY="245.0" mnemonicParsing="false" style="-fx-background-color: #BDBDBD;" text="Check" />
+      <Button defaultButton="true" layoutX="710.0" layoutY="440.0" mnemonicParsing="false" style="-fx-background-color: #BDBDBD;" text="Sign up" />
+      <Button defaultButton="true" layoutX="735.0" layoutY="565.0" mnemonicParsing="false" onAction="#handleBackButton" style="-fx-background-color: #BDBDBD;" text="Back" />
       <ImageView fx:id="logo01" fitHeight="146.0" fitWidth="152.0" layoutX="572.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@reg_images/logo001.jpg" />
