@@ -60,7 +60,7 @@
             <Font size="22.0" />
          </font>
       </Label>
-      <Button fx:id="handleBackButton" layoutX="708.0" layoutY="28.0" mnemonicParsing="false" text="Back" />
+      <Button layoutX="708.0" layoutY="28.0" mnemonicParsing="false" text="Back" onAction="#handleBackButton" />
       <Label layoutX="257.0" layoutY="524.0" text="6410451024">
          <font>
             <Font size="22.0" />
