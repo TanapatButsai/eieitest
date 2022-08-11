@@ -1,15 +1,14 @@
-CS211 - Project<br>
-วิธีทดสอบการ RUN<br>
-1. Main <br>
-run Main Class
-2. javafx plugin<br>
-MVN Clean<br>
-javafx -> javafx:run<br><br>
+# CSS Project<br>
 
-วิธีสร้าง Jar<br>
-MVN Clean<br>
-MVN install<br><br>
-file จะอยู่ใน target เป็น shade.jar 
-
-
-
+## รายชื่อสมาชิก<br>
+      6410451059 ธนาภัทร บุตรใส (HEAD) 
+      6410451113 นภกมล ปินตาพรหม
+      6410451229 พีรพัฒน์ ภักดีพงษ์ 
+      6410451024 ธนภัทร ตันเจริญ 
+      
+## การส่งงานเพื่อนําเสนอความก้าวหน้า
+# ความก้าวหน้าของระบบครั้งที่ 1 ( 12 ส.ค. 17:00 น.)
+      -ทำหน้า login, home template, ขึ้นโครง User (ธนาภัทร บุตรใส)
+      -ทำหน้า Register และวางโครงไว้คร่าวๆ (ธนภัทร ตันเจริญ)
+      -ทำหน้า Change password (นภกมล ปินตาพรหม)
+      -ทำหน้า Credit (พีรพัฒน์ ภักดีพงษ์)
