@@ -36,12 +36,12 @@
             <Font name="Corbel Bold" size="18.0" />
          </font>
       </Button>
-      <Button layoutX="690.0" layoutY="557.0" mnemonicParsing="false" onAction="#handleGoToForgetPassword" prefHeight="19.0" prefWidth="86.0" style="-fx-background-color: #BDBDBD;" text="forget password">
+      <Button layoutX="684.0" layoutY="557.0" mnemonicParsing="false" onAction="#handleGoToForgetPassword" prefHeight="20.0" prefWidth="92.0" style="-fx-background-color: #BDBDBD;" text="forget password">
          <font>
             <Font name="Corbel Bold" size="10.0" />
          </font>
       </Button>
-      <Button layoutX="523.0" layoutY="557.0" mnemonicParsing="false" onAction="#handleGoToRegister" prefHeight="19.0" prefWidth="86.0" style="-fx-background-color: #BDBDBD;" text="sign up">
+      <Button layoutX="523.0" layoutY="557.0" mnemonicParsing="false" onAction="#handleGoToRegister" prefHeight="20.0" prefWidth="92.0" style="-fx-background-color: #BDBDBD;" text="sign up">
          <font>
             <Font name="Corbel Bold" size="10.0" />
          </font>
