@@ -13,7 +13,7 @@ import com.github.saacsos.FXRouter;
 public class LoginController {
     //Admin ID PASSWORD
     String adminUsername = "admin";
-    String adminPassword = "123";
+    String adminPassword = "123456";
 
     @FXML private Label textError;
     @FXML private TextField inputUsername;
