@@ -36,8 +36,7 @@ public class LoginController {
     }
     public void handleGoToRegister(ActionEvent actionEvent){
         try {
-            // เปลี่ยนการแสดงผลไปที่ route ที่ชื่อ member_card_detail
-            // พร้อมส่ง reference instance john ไปด้วย
+
             com.github.saacsos.FXRouter.goTo("register");
         } catch (IOException e) {
             System.err.println("ไปที่หน้า register");
