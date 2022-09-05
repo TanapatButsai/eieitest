@@ -9,6 +9,12 @@ import java.io.IOException;
 import java.util.Objects;
 import javafx.scene.control.Label;
 import com.github.saacsos.FXRouter;
+import ku.cs.application.models.UserList;
+import ku.cs.application.services.DataSource;
+import ku.cs.application.services.UserListDataSource;
+import ku.cs.application.models.Users;
+
+import javax.net.ssl.SSLContext;
 
 public class LoginController {
     //Admin ID PASSWORD
@@ -29,33 +35,50 @@ public class LoginController {
     private ImageView image_view_ku_logo;
 
 
-
+    private DataSource<UserList> dataSource;
+    private UserList userList;
     @FXML
     public void initialize() {
         image_view_login.setImage(new Image(url));
         image_view_ku_logo.setImage(new Image(url2));
+        dataSource = new UserListDataSource("data","user.csv");
+        userList = dataSource.readData();
+        System.out.println(userList.toString());
 
 
     }
     @FXML
     public void handleSignIn(ActionEvent actionEvent) {
+        String username = inputUsername.getText();
+        String password = inputPassword.getText();
 
-        if (Objects.equals(adminUsername, inputUsername.getText()) && Objects.equals(adminPassword, inputPassword.getText())){
+        Users user = userList.findUser(username);
+        if (username.equals("") && password.equals("")){
+            textError.setText("wrong username or password");
+        }
+        else if (Objects.equals(adminUsername, username) && Objects.equals(adminPassword, password)){
             try {
                 FXRouter.goTo("home");
-
 
             } catch (IOException e) {
                 System.err.println("ไปที่หน้า home");
                 System.err.println("ให้ตรวจสอบการกำหนด route");
                 e.printStackTrace();
             }
-        }else {
-            textError.setText("wrong username or password");
+        } else if (username.equals(user.getUsername())
+                && password.equals(user.getPassword())) {
+            try {
+                FXRouter.goTo("home");
+            } catch (IOException e) {
+                System.err.println("ไปที่หน้า home");
+                System.err.println("ให้ตรวจสอบการกำหนด route");
+                e.printStackTrace();
+            }
         }
         inputUsername.clear() ;// clear ช่อง TextField
         inputPassword.clear();
     }
+
     @FXML
     public void handleGoToHome(ActionEvent actionEvent){
         try {

@@ -1,15 +1,34 @@
 package ku.cs.application.models;
 import java.util.ArrayList;
-
+import ku.cs.application.models.Users;
 public class UserList {
-    private ArrayList<Users> users_student;
+    private ArrayList<Users> userList;
 
     public UserList() {
-        users_student = new ArrayList<>();}
-    public void addCard(Users user) {
+        userList = new ArrayList<>();}
+    public void addUser(Users user) {
         // เรียกmethod add จากArrayList เพื'อเพิ'มข้อมูล
-        users_student.add(user);
+        userList.add(user);
     }
-    public ArrayList<Users> getAllCards() {return users_student;}
+    public ArrayList<Users> getAllCards() {return userList;}
+
+
+    public Users findUser(String username) {
+        Users user = null;
+        for (Users temp : userList) {
+            if (temp.getUsername().equals(username)) {
+                user = temp;
+            }
+        }
+        return user;
+    }
+
+    @Override
+    public String toString() {
+        return "UserList{" +
+                "userList=" + userList +
+                '}';
+    }
 }
+
 
