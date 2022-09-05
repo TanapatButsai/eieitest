@@ -15,29 +15,17 @@
       <ImageView fx:id="bg" fitHeight="627.0" fitWidth="534.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
       <Text layoutX="540.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Resgistration" underline="true">
          <font>
-            <Font size="30.0" />
+            <Font size="21.0" />
          </font>
       </Text>
-      <Text layoutX="540.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Input ID">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Text>
+      <Text layoutX="540.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Input ID" />
       <TextField fx:id="purchaseTextField" layoutX="540.0" layoutY="247.0" />
-      <Text layoutX="540.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Text>
+      <Text layoutX="540.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
       <TextField fx:id="purchaseTextField1" layoutX="540.0" layoutY="330.0" />
-      <Text layoutX="540.0" layoutY="387.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Re-type Password" textAlignment="CENTER">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Text>
+      <Text layoutX="540.0" layoutY="387.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Re-type Password" textAlignment="CENTER" />
       <TextField fx:id="purchaseTextField11" layoutX="540.0" layoutY="404.0" />
       <Button defaultButton="true" layoutX="710.0" layoutY="245.0" mnemonicParsing="false" style="-fx-background-color: #BDBDBD;" text="Check" />
-      <Button defaultButton="true" layoutX="710.0" layoutY="440.0" mnemonicParsing="false" style="-fx-background-color: #BDBDBD;" text="Sign up" />
+      <Button defaultButton="true" layoutX="710.0" layoutY="453.0" mnemonicParsing="false" style="-fx-background-color: #BDBDBD;" text="Sign up" />
       <Button defaultButton="true" layoutX="735.0" layoutY="565.0" mnemonicParsing="false" onAction="#handleBackButton" style="-fx-background-color: #BDBDBD;" text="Back" />
       <ImageView fx:id="logo01" fitHeight="146.0" fitWidth="152.0" layoutX="572.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
