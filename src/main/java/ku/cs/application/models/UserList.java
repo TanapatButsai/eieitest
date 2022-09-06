@@ -12,7 +12,14 @@ public class UserList {
     }
     public ArrayList<Users> getAllCards() {return userList;}
 
-
+    public boolean checkUsernameIsExistedInUserList(String username){
+        for (Users temp: userList){
+            if (temp.getUsername().equals(username)){
+                return true;
+            }
+        }
+        return false;
+    }
     public Users findUser(String username) {
         Users user = null;
         for (Users temp : userList) {

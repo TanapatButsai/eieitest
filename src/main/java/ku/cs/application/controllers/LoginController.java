@@ -53,6 +53,8 @@ public class LoginController {
         String password = inputPassword.getText();
 
         Users user = userList.findUser(username);
+
+
         if (username.equals("") && password.equals("")){
             textError.setText("wrong username or password");
         }
