@@ -13,9 +13,13 @@ public class UserList {
     public ArrayList<Users> getAllCards() {return userList;}
 
     public boolean checkUsernameIsExistedInUserList(String username){
-        for (Users temp: userList){
-            if (temp.getUsername().equals(username)){
-                return true;
+        if (username.isEmpty()){
+            return true;
+        }else {
+            for (Users temp: userList){
+                if (temp.getUsername().equals(username)){
+                    return true;
+                }
             }
         }
         return false;
@@ -28,6 +32,7 @@ public class UserList {
             }
         }
         return user;
+
     }
 
     @Override

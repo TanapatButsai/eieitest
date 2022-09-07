@@ -24,7 +24,9 @@ public class RegisterController {
 
     private DataSource<UserList> dataSource;
     private UserList userList;
-    private boolean usernameIsInUsers,usernameAlreadyCheck;
+    private boolean usernameIsInUsers;
+    private boolean usernameAlreadyCheck;
+    private boolean usernameCanBeUse;
 
 
     @FXML private Label promptCheckID;
@@ -42,6 +44,7 @@ public class RegisterController {
     }
 
     @FXML public void handleCheckID() {
+        promptCheckID.setText("");
         usernameAlreadyCheck = true;
         String username = usernameTextField.getText();
         usernameIsInUsers = userList.checkUsernameIsExistedInUserList(username);
@@ -52,6 +55,7 @@ public class RegisterController {
                 promptCheckID.setText("ID is already exists");
             } else {
                 promptCheckID.setText("Can be used");
+                usernameCanBeUse = true;
             }
         }
 
@@ -59,20 +63,22 @@ public class RegisterController {
     }
 
     @FXML public void handleSignUp(){
+        promptCheckIRetypePassword.setText("");
+        promptCheckID.setText("");
+        promptCheckName.setText("");
+
         String password = passwordTextFieldSignUp.getText();
         String passwordCheck = passwordTextFieldSignUpCheck.getText();
 
         boolean checkEqualPassword = password.equals(passwordCheck);
 
-        if (usernameTextField.getText().isEmpty() && passwordTextFieldSignUp.getText().isEmpty()
-                &&passwordTextFieldSignUpCheck.getText().isEmpty() && nameTextField.getText().isEmpty()){
-            System.out.println("Please enter");
-            promptCheckIRetypePassword.setText("Password is not match");
-            promptCheckID.setText("hohonana");
-            promptCheckName.setText("Please enter name");
-
-        }else {
-        }
+//        if (usernameTextField.getText().isEmpty() && passwordTextFieldSignUp.getText().isEmpty()
+//                &&passwordTextFieldSignUpCheck.getText().isEmpty() && nameTextField.getText().isEmpty()){
+//            System.out.println("Please enter");
+//            promptCheckIRetypePassword.setText("Password is not match");
+//            promptCheckID.setText("Please enter ID");
+//            promptCheckName.setText("Please enter name");
+//        }
 
 //        if (!usernameAlreadyCheck && password.isEmpty() && passwordCheck.isEmpty()
 //                && nameTextField.getText().isEmpty()){
@@ -118,12 +124,5 @@ public class RegisterController {
             if(Character.digit(s.charAt(i),radix) < 0) return false;
         }
         return true;
-    }
-    public boolean isEmpty(String string){
-        if (string.isEmpty()){
-            return true;
-        }else {
-            return false;
-        }
     }
 }
