@@ -24,6 +24,7 @@ public class ProjectApplication extends Application {
         FXRouter.when("credit", packageStr + "credit.fxml");
         FXRouter.when("home",packageStr + "home.fxml");
         FXRouter.when("forgetpassword",packageStr + "forgetpassword.fxml");
+        FXRouter.when("normalcomplaint", packageStr + "normalcomplaint.fxml");
     }
 
     public static void main(String[] args) {

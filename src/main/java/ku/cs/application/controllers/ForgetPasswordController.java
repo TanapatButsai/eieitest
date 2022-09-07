@@ -6,6 +6,7 @@ import com.github.saacsos.FXRouter;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+
 import java.io.IOException;
 
 public class ForgetPasswordController {
@@ -19,19 +20,6 @@ public class ForgetPasswordController {
 //        addEmailTextField.clear();
 //    }
 
-
-    @FXML
-    public void handleBackButton(ActionEvent actionEvent) {
-        try {
-            FXRouter.goTo("login");
-        } catch (IOException e) {
-            System.err.println("ไปที่หน้า login ไม่ได้");
-            System.err.println("ให้ตรวจสอบการกำหนด route");
-        }
-
-
-    }
-
     @FXML
     private ImageView scku;
     @FXML
@@ -43,5 +31,16 @@ public class ForgetPasswordController {
         scku.setImage(new Image(url));
         String url1 = getClass().getResource("/ku/cs/pass_images/logoku.png").toExternalForm();
         logoku.setImage(new Image(url1));
+    }
+
+    @FXML
+    public void handleBackButton(ActionEvent actionEvent) {
+        try {
+            FXRouter.goTo("login");
+        } catch (IOException e) {
+            System.err.println("ไปที่หน้า login ไม่ได้");
+            System.err.println("ให้ตรวจสอบการกำหนด route");
+        }
+
     }
 }
