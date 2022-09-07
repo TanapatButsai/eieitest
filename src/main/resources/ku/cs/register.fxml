@@ -14,45 +14,52 @@
    <children>
       <Separator layoutX="506.0" layoutY="-8.0" orientation="VERTICAL" prefHeight="627.0" prefWidth="19.0" />
       <ImageView fx:id="bg" fitHeight="627.0" fitWidth="534.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
-      <Text layoutX="565.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Resgistration" underline="true">
+      <Text layoutX="585.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Resgistration" underline="true">
          <font>
-            <Font size="30.0" />
+            <Font size="24.0" />
          </font>
       </Text>
-      <Text layoutX="542.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Text>
-      <TextField fx:id="usernameTextField" layoutX="540.0" layoutY="265.0" />
-      <Text layoutX="540.0" layoutY="328.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+      <Text layoutX="545.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <TextField fx:id="passwordTextFieldSignUp" layoutX="540.0" layoutY="337.0" />
-      <Text layoutX="540.0" layoutY="404.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Re-type Password" textAlignment="CENTER">
+      <TextField fx:id="usernameTextField" layoutX="539.0" layoutY="241.0" prefHeight="26.0" prefWidth="241.0" />
+      <Text layoutX="547.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <TextField fx:id="passwordTextFieldSignUpCheck" layoutX="540.0" layoutY="412.0" />
-      <Button defaultButton="true" layoutX="709.0" layoutY="265.0" mnemonicParsing="false" onAction="#handleCheckID" style="-fx-background-color: #BDBDBD;" text="Check" />
-      <Button defaultButton="true" layoutX="718.0" layoutY="493.0" mnemonicParsing="false" onAction="#handleSignUp" style="-fx-background-color: #BDBDBD;" text="Sign up" />
-      <Button defaultButton="true" layoutX="735.0" layoutY="565.0" mnemonicParsing="false" onAction="#handleBackButton" style="-fx-background-color: #BDBDBD;" text="Back" />
-      <ImageView fx:id="logo01" fitHeight="146.0" fitWidth="152.0" layoutX="572.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <TextField fx:id="passwordTextFieldSignUp" layoutX="539.0" layoutY="302.0" prefHeight="26.0" prefWidth="242.0" />
+      <Text layoutX="547.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Re-type Password" textAlignment="CENTER">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <TextField fx:id="passwordTextFieldSignUpCheck" layoutX="539.0" layoutY="355.0" prefHeight="26.0" prefWidth="242.0" />
+      <Button defaultButton="true" layoutX="734.0" layoutY="268.0" mnemonicParsing="false" onAction="#handleCheckUsername" style="-fx-background-color: #BDBDBD;" text="Check" />
+      <Button defaultButton="true" layoutX="706.0" layoutY="548.0" mnemonicParsing="false" onAction="#handleSignUp" prefHeight="45.0" prefWidth="58.0" style="-fx-background-color: #BDBDBD;" text="Sign up" />
+      <Button defaultButton="true" layoutX="544.0" layoutY="568.0" mnemonicParsing="false" onAction="#handleBackButton" style="-fx-background-color: #BDBDBD;" text="Back" />
+      <ImageView fx:id="logo01" fitHeight="146.0" fitWidth="152.0" layoutX="581.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@reg_images/logo001.jpg" />
          </image>
       </ImageView>
-      <TextField fx:id="nameTextField" layoutX="540.0" layoutY="480.0" />
-      <Text layoutX="540.0" layoutY="474.0" strokeType="OUTSIDE" strokeWidth="0.0" text="name" textAlignment="CENTER">
+      <TextField fx:id="nameTextField" layoutX="539.0" layoutY="412.0" prefHeight="26.0" prefWidth="242.0" />
+      <Text layoutX="547.0" layoutY="406.0" strokeType="OUTSIDE" strokeWidth="0.0" text="name" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Label fx:id="promptCheckID" layoutX="560.0" layoutY="297.0" prefHeight="17.0" prefWidth="120.0" textAlignment="CENTER" textFill="RED" />
-      <Label fx:id="promptCheckIRetypePassword" layoutX="560.0" layoutY="441.0" prefHeight="17.0" prefWidth="120.0" textAlignment="CENTER" textFill="RED" />
-      <Label fx:id="promptCheckName" layoutX="560.0" layoutY="511.0" prefHeight="17.0" prefWidth="120.0" textAlignment="CENTER" textFill="RED" />
+      <Label fx:id="promptCheckUsername" layoutX="597.0" layoutY="267.0" prefHeight="18.0" prefWidth="138.0" textAlignment="CENTER" textFill="RED" />
+      <Label fx:id="promptCheckIRetypePassword" layoutX="597.0" layoutY="381.0" prefHeight="18.0" prefWidth="190.0" textAlignment="RIGHT" textFill="RED" />
+      <Label fx:id="promptCheckName" layoutX="599.0" layoutY="438.0" prefHeight="18.0" prefWidth="196.0" textAlignment="CENTER" textFill="RED" />
+      <TextField fx:id="idTextField" layoutX="539.0" layoutY="471.0" prefHeight="26.0" prefWidth="137.0" />
+      <Text layoutX="545.0" layoutY="467.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student ID" textAlignment="CENTER" wrappingWidth="70.4755859375">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Label fx:id="promptCheckID" layoutX="559.0" layoutY="497.0" prefHeight="18.0" prefWidth="223.0" textAlignment="CENTER" textFill="RED" />
    </children>
 </AnchorPane>

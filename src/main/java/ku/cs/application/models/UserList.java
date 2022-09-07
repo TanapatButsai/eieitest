@@ -6,11 +6,12 @@ public class UserList {
 
     public UserList() {
         userList = new ArrayList<>();}
-    public void addUser(Users user) {
-        // เรียกmethod add จากArrayList เพื'อเพิ'มข้อมูล
-        userList.add(user);
-    }
-    public ArrayList<Users> getAllCards() {return userList;}
+
+    public void addUser(Users user){
+
+        userList.add(user);} // เรียกmethod add จากArrayList เพื'อเพิ'มข้อมูล
+    public ArrayList<Users> getAllCards(){
+        return userList;}
 
     public boolean checkUsernameIsExistedInUserList(String username){
         if (username.isEmpty()){

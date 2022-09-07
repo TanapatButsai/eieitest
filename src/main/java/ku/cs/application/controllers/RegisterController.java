@@ -7,9 +7,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import ku.cs.application.models.UserList;
+import ku.cs.application.models.Users;
 import ku.cs.application.services.DataSource;
 import ku.cs.application.services.UserListDataSource;
-
+import com.github.saacsos.FXRouter;
 import java.io.IOException;
 
 public class RegisterController {
@@ -19,17 +20,22 @@ public class RegisterController {
     @FXML private TextField passwordTextFieldSignUp;
     @FXML private TextField passwordTextFieldSignUpCheck;
     @FXML private TextField nameTextField;
+    @FXML private TextField idTextField;
     @FXML private Label promptCheckIRetypePassword;
     @FXML private Label promptCheckName;
-
+    @FXML private Label promptCheckUsername;
+    @FXML private Label promptCheckID;
     private DataSource<UserList> dataSource;
     private UserList userList;
-    private boolean usernameIsInUsers;
-    private boolean usernameAlreadyCheck;
-    private boolean usernameCanBeUse;
+    private Users newUser;
+    private boolean usernameIsInUsers = false;
+    private boolean usernameAlreadyCheck = false;
+    private boolean usernameCanBeUse = false;
+    private boolean usernameHasComma = false;
 
 
-    @FXML private Label promptCheckID;
+
+
     @FXML public void initialize(){
         String url1 = getClass().getResource("/ku/cs/reg_images/bg002.jpg").toExternalForm();
         String url2 = getClass().getResource("/ku/cs/reg_images/logo001.jpg").toExternalForm();
@@ -40,67 +46,50 @@ public class RegisterController {
         dataSource = new UserListDataSource("data", "user.csv");
         userList = dataSource.readData();
 
-        System.out.println(usernameAlreadyCheck);
+
+    }
+    @FXML public void handleSignUp(ActionEvent actionEvent){
+        promptCheckID.setText("");
+        promptCheckIRetypePassword.setText("");
+        promptCheckName.setText("");
+        promptCheckUsername.setText("");
+
+        try {
+            if (isSignUp()){
+                FXRouter.goTo("login");
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
-    @FXML public void handleCheckID() {
-        promptCheckID.setText("");
+    @FXML public void handleCheckUsername(ActionEvent actionEvent) {
+        promptCheckUsername.setText("");
         usernameAlreadyCheck = true;
         String username = usernameTextField.getText();
         usernameIsInUsers = userList.checkUsernameIsExistedInUserList(username);
         if (username.isEmpty()) {
-            promptCheckID.setText("Please enter ID");
+            promptCheckUsername.setText("Please enter ID");
         } else {
             if (usernameIsInUsers) {
-                promptCheckID.setText("ID is already exists");
+                promptCheckUsername.setText("ID is already exists");
+            } else if (username.contains(",")) {
+                promptCheckUsername.setText("Can not use \",\"");
+                usernameHasComma = true;
             } else {
-                promptCheckID.setText("Can be used");
+                promptCheckUsername.setText("Can be used");
                 usernameCanBeUse = true;
+                usernameHasComma = false;
             }
         }
 
         System.out.println("ID is in user = " + usernameIsInUsers + " | Already click check =" + usernameAlreadyCheck);
     }
 
-    @FXML public void handleSignUp(){
-        promptCheckIRetypePassword.setText("");
-        promptCheckID.setText("");
-        promptCheckName.setText("");
 
-        String password = passwordTextFieldSignUp.getText();
-        String passwordCheck = passwordTextFieldSignUpCheck.getText();
-
-        boolean checkEqualPassword = password.equals(passwordCheck);
-
-//        if (usernameTextField.getText().isEmpty() && passwordTextFieldSignUp.getText().isEmpty()
-//                &&passwordTextFieldSignUpCheck.getText().isEmpty() && nameTextField.getText().isEmpty()){
-//            System.out.println("Please enter");
-//            promptCheckIRetypePassword.setText("Password is not match");
-//            promptCheckID.setText("Please enter ID");
-//            promptCheckName.setText("Please enter name");
-//        }
-
-//        if (!usernameAlreadyCheck && password.isEmpty() && passwordCheck.isEmpty()
-//                && nameTextField.getText().isEmpty()){
-//            System.out.println("Please enter");
-//        }
-//        else if (!usernameAlreadyCheck){
-//            System.out.println("Please check username");
-//        }
-//        else if ( password.isEmpty() && passwordCheck.isEmpty() && nameTextField.getText().isEmpty()){
-//            System.out.println("Please enter password or name");
-//        } else if (checkEqualPassword) {
-//            System.out.println("Password not match");
-//        } else if ( !usernameIsInUsers ){
-//            System.out.println("Can sign up");
-//
-//        }
-
-
-    }
     @FXML public void handleBackButton(ActionEvent actionEvent){
         try {
-            com.github.saacsos.FXRouter.goTo("login");
+            FXRouter.goTo("login");
         } catch (IOException e) {
             System.err.println("ไปที่หน้า login ไม่ได้");
             System.err.println("ให้ตรวจสอบการกำหนด route");
@@ -111,6 +100,62 @@ public class RegisterController {
 
 
     //other function
+
+    public boolean isSignUp() {
+        String newUserUsername = usernameTextField.getText();
+        String newUserPasswordUsername = passwordTextFieldSignUp.getText();
+        String newUserID = idTextField.getText();
+        String newUserFullName = nameTextField.getText();
+        if (newUserFullName.isEmpty() || newUserUsername.isEmpty()|| newUserID.isEmpty()
+                    || newUserPasswordUsername.isEmpty() || !usernameAlreadyCheck
+                    || !newUserPasswordUsername.equals(passwordTextFieldSignUpCheck.getText())
+                    || !isInteger(newUserID) || newUserID.length() != 10
+                    || !usernameCanBeUse || usernameIsInUsers || usernameHasComma) {
+            if (!usernameAlreadyCheck || !usernameCanBeUse) {
+                promptCheckUsername.setText("Please check username");
+            }
+            if (newUserID.isEmpty()) {
+                promptCheckID.setText("Enter your Student ID");
+                idTextField.clear();
+            }
+            if (newUserFullName.isEmpty()) {
+                promptCheckName.setText("Enter your name");
+                nameTextField.clear();
+            }
+
+            if (newUserPasswordUsername.isEmpty() || passwordTextFieldSignUpCheck.getText().isEmpty()) {
+                promptCheckIRetypePassword.setText("Enter password");
+                passwordTextFieldSignUp.clear();
+                passwordTextFieldSignUpCheck.clear();
+            } else if (!newUserPasswordUsername.equals(passwordTextFieldSignUpCheck.getText())) {
+                promptCheckIRetypePassword.setText("Passwords do not match");
+                passwordTextFieldSignUp.clear();
+                passwordTextFieldSignUpCheck.clear();
+            }
+            if (newUserUsername.isEmpty()) {
+                promptCheckUsername.setText("Enter username");
+                usernameTextField.clear();
+            }
+            if (!usernameAlreadyCheck) {
+                promptCheckUsername.setText("Please check username");
+            }
+            if (!isInteger(newUserID) || newUserID.length() != 10){
+                promptCheckID.setText("Student ID must be a number(10 digits)");
+            }
+            usernameCanBeUse = false;
+            usernameAlreadyCheck = false;
+            return false;
+        }
+            Users newUser = new Users(newUserFullName,newUserID,newUserUsername,newUserPasswordUsername);
+            userList.addUser(newUser);
+            dataSource.writeData(userList);
+            usernameCanBeUse = false;
+            usernameAlreadyCheck = false;
+            System.out.println("Already save a new user");
+            return true;
+        }
+    
+    
     public static boolean isInteger(String s) {
         return isInteger(s,10);
     }
