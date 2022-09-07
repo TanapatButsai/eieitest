@@ -7,6 +7,7 @@ public class Users {
     private String username;
     private String password;
     private double lastTimeLogin;
+    private String userImage;
 
 
     public Users(String name, String id, String username, String password) {
