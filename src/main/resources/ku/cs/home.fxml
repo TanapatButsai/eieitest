@@ -48,7 +48,7 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <Button layoutX="-3.0" layoutY="48.0" mnemonicParsing="false" onAction="#handleNormalComplaint" prefHeight="31.0" prefWidth="223.0" style="-fx-background-color: #606261 #606261 #606261 #606261 #606261 #606261 #606261 #606261;" text="ร้องเรียนทั่วไป" textFill="#fcf6f6">
+            <Button layoutX="-2.0" layoutY="48.0" mnemonicParsing="false" onAction="#handleNormalComplaint" prefHeight="23.0" prefWidth="223.0" style="-fx-background-color: #606261 #606261 #606261 #606261 #606261 #606261 #606261 #606261;" text="ร้องเรียนทั่วไป" textFill="#fcf6f6">
                <font>
                   <Font size="16.0" />
                </font>
