@@ -41,7 +41,7 @@ public class LoginController {
         image_view_ku_logo.setImage(new Image(url2));
         dataSource = new UserListDataSource("data","user.csv");
         userList = dataSource.readData();
-        if (userList.equals(null)){
+        if (userList == null){
             System.err.println("Cannot read file");
         } else {
             System.out.println("Can read file");
@@ -52,9 +52,7 @@ public class LoginController {
     public void handleSignIn(ActionEvent actionEvent) {
         String username = inputUsername.getText();
         String password = inputPassword.getText();
-
         Users user = userList.findUser(username);
-
 
         if (username.isEmpty() || password.isEmpty()){
             textError.setText("Enter username and password");
@@ -80,15 +78,13 @@ public class LoginController {
                 e.printStackTrace();
             }
         }
-        inputUsername.clear() ;// clear ช่อง TextField
+        inputUsername.clear();// clear ช่อง TextField
         inputPassword.clear();
     }
 
     @FXML
     public void handleGoToHome(ActionEvent actionEvent){
         try {
-            // เปลี่ยนการแสดงผลไปที่ route ที่ชื่อ member_card_detail
-            // พร้อมส่ง reference instance john ไปด้วย
             FXRouter.goTo("home");
         } catch (IOException e) {
             System.err.println("ไปที่หน้า home");
@@ -99,11 +95,6 @@ public class LoginController {
     @FXML
     public void handleGoToRegister(ActionEvent actionEvent){
         try {
-
-
-
-            // เปลี่ยนการแสดงผลไปที่ route ที่ชื่อ member_card_detail
-            // พร้อมส่ง reference instance john ไปด้วย
             FXRouter.goTo("register");
         } catch (IOException e) {
             System.err.println("ไปที่หน้า register");
@@ -114,8 +105,6 @@ public class LoginController {
     @FXML
     public void handleGoToForgetPassword(ActionEvent actionEvent){
         try {
-            // เปลี่ยนการแสดงผลไปที่ route ที่ชื่อ member_card_detail
-            // พร้อมส่ง reference instance john ไปด้วย
             FXRouter.goTo("forgetpassword");
         } catch (IOException e) {
             System.err.println("ไปที่หน้า forgetpassword");

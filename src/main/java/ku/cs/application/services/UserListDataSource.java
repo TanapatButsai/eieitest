@@ -3,17 +3,10 @@ package ku.cs.application.services;
 import ku.cs.application.models.UserList;
 import ku.cs.application.models.Users;
 import java.io.*;
-import java.util.Objects;
-import java.util.Timer;
 
 public class UserListDataSource implements DataSource<UserList> {
-
     private String directoryName;
-
     private String fileName;
-
-    private DataSource<UserList> dataSource;
-    private UserList userList;
 
     public UserListDataSource(String directoryName, String fileName) {
         this.directoryName = directoryName;
@@ -22,14 +15,14 @@ public class UserListDataSource implements DataSource<UserList> {
     }
 
     //check that file is exist or not
-    private void checkFileIsExisted(){
+    private void checkFileIsExisted() {
         File file = new File(directoryName);
-        if (! file.exists()){
+        if (!file.exists()) {
             file.mkdirs();
         }
         String filePath = directoryName + File.separator + fileName;
         file = new File(filePath);
-        if (! file.exists()){
+        if (!file.exists()) {
             try {
                 file.createNewFile();
             } catch (IOException e) {
@@ -42,7 +35,7 @@ public class UserListDataSource implements DataSource<UserList> {
     public UserList readData() {
         UserList list = new UserList();
         String filePath = directoryName + File.separator + fileName;
-        File file  = new File(filePath);
+        File file = new File(filePath);
         FileReader reader = null;
         BufferedReader buffer = null;
 
@@ -51,12 +44,12 @@ public class UserListDataSource implements DataSource<UserList> {
             buffer = new BufferedReader(reader);
 
             String line = "";
-            while ( ( line = buffer.readLine() ) != null ){
+            while ((line = buffer.readLine()) != null) {
                 String[] data = line.split(",");
                 Users user = new Users(data[0].trim(),
                         data[1].trim()
-                        ,data[2].trim()
-                        ,data[3].trim() );
+                        , data[2].trim()
+                        , data[3].trim());
                 list.addUser(user);
             }
 
@@ -76,15 +69,7 @@ public class UserListDataSource implements DataSource<UserList> {
     }
 
 
-    @Override
-    public String toString() {
-        return "UserListDataSource{" +
-                "directoryName='" + directoryName + '\'' +
-                ", fileName='" + fileName + '\'' +
-                ", dataSource=" + dataSource +
-                ", userList=" + userList +
-                '}';
-    }
+
 
     @Override
     public void writeData(UserList userList) {
@@ -93,25 +78,35 @@ public class UserListDataSource implements DataSource<UserList> {
 
         FileWriter writer = null;
         BufferedWriter buffer = null;
-
+//        newUser = new Users("jaja123","456","780","123");
+//        String newUserString = newUser.getName()+","+newUser.getId()+","+ newUser.getUsername()+","+ newUser.getPassword();
         try {
             writer = new FileWriter(file);
             buffer = new BufferedWriter(writer);
-            for (Users user : userList.getAllCards()){
-                String line = user.getName() +","
+            for (Users user : userList.getAllCards()) {
+                String line = user.getName() + ","
                         + user.getId() + ","
-                        + user.getUsername() +","
+                        + user.getUsername() + ","
                         + user.getPassword();
 
                 buffer.append(line);
                 buffer.newLine();
             }
+//            buffer.append(newUserString);
             buffer.close();
-        } catch (IOException e){
+        } catch (IOException e) {
             throw new RuntimeException();
         }
 
     }
+    @Override
+    public String toString() {
+        return "UserListDataSource{" +
+                "directoryName='" + directoryName + '\'' +
+                ", fileName='" + fileName + '\'';
+    }
+}
+
 //    public boolean loginUser(String username,String password){
 //        String filePath = directoryName;
 //        File file = new File(filePath);
@@ -141,4 +136,4 @@ public class UserListDataSource implements DataSource<UserList> {
 //            }
 //        }
 //    }
-}
+
