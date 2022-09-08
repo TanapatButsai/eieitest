@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #D8D8D8;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.AdminSignupOfficer">
+   <children>
+      <Label layoutX="296.0" layoutY="39.0" prefHeight="43.0" prefWidth="209.0" text="Sign Up Officer">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+      <Label layoutX="523.0" layoutY="194.0" text="Username" />
+      <TextField layoutX="511.0" layoutY="217.0" />
+      <Label layoutX="525.0" layoutY="250.0" text="Password" />
+      <Label layoutX="523.0" layoutY="407.0" text="Institution" />
+      <Label layoutX="521.0" layoutY="300.0" text="Confirm Password" />
+      <Label layoutX="523.0" layoutY="354.0" text="Officer Name" />
+      <TextField layoutX="511.0" layoutY="371.0" />
+      <TextField layoutX="511.0" layoutY="317.0" />
+      <TextField layoutX="511.0" layoutY="267.0" />
+      <TextField layoutX="511.0" layoutY="424.0" />
+   </children>
+</AnchorPane>

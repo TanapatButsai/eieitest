@@ -3,15 +3,17 @@ package ku.cs.application.models;
 public class Users {
     private String name;
     private String id;
-    private String email;
+//    private String email;
     private String username;
     private String password;
+    private double lastTimeLogin;
+    private String userImage;
 
 
-    public Users(String name, String id, String email, String username, String password) {
+    public Users(String name, String id, String username, String password) {
         this.name = name;
         this.id = id;
-        this.email = email;
+//        this.email = email;
         this.username = username;
         this.password = password;
     }
@@ -21,7 +23,7 @@ public class Users {
         return "Users{" +
                 "name='" + name + '\'' +
                 ", id='" + id + '\'' +
-                ", email='" + email + '\'' +
+//                ", email='" + email + '\'' +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 '}';
@@ -43,14 +45,13 @@ public class Users {
     public void setId(String id) {
         this.id = id;
     }
+//    public String getEmail() {
+//        return email;
+//    }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
+//    public void setEmail(String email) {
+//        this.email = email;
+//    }
 
     public String getUsername() {
         return username;
@@ -67,4 +68,5 @@ public class Users {
     public void setPassword(String password) {
         this.password = password;
     }
+
 }
