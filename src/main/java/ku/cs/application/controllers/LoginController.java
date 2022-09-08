@@ -102,12 +102,17 @@ public class LoginController {
             e.printStackTrace();
         }
     }
+
     @FXML
-    public void handleGoToForgetPassword(ActionEvent actionEvent){
+
+    public void handleGoToChangePassword(ActionEvent actionEvent){
         try {
-            FXRouter.goTo("forgetpassword");
+            // เปลี่ยนการแสดงผลไปที่ route ที่ชื่อ member_card_detail
+            // พร้อมส่ง reference instance john ไปด้วย
+            FXRouter.goTo("changepassword");
+
         } catch (IOException e) {
-            System.err.println("ไปที่หน้า forgetpassword");
+            System.err.println("ไปที่หน้า changepassword");
             System.err.println("ให้ตรวจสอบการกำหนด route");
             e.printStackTrace();
         }

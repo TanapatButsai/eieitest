@@ -26,4 +26,34 @@ public class HomeController {
             e.printStackTrace();
         }
     }
+    @FXML
+    public void handleTeacherComplaint(ActionEvent actionEvent){
+        try {
+            com.github.saacsos.FXRouter.goTo("teachercomplaint");
+        } catch (IOException e) {
+            System.err.println("ไปที่หน้า ร้องเรียนอาจารย์/บุคลากร ไม่ได้");
+            System.err.println("ให้ตรวจสอบการกำหนด route");
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    public void handlePlaceComplaint(ActionEvent actionEvent){
+        try {
+            com.github.saacsos.FXRouter.goTo("placecomplaint");
+        } catch (IOException e) {
+            System.err.println("ไปที่หน้า ร้องเรียนอาคาร/สถานที่ ไม่ได้");
+            System.err.println("ให้ตรวจสอบการกำหนด route");
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    public void handleEnrollComplaint(ActionEvent actionEvent){
+        try {
+            com.github.saacsos.FXRouter.goTo("enrollcomplaint");
+        } catch (IOException e) {
+            System.err.println("ไปที่หน้า ร้องเรียนการลงทะเบียนเรียน ไม่ได้");
+            System.err.println("ให้ตรวจสอบการกำหนด route");
+            e.printStackTrace();
+        }
+    }
 }

@@ -31,38 +31,33 @@
          <children>
             <VBox layoutX="-3.0" layoutY="108.0" prefHeight="436.0" prefWidth="225.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#handleNormalComplaint" prefHeight="79.0" prefWidth="211.0" style="-fx-background-color: #606261 #606261 #606261 #606261;" text="ร้องเรียนทั่วไป" textFill="#fcf6f6">
+                  <Button mnemonicParsing="false" onAction="#handlePlaceComplaint" prefHeight="0.0" prefWidth="222.0" style="-fx-background-color: #606261 #606261 #606261 #606261;" text="ร้องเรียนอาคารและสถานที่" textFill="#f8f3f3">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="91.0" prefWidth="222.0" style="-fx-background-color: #606261 #606261 #606261 #606261;" text="ร้องเรียนอาจารย์/บุคลากร" textFill="#f8f6f6">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Button>
-                  <Button mnemonicParsing="false" prefHeight="87.0" prefWidth="222.0" style="-fx-background-color: #606261 #606261 #606261 #606261;" text="ร้องเรียนอาคารและสถานที่" textFill="#f8f3f3">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Button>
-                  <Button mnemonicParsing="false" prefHeight="106.0" prefWidth="223.0" style="-fx-background-color: #606261 #606261 #606261 #606261;" text="ร้องเรียนการลงทะเบียนเรียน" textFill="#f2ecec">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Button>
-                  <Button mnemonicParsing="false" prefHeight="79.0" prefWidth="221.0" style="-fx-background-color: #606261 #606261 #606261 #606261;" text="หน้ารวม" textFill="#f2ecec">
+                  <Button mnemonicParsing="false" onAction="#handleEnrollComplaint" prefHeight="0.0" prefWidth="223.0" style="-fx-background-color: #606261 #606261 #606261 #606261;" text="ร้องเรียนการลงทะเบียนเรียน" textFill="#f2ecec">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Button>
                </children>
             </VBox>
-            <Label layoutX="4.0" prefHeight="107.0" prefWidth="213.0" style="-fx-background-color: #606261 #606261 #606261 #606261 #606261 #606261 #606261 #606261;" text="            ประเภทการร้องเรียน" textFill="#f5f4f4">
+            <Label layoutX="-2.0" layoutY="-1.0" prefHeight="46.0" prefWidth="222.0" style="-fx-background-color: #BDBDBD #BDBDBD;" text="            ประเภทการร้องเรียน" textFill="#252424">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
+            <Button layoutX="-3.0" layoutY="48.0" mnemonicParsing="false" onAction="#handleNormalComplaint" prefHeight="31.0" prefWidth="223.0" style="-fx-background-color: #606261 #606261 #606261 #606261 #606261 #606261 #606261 #606261;" text="ร้องเรียนทั่วไป" textFill="#fcf6f6">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button layoutX="-2.0" layoutY="79.0" mnemonicParsing="false" onAction="#handleTeacherComplaint" prefHeight="0.0" prefWidth="222.0" style="-fx-background-color: #606261 #606261 #606261 #606261 #606261 #606261 #606261 #606261;" text="ร้องเรียนอาจารย์/บุคลากร" textFill="#f8f6f6">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
          </children></Pane>
       <BorderPane layoutX="254.0" layoutY="94.0" prefHeight="469.0" prefWidth="483.0">
          <top>
