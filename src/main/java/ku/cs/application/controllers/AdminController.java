@@ -10,16 +10,16 @@ public class AdminController {
     @FXML private ListView<Users> userListView;
 
     private UserListDataSource ulds = new UserListDataSource();
-    private UserList ul;
+    private UserList userList;
 
     @FXML
     public void initialize(){
-        ul = ulds.getUserList();
+        userList = ulds.getUserList();
         showListView();
     }
 
     private void showListView() {
-        userListView.getItems().addAll(ul.getAllCards());
+        userListView.getItems().addAll(userList.getAllCards());
         userListView.refresh();
     }
 
