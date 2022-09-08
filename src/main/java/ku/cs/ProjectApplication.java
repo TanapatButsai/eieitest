@@ -23,8 +23,11 @@ public class ProjectApplication extends Application {
         FXRouter.when("register",packageStr + "register.fxml");
         FXRouter.when("credit", packageStr + "credit.fxml");
         FXRouter.when("home",packageStr + "home.fxml");
-        FXRouter.when("forgetpassword",packageStr + "forgetpassword.fxml");
+        FXRouter.when("changepassword",packageStr + "changepassword.fxml");
         FXRouter.when("normalcomplaint", packageStr + "normalcomplaint.fxml");
+        FXRouter.when("teachercomplaint", packageStr + "teachercomplaint.fxml");
+        FXRouter.when("placecomplaint", packageStr + "placecomplaint.fxml");
+        FXRouter.when("enrollcomplaint", packageStr + "enrollcomplaint.fxml");
     }
 
     public static void main(String[] args) {

@@ -9,7 +9,7 @@ import javafx.scene.image.ImageView;
 
 import java.io.IOException;
 
-public class ForgetPasswordController {
+public class ChangePasswordController {
 
 //    @FXML
 //    public void handleAddEmailButton(ActionEvent actionEvent) {
