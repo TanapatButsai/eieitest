@@ -14,6 +14,11 @@ public class UserListDataSource implements DataSource<UserList> {
         checkFileIsExisted();
     }
 
+    public UserListDataSource() {
+        userList = new UserList();
+        readData();
+    }
+
     //check that file is exist or not
     private void checkFileIsExisted() {
         File file = new File(directoryName);
@@ -104,6 +109,10 @@ public class UserListDataSource implements DataSource<UserList> {
         return "UserListDataSource{" +
                 "directoryName='" + directoryName + '\'' +
                 ", fileName='" + fileName + '\'';
+    }
+    private UserList userList;
+    public UserList getUserList() {
+        return userList;
     }
 }
 
