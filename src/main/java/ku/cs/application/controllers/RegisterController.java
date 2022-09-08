@@ -45,9 +45,8 @@ public class RegisterController {
 
         dataSource = new UserListDataSource("data", "user.csv");
         userList = dataSource.readData();
-
-
     }
+
     @FXML public void handleSignUp(ActionEvent actionEvent){
         promptCheckID.setText("");
         promptCheckIRetypePassword.setText("");

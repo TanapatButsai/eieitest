@@ -5,13 +5,21 @@ public class UserList {
     private ArrayList<Users> userList;
 
     public UserList() {
-        userList = new ArrayList<>();}
+        userList = new ArrayList<>();
+    }
 
     public void addUser(Users user){
 
-        userList.add(user);} // เรียกmethod add จากArrayList เพื'อเพิ'มข้อมูล
+        userList.add(user);
+    }
+
     public ArrayList<Users> getAllCards(){
-        return userList;}
+        return userList;
+    }
+
+    public void removeUser(Users user){
+        userList.remove(user);
+    }
 
     public boolean checkUsernameIsExistedInUserList(String username){
         if (username.isEmpty()){
