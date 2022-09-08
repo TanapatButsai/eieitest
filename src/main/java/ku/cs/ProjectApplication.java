@@ -13,7 +13,7 @@ public class ProjectApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXRouter.bind(this, stage, "DingTwoProject", 800, 600);
         configRoute();
-        FXRouter.goTo("login");
+        FXRouter.goTo("officer");
     }
 
     private static void configRoute() {
@@ -24,6 +24,7 @@ public class ProjectApplication extends Application {
         FXRouter.when("credit", packageStr + "credit.fxml");
         FXRouter.when("home",packageStr + "home.fxml");
         FXRouter.when("forgetpassword",packageStr + "forgetpassword.fxml");
+        FXRouter.when("officer", packageStr + "officer.fxml");
     }
 
     public static void main(String[] args) {
