@@ -69,8 +69,6 @@ public class UserListDataSource implements DataSource<UserList> {
     }
 
 
-
-
     @Override
     public void writeData(UserList userList) {
         String filePath = directoryName + File.separator + fileName;
