@@ -1,28 +1,57 @@
 package ku.cs.application.models;
 
 public class Complaint {
-    private String information;
-    private String intro;
+    private String headComplaint; //หัวเรื่อง
+    private String bodyComplaint; //เนื้อหาที่จะร้องเรียน
+    private String detailComplaint; //
+    private String CATEGORY;
 
-    public Complaint(String information, String intro) {
-        this.information = information;
-        this.intro = intro;
+    private int rating;
+
+    private boolean isBan;
+    public Complaint(String headComplaint, String bodyComplaint,
+                     String detailComplaint, String CATEGORY) {
+        this.headComplaint = headComplaint;
+        this.bodyComplaint = bodyComplaint;
+        this.detailComplaint = detailComplaint;
+        this.CATEGORY = CATEGORY;
+        isBan = false;
     }
-
-    public String getInformation() {
-        return information;
+    public void donBan(){
+        isBan = true;
     }
-
-    public void setInformation(String information) {
-        this.information = information;
+    public String getHeadComplaint() {
+        return headComplaint;
     }
-
-    public String getIntro() {
-        return intro;
+    public void setHeadComplaint(String headComplaint) {
+        this.headComplaint = headComplaint;
     }
-
-    public void setIntro(String intro) {
-        this.intro = intro;
+    public String getBodyComplaint() {
+        return bodyComplaint;
+    }
+    public void setBodyComplaint(String bodyComplaint) {
+        this.bodyComplaint = bodyComplaint;
+    }
+    public String getDetailComplaint() {
+        return detailComplaint;
+    }
+    public void setDetailComplaint(String detailComplaint) {
+        this.detailComplaint = detailComplaint;
+    }
+    public String getCATEGORY() {
+        return CATEGORY;
+    }
+    public void setCATEGORY(String CATEGORY) {
+        this.CATEGORY = CATEGORY;
+    }
+    @Override
+    public String toString() {
+        return "Complaint{" +
+                "headComplaint='" + headComplaint + '\'' +
+                ", bodyComplaint='" + bodyComplaint + '\'' +
+                ", detailComplaint='" + detailComplaint + '\'' +
+                ", CATEGORY='" + CATEGORY + '\'' +
+                '}';
     }
 
 }
