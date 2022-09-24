@@ -88,8 +88,8 @@ public class ComplaintListDataSource implements DataSource<ComplaintList>{
             for (Complaint complaint : complaintList.getAllComplaint()) {
                 String line = complaint.getHeadComplaint() + ","
                         + complaint.getBodyComplaint() + ","
-                        + complaint.getDetailComplaint() + ","
-                        + complaint.getCATEGORY();
+                        + complaint.getCATEGORY()+","
+                        + complaint.getNameWriter();
 
                 buffer.append(line);
                 buffer.newLine();
@@ -108,5 +108,6 @@ public class ComplaintListDataSource implements DataSource<ComplaintList>{
                 ", fileName='" + fileName + '\'' +
                 '}';
     }
-    
+    //--------
+
 }

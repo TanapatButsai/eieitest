@@ -81,7 +81,6 @@ public class RegisterController {
                 usernameHasComma = false;
             }
         }
-
         System.out.println("ID is in user = " + usernameIsInUsers + " | Already click check =" + usernameAlreadyCheck);
     }
 

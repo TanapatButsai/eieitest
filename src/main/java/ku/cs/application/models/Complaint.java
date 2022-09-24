@@ -5,18 +5,34 @@ public class Complaint {
     private String bodyComplaint; //เนื้อหาที่จะร้องเรียน
     private String detailComplaint; //
     private String CATEGORY;
+    private String nameWriter;
 
     private int rating;
 
     private boolean isBan;
     public Complaint(String headComplaint, String bodyComplaint,
-                     String detailComplaint, String CATEGORY) {
+                     String CATEGORY,String nameWriter) {
         this.headComplaint = headComplaint;
         this.bodyComplaint = bodyComplaint;
-        this.detailComplaint = detailComplaint;
         this.CATEGORY = CATEGORY;
+        this.nameWriter = nameWriter;
         isBan = false;
     }
+
+    public String getNameWriter() {
+        return nameWriter;
+    }
+
+    public void setNameWriter(String nameWriter) {
+        this.nameWriter = nameWriter;
+    }
+
+    public Complaint(String headComplaint, String bodyComplaint, String CATEGORY) {
+        this.headComplaint = headComplaint;
+        this.bodyComplaint = bodyComplaint;
+        this.CATEGORY = CATEGORY;
+    }
+
     public void donBan(){
         isBan = true;
     }

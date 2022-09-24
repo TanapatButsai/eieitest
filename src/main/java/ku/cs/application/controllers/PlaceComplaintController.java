@@ -1,11 +1,10 @@
 package ku.cs.application.controllers;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-
 import java.io.IOException;
-
 
 public class PlaceComplaintController {
     @FXML

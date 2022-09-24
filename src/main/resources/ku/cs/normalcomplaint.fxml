@@ -12,8 +12,8 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.NormalComplaintController">
    <children>
-      <TextField layoutX="395.0" layoutY="129.0" prefHeight="26.0" prefWidth="355.0" promptText="กรุณาใส่หัวข้อ เช่น ทำของมีค่าหาย" />
-      <TextArea layoutX="395.0" layoutY="225.0" prefHeight="281.0" prefWidth="365.0" />
+      <TextField fx:id="headTextField" layoutX="395.0" layoutY="129.0" prefHeight="26.0" prefWidth="355.0" promptText="กรุณาใส่หัวข้อ เช่น ทำของมีค่าหาย" />
+      <TextArea fx:id="bodyTextField" layoutX="395.0" layoutY="225.0" prefHeight="281.0" prefWidth="365.0" />
       <Label layoutX="391.0" layoutY="91.0" text="หัวเรื่อง">
          <font>
             <Font size="16.0" />
@@ -34,7 +34,7 @@
       </HBox>
       <ImageView fx:id="kasetsarts" fitHeight="601.0" fitWidth="350.0" layoutX="-5.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true" />
       <Label layoutX="51.0" layoutY="98.0" prefHeight="26.0" prefWidth="234.0" style="-fx-background-color: #ffffff;" text="        หลักเกณฑ์การรับเรื่องร้องเรียน" textFill="#0a0000" />
-      <Button layoutX="533.0" layoutY="516.0" mnemonicParsing="false" text="ส่งคำร้องเรียน" />
+      <Button layoutX="533.0" layoutY="516.0" mnemonicParsing="false" onAction="#handlePushComplaint" text="ส่งคำร้องเรียน" />
       <Label layoutX="51.0" layoutY="173.0" prefHeight="20.0" prefWidth="191.0" style="-fx-background-color: #ffffff;" text="1. ใช้ถ้อยคำหรือข้อความที่สุภาพ" textFill="#0a0000" />
       <Label layoutX="51.0" layoutY="215.0" prefHeight="20.0" prefWidth="234.0" style="-fx-background-color: #ffffff;" text=" 2. ข้อร้องเรียนต้องเป็นเรื่องจริงที่มีมูลเหตุ " textFill="#0a0000" />
       <Label layoutX="51.0" layoutY="235.0" prefHeight="26.0" prefWidth="234.0" style="-fx-background-color: #ffffff;" text="มิได้หวังสร้างกระแสหรือสร้างข่าวที่เสียหาย" textFill="#0a0000" />
