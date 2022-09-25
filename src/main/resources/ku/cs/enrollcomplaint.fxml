@@ -27,14 +27,14 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <TextField layoutX="442.0" layoutY="122.0" prefHeight="26.0" prefWidth="287.0" />
-      <TextArea layoutX="446.0" layoutY="182.0" prefHeight="329.0" prefWidth="285.0" />
+      <TextField fx:id="headTextField" layoutX="442.0" layoutY="122.0" prefHeight="26.0" prefWidth="287.0" />
+      <TextArea fx:id="bodyTextField" layoutX="446.0" layoutY="182.0" prefHeight="329.0" prefWidth="285.0" />
       <Label layoutX="442.0" layoutY="154.0" prefHeight="20.0" prefWidth="185.0" text="รายละเอียดในการร้องเรียน">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Button layoutX="548.0" layoutY="517.0" mnemonicParsing="false" text="ส่งคำร้องเรียน" />
+      <Button layoutX="548.0" layoutY="517.0" mnemonicParsing="false" onAction="#handlePushComplaint" text="ส่งคำร้องเรียน" />
       <Button layoutX="567.0" layoutY="549.0" mnemonicParsing="false" onAction="#handleBackButton" text="Back" />
       <CheckBox layoutX="567.0" layoutY="96.0" mnemonicParsing="false" text="ร้องเรียนอาคารและสถานที่">
          <font>
