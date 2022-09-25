@@ -51,10 +51,15 @@ public class UserListDataSource implements DataSource<UserList> {
             String line = "";
             while ((line = buffer.readLine()) != null) {
                 String[] data = line.split(",");
+                boolean isAdmin = false;
+                if (data[4].trim().equals("true")){
+                    isAdmin = true;
+                }
                 Users user = new Users(data[0].trim(),
                         data[1].trim()
                         , data[2].trim()
-                        , data[3].trim());
+                        , data[3].trim()
+                        ,isAdmin);
                 list.addUser(user);
             }
 
@@ -90,7 +95,8 @@ public class UserListDataSource implements DataSource<UserList> {
                 String line = user.getName() + ","
                         + user.getId() + ","
                         + user.getUsername() + ","
-                        + user.getPassword();
+                        + user.getPassword() + ","
+                        + user.isAdmin();
 
                 buffer.append(line);
                 buffer.newLine();

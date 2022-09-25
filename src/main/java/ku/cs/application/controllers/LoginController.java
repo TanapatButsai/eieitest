@@ -23,6 +23,7 @@ public class LoginController {
     @FXML private Label textError;
     @FXML private TextField inputUsername;
     @FXML private TextField inputPassword;
+    @FXML private Label userLabel;
     String url
             = getClass().getResource("/ku/cs/login_images/ku_view.jpg").toExternalForm();
     String url2
@@ -35,6 +36,7 @@ public class LoginController {
 
     private DataSource<UserList> dataSource;
     private UserList userList;
+    private Users user;
     @FXML
     public void initialize() {
         image_view_login.setImage(new Image(url));
@@ -46,12 +48,14 @@ public class LoginController {
         } else {
             System.out.println("Can read file");
         }
+
     }
 
     @FXML
     public void handleSignIn(ActionEvent actionEvent) {
         String username = inputUsername.getText();
         String password = inputPassword.getText();
+
         Users user = userList.findUser(username);
 
         if (username.isEmpty() || password.isEmpty()){
@@ -70,13 +74,22 @@ public class LoginController {
             System.err.println("Wrong username or password");
             textError.setText("Wrong username or password");
         } else if (isLogin(username,password,user)) {
-            try {
-                FXRouter.goTo("home",user);
-            } catch (IOException e) {
-                System.err.println("ไปที่หน้า home");
-                System.err.println("ให้ตรวจสอบการกำหนด route");
-                e.printStackTrace();
-            }
+            if (user.isAdmin()){
+                try {
+                    FXRouter.goTo("adminscene",user);
+                } catch (IOException e) {
+                    System.err.println("ไปที่หน้า home");
+                    System.err.println("ให้ตรวจสอบการกำหนด route");
+                    e.printStackTrace();
+                }
+            }else{
+                try {
+                    FXRouter.goTo("home",user);
+                } catch (IOException e) {
+                    System.err.println("ไปที่หน้า home");
+                    System.err.println("ให้ตรวจสอบการกำหนด route");
+                    e.printStackTrace();
+            }}
         }
         inputUsername.clear();// clear ช่อง TextField
         inputPassword.clear();
