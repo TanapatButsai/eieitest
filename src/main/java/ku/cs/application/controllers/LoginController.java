@@ -9,17 +9,21 @@ import java.io.IOException;
 import java.util.Objects;
 import javafx.scene.control.Label;
 import com.github.saacsos.FXRouter;
+import ku.cs.application.models.Officer;
 import ku.cs.application.models.UserList;
 import ku.cs.application.services.DataSource;
 import ku.cs.application.services.UserListDataSource;
 import ku.cs.application.models.Users;
 
-import javax.net.ssl.SSLContext;
-
 public class LoginController {
     //Admin ID PASSWORD
     String adminUsername = "admin";
     String adminPassword = "123456";
+    //Officer ID PASSWORD
+    String officerUser1 = "officer1";
+    String officerPassword1 = "officer111";
+    private Officer officer1;
+
     @FXML private Label textError;
     @FXML private TextField inputUsername;
     @FXML private TextField inputPassword;
@@ -37,6 +41,7 @@ public class LoginController {
     private UserList userList;
     @FXML
     public void initialize() {
+        //officer1 = new Officers("เรื่องร้องเรียงทั่วไป");
         image_view_login.setImage(new Image(url));
         image_view_ku_logo.setImage(new Image(url2));
         dataSource = new UserListDataSource("data","user.csv");
@@ -63,6 +68,14 @@ public class LoginController {
 
             } catch (IOException e) {
                 System.err.println("ไปที่หน้า home");
+                System.err.println("ให้ตรวจสอบการกำหนด route");
+                e.printStackTrace();
+            }
+        } else if (Objects.equals(officerUser1, username) && Objects.equals(officerPassword1, password)) {
+            try {
+                FXRouter.goTo("officer", officer1);
+            } catch (IOException e) {
+                System.err.println("ไปที่หน้า officer");
                 System.err.println("ให้ตรวจสอบการกำหนด route");
                 e.printStackTrace();
             }
