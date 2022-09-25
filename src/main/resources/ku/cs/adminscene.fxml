@@ -8,7 +8,7 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #D8D8D8;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.AdminController">
    <children>
-      <ListView layoutX="68.0" layoutY="106.0" prefHeight="455.0" prefWidth="311.0" />
+      <ListView fx:id="userListView" layoutX="68.0" layoutY="106.0" prefHeight="455.0" prefWidth="311.0" />
       <Label layoutX="562.0" layoutY="58.0" text=" User Detail">
          <font>
             <Font size="28.0" />
