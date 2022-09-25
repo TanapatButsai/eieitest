@@ -1,22 +1,21 @@
 package ku.cs.application.services;
 
-import ku.cs.application.models.Complaint;
-import ku.cs.application.models.ComplaintList;
-import ku.cs.application.models.Officer;
-import ku.cs.application.models.OfficerList;
+import ku.cs.application.models.OfficerID;
+import ku.cs.application.models.OfficerIDList;
+import ku.cs.application.models.UserList;
+import ku.cs.application.models.Users;
 
 import java.io.*;
 
-public class OfficersListDataSource implements DataSource<OfficerList>{
+public class OfficerIDListDataSource implements DataSource<OfficerIDList>{
     private String directoryName;
     private String fileName;
 
-    public OfficersListDataSource(String directoryName, String fileName){
+    public OfficerIDListDataSource(String directoryName, String fileName) {
         this.directoryName = directoryName;
         this.fileName = fileName;
         checkFileIsExisted();
     }
-
     private void checkFileIsExisted() {
         File file = new File(directoryName);
         if (!file.exists()) {
@@ -32,10 +31,9 @@ public class OfficersListDataSource implements DataSource<OfficerList>{
             }
         }
     }
-
     @Override
-    public OfficerList readData() {
-        OfficerList list = new OfficerList();
+    public OfficerIDList readData() {
+        OfficerIDList list = new OfficerIDList();
         String filePath = directoryName + File.separator + fileName;
         File file = new File(filePath);
         FileReader reader = null;
@@ -48,12 +46,11 @@ public class OfficersListDataSource implements DataSource<OfficerList>{
             String line = "";
             while ((line = buffer.readLine()) != null) {
                 String[] data = line.split(",");
-                Officer officer = new Officer(
+                OfficerID officerID = new OfficerID(
                         data[0].trim(),
                         data[1].trim(),
-                        data[2].trim(),
-                        data[3].trim());
-                list.add(officer);
+                        data[2].trim());
+                list.addOfficer(officerID);
             }
 
         } catch (FileNotFoundException e) {
@@ -69,38 +66,30 @@ public class OfficersListDataSource implements DataSource<OfficerList>{
             }
         }
         return list;
-
     }
     @Override
-    public void writeData(OfficerList officerList) {
+    public void writeData(OfficerIDList officerIDList) {
         String filePath = directoryName + File.separator + fileName;
         File file = new File(filePath);
 
         FileWriter writer = null;
         BufferedWriter buffer = null;
-        try{
+        try {
             writer = new FileWriter(file);
             buffer = new BufferedWriter(writer);
-            for (Officer officer : officerList.getAllOfficer()) {
-                String line = officer.getName() + ","
-                        + officer.getTopic() + ","
-                        + officer.getHeadComplaint()+","
-                        + officer.getBodyComplaint();
-
+            for (OfficerID officerID : officerIDList.getAllOfficerID()) {
+                String line =
+                        officerID.getOfficerID() + ","
+                        + officerID.getOfficerPassword() + ","
+                        + officerID.getRole();
                 buffer.append(line);
                 buffer.newLine();
             }
-
+//            buffer.append(newUserString);
+            buffer.close();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException();
         }
-        finally {
-            try {
-                buffer.close();
-                writer.close();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        }
+
     }
-    }
+}

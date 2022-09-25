@@ -13,4 +13,15 @@ public class OfficerList {
     public ArrayList<Officer> getAllOfficer(){
         return officerList;
     }
+
+    public String setRole(Officer role){
+        return role.getRole();
+    }
+
+    @Override
+    public String toString() {
+        return "OfficerList{" +
+                "officerList=" + officerList +
+                '}';
+    }
 }

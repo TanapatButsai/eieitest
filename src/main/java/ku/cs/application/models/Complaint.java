@@ -3,7 +3,7 @@ package ku.cs.application.models;
 public class Complaint {
     private String headComplaint; //หัวเรื่อง
     private String bodyComplaint; //เนื้อหาที่จะร้องเรียน
-    private String detailComplaint; //
+    //private String detailComplaint; //
     private String CATEGORY;
     private String nameWriter;
 
@@ -48,12 +48,12 @@ public class Complaint {
     public void setBodyComplaint(String bodyComplaint) {
         this.bodyComplaint = bodyComplaint;
     }
-    public String getDetailComplaint() {
-        return detailComplaint;
-    }
-    public void setDetailComplaint(String detailComplaint) {
-        this.detailComplaint = detailComplaint;
-    }
+//    public String getDetailComplaint() {
+//        return detailComplaint;
+//    }
+//    public void setDetailComplaint(String detailComplaint) {
+//        this.detailComplaint = detailComplaint;
+//    }
     public String getCATEGORY() {
         return CATEGORY;
     }
@@ -64,8 +64,8 @@ public class Complaint {
     public String toString() {
         return "Complaint{" +
                 "headComplaint='" + headComplaint + '\'' +
-                ", bodyComplaint='" + bodyComplaint + '\'' +
-                ", detailComplaint='" + detailComplaint + '\'' +
+                ", bodyComplaint='" + bodyComplaint + '\''
+                +'\'' +
                 ", CATEGORY='" + CATEGORY + '\'' +
                 '}';
     }

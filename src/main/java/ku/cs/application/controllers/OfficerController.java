@@ -6,10 +6,17 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import ku.cs.application.models.Officer;
 import com.github.saacsos.FXRouter;
+import ku.cs.application.models.OfficerList;
+import ku.cs.application.services.ComplaintListDataSource;
+import ku.cs.application.services.DataSource;
+import ku.cs.application.services.OfficersListDataSource;
+
 import java.io.IOException;
 
 public class OfficerController {
-    private Officer officers;
+    private Officer officer;
+    private OfficerList officerList;
+    private DataSource<OfficerList> dataSource;
     @FXML private Label topicLabel;
     @FXML private Label officerLabel;
     @FXML private ListView complaintListView;
@@ -17,13 +24,16 @@ public class OfficerController {
     @FXML
     public void initialize(){
         System.out.println("initialize MemberCardDetailController");
-        //memberCard = new MemberCard("John Smith", "081-222-8888");
-        officers = (Officer) FXRouter.getData();
+        dataSource = new OfficersListDataSource("data","officer.csv");
+        officerList = dataSource.readData();
         showOfficerData();
     }
     public void showOfficerData(){
-        officerLabel.setText(officers.getRole());
-
+        Officer officer1 = new Officer("benny","officer1","trasgh","wwwwwwwwww");
+        topicLabel.setText("");
+        complaintListView.getItems().addAll(officerList.getAllOfficer());
+        //officerLabel.setText(officerList.setRole(officer));
+        officerLabel.setText(officer1.getRole());
     }
     @FXML
     public void handleBackButton(ActionEvent actionEvent) {
