@@ -17,13 +17,9 @@ import ku.cs.application.models.Users;
 import javax.net.ssl.SSLContext;
 
 public class LoginController {
-    //Admin ID PASSWORD
-    String adminUsername = "admin";
-    String adminPassword = "123456";
     @FXML private Label textError;
     @FXML private TextField inputUsername;
     @FXML private TextField inputPassword;
-    @FXML private Label userLabel;
     String url
             = getClass().getResource("/ku/cs/login_images/ku_view.jpg").toExternalForm();
     String url2
@@ -32,8 +28,6 @@ public class LoginController {
     private ImageView image_view_login;
     @FXML
     private ImageView image_view_ku_logo;
-
-
     private DataSource<UserList> dataSource;
     private UserList userList;
     private Users user;
@@ -55,21 +49,10 @@ public class LoginController {
     public void handleSignIn(ActionEvent actionEvent) {
         String username = inputUsername.getText();
         String password = inputPassword.getText();
-
         Users user = userList.findUser(username);
-
         if (username.isEmpty() || password.isEmpty()){
             textError.setText("Enter username and password");
             System.err.println("TextField is empty");
-        } else if (Objects.equals(adminUsername, username) && Objects.equals(adminPassword, password)){
-            try {
-                FXRouter.goTo("home");
-
-            } catch (IOException e) {
-                System.err.println("ไปที่หน้า home");
-                System.err.println("ให้ตรวจสอบการกำหนด route");
-                e.printStackTrace();
-            }
         } else if (user == null || !user.getPassword().equals(password)) {
             System.err.println("Wrong username or password");
             textError.setText("Wrong username or password");
@@ -89,7 +72,8 @@ public class LoginController {
                     System.err.println("ไปที่หน้า home");
                     System.err.println("ให้ตรวจสอบการกำหนด route");
                     e.printStackTrace();
-            }}
+                }
+            }
         }
         inputUsername.clear();// clear ช่อง TextField
         inputPassword.clear();

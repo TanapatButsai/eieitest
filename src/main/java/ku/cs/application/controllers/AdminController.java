@@ -6,6 +6,8 @@ import ku.cs.application.models.UserList;
 import ku.cs.application.models.Users;
 import ku.cs.application.services.UserListDataSource;
 
+import java.io.IOException;
+
 public class AdminController {
     @FXML private ListView<Users> userListView;
 
@@ -24,4 +26,12 @@ public class AdminController {
 //        userListView.refresh();
 //    }
 
+    @FXML
+    public void handleBackToLogin(){
+        try {
+            com.github.saacsos.FXRouter.goTo("login");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
