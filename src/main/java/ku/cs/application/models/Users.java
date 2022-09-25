@@ -9,7 +9,6 @@ public class Users {
     private double lastTimeLogin;
     private String userImage;
 
-
     public Users(String name, String id, String username, String password) {
         this.name = name;
         this.id = id;

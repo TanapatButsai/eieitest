@@ -3,9 +3,16 @@ package ku.cs.application.controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import com.github.saacsos.FXRouter;
+import ku.cs.application.models.Users;
+
 import java.io.IOException;
 
 public class HomeController {
+    private Users user;
+    @FXML
+    public void initialize(){
+        user = (Users)FXRouter.getData();
+    }
     @FXML
     public void handleBackButton(ActionEvent actionEvent){
         try {
@@ -19,7 +26,7 @@ public class HomeController {
     @FXML
     public void handleNormalComplaint(ActionEvent actionEvent){
         try {
-            com.github.saacsos.FXRouter.goTo("normalcomplaint");
+            com.github.saacsos.FXRouter.goTo("normalcomplaint",user);
         } catch (IOException e) {
             System.err.println("ไปที่หน้า ร้องเรียนทั่วไป ไม่ได้");
             System.err.println("ให้ตรวจสอบการกำหนด route");
@@ -29,7 +36,7 @@ public class HomeController {
     @FXML
     public void handleTeacherComplaint(ActionEvent actionEvent){
         try {
-            com.github.saacsos.FXRouter.goTo("teachercomplaint");
+            com.github.saacsos.FXRouter.goTo("teachercomplaint",user);
         } catch (IOException e) {
             System.err.println("ไปที่หน้า ร้องเรียนอาจารย์/บุคลากร ไม่ได้");
             System.err.println("ให้ตรวจสอบการกำหนด route");
@@ -39,7 +46,7 @@ public class HomeController {
     @FXML
     public void handlePlaceComplaint(ActionEvent actionEvent){
         try {
-            com.github.saacsos.FXRouter.goTo("placecomplaint");
+            com.github.saacsos.FXRouter.goTo("placecomplaint",user);
         } catch (IOException e) {
             System.err.println("ไปที่หน้า ร้องเรียนอาคาร/สถานที่ ไม่ได้");
             System.err.println("ให้ตรวจสอบการกำหนด route");
@@ -49,7 +56,7 @@ public class HomeController {
     @FXML
     public void handleEnrollComplaint(ActionEvent actionEvent){
         try {
-            com.github.saacsos.FXRouter.goTo("enrollcomplaint");
+            com.github.saacsos.FXRouter.goTo("enrollcomplaint",user);
         } catch (IOException e) {
             System.err.println("ไปที่หน้า ร้องเรียนการลงทะเบียนเรียน ไม่ได้");
             System.err.println("ให้ตรวจสอบการกำหนด route");
