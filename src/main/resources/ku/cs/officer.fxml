@@ -31,7 +31,7 @@
             <Font name="Cambria" size="14.0" />
          </font>
       </Label>
-      <ListView fx:id="cardsListView" layoutX="14.0" layoutY="93.0" prefHeight="478.0" prefWidth="314.0" />
+      <ListView fx:id="complaintListView" layoutX="14.0" layoutY="93.0" prefHeight="478.0" prefWidth="314.0" />
       <Separator layoutX="336.0" layoutY="59.0" orientation="VERTICAL" prefHeight="545.0" prefWidth="4.0" />
       <Label layoutX="527.0" layoutY="63.0" prefHeight="30.0" prefWidth="77.0" text="คำร้องเรียน" textFill="#2e2e2e">
          <font>

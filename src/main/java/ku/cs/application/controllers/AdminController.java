@@ -12,25 +12,30 @@ import java.io.IOException;
 public class AdminController {
     @FXML private ListView<Users> userListView;
 
-    private UserListDataSource ulds = new UserListDataSource();
-    private UserList userList;
+//    private UserListDataSource ulds = new UserListDataSource();
+//    private UserList userList;
 
 
     @FXML
-    public void initialize(){
-        userList = ulds.getUserList();
-        showListView();
+    public void initialize() {
+//        userList = ulds.getUserList();
+//        showListView();
+//    }
     }
+//
+//    private void showListView() {
+//        userListView.getItems().addAll(userList.getAllCards());
+//        userListView.refresh();
+//    }
 
-    private void showListView() {
-        userListView.getItems().addAll(userList.getAllCards());
-        userListView.refresh();
+    @FXML
+    public void handleBackToLogin(){
+        try {
+            com.github.saacsos.FXRouter.goTo("login");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
-
-
-
-
-
 
     @FXML
     public void handleLogout(ActionEvent event) {
@@ -41,6 +46,7 @@ public class AdminController {
             System.err.println("ให้ตรวจสอบการกำหนด route");
         }
     }
+
 
 
 }

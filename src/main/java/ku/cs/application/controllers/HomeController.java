@@ -3,15 +3,19 @@ package ku.cs.application.controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import com.github.saacsos.FXRouter;
+import javafx.scene.control.Label;
 import ku.cs.application.models.Users;
 
 import java.io.IOException;
 
 public class HomeController {
     private Users user;
+    @FXML private Label userLabel;
     @FXML
     public void initialize(){
         user = (Users)FXRouter.getData();
+        userLabel.setText(user.getName());
+        System.out.println(user.isAdmin());
     }
     @FXML
     public void handleBackButton(ActionEvent actionEvent){

@@ -8,13 +8,23 @@ public class Users {
     private String password;
     private double lastTimeLogin;
     private String userImage;
+    private boolean isAdmin;
 
-    public Users(String name, String id, String username, String password) {
+    public Users(String name, String id, String username, String password,boolean isAdmin) {
         this.name = name;
         this.id = id;
 //        this.email = email;
         this.username = username;
         this.password = password;
+        this.isAdmin = isAdmin;
+    }
+
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
     }
 
     @Override
