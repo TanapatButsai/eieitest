@@ -59,59 +59,50 @@ public class LoginController {
         String password = inputPassword.getText();
         Users user = userList.findUser(username);
         OfficerID officerID = officerIDList.findOfficer(username);
-
-
         if (username.isEmpty() || password.isEmpty()){
             textError.setText("Enter username and password");
             System.err.println("TextField is empty");
-        } else if (user == null || !user.getPassword().equals(password) || officerID == null) {
+        } else if (user == null || !user.getPassword().equals(password)
+                || officerID == null || !officerID.getOfficerPassword().equals(password)) {
             if (officerID == null){
                 System.err.println("Wrong username or password");
                 textError.setText("Wrong username or password");
             }else if (isOfficer(username,password,officerID)){
                 try {
                     FXRouter.goTo("officer",officerID);
-
                 } catch (IOException e) {
                     System.err.println("ไปที่หน้า home");
                     System.err.println("ให้ตรวจสอบการกำหนด route");
                     e.printStackTrace();
                 }
             }
+            if (user == null){
                 System.err.println("Wrong username or password");
                 textError.setText("Wrong username or password");
-
-        }else if (isLogin(username,password,user)) {
-            if (user.isAdmin()){
-                try {
-                    FXRouter.goTo("adminscene",user);
-                } catch (IOException e) {
-                    System.err.println("ไปที่หน้า home");
-                    System.err.println("ให้ตรวจสอบการกำหนด route");
-                    e.printStackTrace();
+            } else if (isLogin(username,password,user)) {
+                if (user.isAdmin()){
+                    try {
+                        FXRouter.goTo("adminscene",user);
+                    } catch (IOException e) {
+                        System.err.println("ไปที่หน้า home");
+                        System.err.println("ให้ตรวจสอบการกำหนด route");
+                        e.printStackTrace();
+                    }
+                }else {
+                    try {
+                        FXRouter.goTo("home", user);
+                    } catch (IOException e) {
+                        System.err.println("ไปที่หน้า home");
+                        System.err.println("ให้ตรวจสอบการกำหนด route");
+                        e.printStackTrace();
+                    }
                 }
             }
-            try {
-                FXRouter.goTo("home",user);
-            } catch (IOException e) {
-                System.err.println("ไปที่หน้า home");
-                System.err.println("ให้ตรวจสอบการกำหนด route");
-                e.printStackTrace();
-            }
+
         }
-//        else if (isOfficer(username,password,officerID)) {
-//            try {
-//                FXRouter.goTo("officer",officerID);
-//            } catch (IOException e) {
-//                System.err.println("ไปที่หน้า home");
-//                System.err.println("ให้ตรวจสอบการกำหนด route");
-//                e.printStackTrace();
-//            }
-//        }
         inputUsername.clear();// clear ช่อง TextField
         inputPassword.clear();
     }
-
     @FXML
     public void handleGoToHome(ActionEvent actionEvent){
         try {
@@ -132,9 +123,7 @@ public class LoginController {
             e.printStackTrace();
         }
     }
-
     @FXML
-
     public void handleGoToChangePassword(ActionEvent actionEvent){
         try {
             // เปลี่ยนการแสดงผลไปที่ route ที่ชื่อ member_card_detail
