@@ -48,6 +48,7 @@ public class NormalComplaintController {
         String bodyComplaint = bodyTextField.getText();
 
         Complaint complaint = new Complaint(headComplaint,bodyComplaint,"normal",user.getName());
+        complaint.recordTime();
         complaintList.add(complaint);
         dataSource.writeData(complaintList);
     }
