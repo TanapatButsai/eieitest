@@ -54,7 +54,8 @@ public class ComplaintListDataSource implements DataSource<ComplaintList>{
                 Complaint complaint = new Complaint(data[0].trim(),
                         data[1].trim()
                         , data[2].trim()
-                        , data[3].trim());
+                        , data[3].trim()
+                        , data[4].trim());
                 list.add(complaint);
             }
 
@@ -89,7 +90,8 @@ public class ComplaintListDataSource implements DataSource<ComplaintList>{
                 String line = complaint.getHeadComplaint() + ","
                         + complaint.getBodyComplaint() + ","
                         + complaint.getCATEGORY()+","
-                        + complaint.getNameWriter();
+                        + complaint.getNameWriter()+","
+                        + complaint.getTime();
 
                 buffer.append(line);
                 buffer.newLine();
