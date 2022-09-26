@@ -28,12 +28,7 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <Label layoutX="443.0" layoutY="444.0" text="Email">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
-      <Label layoutX="445.0" layoutY="486.0" text="Last login">
+      <Label layoutX="439.0" layoutY="444.0" text="Last login">
          <font>
             <Font size="16.0" />
          </font>
@@ -48,17 +43,12 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <Label fx:id="emailLabel" layoutX="574.0" layoutY="444.0" text="emailLabel">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
       <Label fx:id="intuitionLabel" layoutX="574.0" layoutY="401.0" text="intuitionLabel">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Label fx:id="lastloginLabel" layoutX="578.0" layoutY="486.0" text="lastloginLabel">
+      <Label fx:id="lastloginLabel" layoutX="573.0" layoutY="444.0" text="lastloginLabel">
          <font>
             <Font size="16.0" />
          </font>
