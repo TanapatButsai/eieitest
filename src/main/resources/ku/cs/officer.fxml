@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #D8D8D8;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.OfficerController">
    <children>
@@ -49,11 +48,16 @@
             <Font name="Cambria" size="15.0" />
          </font>
       </Label>
-      <Text layoutX="122.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[                                                          ]" />
-      <Label fx:id="officerLabel" layoutX="190.0" layoutY="70.0" text="officerLabel" />
-      <TextArea layoutX="362.0" layoutY="153.0" prefHeight="382.0" prefWidth="419.0" />
-      <Button layoutX="362.0" layoutY="546.0" mnemonicParsing="false" text="ดำเนินการแล้ว" />
-      <Button layoutX="455.0" layoutY="546.0" mnemonicParsing="false" text="อยู่ระหว่างการดำเนินการแล้ว" />
-      <Button layoutX="614.0" layoutY="546.0" mnemonicParsing="false" text="ยังไม่ถูกจัดการ" />
+      <Label fx:id="officerLabel" layoutX="129.0" layoutY="70.0" text="officerLabel" textAlignment="CENTER" />
+      <TextArea fx:id="bodyTextArea" layoutX="362.0" layoutY="153.0" prefHeight="382.0" prefWidth="419.0" />
+      <Button layoutX="362.0" layoutY="546.0" mnemonicParsing="false" onAction="#handleDoneButton" text="ดำเนินการแล้ว" />
+      <Button layoutX="455.0" layoutY="546.0" mnemonicParsing="false" onAction="#handleInProgress" text="อยู่ระหว่างการดำเนินการแล้ว" />
+      <Button layoutX="614.0" layoutY="546.0" mnemonicParsing="false" onAction="#handleUnmanagedButton" text="ยังไม่ถูกจัดการ" />
+      <Label layoutX="561.0" layoutY="123.0" prefHeight="30.0" prefWidth="77.0" text="สถานะ :" textFill="#2e2e2e">
+         <font>
+            <Font name="Cambria" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="statusLabel" layoutX="627.0" layoutY="130.0" text="statusLabel" />
    </children>
 </AnchorPane>
