@@ -42,6 +42,51 @@
                         <Font size="16.0" />
                      </font>
                   </Button>
+                  <Button mnemonicParsing="false" prefHeight="0.0" prefWidth="223.0" style="-fx-background-color: #606261 #606261 #606261 #606261;" textFill="#f2ecec">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="0.0" prefWidth="223.0" style="-fx-background-color: #606261 #606261 #606261 #606261;" textFill="#f2ecec">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="0.0" prefWidth="223.0" style="-fx-background-color: #606261 #606261 #606261 #606261;" textFill="#f2ecec">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="0.0" prefWidth="223.0" style="-fx-background-color: #606261 #606261 #606261 #606261;" textFill="#f2ecec">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="0.0" prefWidth="223.0" style="-fx-background-color: #606261 #606261 #606261 #606261;" textFill="#f2ecec">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="0.0" prefWidth="223.0" style="-fx-background-color: #606261 #606261 #606261 #606261;" textFill="#f2ecec">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="0.0" prefWidth="223.0" style="-fx-background-color: #606261 #606261 #606261 #606261;" textFill="#f2ecec">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="0.0" prefWidth="223.0" style="-fx-background-color: #606261 #606261 #606261 #606261;" textFill="#f2ecec">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#handleGoToUserAccountScene" prefHeight="0.0" prefWidth="223.0" style="-fx-background-color: #606261 #606261 #606261 #606261;" text="บัญชีผู้ใช้" textFill="#f2ecec">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
                </children>
             </VBox>
             <Label layoutX="-2.0" layoutY="-1.0" prefHeight="46.0" prefWidth="222.0" style="-fx-background-color: #BDBDBD #BDBDBD;" text="            ประเภทการร้องเรียน" textFill="#252424">

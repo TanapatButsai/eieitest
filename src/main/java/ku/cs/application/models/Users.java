@@ -1,9 +1,7 @@
 package ku.cs.application.models;
 
-import java.util.Objects;
-
 public class Users implements Comparable<Users> {
-    private String name;
+    private String fullName;
     private String id;
 //    private String email;
     private String username;
@@ -14,8 +12,8 @@ public class Users implements Comparable<Users> {
 
 
 
-    public Users(String name, String id, String username, String password, boolean isAdmin,String lastTimeLogin) {
-        this.name = name;
+    public Users(String fullName, String id, String username, String password, boolean isAdmin, String lastTimeLogin) {
+        this.fullName = fullName;
         this.id = id;
 //        this.email = email;
         this.username = username;
@@ -35,7 +33,7 @@ public class Users implements Comparable<Users> {
     @Override
     public String toString() {
         return "Users{" +
-                "name='" + name + '\'' +
+                "name='" + fullName + '\'' +
                 ", id='" + id + '\'' +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
@@ -50,12 +48,12 @@ public class Users implements Comparable<Users> {
     }
 
     //getter-setter---------------
-    public String getName() {
-        return name;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
     public String getLastTimeLogin() {return lastTimeLogin;}
     public double getLastTimeLoginToSecond(){

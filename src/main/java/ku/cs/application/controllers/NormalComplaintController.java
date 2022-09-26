@@ -7,7 +7,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import ku.cs.application.models.Complaint;
 import ku.cs.application.models.ComplaintList;
-import ku.cs.application.models.UserList;
 import ku.cs.application.models.Users;
 import ku.cs.application.services.ComplaintListDataSource;
 import ku.cs.application.services.DataSource;
@@ -47,7 +46,7 @@ public class NormalComplaintController {
         String headComplaint = headTextField.getText();
         String bodyComplaint = bodyTextField.getText();
 
-        Complaint complaint = new Complaint(headComplaint,bodyComplaint,"normal",user.getName());
+        Complaint complaint = new Complaint(headComplaint,bodyComplaint,"normal",user.getFullName());
         complaintList.add(complaint);
         dataSource.writeData(complaintList);
     }

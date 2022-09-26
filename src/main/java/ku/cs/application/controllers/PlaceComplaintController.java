@@ -7,7 +7,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import ku.cs.application.models.Complaint;
 import ku.cs.application.models.ComplaintList;
-import ku.cs.application.models.UserList;
 import ku.cs.application.models.Users;
 import ku.cs.application.services.ComplaintListDataSource;
 import ku.cs.application.services.DataSource;
@@ -39,7 +38,6 @@ public class PlaceComplaintController {
     public void initialize() {
         String url = getClass().getResource("/ku/cs/placecomplaint_images/kuku.jpeg").toExternalForm();
         kuku.setImage(new Image(url));
-
         dataSource = new ComplaintListDataSource("data","complaint.csv");
         complaintList = dataSource.readData();
         user = (Users) com.github.saacsos.FXRouter.getData();
@@ -49,7 +47,7 @@ public class PlaceComplaintController {
         String headComplaint = headTextField.getText();
         String bodyComplaint = bodyTextField.getText();
 
-        Complaint complaint = new Complaint(headComplaint,bodyComplaint,"place",user.getName());
+        Complaint complaint = new Complaint(headComplaint,bodyComplaint,"place",user.getFullName());
         complaintList.add(complaint);
         dataSource.writeData(complaintList);
     }

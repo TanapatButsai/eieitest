@@ -33,6 +33,7 @@ public class ProjectApplication extends Application {
         FXRouter.when("enrollcomplaint", packageStr + "enrollcomplaint.fxml");
         FXRouter.when("adminscene",packageStr + "adminscene.fxml");
         FXRouter.when("officer",packageStr + "officer.fxml");
+        FXRouter.when("user_account",packageStr + "user_account.fxml");
     }
 
     public static void main(String[] args) {

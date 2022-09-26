@@ -11,7 +11,6 @@ import ku.cs.application.services.DataSource;
 import ku.cs.application.services.UserListDataSource;
 
 import java.io.IOException;
-import java.util.Arrays;
 
 public class AdminController {
     @FXML private ListView<Users> userListView;
@@ -60,7 +59,7 @@ public class AdminController {
                 });
     }
     private void showSelectedUser(Users user) {
-        fnLabel.setText(user.getName());
+        fnLabel.setText(user.getFullName());
         intuitionLabel.setText(user.getId());
         usernameLabel.setText(user.getUsername());
         lastloginLabel.setText(user.getLastTimeLogin());
