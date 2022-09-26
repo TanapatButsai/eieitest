@@ -1,7 +1,11 @@
 package ku.cs.application.models;
-import java.util.ArrayList;
+import java.util.*;
+
 import ku.cs.application.models.Users;
-public class UserList {
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+public class UserList{
     private ArrayList<Users> userList;
 
     public UserList() {
@@ -15,6 +19,16 @@ public class UserList {
 
     public ArrayList<Users> getAllCards(){
         return userList;
+    }
+    public ArrayList<Users> getAllUsers(){
+        ArrayList<Users> userListTemp = new ArrayList<>();
+        for (Users userTemp:userList) {
+            if (!userTemp.isAdmin()) {
+                userListTemp.add(userTemp);
+            }
+        }
+        Collections.sort(userListTemp);
+        return userListTemp;
     }
 
     public void removeUser(Users user){
@@ -32,6 +46,14 @@ public class UserList {
             }
         }
         return false;
+    }
+    public void recordTimeLogin(Users users){
+        Users usersTemp = findUser(users.getUsername());
+        LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH-mm-ss-dd-MM-yy");
+        usersTemp.setLastTimeLogin(now.format(formatter));
+        userList.remove(users);
+        userList.add(usersTemp);
     }
     public Users findUser(String username) {
         Users user = null;

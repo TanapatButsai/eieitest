@@ -60,7 +60,8 @@ public class UserListDataSource implements DataSource<UserList> {
                         data[1].trim()
                         , data[2].trim()
                         , data[3].trim()
-                        ,isAdmin);
+                        ,isAdmin
+                        ,data[5].trim());
                 list.addUser(user);
             }
 
@@ -97,7 +98,8 @@ public class UserListDataSource implements DataSource<UserList> {
                         + user.getId() + ","
                         + user.getUsername() + ","
                         + user.getPassword() + ","
-                        + user.isAdmin();
+                        + user.isAdmin()+","
+                        + user.getLastTimeLogin();
 
                 buffer.append(line);
                 buffer.newLine();

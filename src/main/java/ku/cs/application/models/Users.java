@@ -1,22 +1,27 @@
 package ku.cs.application.models;
 
-public class Users {
+import java.util.Objects;
+
+public class Users implements Comparable<Users> {
     private String name;
     private String id;
 //    private String email;
     private String username;
     private String password;
-    private double lastTimeLogin;
+    private String lastTimeLogin;
     private String userImage;
     private boolean isAdmin;
 
-    public Users(String name, String id, String username, String password,boolean isAdmin) {
+
+
+    public Users(String name, String id, String username, String password, boolean isAdmin,String lastTimeLogin) {
         this.name = name;
         this.id = id;
 //        this.email = email;
         this.username = username;
         this.password = password;
         this.isAdmin = isAdmin;
+        this.lastTimeLogin = lastTimeLogin;
     }
 
     public boolean isAdmin() {
@@ -32,10 +37,16 @@ public class Users {
         return "Users{" +
                 "name='" + name + '\'' +
                 ", id='" + id + '\'' +
-//                ", email='" + email + '\'' +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
+                ", lastTimeLogin='" + lastTimeLogin + '\'' +
+                ", userImage='" + userImage + '\'' +
+                ", isAdmin=" + isAdmin +
                 '}';
+    }
+
+    public void recordTimeLogin(){
+
     }
 
     //getter-setter---------------
@@ -46,7 +57,16 @@ public class Users {
     public void setName(String name) {
         this.name = name;
     }
+    public String getLastTimeLogin() {return lastTimeLogin;}
+    public double getLastTimeLoginToSecond(){
+        String[] timeArr = new String[lastTimeLogin.length()];
+        timeArr = lastTimeLogin.split("-");
+        return (Double.parseDouble(timeArr[0])*3600)+(Double.parseDouble(timeArr[1])*60)
+                +Double.parseDouble(timeArr[2])+(Double.parseDouble(timeArr[3])*86400)
+                +(Double.parseDouble(timeArr[4])*2629743);
+    }
 
+    public void setLastTimeLogin(String lastTimeLogin) {this.lastTimeLogin = lastTimeLogin;}
     public String getId() {
         return id;
     }
@@ -54,14 +74,6 @@ public class Users {
     public void setId(String id) {
         this.id = id;
     }
-//    public String getEmail() {
-//        return email;
-//    }
-
-//    public void setEmail(String email) {
-//        this.email = email;
-//    }
-
     public String getUsername() {
         return username;
     }
@@ -78,4 +90,8 @@ public class Users {
         this.password = password;
     }
 
+    @Override
+    public int compareTo(Users o) {
+        return Double.compare(o.getLastTimeLoginToSecond(), getLastTimeLoginToSecond());
+    }
 }
