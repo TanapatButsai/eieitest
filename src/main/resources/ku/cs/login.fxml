@@ -37,14 +37,8 @@
          </font>
       </Button>
 
-      <Button layoutX="684.0" layoutY="557.0" mnemonicParsing="false" onAction="#handleGoToChangePassword" prefHeight="20.0" prefWidth="92.0" style="-fx-background-color: #BDBDBD;" text="change password">
-         <font>
-            <Font name="Corbel Bold" size="10.0" />
-         </font>
-      </Button>
 
-
-      <Button layoutX="523.0" layoutY="557.0" mnemonicParsing="false" onAction="#handleGoToRegister" prefHeight="20.0" prefWidth="92.0" style="-fx-background-color: #BDBDBD;" text="sign up">
+      <Button layoutX="676.0" layoutY="566.0" mnemonicParsing="false" onAction="#handleGoToRegister" prefHeight="20.0" prefWidth="92.0" style="-fx-background-color: #BDBDBD;" text="sign up">
 
          <font>
             <Font name="Corbel Bold" size="10.0" />

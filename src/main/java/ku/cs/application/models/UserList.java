@@ -32,7 +32,9 @@ public class UserList{
     }
 
     public void removeUser(Users user){
+        System.out.println(userList.size());
         userList.remove(user);
+        System.out.println(userList.size());
     }
 
     public boolean checkUsernameIsExistedInUserList(String username){

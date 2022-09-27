@@ -15,7 +15,7 @@ public class ProjectApplication extends Application {
         configRoute();
 
 
-        FXRouter.goTo("admincomplaint");
+        FXRouter.goTo("login");
 
 
     }
@@ -35,6 +35,8 @@ public class ProjectApplication extends Application {
         FXRouter.when("adminscene",packageStr + "adminscene.fxml");
         FXRouter.when("officer",packageStr + "officer.fxml");
         FXRouter.when("admincomplaint",packageStr + "admin_Complaint_scene.fxml");
+        FXRouter.when("user_account",packageStr + "user_account.fxml");
+
     }
 
     public static void main(String[] args) {

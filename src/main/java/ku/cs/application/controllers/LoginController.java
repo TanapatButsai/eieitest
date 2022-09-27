@@ -25,7 +25,7 @@ public class LoginController {
     @FXML
     private ImageView image_view_login;
     @FXML
-    private ImageView image_view_ku_logo;
+    private ImageView image_view_ku_logo; //imageViewKULogin
     private DataSource<UserList> dataSource;
     private UserList userList;
     private Users user;
@@ -127,19 +127,7 @@ public class LoginController {
             e.printStackTrace();
         }
     }
-    @FXML
-    public void handleGoToChangePassword(ActionEvent actionEvent){
-        try {
-            // เปลี่ยนการแสดงผลไปที่ route ที่ชื่อ member_card_detail
-            // พร้อมส่ง reference instance john ไปด้วย
-            FXRouter.goTo("changepassword");
 
-        } catch (IOException e) {
-            System.err.println("ไปที่หน้า changepassword");
-            System.err.println("ให้ตรวจสอบการกำหนด route");
-            e.printStackTrace();
-        }
-    }
     public boolean isLogin(String username, String password,Users user){
         return username.equals(user.getUsername()) && password.equals(user.getPassword());
     }

@@ -14,8 +14,8 @@ public class HomeController {
     @FXML
     public void initialize(){
         user = (Users)FXRouter.getData();
-        userLabel.setText(user.getName());
-        System.out.println(user.isAdmin());
+        userLabel.setText(user.getFullName());
+        System.out.println(user.toString());
     }
     @FXML
     public void handleBackButton(ActionEvent actionEvent){
@@ -63,6 +63,18 @@ public class HomeController {
             com.github.saacsos.FXRouter.goTo("enrollcomplaint",user);
         } catch (IOException e) {
             System.err.println("ไปที่หน้า ร้องเรียนการลงทะเบียนเรียน ไม่ได้");
+            System.err.println("ให้ตรวจสอบการกำหนด route");
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    public void handleGoToUserAccountScene(ActionEvent actionEvent){
+        try {
+            FXRouter.goTo("user_account",user);
+
+        } catch (IOException e) {
+            System.err.println("ไปที่หน้า changepassword");
             System.err.println("ให้ตรวจสอบการกำหนด route");
             e.printStackTrace();
         }

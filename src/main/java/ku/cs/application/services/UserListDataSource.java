@@ -1,6 +1,5 @@
 package ku.cs.application.services;
 
-import ku.cs.application.models.ComplaintList;
 import ku.cs.application.models.UserList;
 import ku.cs.application.models.Users;
 import java.io.*;
@@ -94,7 +93,7 @@ public class UserListDataSource implements DataSource<UserList> {
             writer = new FileWriter(file);
             buffer = new BufferedWriter(writer);
             for (Users user : userList.getAllCards()) {
-                String line = user.getName() + ","
+                String line = user.getFullName() + ","
                         + user.getId() + ","
                         + user.getUsername() + ","
                         + user.getPassword() + ","
