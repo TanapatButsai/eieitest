@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextArea?>
@@ -14,41 +15,42 @@
          </font>
       </Label>
       <ListView fx:id="reportListView" layoutX="55.0" layoutY="92.0" prefHeight="457.0" prefWidth="271.0" />
-      <Label fx:id="reporttypeLabel" layoutX="566.0" layoutY="290.0" text="reporttypeLabel">
+      <Label fx:id="reportcategoryLabel" layoutX="566.0" layoutY="239.0" text="reportcategoryLabel">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="410.0" layoutY="404.0" text="Description">
+      <Label layoutX="410.0" layoutY="343.0" text="Detail">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="413.0" layoutY="334.0" text="Title">
+      <Label layoutX="415.0" layoutY="189.0" text="Title">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="411.0" layoutY="290.0" text="Type">
+      <Label layoutX="414.0" layoutY="239.0" text="Category">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label fx:id="titleLabel" layoutX="566.0" layoutY="334.0" text="titleLabel">
+      <Label fx:id="titleLabel" layoutX="566.0" layoutY="189.0" text="titleLabel">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="412.0" layoutY="238.0" text="Reporter">
+      <Label layoutX="415.0" layoutY="290.0" text="Reporter">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label fx:id="reporterLabel" layoutX="566.0" layoutY="238.0" text="reporterLabel">
+      <Label fx:id="reporterLabel" layoutX="566.0" layoutY="290.0" text="reporterLabel">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <TextArea fx:id="descriptionLabel" layoutX="523.0" layoutY="376.0" prefHeight="200.0" prefWidth="249.0" />
+      <TextArea fx:id="detailLabel" layoutX="532.0" layoutY="337.0" prefHeight="215.0" prefWidth="249.0" />
+      <Button layoutX="29.0" layoutY="35.0" mnemonicParsing="false" onAction="#handleBack" text="Back" />
    </children>
 </AnchorPane>

@@ -69,7 +69,9 @@ public class AdminController {
         fnLabel.setText(user.getName());
         intuitionLabel.setText(user.getId());
         usernameLabel.setText(user.getUsername());
-        lastloginLabel.setText(user.getLastTimeLogin());
+        String[] timeArr = user.getLastTimeLogin().split("-");
+        String time = timeArr[0]+":"+timeArr[1]+":"+timeArr[2]+" "+timeArr[3]+"-"+timeArr[4]+"-"+timeArr[5];
+        lastloginLabel.setText(time);
     }
 
     private void clearSelectedUser(){
@@ -77,6 +79,16 @@ public class AdminController {
         intuitionLabel.setText("");
         usernameLabel.setText("");
         lastloginLabel.setText("");
+    }
+
+    @FXML
+    public void handleAdminComplaint(ActionEvent event) {
+        try {
+            com.github.saacsos.FXRouter.goTo("admincomplaint");
+        } catch (IOException e) {
+            System.err.println("ไปที่หน้า complaint ไม่ได้");
+            System.err.println("ให้ตรวจสอบการกำหนด route");
+        }
     }
 
 }

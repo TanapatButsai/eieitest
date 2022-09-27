@@ -53,7 +53,7 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <Button layoutX="303.0" layoutY="26.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="76.0" text="Report">
+      <Button layoutX="303.0" layoutY="26.0" mnemonicParsing="false" onAction="#handleAdminComplaint" prefHeight="32.0" prefWidth="76.0" text="Report">
          <font>
             <Font size="15.0" />
          </font>
