@@ -43,8 +43,8 @@ public class TeacherComplaintController {
     public void handlePushComplaint(ActionEvent actionEvent){
         String headComplaint = headTextField.getText();
         String bodyComplaint = bodyTextField.getText();
-
         Complaint complaint = new Complaint(headComplaint,bodyComplaint,"teacher",user.getName());
+        complaint.recordTime();
         complaintList.add(complaint);
         dataSource.writeData(complaintList);
     }

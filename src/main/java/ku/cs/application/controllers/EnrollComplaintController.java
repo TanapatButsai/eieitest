@@ -43,8 +43,8 @@ public class EnrollComplaintController {
     public void handlePushComplaint(ActionEvent actionEvent){
         String headComplaint = headTextField.getText();
         String bodyComplaint = bodyTextField.getText();
-
         Complaint complaint = new Complaint(headComplaint,bodyComplaint,"enroll",user.getName());
+        complaint.recordTime();
         complaintList.add(complaint);
         dataSource.writeData(complaintList);
     }
