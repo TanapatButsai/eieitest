@@ -14,7 +14,7 @@ public class HomeController {
     @FXML
     public void initialize(){
         user = (Users)FXRouter.getData();
-        userLabel.setText(user.getFullName());
+        userLabel.setText(user.getName());
         System.out.println(user.toString());
     }
     @FXML

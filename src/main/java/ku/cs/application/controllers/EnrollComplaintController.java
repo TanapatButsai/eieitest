@@ -44,7 +44,7 @@ public class EnrollComplaintController {
         String headComplaint = headTextField.getText();
         String bodyComplaint = bodyTextField.getText();
 
-        Complaint complaint = new Complaint(headComplaint,bodyComplaint,"enroll",user.getFullName());
+        Complaint complaint = new Complaint(headComplaint,bodyComplaint,"enroll",user.getName());
         complaintList.add(complaint);
         dataSource.writeData(complaintList);
     }

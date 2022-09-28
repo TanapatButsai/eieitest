@@ -47,7 +47,7 @@ public class PlaceComplaintController {
         String headComplaint = headTextField.getText();
         String bodyComplaint = bodyTextField.getText();
 
-        Complaint complaint = new Complaint(headComplaint,bodyComplaint,"place",user.getFullName());
+        Complaint complaint = new Complaint(headComplaint,bodyComplaint,"place",user.getName());
         complaintList.add(complaint);
         dataSource.writeData(complaintList);
     }

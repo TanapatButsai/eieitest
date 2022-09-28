@@ -57,7 +57,7 @@ public class AdminController {
                 });
     }
     private void showSelectedUser(Users user) {
-        fnLabel.setText(user.getFullName());
+        fnLabel.setText(user.getName());
         intuitionLabel.setText(user.getId());
         usernameLabel.setText(user.getUsername());
         lastloginLabel.setText(user.getLastTimeLogin());

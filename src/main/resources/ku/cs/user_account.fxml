@@ -6,10 +6,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #D8D8D8#D8D8D8;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.UserAccountSceneController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #D8D8D8#D8D8D8;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.UserAccountController">
    <children>
-      <ImageView fx:id="imageBackGroundUrl" fitHeight="600.0" fitWidth="450.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="logoku" fitHeight="207.0" fitWidth="323.0" layoutX="466.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imageBackGroundUrl" fitHeight="642.0" fitWidth="484.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="logoku" fitHeight="338.0" fitWidth="425.0" layoutX="589.0" layoutY="-85.0" pickOnBounds="true" preserveRatio="true" />
       <Label fx:id="promptPassword" layoutX="627.0" layoutY="418.0" prefHeight="16.0" prefWidth="118.0" textFill="RED">
          <font>
             <Font size="11.0" />
@@ -25,7 +25,7 @@
             <Font size="11.0" />
          </font>
       </Label>
-      <Button layoutX="585.0" layoutY="223.0" mnemonicParsing="false" onAction="#handleGoToChangPassword" prefHeight="60.0" prefWidth="83.0" text="change pass" />
-      <Button layoutX="466.0" layoutY="21.0" mnemonicParsing="false" onAction="#handleGoToHome" prefHeight="16.0" prefWidth="62.0" text="Back" />
+      <Button layoutX="530.0" layoutY="538.0" mnemonicParsing="false" onAction="#handleGoToChangPassword" prefHeight="26.0" prefWidth="118.0" text="change password" />
+      <Button layoutX="499.0" layoutY="21.0" mnemonicParsing="false" onAction="#handleGoToHome" prefHeight="16.0" prefWidth="62.0" text="Back" />
    </children>
 </AnchorPane>

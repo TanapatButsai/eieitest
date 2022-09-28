@@ -44,7 +44,7 @@ public class TeacherComplaintController {
         String headComplaint = headTextField.getText();
         String bodyComplaint = bodyTextField.getText();
 
-        Complaint complaint = new Complaint(headComplaint,bodyComplaint,"teacher",user.getFullName());
+        Complaint complaint = new Complaint(headComplaint,bodyComplaint,"teacher",user.getName());
         complaintList.add(complaint);
         dataSource.writeData(complaintList);
     }

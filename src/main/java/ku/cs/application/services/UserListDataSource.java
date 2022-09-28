@@ -93,7 +93,7 @@ public class UserListDataSource implements DataSource<UserList> {
             writer = new FileWriter(file);
             buffer = new BufferedWriter(writer);
             for (Users user : userList.getAllCards()) {
-                String line = user.getFullName() + ","
+                String line = user.getName() + ","
                         + user.getId() + ","
                         + user.getUsername() + ","
                         + user.getPassword() + ","

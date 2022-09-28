@@ -40,6 +40,7 @@ public class ChangePasswordController {
         } else {
             System.out.println("ChangePasswordController : Can read file");
         }
+
         user = (Users)FXRouter.getData();
         System.out.println(user);
     }
@@ -47,7 +48,7 @@ public class ChangePasswordController {
     @FXML
     public void handleBackButton(ActionEvent actionEvent) {
         try {
-            FXRouter.goTo("login");
+            FXRouter.goTo("user_account",user);
 
         } catch (IOException e) {
             System.err.println("ไปที่หน้า login ไม่ได้");
@@ -65,6 +66,7 @@ public class ChangePasswordController {
             }
     }
     private boolean isChangePassword() {
+
             String oldPassword = oldPasswordTextField.getText();
             String newPassword = newPasswordTextField.getText();
             String confirmNewPassword = newConfirmPasswordTextField.getText();
@@ -87,7 +89,8 @@ public class ChangePasswordController {
                 return false;
             }
             System.out.println("Can change password");
-            userList.removeUser(user);
+            Users userDelete = userList.findUser(user.getUsername());
+            userList.removeUser(userDelete);
             user.setPassword(newPasswordTextField.getText());
             userList.addUser(user);
             dataSource.writeData(userList);
