@@ -1,5 +1,8 @@
 package ku.cs.application.models;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 public class Users implements Comparable<Users> {
     private String name;
     private String id;
@@ -86,6 +89,12 @@ public class Users implements Comparable<Users> {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public void updateTimeNow(){
+        LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH-mm-ss-dd-MM-yy");
+        this.setLastTimeLogin(now.format(formatter));
     }
 
     @Override

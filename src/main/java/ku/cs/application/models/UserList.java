@@ -32,39 +32,30 @@ public class UserList{
     }
 
     public void removeUser(Users user){
-        System.out.println(userList.size());
         userList.remove(user);
-        System.out.println(userList.size());
     }
 
     public boolean checkUsernameIsExistedInUserList(String username){
-        if (username.isEmpty()){
-            return true;
-        }else {
-            for (Users temp: userList){
-                if (temp.getUsername().equals(username)){
-                    return true;
-                }
-            }
-        }
-        return false;
+        Users user = findUser(username);
+        return user != null;
     }
     public void recordTimeLogin(Users users){
-        Users usersTemp = findUser(users.getUsername());
-        LocalDateTime now = LocalDateTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH-mm-ss-dd-MM-yy");
-        usersTemp.setLastTimeLogin(now.format(formatter));
-        userList.remove(users);
-        userList.add(usersTemp);
+        users.updateTimeNow();
+    }
+
+    public void recordTimeLogin(String username){
+        Users user = findUser(username);
+        if (user != null) {
+            user.updateTimeNow();
+        }
     }
     public Users findUser(String username) {
-        Users user = null;
-        for (Users temp : userList) {
-            if (temp.getUsername().equals(username)) {
-                user = temp;
+        for (Users user : userList) {
+            if (user.getUsername().equals(username)) {
+                return user;
             }
         }
-        return user;
+        return null;
 
     }
 

@@ -20,6 +20,8 @@ public class NormalComplaintController {
     private DataSource<ComplaintList> dataSource;
     private ComplaintList complaintList;
     private Users user;
+    @FXML
+    private ImageView kasetsarts;
     public void handleBackHomeButton(ActionEvent actionEvent){
         try {
             com.github.saacsos.FXRouter.goTo("home");
@@ -29,8 +31,6 @@ public class NormalComplaintController {
             e.printStackTrace();
         }
     }
-    @FXML
-    private ImageView kasetsarts;
     @FXML
     public void initialize() {
         String url = getClass().getResource("/ku/cs/normalcomplaint_images/kasetsarts.jpeg").toExternalForm();
