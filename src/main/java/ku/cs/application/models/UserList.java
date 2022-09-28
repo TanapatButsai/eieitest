@@ -49,6 +49,12 @@ public class UserList{
             user.updateTimeNow();
         }
     }
+    public void changePassword(String username,String newPassword){
+        Users user = findUser(username);
+        if (user != null) {
+            user.setPassword(newPassword);
+        }
+    }
     public Users findUser(String username) {
         for (Users user : userList) {
             if (user.getUsername().equals(username)) {
@@ -56,7 +62,6 @@ public class UserList{
             }
         }
         return null;
-
     }
 
     @Override
