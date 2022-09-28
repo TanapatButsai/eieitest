@@ -1,4 +1,4 @@
-name,officer1,header1,bodyComplaint1,false,false,true,
-john,officer2,header2,bodyComplaint2,false,true,false,
-jame,officer3,header3,bodyComplaint3,false,true,false,
-joel,officer4,header4,bodyComplaint4,false,false,true,
+name,officer1,header1,bodyComplaint1,fixTopic1,false,false,true,
+joel,officer2,header2,bodyComplaint2,fixTopic2,false,false,true,
+john,officer3,header3,bodyComplaint3,fixTopic3,false,false,true,
+jame,officer4,header4,bodyComplaint4,fixTopic4,false,false,true,

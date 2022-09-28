@@ -43,21 +43,27 @@
          </font>
       </Label>
       <Label fx:id="topicLabel" layoutX="451.0" layoutY="100.0" text="topicLabel" />
-      <Label layoutX="362.0" layoutY="123.0" prefHeight="30.0" prefWidth="77.0" text="เนื้อหา :" textFill="#2e2e2e">
+      <Label layoutX="362.0" layoutY="149.0" prefHeight="30.0" prefWidth="77.0" text="เนื้อหา :" textFill="#2e2e2e">
          <font>
             <Font name="Cambria" size="15.0" />
          </font>
       </Label>
       <Label fx:id="officerLabel" layoutX="129.0" layoutY="70.0" text="officerLabel" textAlignment="CENTER" />
-      <TextArea fx:id="bodyTextArea" layoutX="362.0" layoutY="153.0" prefHeight="382.0" prefWidth="419.0" />
+      <TextArea fx:id="bodyTextArea" layoutX="362.0" layoutY="179.0" prefHeight="356.0" prefWidth="419.0" />
       <Button layoutX="362.0" layoutY="546.0" mnemonicParsing="false" onAction="#handleDoneButton" text="ดำเนินการแล้ว" />
       <Button layoutX="455.0" layoutY="546.0" mnemonicParsing="false" onAction="#handleInProgress" text="อยู่ระหว่างการดำเนินการแล้ว" />
       <Button layoutX="614.0" layoutY="546.0" mnemonicParsing="false" onAction="#handleUnmanagedButton" text="ยังไม่ถูกจัดการ" />
-      <Label layoutX="561.0" layoutY="123.0" prefHeight="30.0" prefWidth="77.0" text="สถานะ :" textFill="#2e2e2e">
+      <Label layoutX="561.0" layoutY="149.0" prefHeight="30.0" prefWidth="77.0" text="สถานะ :" textFill="#2e2e2e">
          <font>
             <Font name="Cambria" size="15.0" />
          </font>
       </Label>
-      <Label fx:id="statusLabel" layoutX="627.0" layoutY="130.0" text="statusLabel" />
+      <Label fx:id="statusLabel" layoutX="627.0" layoutY="156.0" text="statusLabel" />
+      <Label layoutX="361.0" layoutY="120.0" prefHeight="30.0" prefWidth="131.0" text="เรื่องที่ต้องแก้ไข :" textFill="#2e2e2e">
+         <font>
+            <Font name="Cambria" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="fixTopicLabel" layoutX="479.0" layoutY="127.0" text="fixTopicLabel" />
    </children>
 </AnchorPane>

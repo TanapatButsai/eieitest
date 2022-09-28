@@ -49,11 +49,11 @@ public class OfficersListDataSource implements DataSource<OfficerList>{
                 boolean isDone = false;
                 boolean isInProgress = false;
                 boolean isUnmanaged = false;
-                if (data[4].trim().equals("true")) {
+                if (data[5].trim().equals("true")) {
                     isDone = true;
-                }else if (data[5].trim().equals("true")) {
+                }else if (data[6].trim().equals("true")) {
                     isInProgress = true;
-                }if (data[6].trim().equals("true")) {
+                }if (data[7].trim().equals("true")) {
                     isUnmanaged = true;
                 }
                 Officer officer = new Officer(
@@ -61,6 +61,7 @@ public class OfficersListDataSource implements DataSource<OfficerList>{
                         data[1].trim(),
                         data[2].trim(),
                         data[3].trim(),
+                        data[4].trim(),
                         isDone,
                         isInProgress,
                         isUnmanaged
@@ -111,8 +112,9 @@ public class OfficersListDataSource implements DataSource<OfficerList>{
             for (Officer officer : officerList.getAllOfficer()) {
                 String line = officer.getName() + ","
                         + officer.getRole() + ","
-                        + officer.getHeadComplaint()+","
-                        + officer.getBodyComplaint()+","
+                        + officer.getTopic()+","
+                        + officer.getBody()+","
+                        + officer.getFixComplaint()+","
                         + officer.isDone()+","
                         + officer.isInProgress()+","
                         + officer.isUnmanaged()+",";
