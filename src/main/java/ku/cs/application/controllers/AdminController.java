@@ -32,13 +32,11 @@ public class AdminController {
         handleSelectedListView();
     }
 
-//
-    private void showListView() {
 
+    private void showListView() {
         userListView.getItems().addAll(userList.getAllUsers());
         userListView.refresh();
     }
-
 
     @FXML
     public void handleBackToLogin(){

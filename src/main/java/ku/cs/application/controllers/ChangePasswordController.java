@@ -56,17 +56,22 @@ public class ChangePasswordController {
     }
     @FXML
     public void handleChangePassword(ActionEvent actionEvent){
-        try {
-            FXRouter.goTo("user_account");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+            if (isChangePassword()){
+                try {
+                    FXRouter.goTo("user_account");
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
     }
-        private boolean isChangePassword() {
+    private boolean isChangePassword() {
             String oldPassword = oldPasswordTextField.getText();
             String newPassword = newPasswordTextField.getText();
+            String confirmNewPassword = newConfirmPasswordTextField.getText();
             if (oldPasswordTextField.getText().isEmpty() || newPasswordTextField.getText().isEmpty()
-                    || newConfirmPasswordTextField.getText().isEmpty()){
+                    || newConfirmPasswordTextField.getText().isEmpty()
+                    || !oldPasswordTextField.getText().equals(user.getPassword())
+                    || !newPassword.equals(confirmNewPassword)){
                 oldPasswordTextField.clear();
                 newConfirmPasswordTextField.clear();
                 newPasswordTextField.clear();
@@ -76,8 +81,9 @@ public class ChangePasswordController {
                 } else if (!oldPasswordTextField.getText().equals(user.getPassword())) {
                     promptOldPassword.setText("Wrong password");
                 }
-
-
+                if (newPassword.equals(confirmNewPassword)){
+                    promptNewPassword.setText("Please try again");
+                }
                 return false;
             }
             System.out.println("Can change password");
