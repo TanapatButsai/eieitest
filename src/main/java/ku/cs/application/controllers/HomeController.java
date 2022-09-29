@@ -96,7 +96,6 @@ public class HomeController {
     }
     @FXML
     void handleTimeButton(ActionEvent event) {
-
     }
 
     @FXML
@@ -104,15 +103,15 @@ public class HomeController {
 
     }
 
-//    @FXML
-//    public void handleGoToUserAccountScene(ActionEvent actionEvent){
-//        try {
-//            FXRouter.goTo("user_account",user);
-//
-//        } catch (IOException e) {
-//            System.err.println("ไปที่หน้า changepassword");
-//            System.err.println("ให้ตรวจสอบการกำหนด route");
-//            e.printStackTrace();
-//        }
-//    }
+    @FXML
+    public void handleGoToUserAccountScene(ActionEvent actionEvent){
+        try {
+            FXRouter.goTo("user_account",user);
+
+        } catch (IOException e) {
+            System.err.println("ไปที่หน้า changepassword");
+            System.err.println("ให้ตรวจสอบการกำหนด route");
+            e.printStackTrace();
+        }
+    }
 }

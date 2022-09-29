@@ -92,15 +92,11 @@ public class UserAccountController {
                 Path target = FileSystems.getDefault().getPath(
                         destDir.getAbsolutePath()+System.getProperty("file.separator")+filename);
                 Files.copy(file.toPath(), target, StandardCopyOption.REPLACE_EXISTING );
-
                 // COPY WITH FLAG REPLACE FILE IF FILE IS EXIST
                 userImage.setImage(new Image(target.toUri().toString()));
-
                 userList.setImageStudent(user.getUsername(),destDir + File.separator + filename);
                 user.setUserImage(destDir + File.separator + filename);
-
                 dataSource.writeData(userList);
-
                 // SET NEW FILE PATH TO IMAGE
             } catch (IOException e) {
                 e.printStackTrace();
