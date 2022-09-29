@@ -2,8 +2,6 @@ package ku.cs.application.services;
 
 import ku.cs.application.models.OfficerID;
 import ku.cs.application.models.OfficerIDList;
-import ku.cs.application.models.UserList;
-import ku.cs.application.models.Users;
 
 import java.io.*;
 
@@ -81,7 +79,7 @@ public class OfficerIDListDataSource implements DataSource<OfficerIDList>{
                 String line =
                         officerID.getOfficerID() + ","
                         + officerID.getOfficerPassword() + ","
-                        + officerID.getRole();
+                        + officerID.setRole();
                 buffer.append(line);
                 buffer.newLine();
             }

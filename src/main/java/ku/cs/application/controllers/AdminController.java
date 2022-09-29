@@ -1,5 +1,6 @@
 package ku.cs.application.controllers;
 
+import javafx.event.ActionEvent;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
@@ -22,6 +23,7 @@ public class AdminController {
     private DataSource<UserList> ulds;
     private UserList userList;
 
+
     @FXML
     public void initialize() {
         ulds = new UserListDataSource("data","user.csv");
@@ -39,13 +41,17 @@ public class AdminController {
     }
 
     @FXML
-    public void handleBackToLogin(){
+    public void handleBack(ActionEvent event) {
         try {
             com.github.saacsos.FXRouter.goTo("login");
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            System.err.println("ไปที่หน้า login ไม่ได้");
+            System.err.println("ให้ตรวจสอบการกำหนด route");
         }
     }
+
+
+
     private void handleSelectedListView() {
         userListView.getSelectionModel().selectedItemProperty().addListener(
                 new ChangeListener<Users>() {
@@ -60,7 +66,9 @@ public class AdminController {
         fnLabel.setText(user.getName());
         intuitionLabel.setText(user.getId());
         usernameLabel.setText(user.getUsername());
-        lastloginLabel.setText(user.getLastTimeLogin());
+        String[] timeArr = user.getLastTimeLogin().split("-");
+        String time = timeArr[0]+":"+timeArr[1]+":"+timeArr[2]+" "+timeArr[3]+"-"+timeArr[4]+"-"+timeArr[5];
+        lastloginLabel.setText(time);
     }
 
     private void clearSelectedUser(){
@@ -68,5 +76,25 @@ public class AdminController {
         intuitionLabel.setText("");
         usernameLabel.setText("");
         lastloginLabel.setText("");
+    }
+
+    @FXML
+    public void handleAdminComplaint(ActionEvent event) {
+        try {
+            com.github.saacsos.FXRouter.goTo("admincomplaint");
+        } catch (IOException e) {
+            System.err.println("ไปที่หน้า complaint ไม่ได้");
+            System.err.println("ให้ตรวจสอบการกำหนด route");
+        }
+    }
+
+    @FXML
+    public void handleManageBan(ActionEvent event) {
+        try {
+            com.github.saacsos.FXRouter.goTo("adminmanageban");
+        } catch (IOException e) {
+            System.err.println("ไปที่หน้า manageban ไม่ได้");
+            System.err.println("ให้ตรวจสอบการกำหนด route");
+        }
     }
 }

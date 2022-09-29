@@ -78,7 +78,7 @@ public class LoginController {
                 try {
                     FXRouter.goTo("officer",officerID);
                 } catch (IOException e) {
-                    System.err.println("ไปที่หน้า home");
+                    System.err.println("ไปที่หน้า officer");
                     System.err.println("ให้ตรวจสอบการกำหนด route");
                     e.printStackTrace();
                 }
