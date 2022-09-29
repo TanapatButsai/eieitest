@@ -27,8 +27,8 @@
          </font>
       </Label>
       <TextField fx:id="headTextField" layoutX="442.0" layoutY="122.0" prefHeight="26.0" prefWidth="287.0" />
-      <TextArea fx:id="bodyTextField" layoutX="446.0" layoutY="182.0" prefHeight="329.0" prefWidth="285.0" />
-      <Label layoutX="442.0" layoutY="154.0" prefHeight="20.0" prefWidth="185.0" text="รายละเอียดในการร้องเรียน">
+      <TextArea fx:id="bodyTextArea" layoutX="443.0" layoutY="217.0" prefHeight="95.0" prefWidth="285.0" />
+      <Label layoutX="443.0" layoutY="191.0" prefHeight="20.0" prefWidth="185.0" text="รายละเอียดในการร้องเรียน">
          <font>
             <Font size="16.0" />
          </font>
@@ -42,5 +42,11 @@
       <Label layoutX="93.0" layoutY="284.0" style="-fx-background-color: #ffffff;" text="3. ข้อร้องเรียนที่มีข้อมูลไม่ครบถ้วน ไม่เพียงพอ" />
       <Label layoutX="93.0" layoutY="301.0" prefHeight="17.0" prefWidth="243.0" style="-fx-background-color: #ffffff;" text="หรือไม่สามารถหาข้อมูลเพิ่มได้ในการตรวจ" />
       <Label layoutX="92.0" layoutY="318.0" prefHeight="17.0" prefWidth="245.0" style="-fx-background-color: #ffffff;" text="ให้ยุติเรื่องและเก็บเป็นข้อมูลในระบบฐานข้อมูล" />
+      <Label layoutX="443.0" layoutY="346.0" prefHeight="20.0" prefWidth="305.0" text="ข้อมูลที่ต้องการในหมวดหมู่เรื่องร้องเรียนนั้น">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="bodyTextArea1" layoutX="443.0" layoutY="383.0" prefHeight="95.0" prefWidth="285.0" />
    </children>
 </AnchorPane>

@@ -34,13 +34,11 @@ public class AdminController {
         handleSelectedListView();
     }
 
-//
-    private void showListView() {
 
+    private void showListView() {
         userListView.getItems().addAll(userList.getAllUsers());
         userListView.refresh();
     }
-
 
     @FXML
     public void handleBack(ActionEvent event) {
@@ -65,7 +63,7 @@ public class AdminController {
                 });
     }
     private void showSelectedUser(Users user) {
-        fnLabel.setText(user.getFullName());
+        fnLabel.setText(user.getName());
         intuitionLabel.setText(user.getId());
         usernameLabel.setText(user.getUsername());
         String[] timeArr = user.getLastTimeLogin().split("-");

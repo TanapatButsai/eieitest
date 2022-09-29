@@ -26,9 +26,9 @@
          </font>
       </Label>
       <TextField fx:id="headTextField" layoutX="409.0" layoutY="123.0" prefHeight="26.0" prefWidth="340.0" />
-      <TextArea fx:id="bodyTextField" layoutX="412.0" layoutY="199.0" prefHeight="300.0" prefWidth="339.0" />
+      <TextArea fx:id="bodyTextArea" layoutX="409.0" layoutY="218.0" prefHeight="99.0" prefWidth="339.0" />
       <Button layoutX="556.0" layoutY="559.0" mnemonicParsing="false" onAction="#handleBackButton" text="Back" />
-      <Label layoutX="407.0" layoutY="173.0" prefHeight="20.0" prefWidth="281.0" text="รายละเอียดในการร้องเรียน">
+      <Label layoutX="405.0" layoutY="189.0" prefHeight="20.0" prefWidth="281.0" text="รายละเอียดในการร้องเรียน">
          <font>
             <Font size="16.0" />
          </font>
@@ -41,5 +41,11 @@
       <Label layoutX="94.0" layoutY="259.0" style="-fx-background-color: #ffffff;" text="3. ข้อร้องเรียนที่มีข้อมูลไม่ครบถ้วน ไม่เพียงพอ" />
       <Label layoutX="94.0" layoutY="276.0" style="-fx-background-color: #ffffff;" text="หรือไม่สามารถหาข้อมูลเพิ่มได้ในการตรวจ" />
       <Label layoutX="94.0" layoutY="293.0" style="-fx-background-color: #ffffff;" text="ให้ยุติเรื่องและเก็บเป็นข้อมูลในระบบฐานข้อมูล" />
+      <Label layoutX="405.0" layoutY="350.0" prefHeight="20.0" prefWidth="340.0" text="หมวดหมู่ที่ต้องการในหมวดหมู่เรื่องร้องเรียนนั้น">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="bodyTextArea1" layoutX="410.0" layoutY="382.0" prefHeight="99.0" prefWidth="339.0" />
    </children>
 </AnchorPane>

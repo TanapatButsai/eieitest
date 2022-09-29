@@ -1,7 +1,10 @@
 package ku.cs.application.models;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 public class Users implements Comparable<Users> {
-    private String fullName;
+    private String name;
     private String id;
 //    private String email;
     private String username;
@@ -10,12 +13,19 @@ public class Users implements Comparable<Users> {
     private String userImage;
     private boolean isAdmin;
 
-
-
-    public Users(String fullName, String id, String username, String password, boolean isAdmin, String lastTimeLogin) {
-        this.fullName = fullName;
+    public Users(String name, String id, String username, String password, boolean isAdmin ,String lastTimeLogin, String userImage) {
+        this.name = name;
         this.id = id;
-//        this.email = email;
+        this.userImage = userImage;
+        this.username = username;
+        this.password = password;
+        this.isAdmin = isAdmin;
+        this.lastTimeLogin = lastTimeLogin;
+    }
+
+    public Users(String name, String id, String username, String password, boolean isAdmin, String lastTimeLogin) {
+        this.name = name;
+        this.id = id;
         this.username = username;
         this.password = password;
         this.isAdmin = isAdmin;
@@ -30,10 +40,18 @@ public class Users implements Comparable<Users> {
         isAdmin = admin;
     }
 
+    public String getUserImage() {
+        return userImage;
+    }
+
+    public void setUserImage(String userImage) {
+        this.userImage = userImage;
+    }
+
     @Override
     public String toString() {
         return "Users{" +
-                "name='" + fullName + '\'' +
+                "name='" + name + '\'' +
                 ", id='" + id + '\'' +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
@@ -48,12 +66,12 @@ public class Users implements Comparable<Users> {
     }
 
     //getter-setter---------------
-    public String getFullName() {
-        return fullName;
+    public String getName() {
+        return name;
     }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
+    public void setName(String name) {
+        this.name = name;
     }
     public String getLastTimeLogin() {return lastTimeLogin;}
     public double getLastTimeLoginToSecond(){
@@ -86,6 +104,12 @@ public class Users implements Comparable<Users> {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public void updateTimeNow(){
+        LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH-mm-ss-dd-MM-yy");
+        this.setLastTimeLogin(now.format(formatter));
     }
 
     @Override

@@ -40,6 +40,7 @@ public class ChangePasswordController {
         } else {
             System.out.println("ChangePasswordController : Can read file");
         }
+
         user = (Users)FXRouter.getData();
         System.out.println(user);
     }
@@ -47,7 +48,7 @@ public class ChangePasswordController {
     @FXML
     public void handleBackButton(ActionEvent actionEvent) {
         try {
-            FXRouter.goTo("login");
+            FXRouter.goTo("user_account",user);
 
         } catch (IOException e) {
             System.err.println("ไปที่หน้า login ไม่ได้");
@@ -56,17 +57,23 @@ public class ChangePasswordController {
     }
     @FXML
     public void handleChangePassword(ActionEvent actionEvent){
-        try {
-            FXRouter.goTo("user_account");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+            if (isChangePassword()){
+                try {
+                    FXRouter.goTo("user_account");
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
     }
-        private boolean isChangePassword() {
+    private boolean isChangePassword() {
+
             String oldPassword = oldPasswordTextField.getText();
             String newPassword = newPasswordTextField.getText();
+            String confirmNewPassword = newConfirmPasswordTextField.getText();
             if (oldPasswordTextField.getText().isEmpty() || newPasswordTextField.getText().isEmpty()
-                    || newConfirmPasswordTextField.getText().isEmpty()){
+                    || newConfirmPasswordTextField.getText().isEmpty()
+                    || !oldPasswordTextField.getText().equals(user.getPassword())
+                    || !newPassword.equals(confirmNewPassword)){
                 oldPasswordTextField.clear();
                 newConfirmPasswordTextField.clear();
                 newPasswordTextField.clear();
@@ -76,17 +83,19 @@ public class ChangePasswordController {
                 } else if (!oldPasswordTextField.getText().equals(user.getPassword())) {
                     promptOldPassword.setText("Wrong password");
                 }
-
-
+                if (newPassword.equals(confirmNewPassword)){
+                    promptNewPassword.setText("Please try again");
+                }
                 return false;
             }
             System.out.println("Can change password");
-            userList.removeUser(user);
-            user.setPassword(newPasswordTextField.getText());
-            userList.addUser(user);
+//            Users userDelete = userList.findUser(user.getUsername());
+//            userList.removeUser(userDelete);
+//              userList.changePassword(user.getUsername(), newPasswordTextField.getText());
+//            userList.addUser(user);
+//            dataSource.writeData(userList);
+            userList.changePassword(user.getUsername(), confirmNewPassword);
             dataSource.writeData(userList);
-
-
             return true;
         }
     }

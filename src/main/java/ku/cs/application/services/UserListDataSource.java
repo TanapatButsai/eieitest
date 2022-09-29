@@ -60,7 +60,8 @@ public class UserListDataSource implements DataSource<UserList> {
                         , data[2].trim()
                         , data[3].trim()
                         ,isAdmin
-                        ,data[5].trim());
+                        ,data[5].trim()
+                        ,data[6].trim());
                 list.addUser(user);
             }
 
@@ -93,12 +94,13 @@ public class UserListDataSource implements DataSource<UserList> {
             writer = new FileWriter(file);
             buffer = new BufferedWriter(writer);
             for (Users user : userList.getAllCards()) {
-                String line = user.getFullName() + ","
+                String line = user.getName() + ","
                         + user.getId() + ","
                         + user.getUsername() + ","
                         + user.getPassword() + ","
                         + user.isAdmin()+","
-                        + user.getLastTimeLogin();
+                        + user.getLastTimeLogin()+","
+                        + user.getUserImage();
 
                 buffer.append(line);
                 buffer.newLine();

@@ -4,18 +4,31 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import com.github.saacsos.FXRouter;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import ku.cs.application.models.Complaint;
+import ku.cs.application.models.ComplaintList;
 import ku.cs.application.models.Users;
+import ku.cs.application.services.ComplaintListDataSource;
 
 import java.io.IOException;
 
 public class HomeController {
     private Users user;
+    @FXML private ListView<Complaint> complaintListView;
     @FXML private Label userLabel;
+    private ComplaintListDataSource dataSource;
+    private ComplaintList complaintList;
     @FXML
     public void initialize(){
         user = (Users)FXRouter.getData();
-        userLabel.setText(user.getFullName());
-        System.out.println(user.toString());
+        System.out.println(user);
+        userLabel.setText(user.getName());
+        dataSource = new ComplaintListDataSource("data","complaint.csv");
+        complaintList = dataSource.readData();
+    }
+    private void showListView() {
+       complaintListView.getItems().setAll(complaintList.getAllComplaint());
+        complaintListView.refresh();
     }
     @FXML
     public void handleBackButton(ActionEvent actionEvent){
@@ -67,16 +80,39 @@ public class HomeController {
             e.printStackTrace();
         }
     }
-
     @FXML
-    public void handleGoToUserAccountScene(ActionEvent actionEvent){
+    public void handleStatusButton(ActionEvent actionEvent){
         try {
-            FXRouter.goTo("user_account",user);
-
+            com.github.saacsos.FXRouter.goTo("enrollcomplaint",user);
         } catch (IOException e) {
-            System.err.println("ไปที่หน้า changepassword");
+            System.err.println("ไปที่หน้า ร้องเรียนการลงทะเบียนเรียน ไม่ได้");
             System.err.println("ให้ตรวจสอบการกำหนด route");
             e.printStackTrace();
         }
     }
+    @FXML
+    void handleShowListView(){
+        showListView();
+    }
+    @FXML
+    void handleTimeButton(ActionEvent event) {
+
+    }
+
+    @FXML
+    void handleScoreButton(ActionEvent event) {
+
+    }
+
+//    @FXML
+//    public void handleGoToUserAccountScene(ActionEvent actionEvent){
+//        try {
+//            FXRouter.goTo("user_account",user);
+//
+//        } catch (IOException e) {
+//            System.err.println("ไปที่หน้า changepassword");
+//            System.err.println("ให้ตรวจสอบการกำหนด route");
+//            e.printStackTrace();
+//        }
+//    }
 }

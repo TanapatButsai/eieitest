@@ -17,7 +17,8 @@ import ku.cs.application.services.DataSource;
 import java.io.IOException;
 
 public class PlaceComplaintController {
-    @FXML private TextArea bodyTextField;
+    @FXML private TextArea bodyTextArea;
+    @FXML private TextArea bodyTextArea1;
     @FXML private TextField headTextField;
     private DataSource<ComplaintList> dataSource;
     private ComplaintList complaintList;
@@ -45,10 +46,10 @@ public class PlaceComplaintController {
     @FXML
     public void handlePushComplaint(ActionEvent actionEvent){
         String headComplaint = headTextField.getText();
-        String bodyComplaint = bodyTextField.getText();
-        Complaint complaint = new Complaint(headComplaint,bodyComplaint,"place",user.getFullName());
+        String bodyComplaint = bodyTextArea.getText();
+        String bodyComplaint1 = bodyTextArea1.getText();
+        Complaint complaint = new Complaint(headComplaint,bodyComplaint,bodyComplaint1,"place",user.getName());
         complaint.recordTime();
-
         complaintList.add(complaint);
         dataSource.writeData(complaintList);
     }
