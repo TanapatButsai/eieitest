@@ -1,7 +1,5 @@
 package ku.cs.application.services;
 
-import ku.cs.application.models.Complaint;
-import ku.cs.application.models.ComplaintList;
 import ku.cs.application.models.Officer;
 import ku.cs.application.models.OfficerList;
 
@@ -48,11 +46,26 @@ public class OfficersListDataSource implements DataSource<OfficerList>{
             String line = "";
             while ((line = buffer.readLine()) != null) {
                 String[] data = line.split(",");
+                boolean isDone = false;
+                boolean isInProgress = false;
+                boolean isUnmanaged = false;
+                if (data[5].trim().equals("true")) {
+                    isDone = true;
+                }else if (data[6].trim().equals("true")) {
+                    isInProgress = true;
+                }if (data[7].trim().equals("true")) {
+                    isUnmanaged = true;
+                }
                 Officer officer = new Officer(
                         data[0].trim(),
                         data[1].trim(),
                         data[2].trim(),
-                        data[3].trim());
+                        data[3].trim(),
+                        data[4].trim(),
+                        isDone,
+                        isInProgress,
+                        isUnmanaged
+                        );
                 list.add(officer);
             }
 
@@ -69,8 +82,23 @@ public class OfficersListDataSource implements DataSource<OfficerList>{
             }
         }
         return list;
-
     }
+
+//    @Override
+//    public OfficerList readData2() {
+//        return null;
+//    }
+//
+//    @Override
+//    public OfficerList readData3() {
+//        return null;
+//    }
+//
+//    @Override
+//    public OfficerList readData4() {
+//        return null;
+//    }
+
     @Override
     public void writeData(OfficerList officerList) {
         String filePath = directoryName + File.separator + fileName;
@@ -83,9 +111,13 @@ public class OfficersListDataSource implements DataSource<OfficerList>{
             buffer = new BufferedWriter(writer);
             for (Officer officer : officerList.getAllOfficer()) {
                 String line = officer.getName() + ","
-                        + officer.getTopic() + ","
-                        + officer.getHeadComplaint()+","
-                        + officer.getBodyComplaint();
+                        + officer.getRole() + ","
+                        + officer.getTopic()+","
+                        + officer.getBody()+","
+                        + officer.getFixComplaint()+","
+                        + officer.isDone()+","
+                        + officer.isInProgress()+","
+                        + officer.isUnmanaged()+",";
 
                 buffer.append(line);
                 buffer.newLine();

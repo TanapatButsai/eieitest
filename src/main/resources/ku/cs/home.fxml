@@ -61,6 +61,7 @@
       <Button layoutX="281.0" layoutY="115.0" mnemonicParsing="false" onAction="#handleStatusButton" text="สถานะ" />
       <Button layoutX="346.0" layoutY="116.0" mnemonicParsing="false" onAction="#handleTimeButton" text="เวลา" />
       <Button layoutX="401.0" layoutY="116.0" mnemonicParsing="false" onAction="#handleScoreButton" text="คะแนน" />
-      <ListView layoutX="281.0" layoutY="164.0" prefHeight="363.0" prefWidth="463.0" />
+      <ListView fx:id="complaintListView" layoutX="281.0" layoutY="164.0" prefHeight="363.0" prefWidth="463.0" />
+      <Button layoutX="470.0" layoutY="117.0" mnemonicParsing="false" onAction="#handleShowListView" text="คำร้องเรียนทั้งหมด" />
    </children>
 </AnchorPane>

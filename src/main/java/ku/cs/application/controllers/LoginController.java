@@ -10,6 +10,7 @@ import java.util.Objects;
 import javafx.scene.control.Label;
 import com.github.saacsos.FXRouter;
 import ku.cs.application.models.*;
+import ku.cs.application.services.ComplaintListDataSource;
 import ku.cs.application.services.DataSource;
 import ku.cs.application.services.OfficerIDListDataSource;
 import ku.cs.application.services.UserListDataSource;
@@ -32,6 +33,9 @@ public class LoginController {
     private DataSource<OfficerIDList> dataSource1;
     private OfficerIDList officerIDList;
 
+    private DataSource<ComplaintList> dataSource2 = new ComplaintListDataSource("data","complaint");
+//    private ComplaintList complaintList;
+
     @FXML
     public void initialize() {
         //officer1 = new Officer("nenny","เรื่องร้องเรียงทั่วไป","teacher","study too much");
@@ -40,6 +44,9 @@ public class LoginController {
         dataSource = new UserListDataSource("data","user.csv");
         dataSource1 = new OfficerIDListDataSource("data","officerID.csv");
         userList = dataSource.readData();
+
+//        complaintList = dataSource2.readData();
+
         if (userList == null){
             System.err.println("Cannot read file");
         } else {
@@ -71,7 +78,7 @@ public class LoginController {
                 try {
                     FXRouter.goTo("officer",officerID);
                 } catch (IOException e) {
-                    System.err.println("ไปที่หน้า home");
+                    System.err.println("ไปที่หน้า officer");
                     System.err.println("ให้ตรวจสอบการกำหนด route");
                     e.printStackTrace();
                 }

@@ -53,12 +53,17 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <Button layoutX="303.0" layoutY="26.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="76.0" text="Report">
+      <Button layoutX="303.0" layoutY="26.0" mnemonicParsing="false" onAction="#handleAdminComplaint" prefHeight="32.0" prefWidth="76.0" text="Report">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="30.0" layoutY="26.0" mnemonicParsing="false" onAction="#handleBackToLogin" prefHeight="32.0" prefWidth="76.0" text="Back">
+      <Button layoutX="30.0" layoutY="26.0" mnemonicParsing="false" onAction="#handleBack" prefHeight="32.0" prefWidth="76.0" text="Back">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="165.0" layoutY="26.0" mnemonicParsing="false" onAction="#handleManageBan" prefHeight="32.0" prefWidth="76.0" text="Manage Ban">
          <font>
             <Font size="15.0" />
          </font>

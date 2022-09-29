@@ -4,19 +4,31 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import com.github.saacsos.FXRouter;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import ku.cs.application.models.Complaint;
+import ku.cs.application.models.ComplaintList;
 import ku.cs.application.models.Users;
+import ku.cs.application.services.ComplaintListDataSource;
 
 import java.io.IOException;
 
 public class HomeController {
     private Users user;
+    @FXML private ListView<Complaint> complaintListView;
     @FXML private Label userLabel;
+    private ComplaintListDataSource dataSource;
+    private ComplaintList complaintList;
     @FXML
     public void initialize(){
         user = (Users)FXRouter.getData();
         System.out.println(user);
         userLabel.setText(user.getName());
-//        System.out.println(user.toString());
+        dataSource = new ComplaintListDataSource("data","complaint.csv");
+        complaintList = dataSource.readData();
+    }
+    private void showListView() {
+       complaintListView.getItems().setAll(complaintList.getAllComplaint());
+        complaintListView.refresh();
     }
     @FXML
     public void handleBackButton(ActionEvent actionEvent){
@@ -77,6 +89,10 @@ public class HomeController {
             System.err.println("ให้ตรวจสอบการกำหนด route");
             e.printStackTrace();
         }
+    }
+    @FXML
+    void handleShowListView(){
+        showListView();
     }
     @FXML
     void handleTimeButton(ActionEvent event) {
