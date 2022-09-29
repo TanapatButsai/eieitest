@@ -42,7 +42,6 @@ public class UserAccountController {
     @FXML private Label idLabel;
     @FXML private Label usernameLabel;
     private UserList userList;
-
     private String imageUrl;
     DataSource<UserList> dataSource = new UserListDataSource("data","user.csv");
     @FXML private void initialize(){

@@ -17,7 +17,7 @@ import java.io.IOException;
 public class AdminComplaintController {
     @FXML private ListView<Complaint> complaintListView;
     @FXML private Label reporterLabel;
-    @FXML private Label reportcategoryLabel;
+    @FXML private Label reportCategoryLabel;
     @FXML private Label titleLabel;
     @FXML private TextArea detailLabel;
     private DataSource<ComplaintList> clds;
@@ -52,14 +52,14 @@ public class AdminComplaintController {
 
     private void showSelectedComplaint(Complaint complaint) {
         titleLabel.setText(complaint.getHeadComplaint());
-        reportcategoryLabel.setText(complaint.getCATEGORY());
+        reportCategoryLabel.setText(complaint.getCategory());
         reporterLabel.setText(complaint.getNameWriter());
         detailLabel.setText(complaint.getBodyComplaint());
     }
 
     private void clearSelectedComplaint(){
         titleLabel.setText("");
-        reportcategoryLabel.setText("");
+        reportCategoryLabel.setText("");
         reporterLabel.setText("");
         detailLabel.setText("");
     }

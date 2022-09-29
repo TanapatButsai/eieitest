@@ -18,7 +18,7 @@ public class AdminController {
     @FXML private Label fnLabel;
     @FXML private Label usernameLabel;
     @FXML private Label intuitionLabel;
-    @FXML private Label lastloginLabel;
+    @FXML private Label lastLoginLabel;
 
     private DataSource<UserList> ulds;
     private UserList userList;
@@ -68,14 +68,14 @@ public class AdminController {
         usernameLabel.setText(user.getUsername());
         String[] timeArr = user.getLastTimeLogin().split("-");
         String time = timeArr[0]+":"+timeArr[1]+":"+timeArr[2]+" "+timeArr[3]+"-"+timeArr[4]+"-"+timeArr[5];
-        lastloginLabel.setText(time);
+        lastLoginLabel.setText(time);
     }
 
     private void clearSelectedUser(){
         fnLabel.setText("");
         intuitionLabel.setText("");
         usernameLabel.setText("");
-        lastloginLabel.setText("");
+        lastLoginLabel.setText("");
     }
 
     @FXML

@@ -6,27 +6,27 @@ public class Complaint {
     private String bodyComplaint; //เนื้อหาที่จะร้องเรียน
     //private String detailComplaint; //
     private String bodyComplaint1;
-    private String CATEGORY;
+    private String category;
     private String nameWriter;
 
     private int rating;
     private String time;
     private boolean isBan;
-    public Complaint(String headComplaint, String bodyComplaint,String bodyComplaint1,
-                     String CATEGORY,String nameWriter) {
+    public Complaint(String headComplaint, String bodyComplaint, String bodyComplaint1,
+                     String category, String nameWriter) {
         this.headComplaint = headComplaint;
         this.bodyComplaint = bodyComplaint;
         this.bodyComplaint1 = bodyComplaint1;
-        this.CATEGORY = CATEGORY;
+        this.category = category;
         this.nameWriter = nameWriter;
         isBan = false;
     }
 
-    public Complaint(String headComplaint, String bodyComplaint,String bodyComplaint1, String CATEGORY, String nameWriter, String time) {
+    public Complaint(String headComplaint, String bodyComplaint, String bodyComplaint1, String category, String nameWriter, String time) {
         this.headComplaint = headComplaint;
         this.bodyComplaint = bodyComplaint;
         this.bodyComplaint1 = bodyComplaint1;
-        this.CATEGORY = CATEGORY;
+        this.category = category;
         this.nameWriter = nameWriter;
         this.time = time;
         isBan = false;
@@ -55,10 +55,10 @@ public class Complaint {
         this.nameWriter = nameWriter;
     }
 
-    public Complaint(String headComplaint, String bodyComplaint, String CATEGORY) {
+    public Complaint(String headComplaint, String bodyComplaint, String category) {
         this.headComplaint = headComplaint;
         this.bodyComplaint = bodyComplaint;
-        this.CATEGORY = CATEGORY;
+        this.category = category;
     }
 
     public void donBan(){
@@ -83,11 +83,11 @@ public class Complaint {
 //    public void setDetailComplaint(String detailComplaint) {
 //        this.detailComplaint = detailComplaint;
 //    }
-    public String getCATEGORY() {
-        return CATEGORY;
+    public String getCategory() {
+        return category;
     }
-    public void setCATEGORY(String CATEGORY) {
-        this.CATEGORY = CATEGORY;
+    public void setCategory(String category) {
+        this.category = category;
     }
 //    @Override
 //    public String toString() {
@@ -95,7 +95,7 @@ public class Complaint {
 //                "headComplaint='" + headComplaint + '\'' +
 //                ", bodyComplaint='" + bodyComplaint + '\''
 //                +'\'' +
-//                ", CATEGORY='" + CATEGORY + '\'' +
+//                ", category='" + category + '\'' +
 //                '}';
 //    }
 
@@ -106,7 +106,7 @@ public class Complaint {
                 "headComplaint='" + headComplaint + '\'' +
                 ", bodyComplaint='" + bodyComplaint + '\'' +
                 ", bodyComplaint1='" + bodyComplaint1 + '\'' +
-                ", CATEGORY='" + CATEGORY + '\'' +
+                ", category='" + category + '\'' +
                 '}';
     }
 

@@ -33,9 +33,6 @@ public class RegisterController {
     private boolean usernameCanBeUse = false;
     private boolean usernameHasComma = false;
 
-
-
-
     @FXML public void initialize(){
         String url1 = getClass().getResource("/ku/cs/reg_images/bg002.jpg").toExternalForm();
         String url2 = getClass().getResource("/ku/cs/reg_images/logo001.jpg").toExternalForm();
@@ -84,7 +81,6 @@ public class RegisterController {
         System.out.println("ID is in user = " + usernameIsInUsers + " | Already click check =" + usernameAlreadyCheck);
     }
 
-
     @FXML public void handleBackButton(ActionEvent actionEvent){
         try {
             FXRouter.goTo("login");
@@ -95,10 +91,7 @@ public class RegisterController {
         }
     }
 
-
-
     //other function
-
     public boolean isSignUp() {
         String newUserUsername = usernameTextField.getText();
         String newUserPasswordUsername = passwordTextFieldSignUp.getText();

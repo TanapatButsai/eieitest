@@ -34,7 +34,7 @@ public class ProjectApplication extends Application {
         FXRouter.when("enrollcomplaint", packageStr + "enrollcomplaint.fxml");
         FXRouter.when("adminscene",packageStr + "adminscene.fxml");
         FXRouter.when("officer",packageStr + "officer.fxml");
-        FXRouter.when("admincomplaint",packageStr + "admin_Complaint_scene.fxml");
+        FXRouter.when("admincomplaint",packageStr + "admin_complaint_scene.fxml");
         FXRouter.when("user_account",packageStr + "user_account.fxml");
         FXRouter.when("adminmanageban", packageStr + "admin_manage_ban.fxml");
     }

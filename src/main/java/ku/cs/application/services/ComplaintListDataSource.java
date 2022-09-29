@@ -2,8 +2,6 @@ package ku.cs.application.services;
 
 import ku.cs.application.models.Complaint;
 import ku.cs.application.models.ComplaintList;
-import ku.cs.application.models.UserList;
-import ku.cs.application.models.Users;
 
 import java.io.*;
 
@@ -89,7 +87,7 @@ public class ComplaintListDataSource implements DataSource<ComplaintList>{
                 String line = complaint.getHeadComplaint() + ","
                         + complaint.getBodyComplaint() + ","
                         + complaint.getBodyComplaint1() + ","
-                        + complaint.getCATEGORY()+","
+                        + complaint.getCategory()+","
                         + complaint.getNameWriter()+","
                         + complaint.getTime();
 

@@ -31,7 +31,7 @@
             </Label>
          </children>
       </HBox>
-      <ImageView fx:id="kasetsarts" fitHeight="601.0" fitWidth="350.0" layoutX="-5.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="kasetsartImage" fitHeight="601.0" fitWidth="350.0" layoutX="-5.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true" />
       <Label layoutX="51.0" layoutY="98.0" prefHeight="26.0" prefWidth="234.0" style="-fx-background-color: #ffffff;" text="        หลักเกณฑ์การรับเรื่องร้องเรียน" textFill="#0a0000" />
       <Button layoutX="533.0" layoutY="516.0" mnemonicParsing="false" onAction="#handlePushComplaint" text="ส่งคำร้องเรียน" />
       <Label layoutX="51.0" layoutY="173.0" prefHeight="20.0" prefWidth="191.0" style="-fx-background-color: #ffffff;" text="1. ใช้ถ้อยคำหรือข้อความที่สุภาพ" textFill="#0a0000" />
