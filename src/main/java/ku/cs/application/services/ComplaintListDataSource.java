@@ -52,15 +52,12 @@ public class ComplaintListDataSource implements DataSource<ComplaintList>{
             String line = "";
             while ((line = buffer.readLine()) != null) {
                 String[] data = line.split(",");
-                Complaint complaint = new Complaint(data[0].trim(),
-                        data[1].trim()
-                        , data[2].trim()
+                Complaint complaint = new Complaint(data[0].trim(), data[1].trim(), data[2].trim()
                         , data[3].trim()
                         , data[4].trim()
                         , data[5].trim());
                 list.add(complaint);
             }
-
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {

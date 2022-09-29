@@ -23,13 +23,11 @@ public class HomeController {
         user = (Users)FXRouter.getData();
         System.out.println(user);
         userLabel.setText(user.getName());
-        dataSource = new ComplaintListDataSource();
-        complaintList = dataSource.getComplaintList();
-        showListView();
-//        System.out.println(user.toString());
+        dataSource = new ComplaintListDataSource("data","complaint.csv");
+        complaintList = dataSource.readData();
     }
     private void showListView() {
-       complaintListView.getItems().addAll(complaintList.getAllComplaint());
+       complaintListView.getItems().setAll(complaintList.getAllComplaint());
         complaintListView.refresh();
     }
     @FXML
@@ -91,6 +89,10 @@ public class HomeController {
             System.err.println("ให้ตรวจสอบการกำหนด route");
             e.printStackTrace();
         }
+    }
+    @FXML
+    void handleShowListView(){
+        showListView();
     }
     @FXML
     void handleTimeButton(ActionEvent event) {
