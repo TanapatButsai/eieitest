@@ -89,12 +89,23 @@ public class Complaint {
     public void setCATEGORY(String CATEGORY) {
         this.CATEGORY = CATEGORY;
     }
+//    @Override
+//    public String toString() {
+//        return "Complaint{" +
+//                "headComplaint='" + headComplaint + '\'' +
+//                ", bodyComplaint='" + bodyComplaint + '\''
+//                +'\'' +
+//                ", CATEGORY='" + CATEGORY + '\'' +
+//                '}';
+//    }
+
+
     @Override
     public String toString() {
         return "Complaint{" +
                 "headComplaint='" + headComplaint + '\'' +
-                ", bodyComplaint='" + bodyComplaint + '\''
-                +'\'' +
+                ", bodyComplaint='" + bodyComplaint + '\'' +
+                ", bodyComplaint1='" + bodyComplaint1 + '\'' +
                 ", CATEGORY='" + CATEGORY + '\'' +
                 '}';
     }
