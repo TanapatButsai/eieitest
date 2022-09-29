@@ -26,7 +26,7 @@
          </font>
       </Label>
       <TextField fx:id="headTextField" layoutX="409.0" layoutY="123.0" prefHeight="26.0" prefWidth="340.0" />
-      <TextArea fx:id="bodyTextField" layoutX="409.0" layoutY="218.0" prefHeight="99.0" prefWidth="339.0" />
+      <TextArea fx:id="bodyTextArea" layoutX="409.0" layoutY="218.0" prefHeight="99.0" prefWidth="339.0" />
       <Button layoutX="556.0" layoutY="559.0" mnemonicParsing="false" onAction="#handleBackButton" text="Back" />
       <Label layoutX="405.0" layoutY="189.0" prefHeight="20.0" prefWidth="281.0" text="รายละเอียดในการร้องเรียน">
          <font>
@@ -46,6 +46,6 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <TextArea fx:id="bodyTextField1" layoutX="410.0" layoutY="382.0" prefHeight="99.0" prefWidth="339.0" />
+      <TextArea fx:id="bodyTextArea1" layoutX="410.0" layoutY="382.0" prefHeight="99.0" prefWidth="339.0" />
    </children>
 </AnchorPane>

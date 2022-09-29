@@ -15,7 +15,8 @@ import java.io.IOException;
 
 
 public class NormalComplaintController {
-    @FXML private TextArea bodyTextField;
+    @FXML private TextArea bodyTextArea;
+    @FXML private TextArea bodyTextArea1;
     @FXML private TextField headTextField;
     private DataSource<ComplaintList> dataSource;
     private ComplaintList complaintList;
@@ -44,8 +45,9 @@ public class NormalComplaintController {
     @FXML
     public void handlePushComplaint(ActionEvent actionEvent){
         String headComplaint = headTextField.getText();
-        String bodyComplaint = bodyTextField.getText();
-        Complaint complaint = new Complaint(headComplaint,bodyComplaint,"normal",user.getName());
+        String bodyComplaint = bodyTextArea.getText();
+        String bodyComplaint1 = bodyTextArea1.getText();
+        Complaint complaint = new Complaint(headComplaint,bodyComplaint,bodyComplaint1,"normal",user.getName());
         complaint.recordTime();
         complaintList.add(complaint);
         dataSource.writeData(complaintList);
