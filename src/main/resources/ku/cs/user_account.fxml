@@ -27,5 +27,28 @@
       </Label>
       <Button layoutX="530.0" layoutY="538.0" mnemonicParsing="false" onAction="#handleGoToChangPassword" prefHeight="26.0" prefWidth="118.0" text="change password" />
       <Button layoutX="499.0" layoutY="21.0" mnemonicParsing="false" onAction="#handleGoToHome" prefHeight="16.0" prefWidth="62.0" text="Back" />
+      <Button fx:id="updateInfoButton" layoutX="182.0" layoutY="253.0" mnemonicParsing="false" onAction="#handleUpdateButton" prefHeight="37.0" prefWidth="118.0" style="-fx-background-color: #FA5858;" text="Upload Profile" textFill="#5882fa">
+         <font>
+            <Font name="Consolas Bold" size="13.0" />
+         </font></Button>
+      <ImageView fx:id="userImage" fitHeight="185.0" fitWidth="247.0" layoutX="119.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="127.0" layoutY="371.0" text="Username" textFill="#999999" />
+      <Label layoutX="127.0" layoutY="331.0" text="Name" textFill="#999999" />
+      <Label layoutX="127.0" layoutY="409.0" text="Student ID" textFill="#999999" />
+      <Label fx:id="nameLabel" layoutX="198.0" layoutY="331.0" prefHeight="18.0" prefWidth="130.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="idLabel" layoutX="198.0" layoutY="408.0" prefHeight="18.0" prefWidth="130.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="usernameLabel" layoutX="198.0" layoutY="370.0" prefHeight="18.0" prefWidth="130.0" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

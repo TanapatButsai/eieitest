@@ -89,7 +89,6 @@ public class ChangePasswordController {
                 return false;
             }
             System.out.println("Can change password");
-
 //            Users userDelete = userList.findUser(user.getUsername());
 //            userList.removeUser(userDelete);
 //              userList.changePassword(user.getUsername(), newPasswordTextField.getText());

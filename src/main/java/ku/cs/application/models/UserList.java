@@ -55,13 +55,18 @@ public class UserList{
             user.setPassword(newPassword);
         }
     }
+    public void setImageStudent(String username, String imagePath){
+        Users user = findUser(username);
+        if (user != null) {
+            user.setUserImage(imagePath);
+        }
+    }
     public Users findUser(String username) {
         for (Users user : userList) {
             if (user.getUsername().equals(username)) {
                 return user;
             }
-        }
-        return null;
+        }return null;
     }
 
     @Override
