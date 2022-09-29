@@ -10,6 +10,7 @@ import java.io.*;
 public class ComplaintListDataSource implements DataSource<ComplaintList>{
     private String directoryName;
     private String fileName;
+    private ComplaintList complaintList;
     public ComplaintListDataSource(String directoryName, String fileName) {
         this.directoryName = directoryName;
         this.fileName = fileName;
@@ -51,13 +52,12 @@ public class ComplaintListDataSource implements DataSource<ComplaintList>{
             String line = "";
             while ((line = buffer.readLine()) != null) {
                 String[] data = line.split(",");
-                Complaint complaint = new Complaint(data[0].trim(),
-                        data[1].trim()
-                        , data[2].trim()
-                        , data[3].trim());
+                Complaint complaint = new Complaint(data[0].trim(), data[1].trim(), data[2].trim()
+                        , data[3].trim()
+                        , data[4].trim()
+                        , data[5].trim());
                 list.add(complaint);
             }
-
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
@@ -88,8 +88,10 @@ public class ComplaintListDataSource implements DataSource<ComplaintList>{
             for (Complaint complaint : complaintList.getAllComplaint()) {
                 String line = complaint.getHeadComplaint() + ","
                         + complaint.getBodyComplaint() + ","
+                        + complaint.getBodyComplaint1() + ","
                         + complaint.getCATEGORY()+","
-                        + complaint.getNameWriter();
+                        + complaint.getNameWriter()+","
+                        + complaint.getTime();
 
                 buffer.append(line);
                 buffer.newLine();
@@ -107,6 +109,10 @@ public class ComplaintListDataSource implements DataSource<ComplaintList>{
                 "directoryName='" + directoryName + '\'' +
                 ", fileName='" + fileName + '\'' +
                 '}';
+    }
+
+    public ComplaintList getComplaintList() {
+        return complaintList;
     }
     //--------
 

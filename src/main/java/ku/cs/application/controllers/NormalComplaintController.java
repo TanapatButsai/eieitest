@@ -7,7 +7,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import ku.cs.application.models.Complaint;
 import ku.cs.application.models.ComplaintList;
-import ku.cs.application.models.UserList;
 import ku.cs.application.models.Users;
 import ku.cs.application.services.ComplaintListDataSource;
 import ku.cs.application.services.DataSource;
@@ -16,11 +15,14 @@ import java.io.IOException;
 
 
 public class NormalComplaintController {
-    @FXML private TextArea bodyTextField;
+    @FXML private TextArea bodyTextArea;
+    @FXML private TextArea bodyTextArea1;
     @FXML private TextField headTextField;
     private DataSource<ComplaintList> dataSource;
     private ComplaintList complaintList;
     private Users user;
+    @FXML
+    private ImageView kasetsarts;
     public void handleBackHomeButton(ActionEvent actionEvent){
         try {
             com.github.saacsos.FXRouter.goTo("home");
@@ -30,8 +32,6 @@ public class NormalComplaintController {
             e.printStackTrace();
         }
     }
-    @FXML
-    private ImageView kasetsarts;
     @FXML
     public void initialize() {
         String url = getClass().getResource("/ku/cs/normalcomplaint_images/kasetsarts.jpeg").toExternalForm();
@@ -45,9 +45,10 @@ public class NormalComplaintController {
     @FXML
     public void handlePushComplaint(ActionEvent actionEvent){
         String headComplaint = headTextField.getText();
-        String bodyComplaint = bodyTextField.getText();
-
-        Complaint complaint = new Complaint(headComplaint,bodyComplaint,"normal",user.getName());
+        String bodyComplaint = bodyTextArea.getText();
+        String bodyComplaint1 = bodyTextArea1.getText();
+        Complaint complaint = new Complaint(headComplaint,bodyComplaint,bodyComplaint1,"normal",user.getName());
+        complaint.recordTime();
         complaintList.add(complaint);
         dataSource.writeData(complaintList);
     }

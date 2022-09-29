@@ -10,6 +10,7 @@ import java.util.Objects;
 import javafx.scene.control.Label;
 import com.github.saacsos.FXRouter;
 import ku.cs.application.models.*;
+import ku.cs.application.services.ComplaintListDataSource;
 import ku.cs.application.services.DataSource;
 import ku.cs.application.services.OfficerIDListDataSource;
 import ku.cs.application.services.UserListDataSource;
@@ -25,12 +26,15 @@ public class LoginController {
     @FXML
     private ImageView image_view_login;
     @FXML
-    private ImageView image_view_ku_logo;
+    private ImageView image_view_ku_logo; //imageViewKULogin
     private DataSource<UserList> dataSource;
     private UserList userList;
     private Users user;
     private DataSource<OfficerIDList> dataSource1;
     private OfficerIDList officerIDList;
+
+    private DataSource<ComplaintList> dataSource2 = new ComplaintListDataSource("data","complaint");
+//    private ComplaintList complaintList;
 
     @FXML
     public void initialize() {
@@ -40,6 +44,9 @@ public class LoginController {
         dataSource = new UserListDataSource("data","user.csv");
         dataSource1 = new OfficerIDListDataSource("data","officerID.csv");
         userList = dataSource.readData();
+
+//        complaintList = dataSource2.readData();
+
         if (userList == null){
             System.err.println("Cannot read file");
         } else {
@@ -90,7 +97,10 @@ public class LoginController {
                     }
                 }else {
                     try {
-                        FXRouter.goTo("home", user);
+                        userList.recordTimeLogin(user);
+                        dataSource.writeData(userList);
+                        FXRouter.goTo("home",user);
+
                     } catch (IOException e) {
                         System.err.println("ไปที่หน้า home");
                         System.err.println("ให้ตรวจสอบการกำหนด route");
@@ -123,19 +133,7 @@ public class LoginController {
             e.printStackTrace();
         }
     }
-    @FXML
-    public void handleGoToChangePassword(ActionEvent actionEvent){
-        try {
-            // เปลี่ยนการแสดงผลไปที่ route ที่ชื่อ member_card_detail
-            // พร้อมส่ง reference instance john ไปด้วย
-            FXRouter.goTo("changepassword");
 
-        } catch (IOException e) {
-            System.err.println("ไปที่หน้า changepassword");
-            System.err.println("ให้ตรวจสอบการกำหนด route");
-            e.printStackTrace();
-        }
-    }
     public boolean isLogin(String username, String password,Users user){
         return username.equals(user.getUsername()) && password.equals(user.getPassword());
     }

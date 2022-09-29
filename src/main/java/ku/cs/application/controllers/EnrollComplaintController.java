@@ -7,14 +7,14 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import ku.cs.application.models.Complaint;
 import ku.cs.application.models.ComplaintList;
-import ku.cs.application.models.UserList;
 import ku.cs.application.models.Users;
 import ku.cs.application.services.ComplaintListDataSource;
 import ku.cs.application.services.DataSource;
 
 import java.io.IOException;
 public class EnrollComplaintController {
-    @FXML private TextArea bodyTextField;
+    @FXML private TextArea bodyTextArea;
+    @FXML private TextArea bodyTextArea1;
     @FXML private TextField headTextField;
     private DataSource<ComplaintList> dataSource;
     private ComplaintList complaintList;
@@ -43,9 +43,10 @@ public class EnrollComplaintController {
     @FXML
     public void handlePushComplaint(ActionEvent actionEvent){
         String headComplaint = headTextField.getText();
-        String bodyComplaint = bodyTextField.getText();
-
-        Complaint complaint = new Complaint(headComplaint,bodyComplaint,"enroll",user.getName());
+        String bodyComplaint = bodyTextArea.getText();
+        String bodyComplaint1 = bodyTextArea1.getText();
+        Complaint complaint = new Complaint(headComplaint,bodyComplaint,bodyComplaint1,"enroll",user.getName());
+        complaint.recordTime();
         complaintList.add(complaint);
         dataSource.writeData(complaintList);
     }

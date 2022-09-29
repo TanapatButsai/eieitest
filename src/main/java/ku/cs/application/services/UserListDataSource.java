@@ -1,6 +1,5 @@
 package ku.cs.application.services;
 
-import ku.cs.application.models.ComplaintList;
 import ku.cs.application.models.UserList;
 import ku.cs.application.models.Users;
 import java.io.*;
@@ -60,7 +59,9 @@ public class UserListDataSource implements DataSource<UserList> {
                         data[1].trim()
                         , data[2].trim()
                         , data[3].trim()
-                        ,isAdmin);
+                        ,isAdmin
+                        ,data[5].trim()
+                        ,data[6].trim());
                 list.addUser(user);
             }
 
@@ -97,7 +98,9 @@ public class UserListDataSource implements DataSource<UserList> {
                         + user.getId() + ","
                         + user.getUsername() + ","
                         + user.getPassword() + ","
-                        + user.isAdmin();
+                        + user.isAdmin()+","
+                        + user.getLastTimeLogin()+","
+                        + user.getUserImage();
 
                 buffer.append(line);
                 buffer.newLine();
