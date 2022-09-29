@@ -3,10 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -42,51 +39,6 @@
                         <Font size="16.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="0.0" prefWidth="223.0" style="-fx-background-color: #606261 #606261 #606261 #606261;" textFill="#f2ecec">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Button>
-                  <Button mnemonicParsing="false" prefHeight="0.0" prefWidth="223.0" style="-fx-background-color: #606261 #606261 #606261 #606261;" textFill="#f2ecec">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Button>
-                  <Button mnemonicParsing="false" prefHeight="0.0" prefWidth="223.0" style="-fx-background-color: #606261 #606261 #606261 #606261;" textFill="#f2ecec">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Button>
-                  <Button mnemonicParsing="false" prefHeight="0.0" prefWidth="223.0" style="-fx-background-color: #606261 #606261 #606261 #606261;" textFill="#f2ecec">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Button>
-                  <Button mnemonicParsing="false" prefHeight="0.0" prefWidth="223.0" style="-fx-background-color: #606261 #606261 #606261 #606261;" textFill="#f2ecec">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Button>
-                  <Button mnemonicParsing="false" prefHeight="0.0" prefWidth="223.0" style="-fx-background-color: #606261 #606261 #606261 #606261;" textFill="#f2ecec">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Button>
-                  <Button mnemonicParsing="false" prefHeight="0.0" prefWidth="223.0" style="-fx-background-color: #606261 #606261 #606261 #606261;" textFill="#f2ecec">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Button>
-                  <Button mnemonicParsing="false" prefHeight="0.0" prefWidth="223.0" style="-fx-background-color: #606261 #606261 #606261 #606261;" textFill="#f2ecec">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Button>
-                  <Button mnemonicParsing="false" onAction="#handleGoToUserAccountScene" prefHeight="0.0" prefWidth="223.0" style="-fx-background-color: #606261 #606261 #606261 #606261;" text="บัญชีผู้ใช้" textFill="#f2ecec">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Button>
                </children>
             </VBox>
             <Label layoutX="-2.0" layoutY="-1.0" prefHeight="46.0" prefWidth="222.0" style="-fx-background-color: #BDBDBD #BDBDBD;" text="            ประเภทการร้องเรียน" textFill="#252424">
@@ -94,7 +46,7 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <Button layoutX="-2.0" layoutY="48.0" mnemonicParsing="false" onAction="#handleNormalComplaint" prefHeight="36.0" prefWidth="220.0" style="-fx-background-color: #606261 #606261 #606261 #606261 #606261 #606261 #606261 #606261;" text="ร้องเรียนทั่วไป" textFill="#fcf6f6">
+            <Button layoutX="-2.0" layoutY="48.0" mnemonicParsing="false" onAction="#handleNormalComplaint" prefHeight="31.0" prefWidth="220.0" style="-fx-background-color: #606261 #606261 #606261 #606261 #606261 #606261 #606261 #606261;" text="ร้องเรียนทั่วไป" textFill="#fcf6f6">
                <font>
                   <Font size="16.0" />
                </font>
@@ -105,31 +57,9 @@
                </font>
             </Button>
          </children></Pane>
-      <BorderPane layoutX="254.0" layoutY="94.0" prefHeight="469.0" prefWidth="483.0">
-         <top>
-            <TabPane prefHeight="35.0" prefWidth="651.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
-              <tabs>
-                <Tab text="สถานะ">
-                  <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="111.0" prefWidth="558.0" />
-                  </content>
-                </Tab>
-                <Tab text="เรียงตามเวลา">
-                  <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="256.0" prefWidth="396.0" />
-                  </content>
-                </Tab>
-                  <Tab text="เรียงตามผลโหวต">
-                     <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="111.0" prefWidth="558.0" />
-                     </content>
-                  </Tab>
-              </tabs>
-            </TabPane>
-         </top>
-         <center>
-            <ListView prefHeight="313.0" prefWidth="530.0" BorderPane.alignment="CENTER" />
-         </center>
-      </BorderPane>
+      <Button layoutX="281.0" layoutY="115.0" mnemonicParsing="false" onAction="#handleStatusButton" text="สถานะ" />
+      <Button layoutX="346.0" layoutY="116.0" mnemonicParsing="false" onAction="#handleTimeButton" text="เวลา" />
+      <Button layoutX="401.0" layoutY="116.0" mnemonicParsing="false" onAction="#handleScoreButton" text="คะแนน" />
+      <ListView layoutX="281.0" layoutY="164.0" prefHeight="363.0" prefWidth="463.0" />
    </children>
 </AnchorPane>

@@ -67,6 +67,16 @@ public class HomeController {
             e.printStackTrace();
         }
     }
+    @FXML
+    public void handleStatusButton(ActionEvent actionEvent){
+        try {
+            com.github.saacsos.FXRouter.goTo("enrollcomplaint",user);
+        } catch (IOException e) {
+            System.err.println("ไปที่หน้า ร้องเรียนการลงทะเบียนเรียน ไม่ได้");
+            System.err.println("ให้ตรวจสอบการกำหนด route");
+            e.printStackTrace();
+        }
+    }
 
     @FXML
     public void handleGoToUserAccountScene(ActionEvent actionEvent){

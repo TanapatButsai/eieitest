@@ -12,6 +12,7 @@ public class ComplaintList {
         complaintList = new ArrayList<>();
 
     }
+
 //    public void addUser(Users user){
 //
 //        userList.add(user);

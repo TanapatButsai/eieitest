@@ -5,24 +5,27 @@ public class Complaint {
     private String headComplaint; //หัวเรื่อง
     private String bodyComplaint; //เนื้อหาที่จะร้องเรียน
     //private String detailComplaint; //
+    private String bodyComplaint1;
     private String CATEGORY;
     private String nameWriter;
 
     private int rating;
     private String time;
     private boolean isBan;
-    public Complaint(String headComplaint, String bodyComplaint,
+    public Complaint(String headComplaint, String bodyComplaint,String bodyComplaint1,
                      String CATEGORY,String nameWriter) {
         this.headComplaint = headComplaint;
         this.bodyComplaint = bodyComplaint;
+        this.bodyComplaint1 = bodyComplaint1;
         this.CATEGORY = CATEGORY;
         this.nameWriter = nameWriter;
         isBan = false;
     }
 
-    public Complaint(String headComplaint, String bodyComplaint, String CATEGORY, String nameWriter, String time) {
+    public Complaint(String headComplaint, String bodyComplaint,String bodyComplaint1, String CATEGORY, String nameWriter, String time) {
         this.headComplaint = headComplaint;
         this.bodyComplaint = bodyComplaint;
+        this.bodyComplaint1 = bodyComplaint1;
         this.CATEGORY = CATEGORY;
         this.nameWriter = nameWriter;
         this.time = time;
@@ -70,6 +73,7 @@ public class Complaint {
     public String getBodyComplaint() {
         return bodyComplaint;
     }
+
     public void setBodyComplaint(String bodyComplaint) {
         this.bodyComplaint = bodyComplaint;
     }
@@ -93,5 +97,13 @@ public class Complaint {
                 +'\'' +
                 ", CATEGORY='" + CATEGORY + '\'' +
                 '}';
+    }
+
+    public String getBodyComplaint1() {
+        return bodyComplaint1;
+    }
+
+    public void setBodyComplaint1(String bodyComplaint1) {
+        this.bodyComplaint1 = bodyComplaint1;
     }
 }
