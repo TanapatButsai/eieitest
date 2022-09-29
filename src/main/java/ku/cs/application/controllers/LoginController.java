@@ -91,9 +91,8 @@ public class LoginController {
                 }else {
                     try {
                         userList.recordTimeLogin(user);
-                        System.out.println(user.getLastTimeLoginToSecond());
                         dataSource.writeData(userList);
-                        FXRouter.goTo("home", user);
+                        FXRouter.goTo("home",user);
 
                     } catch (IOException e) {
                         System.err.println("ไปที่หน้า home");

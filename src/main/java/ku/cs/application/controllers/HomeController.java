@@ -14,8 +14,9 @@ public class HomeController {
     @FXML
     public void initialize(){
         user = (Users)FXRouter.getData();
+        System.out.println(user);
         userLabel.setText(user.getName());
-        System.out.println(user.toString());
+//        System.out.println(user.toString());
     }
     @FXML
     public void handleBackButton(ActionEvent actionEvent){
@@ -77,16 +78,25 @@ public class HomeController {
             e.printStackTrace();
         }
     }
+    @FXML
+    void handleTimeButton(ActionEvent event) {
+
+    }
 
     @FXML
-    public void handleGoToUserAccountScene(ActionEvent actionEvent){
-        try {
-            FXRouter.goTo("user_account",user);
+    void handleScoreButton(ActionEvent event) {
 
-        } catch (IOException e) {
-            System.err.println("ไปที่หน้า changepassword");
-            System.err.println("ให้ตรวจสอบการกำหนด route");
-            e.printStackTrace();
-        }
     }
+
+//    @FXML
+//    public void handleGoToUserAccountScene(ActionEvent actionEvent){
+//        try {
+//            FXRouter.goTo("user_account",user);
+//
+//        } catch (IOException e) {
+//            System.err.println("ไปที่หน้า changepassword");
+//            System.err.println("ให้ตรวจสอบการกำหนด route");
+//            e.printStackTrace();
+//        }
+//    }
 }
