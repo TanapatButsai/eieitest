@@ -11,6 +11,8 @@ import java.io.IOException;
 public class HomeController {
     private Users user;
     @FXML private Label userLabel;
+
+
     @FXML
     public void initialize(){
         user = (Users)FXRouter.getData();
