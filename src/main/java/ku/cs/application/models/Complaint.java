@@ -159,19 +159,7 @@ public class Complaint {
 
     @Override
     public String toString() {
-        return "Complaint{" +
-                "headComplaint='" + headComplaint + '\'' +
-                ", bodyComplaint='" + bodyComplaint + '\'' +
-                ", fixComplaint='" + fixComplaint + '\'' +
-                ", category='" + category + '\'' +
-                ", nameWriter='" + nameWriter + '\'' +
-                ", done=" + done +
-                ", inProgress=" + inProgress +
-                ", unmanaged=" + unmanaged +
-                ", rating=" + rating +
-                ", time='" + time + '\'' +
-                ", isBan=" + isBan +
-                '}';
+        return headComplaint;
     }
 
     public String getFixComplaint() {

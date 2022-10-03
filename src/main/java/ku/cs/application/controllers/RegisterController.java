@@ -137,7 +137,7 @@ public class RegisterController {
             usernameAlreadyCheck = false;
             return false;
         }
-            Users newUser = new Users(newUserFullName,newUserID,newUserUsername,newUserPasswordUsername,false,"0-0-0-0-0-0","data\\images\\profile\\2022-09-29_1664453890530.jpg");
+            Users newUser = new Users(newUserFullName,newUserID,newUserUsername,newUserPasswordUsername,false,"0-0-0-0-0-0","data\\images\\profile\\default.png");
             userList.addUser(newUser);
             dataSource.writeData(userList);
             usernameCanBeUse = false;

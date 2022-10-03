@@ -8,7 +8,7 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #D8D8D8#D8D8D8;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.UserAccountController">
    <children>
-      <ImageView fx:id="imageBackGroundUrl" fitHeight="642.0" fitWidth="484.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imageBackGroundUrl" fitHeight="642.0" fitWidth="484.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="logoku" fitHeight="338.0" fitWidth="425.0" layoutX="589.0" layoutY="-85.0" pickOnBounds="true" preserveRatio="true" />
       <Label fx:id="promptPassword" layoutX="627.0" layoutY="418.0" prefHeight="16.0" prefWidth="118.0" textFill="RED">
          <font>
@@ -25,30 +25,31 @@
             <Font size="11.0" />
          </font>
       </Label>
-      <Button layoutX="530.0" layoutY="538.0" mnemonicParsing="false" onAction="#handleGoToChangPassword" prefHeight="26.0" prefWidth="118.0" text="change password" />
+      <Button layoutX="499.0" layoutY="218.0" mnemonicParsing="false" onAction="#handleGoToChangPassword" prefHeight="26.0" prefWidth="118.0" text="change password" />
       <Button layoutX="499.0" layoutY="21.0" mnemonicParsing="false" onAction="#handleGoToHome" prefHeight="16.0" prefWidth="62.0" text="Back" />
-      <Button fx:id="updateInfoButton" layoutX="182.0" layoutY="253.0" mnemonicParsing="false" onAction="#handleUpdateButton" prefHeight="37.0" prefWidth="118.0" style="-fx-background-color: #FA5858;" text="Upload Profile" textFill="#5882fa">
+      <Button fx:id="updateInfoButton" layoutX="182.0" layoutY="253.0" mnemonicParsing="false" onAction="#handleUpdateButton" prefHeight="38.0" prefWidth="130.0" style="-fx-background-color: #FA5858;" text="Upload Profile" textFill="#a3bcff">
          <font>
-            <Font name="Consolas Bold" size="13.0" />
+            <Font name="Consolas Bold" size="14.0" />
          </font></Button>
       <ImageView fx:id="userImage" fitHeight="185.0" fitWidth="247.0" layoutX="119.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true" />
-      <Label layoutX="127.0" layoutY="371.0" text="Username" textFill="#999999" />
-      <Label layoutX="127.0" layoutY="331.0" text="Name" textFill="#999999" />
-      <Label layoutX="127.0" layoutY="409.0" text="Student ID" textFill="#999999" />
-      <Label fx:id="nameLabel" layoutX="198.0" layoutY="331.0" prefHeight="18.0" prefWidth="130.0" textFill="WHITE">
+      <Label layoutX="81.0" layoutY="370.0" text="Username" textFill="#999999" />
+      <Label layoutX="81.0" layoutY="330.0" text="Name" textFill="#999999" />
+      <Label layoutX="81.0" layoutY="408.0" text="Student ID" textFill="#999999" />
+      <Label fx:id="nameLabel" layoutX="152.0" layoutY="330.0" prefHeight="18.0" prefWidth="130.0" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="16.0" />
+            <Font name="Calibri Bold" size="16.0" />
          </font>
       </Label>
-      <Label fx:id="idLabel" layoutX="198.0" layoutY="408.0" prefHeight="18.0" prefWidth="130.0" textFill="WHITE">
+      <Label fx:id="idLabel" layoutX="152.0" layoutY="407.0" prefHeight="18.0" prefWidth="130.0" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="16.0" />
+            <Font name="Calibri Bold" size="16.0" />
          </font>
       </Label>
-      <Label fx:id="usernameLabel" layoutX="198.0" layoutY="370.0" prefHeight="18.0" prefWidth="130.0" textFill="WHITE">
+      <Label fx:id="usernameLabel" layoutX="152.0" layoutY="369.0" prefHeight="18.0" prefWidth="130.0" textFill="WHITE">
          <font>
-            <Font size="16.0" />
+            <Font name="Calibri Bold" size="16.0" />
          </font>
       </Label>
+      <Button layoutX="499.0" layoutY="193.0" mnemonicParsing="false" onAction="#handleGoToUserComplaint" prefHeight="26.0" prefWidth="118.0" text="view complaint" />
    </children>
 </AnchorPane>
