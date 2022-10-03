@@ -25,6 +25,7 @@ public class HomeController {
         userLabel.setText(user.getName());
         dataSource = new ComplaintListDataSource("data","complaint.csv");
         complaintList = dataSource.readData();
+        showListView();
     }
     private void showListView() {
        complaintListView.getItems().setAll(complaintList.getAllComplaint());
