@@ -11,6 +11,7 @@ import ku.cs.application.models.Users;
 import ku.cs.application.services.ComplaintListDataSource;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 public class HomeController {
     private Users user;
@@ -25,6 +26,8 @@ public class HomeController {
         userLabel.setText(user.getName());
         dataSource = new ComplaintListDataSource("data","complaint.csv");
         complaintList = dataSource.readData();
+//        System.out.println(System.getProperty("file.separator"));
+//        System.out.println(Arrays.toString(user.getUserImage().split("")));
         showListView();
     }
     private void showListView() {

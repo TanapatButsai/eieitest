@@ -28,6 +28,16 @@ public class ComplaintList {
 //        usersTemp.setLastTimeLogin(now.format(formatter));
 //        userList.remove(users);
 //        userList.add(usersTemp);
+
+    public ArrayList<Complaint> getUserComplaint(String username){
+        ArrayList<Complaint> complaintListTemp = new ArrayList<>();
+        for (Complaint complaint:complaintList){
+            if (complaint.getNameWriter().equals(username)){
+                complaintListTemp.add(complaint);
+            }
+        }
+        return complaintListTemp;
+    }
     public void add(Complaint complaint){
         complaintList.add(complaint);
     }

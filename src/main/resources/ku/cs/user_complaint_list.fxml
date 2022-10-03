@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #D8D8D8#D8D8D8;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.UserComplaintListController">
+    <children>
+        <ImageView fx:id="imageBackGroundUrl" fitHeight="642.0" fitWidth="484.0" pickOnBounds="true" preserveRatio="true" />
+        <ImageView fx:id="logoku" fitHeight="222.0" fitWidth="340.0" layoutX="582.0" layoutY="-46.0" pickOnBounds="true" preserveRatio="true" />
+        <ImageView fx:id="userImage" fitHeight="185.0" fitWidth="247.0" layoutX="119.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true" />
+        <Label layoutX="518.0" layoutY="195.0" text="หมวดหมู่" textFill="#999999" />
+        <Label layoutX="519.0" layoutY="157.0" prefHeight="18.0" prefWidth="38.0" text="หัวเรื่อง" textFill="#999999" />
+        <Label layoutX="519.0" layoutY="229.0" text="เนื้อหา" textFill="#999999" />
+      <ListView fx:id="complaintListView" layoutX="119.0" layoutY="99.0" prefHeight="379.0" prefWidth="300.0" style="-fx-background-color: #E6E6E6;" />
+      <Label layoutX="515.0" layoutY="382.0" text="Specifics" textFill="#999999" />
+      <Label fx:id="bodyLabel" alignment="TOP_LEFT" contentDisplay="TOP" layoutX="582.0" layoutY="247.0" lineSpacing="1.0" prefHeight="120.0" prefWidth="222.0" wrapText="true" />
+      <Label fx:id="specificsLabel" alignment="TOP_LEFT" contentDisplay="TOP" layoutX="582.0" layoutY="400.0" lineSpacing="1.0" prefHeight="94.0" prefWidth="222.0" wrapText="true" />
+      <Label fx:id="headLabel" layoutX="582.0" layoutY="158.0" prefHeight="18.0" prefWidth="180.0" />
+      <Label fx:id="categoryLabel" layoutX="582.0" layoutY="195.0" prefHeight="18.0" prefWidth="180.0" />
+      <Button layoutX="119.0" layoutY="40.0" mnemonicParsing="false" onAction="#handleGoToHome" text="Back" />
+    </children>
+</AnchorPane>
