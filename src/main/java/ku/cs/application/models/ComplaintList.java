@@ -48,4 +48,8 @@ public class ComplaintList {
                 "complaintList=" + complaintList +
                 '}';
     }
+    public void vote(Complaint complaint){
+        complaintList.remove(complaint);
+        complaint.setRating(complaint.getRating()+1);
+    }
 }

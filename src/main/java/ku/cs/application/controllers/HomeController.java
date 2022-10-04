@@ -125,7 +125,6 @@ public class HomeController {
             @Override
             public void changed(ObservableValue<? extends Complaint> observableValue, Complaint complaint, Complaint t1) {
                 System.out.println(t1 + " is selected");
-
             }
         });
     }
