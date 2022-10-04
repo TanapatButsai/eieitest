@@ -5,7 +5,7 @@ import ku.cs.application.models.ComplaintList;
 
 import java.io.*;
 
-public class ComplaintListDataSource implements DataSource<ComplaintList>{ //implement datasource มาใข้
+public class ComplaintListDataSource implements DataSource<ComplaintList>{
     private String directoryName;
     private String fileName;
     private ComplaintList complaintList;

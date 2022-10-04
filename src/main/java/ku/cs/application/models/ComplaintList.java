@@ -9,6 +9,7 @@ public class ComplaintList {
   //  private ArrayList<Users> userList;
 
     public ComplaintList() {
+        // create instance of arraylist
         complaintList = new ArrayList<>();
 
     }
@@ -47,5 +48,18 @@ public class ComplaintList {
         return "ComplaintList{" +
                 "complaintList=" + complaintList +
                 '}';
+    }
+    public Complaint findComlaint(Complaint complaint) {
+        for (Complaint complaintTemp : complaintList) {
+            if (complaint.equals(complaintTemp)) {
+                return complaintTemp;
+            }
+        }return null;
+    }
+    public void vote(Complaint complaint){
+        Complaint complaintTemp = findComlaint(complaint);
+        if (!(complaint == null)){
+            complaintTemp.setRating(complaintTemp.getRating()+1);
+        }
     }
 }

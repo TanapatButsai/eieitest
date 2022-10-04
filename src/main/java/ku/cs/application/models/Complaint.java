@@ -4,6 +4,7 @@ import java.time.format.DateTimeFormatter;
 public class Complaint {
     private String headComplaint; //หัวเรื่อง
     private String bodyComplaint; //เนื้อหาที่จะร้องเรียน
+
     private String fixComplaint;
     private String category;
     private String nameWriter;
@@ -11,6 +12,14 @@ public class Complaint {
     private boolean inProgress;
     private boolean unmanaged;
     private int rating;
+
+    //private String detailComplaint; //
+    private String bodyComplaint1; //ข้อมูลที่ต้องการในหมวดหมู่นั้น
+//    private String category; //หมวดหมู่
+//    private String nameWriter;
+
+  //  private int rating;
+
     private String time;
     private boolean isBan;
 
@@ -37,7 +46,7 @@ public class Complaint {
         this.category = category;
         this.nameWriter = nameWriter;
         isBan = false;
-    }
+    } //construct ทั่วไป
 
     public Complaint(String headComplaint, String bodyComplaint, String fixComplaint, String category, String nameWriter, String time) {
         this.headComplaint = headComplaint;
@@ -47,7 +56,7 @@ public class Complaint {
         this.nameWriter = nameWriter;
         this.time = time;
         isBan = false;
-    }
+    } // construct ใช้กับ csv
 
     public boolean isDone() {
         return done;
@@ -118,7 +127,7 @@ public class Complaint {
         this.category = category;
     }
 
-    public void donBan(){
+     public void donBan(){ // func ban user
         isBan = true;
     }
     public String getHeadComplaint() {
