@@ -14,6 +14,10 @@ public class ComplaintListDataSource implements DataSource<ComplaintList>{
         this.fileName = fileName;
         checkFileIsExisted();
     }
+    public ComplaintListDataSource() {
+        ComplaintList ComplaintList = new ComplaintList();
+        readData();
+    }
 
     private void checkFileIsExisted() {
         File file = new File(directoryName);
@@ -31,10 +35,10 @@ public class ComplaintListDataSource implements DataSource<ComplaintList>{
         }
     }
 
-    public ComplaintListDataSource() {
-        ComplaintList ComplaintList = new ComplaintList();
-        readData();
-    }
+//    public ComplaintListDataSource() {
+//        ComplaintList ComplaintList = new ComplaintList();
+//        readData();
+//    }
     @Override
     public ComplaintList readData() {
         ComplaintList list = new ComplaintList();

@@ -21,6 +21,8 @@ public class HomeController {
     @FXML private Label userLabel;
     private ComplaintListDataSource dataSource;
     private ComplaintList complaintList;
+    private Complaint complaint;
+
     @FXML
     public void initialize(){
         user = (Users)FXRouter.getData();
@@ -31,6 +33,7 @@ public class HomeController {
 //        System.out.println(System.getProperty("file.separator"));
 //        System.out.println(Arrays.toString(user.getUserImage().split("")));
         showListView();
+        handleSelectListView();
     }
     private void showListView() {
        complaintListView.getItems().setAll(complaintList.getAllComplaint());
@@ -88,13 +91,7 @@ public class HomeController {
     }
     @FXML
     public void handleStatusButton(ActionEvent actionEvent){
-        try {
-            com.github.saacsos.FXRouter.goTo("enrollcomplaint",user);
-        } catch (IOException e) {
-            System.err.println("ไปที่หน้า ร้องเรียนการลงทะเบียนเรียน ไม่ได้");
-            System.err.println("ให้ตรวจสอบการกำหนด route");
-            e.printStackTrace();
-        }
+        
     }
     @FXML
     void handleShowListView(){
@@ -107,6 +104,11 @@ public class HomeController {
     @FXML
     void handleScoreButton(ActionEvent event) {
 
+    }
+    @FXML
+    public void handleVoteButton(ActionEvent actionEvent){
+        complaintList.vote(complaint);
+        dataSource.writeData(complaintList);
     }
 
     @FXML
@@ -125,8 +127,13 @@ public class HomeController {
             @Override
             public void changed(ObservableValue<? extends Complaint> observableValue, Complaint complaint, Complaint t1) {
                 System.out.println(t1 + " is selected");
+                selectComplaint(t1);
             }
         });
     }
-
+    private void selectComplaint(Complaint complaint){
+        this.complaint = complaint;
+    }
+//    complaintList.vote(complaint);
+//    dataSource.writeData(complaintList);
 }
