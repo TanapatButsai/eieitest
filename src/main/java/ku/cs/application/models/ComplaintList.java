@@ -3,6 +3,8 @@ package ku.cs.application.models;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 
 public class ComplaintList {
     private ArrayList<Complaint> complaintList;
@@ -39,16 +41,12 @@ public class ComplaintList {
         }
         return complaintListTemp;
     }
-    public void add(Complaint complaint){
-        complaintList.add(complaint);
+    public void add(Complaint complaint){complaintList.add(complaint);}
+    public ArrayList<Complaint> getUserComplaintSortByRating(){
+        Collections.sort(complaintList);
+        return complaintList;
     }
 
-    @Override
-    public String toString() {
-        return "ComplaintList{" +
-                "complaintList=" + complaintList +
-                '}';
-    }
     public Complaint findComlaint(Complaint complaint) {
         for (Complaint complaintTemp : complaintList) {
             if (complaint.equals(complaintTemp)) {
@@ -61,5 +59,11 @@ public class ComplaintList {
         if (!(complaint == null)){
             complaintTemp.setRating(complaintTemp.getRating()+1);
         }
+    }
+    @Override
+    public String toString() {
+        return "ComplaintList{" +
+                "complaintList=" + complaintList +
+                '}';
     }
 }

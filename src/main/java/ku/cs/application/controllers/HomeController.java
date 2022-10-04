@@ -9,10 +9,12 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import ku.cs.application.models.Complaint;
 import ku.cs.application.models.ComplaintList;
+import ku.cs.application.models.UserList;
 import ku.cs.application.models.Users;
 import ku.cs.application.services.ComplaintListDataSource;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class HomeController {
@@ -35,10 +37,7 @@ public class HomeController {
         showListView();
         handleSelectListView();
     }
-    private void showListView() {
-       complaintListView.getItems().setAll(complaintList.getAllComplaint());
-        complaintListView.refresh();
-    }
+
     @FXML
     public void handleBackButton(ActionEvent actionEvent){
         try {
@@ -103,14 +102,19 @@ public class HomeController {
 
     @FXML
     void handleScoreButton(ActionEvent event) {
-
+        ComplaintList complaintListTemp = new ComplaintList();
+        complaintListView.getItems().setAll(complaintListTemp.getUserComplaintSortByRating());
+        complaintListView.refresh();
     }
     @FXML
     public void handleVoteButton(ActionEvent actionEvent){
         complaintList.vote(complaint);
         dataSource.writeData(complaintList);
     }
-
+    private void showListView() {
+        complaintListView.getItems().setAll(complaintList.getAllComplaint());
+        complaintListView.refresh();
+    }
     @FXML
     public void handleGoToUserAccountScene(ActionEvent actionEvent){
         try {

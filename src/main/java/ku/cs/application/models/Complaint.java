@@ -1,7 +1,7 @@
 package ku.cs.application.models;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-public class Complaint {
+public class Complaint implements Comparable<Complaint> {
     private String headComplaint; //หัวเรื่อง
     private String bodyComplaint; //เนื้อหาที่จะร้องเรียน
 
@@ -23,8 +23,8 @@ public class Complaint {
     private String time;
     private boolean isBan;
 
-    public Complaint(String headComplaint, String bodyComplaint, String fixComplaint, String category, String nameWriter, String time,
-                     boolean done, boolean inProgress, boolean unmanaged, int rating, boolean isBan) {
+    public Complaint(String headComplaint, String bodyComplaint, String fixComplaint, String category, String nameWriter,
+                     String time, boolean done, boolean inProgress, boolean unmanaged, int rating, boolean isBan) {
         this.headComplaint = headComplaint;
         this.bodyComplaint = bodyComplaint;
         this.fixComplaint = fixComplaint;
@@ -36,7 +36,7 @@ public class Complaint {
         this.rating = rating;
         this.time = time;
         this.isBan = isBan;
-    }
+    }//CONSTRUCTOR FOR READ,WRITE DATA
 
     public Complaint(String headComplaint, String bodyComplaint, String fixComplaint,
                      String category, String nameWriter) {
@@ -47,7 +47,6 @@ public class Complaint {
         this.nameWriter = nameWriter;
         isBan = false;
     } //construct ทั่วไป
-
     public Complaint(String headComplaint, String bodyComplaint, String fixComplaint, String category, String nameWriter, String time) {
         this.headComplaint = headComplaint;
         this.bodyComplaint = bodyComplaint;
@@ -56,7 +55,7 @@ public class Complaint {
         this.nameWriter = nameWriter;
         this.time = time;
         isBan = false;
-    } // construct ใช้กับ csv
+    }
 
     public boolean isDone() {
         return done;
@@ -177,5 +176,10 @@ public class Complaint {
 
     public void setFixComplaint(String fixComplaint) {
         this.fixComplaint = fixComplaint;
+    }
+
+    @Override
+    public int compareTo(Complaint o) {
+        return Integer.compare(rating,o.getRating());
     }
 }
