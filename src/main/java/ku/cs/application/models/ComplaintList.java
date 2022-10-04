@@ -1,10 +1,8 @@
 package ku.cs.application.models;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class ComplaintList {
     private ArrayList<Complaint> complaintList;
@@ -41,11 +39,40 @@ public class ComplaintList {
         }
         return complaintListTemp;
     }
-    public void add(Complaint complaint){complaintList.add(complaint);}
-    public ArrayList<Complaint> getUserComplaintSortByRating(){
-        Collections.sort(complaintList);
-        return complaintList;
+    public ArrayList<Complaint> getAllComplaintSortByRating(){
+        ArrayList<Complaint> temp = new ArrayList<>(complaintList);
+        Collections.sort(temp);
+        return temp;
     }
+
+    public ArrayList<Complaint> getAllComplaintSortByStatus(){
+        ArrayList<Complaint> temp = new ArrayList<>(complaintList);
+        Collections.sort(temp, new Comparator<Complaint>() {
+            @Override
+            public int compare(Complaint o1, Complaint o2) {
+                int x = 0;
+                int y = 0;
+                if (o1.isUnmanaged()){
+                    x = 3;
+                } else if (o1.isInProgress()) {
+                    x = 2;
+                }else if(o1.isDone()){
+                    x = 1;
+                }
+
+                if (o2.isUnmanaged()){
+                    y = 3;
+                } else if (o2.isInProgress()) {
+                    y = 2;
+                }else if(o2.isDone()){
+                    y = 1;
+                }
+                return Integer.compare(x,y);
+            }
+        });
+        return temp;
+    }
+    public void add(Complaint complaint){complaintList.add(complaint);}
 
     public Complaint findComlaint(Complaint complaint) {
         for (Complaint complaintTemp : complaintList) {

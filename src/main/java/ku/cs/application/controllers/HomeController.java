@@ -9,13 +9,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import ku.cs.application.models.Complaint;
 import ku.cs.application.models.ComplaintList;
-import ku.cs.application.models.UserList;
 import ku.cs.application.models.Users;
 import ku.cs.application.services.ComplaintListDataSource;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
 
 public class HomeController {
     private Users user;
@@ -90,7 +87,8 @@ public class HomeController {
     }
     @FXML
     public void handleStatusButton(ActionEvent actionEvent){
-        
+        complaintListView.getItems().setAll(complaintList.getAllComplaintSortByStatus());
+        complaintListView.refresh();
     }
     @FXML
     void handleShowListView(){
@@ -102,8 +100,7 @@ public class HomeController {
 
     @FXML
     void handleScoreButton(ActionEvent event) {
-        ComplaintList complaintListTemp = new ComplaintList();
-        complaintListView.getItems().setAll(complaintListTemp.getUserComplaintSortByRating());
+        complaintListView.getItems().setAll(complaintList.getAllComplaintSortByRating());
         complaintListView.refresh();
     }
     @FXML
@@ -119,7 +116,6 @@ public class HomeController {
     public void handleGoToUserAccountScene(ActionEvent actionEvent){
         try {
             FXRouter.goTo("user_account",user);
-
         } catch (IOException e) {
             System.err.println("ไปที่หน้า changepassword");
             System.err.println("ให้ตรวจสอบการกำหนด route");
