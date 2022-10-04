@@ -1,5 +1,7 @@
 package ku.cs.application.controllers;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import com.github.saacsos.FXRouter;
@@ -118,4 +120,14 @@ public class HomeController {
             e.printStackTrace();
         }
     }
+    private void handleSelectListView(){
+        complaintListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Complaint>() {
+            @Override
+            public void changed(ObservableValue<? extends Complaint> observableValue, Complaint complaint, Complaint t1) {
+                System.out.println(t1 + " is selected");
+
+            }
+        });
+    }
+
 }

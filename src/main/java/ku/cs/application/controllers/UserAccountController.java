@@ -90,7 +90,7 @@ public class UserAccountController {
                 Path target = FileSystems.getDefault().getPath(
                         destDir.getAbsolutePath()+System.getProperty("file.separator")+filename);
                 Files.copy(file.toPath(), target, StandardCopyOption.REPLACE_EXISTING );
-                //Delete old picture
+                //Delete previous picture
                 if (!user.getUserImage().equals("data" + File.separator + "images" + File.separator
                         + "profile" + File.separator + "default.png")){
                     File deleteDestDir = new File("");
