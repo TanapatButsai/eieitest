@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.CorruptComplaintController">
+   <children>
+      <Label layoutY="-2.0" prefHeight="63.0" prefWidth="801.0" style="-fx-background-color: #2FB16E #2FB16E;" text="                                                     Complaint  System, Kasetsart University" textFill="WHITE">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="kukuku" fitHeight="565.0" fitWidth="332.0" layoutX="-1.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="61.0" layoutY="108.0" prefHeight="26.0" prefWidth="234.0" style="-fx-background-color: #ffffff;" text="        หลักเกณฑ์การรับเรื่องร้องเรียน" textFill="#0a0000" />
+      <Label layoutX="61.0" layoutY="183.0" prefHeight="20.0" prefWidth="191.0" style="-fx-background-color: #ffffff;" text="1. ใช้ถ้อยคำหรือข้อความที่สุภาพ" textFill="#0a0000" />
+      <Label layoutX="61.0" layoutY="225.0" prefHeight="20.0" prefWidth="234.0" style="-fx-background-color: #ffffff;" text=" 2. ข้อร้องเรียนต้องเป็นเรื่องจริงที่มีมูลเหตุ " textFill="#0a0000" />
+      <Label layoutX="61.0" layoutY="245.0" prefHeight="26.0" prefWidth="234.0" style="-fx-background-color: #ffffff;" text="มิได้หวังสร้างกระแสหรือสร้างข่าวที่เสียหาย" textFill="#0a0000" />
+      <Label layoutX="61.0" layoutY="295.0" prefHeight="20.0" prefWidth="257.0" style="-fx-background-color: #ffffff;" text="3. ข้อร้องเรียนที่มีข้อมูลไม่ครบถ้วน ไม่เพียงพอ " textFill="#0a0000" />
+      <Label layoutX="61.0" layoutY="315.0" prefHeight="20.0" prefWidth="253.0" style="-fx-background-color: #ffffff;" text="หรือไม่สามารถหาข้อมูลเพิ่มได้ในการตรวจ" textFill="#0a0000" />
+      <TextField fx:id="headTextField" layoutX="405.0" layoutY="139.0" prefHeight="26.0" prefWidth="355.0" />
+      <TextArea fx:id="bodyTextArea" layoutX="405.0" layoutY="235.0" prefHeight="95.0" prefWidth="365.0" />
+      <Label layoutX="401.0" layoutY="101.0" text="หัวเรื่อง">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="402.0" layoutY="193.0" text="รายละเอียดในการร้องเรียน">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="401.0" layoutY="374.0" text="ข้อมูลที่ต้องการในหมวดหมู่เรื่องร้องเรียนนั้น">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="bodyTextArea1" layoutX="400.0" layoutY="412.0" prefHeight="95.0" prefWidth="365.0" />
+      <Button layoutX="567.0" layoutY="558.0" mnemonicParsing="false" onAction="#handleBackButton" text="Back" />
+      <Button layoutX="543.0" layoutY="526.0" mnemonicParsing="false" onAction="#handlePushComplaint" text="ส่งคำร้องเรียน" />
+   </children>
+</AnchorPane>
