@@ -17,10 +17,7 @@ import ku.cs.application.services.UserListDataSource;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.FileSystems;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.StandardCopyOption;
+import java.nio.file.*;
 import java.time.LocalDate;
 
 public class UserAccountController {
@@ -76,21 +73,31 @@ public class UserAccountController {
         fileChooser.setInitialDirectory(new File(System.getProperty("user.dir")));
         fileChooser.getExtensionFilters().add
                 (new FileChooser.ExtensionFilter("images PNG JPG", "*.png", "*.jpg", "*.jpeg"));
-
         Node source = (Node) actionEvent.getSource();
         File file = fileChooser.showOpenDialog(source.getScene().getWindow());
         if (file != null){
             try {
                 // CREATE FOLDER IF NOT EXIST
                 File destDir = new File("data/images/profile/");
+
                 if (!destDir.exists()) destDir.mkdirs();
                 // RENAME FILE
                 String[] fileSplit = file.getName().split("\\.");
+
                 String filename = LocalDate.now() + "_"+System.currentTimeMillis() + "."
                         + fileSplit[fileSplit.length - 1];
+
                 Path target = FileSystems.getDefault().getPath(
                         destDir.getAbsolutePath()+System.getProperty("file.separator")+filename);
                 Files.copy(file.toPath(), target, StandardCopyOption.REPLACE_EXISTING );
+                //Delete old picture
+                if (!user.getUserImage().equals("data" + File.separator + "images" + File.separator
+                        + "profile" + File.separator + "default.png")){
+                    File deleteDestDir = new File("");
+                    Path pathDelete = FileSystems.getDefault().getPath(deleteDestDir.getAbsolutePath()
+                            +System.getProperty("file.separator")+user.getUserImage());
+                    Files.delete(pathDelete);
+                }
                 // COPY WITH FLAG REPLACE FILE IF FILE IS EXIST
                 userImage.setImage(new Image(target.toUri().toString()));
                 userList.setImageStudent(user.getUsername(),destDir + File.separator + filename);
@@ -100,6 +107,7 @@ public class UserAccountController {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+
             showStudentImage();
         }
     }
@@ -113,6 +121,13 @@ public class UserAccountController {
 
         if (user.getUserImage() != null){
             userImage.setImage(new Image("file:"+user.getUserImage()));
+        }
+    }
+    @FXML void handleGoToUserComplaint(){
+        try {
+            FXRouter.goTo("user_complaint_list",user);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 }

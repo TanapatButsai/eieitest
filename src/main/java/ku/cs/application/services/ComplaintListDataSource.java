@@ -54,10 +54,19 @@ public class ComplaintListDataSource implements DataSource<ComplaintList>{ //imp
             String line = "";
             while ((line = buffer.readLine()) != null) {
                 String[] data = line.split(",");
-                Complaint complaint = new Complaint(data[0].trim(), data[1].trim(), data[2].trim()
-                        , data[3].trim()
-                        , data[4].trim()
-                        , data[5].trim());
+                String headComplaint = data[0].trim();
+                String bodyComplaint = data[1].trim();
+                String fixComplaint = data[2].trim();
+                String category = data[3].trim();
+                String nameWriter = data[4].trim();
+                String time = data[5].trim();
+                boolean done = Boolean.parseBoolean(data[6].trim());
+                boolean inProgress = Boolean.parseBoolean(data[7].trim());
+                boolean unmanaged = Boolean.parseBoolean(data[8].trim());
+                int rating = Integer.parseInt(data[9].trim());
+                boolean isBan = Boolean.parseBoolean(data[10].trim());
+                Complaint complaint = new Complaint(headComplaint,bodyComplaint,fixComplaint,category,nameWriter
+                        ,time,done,inProgress,unmanaged,rating,isBan);
                 list.add(complaint);
             }
         } catch (FileNotFoundException e) {
@@ -90,10 +99,16 @@ public class ComplaintListDataSource implements DataSource<ComplaintList>{ //imp
             for (Complaint complaint : complaintList.getAllComplaint()) {
                 String line = complaint.getHeadComplaint() + ","
                         + complaint.getBodyComplaint() + ","
-                        + complaint.getBodyComplaint1() + ","
+                        + complaint.getFixComplaint() + ","
                         + complaint.getCategory()+","
                         + complaint.getNameWriter()+","
-                        + complaint.getTime();
+                        + complaint.getTime()+","
+                        + complaint.isDone()+","
+                        + complaint.isInProgress()+","
+                        + complaint.isUnmanaged()+","
+                        + complaint.getRating()+","
+                        + complaint.isBan();
+
 
                 buffer.append(line);
                 buffer.newLine();

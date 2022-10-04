@@ -4,32 +4,89 @@ import java.time.format.DateTimeFormatter;
 public class Complaint {
     private String headComplaint; //หัวเรื่อง
     private String bodyComplaint; //เนื้อหาที่จะร้องเรียน
-    //private String detailComplaint; //
-    private String bodyComplaint1;
+    private String fixComplaint;
     private String category;
     private String nameWriter;
-
+    private boolean done;
+    private boolean inProgress;
+    private boolean unmanaged;
     private int rating;
     private String time;
     private boolean isBan;
-    public Complaint(String headComplaint, String bodyComplaint, String bodyComplaint1,
+
+    public Complaint(String headComplaint, String bodyComplaint, String fixComplaint, String category, String nameWriter, String time,
+                     boolean done, boolean inProgress, boolean unmanaged, int rating, boolean isBan) {
+        this.headComplaint = headComplaint;
+        this.bodyComplaint = bodyComplaint;
+        this.fixComplaint = fixComplaint;
+        this.category = category;
+        this.nameWriter = nameWriter;
+        this.done = done;
+        this.inProgress = inProgress;
+        this.unmanaged = unmanaged;
+        this.rating = rating;
+        this.time = time;
+        this.isBan = isBan;
+    }
+
+    public Complaint(String headComplaint, String bodyComplaint, String fixComplaint,
                      String category, String nameWriter) {
         this.headComplaint = headComplaint;
         this.bodyComplaint = bodyComplaint;
-        this.bodyComplaint1 = bodyComplaint1;
+        this.fixComplaint = fixComplaint;
         this.category = category;
         this.nameWriter = nameWriter;
         isBan = false;
     }
 
-    public Complaint(String headComplaint, String bodyComplaint, String bodyComplaint1, String category, String nameWriter, String time) {
+    public Complaint(String headComplaint, String bodyComplaint, String fixComplaint, String category, String nameWriter, String time) {
         this.headComplaint = headComplaint;
         this.bodyComplaint = bodyComplaint;
-        this.bodyComplaint1 = bodyComplaint1;
+        this.fixComplaint = fixComplaint;
         this.category = category;
         this.nameWriter = nameWriter;
         this.time = time;
         isBan = false;
+    }
+
+    public boolean isDone() {
+        return done;
+    }
+
+    public void setDone(boolean done) {
+        this.done = done;
+    }
+
+    public boolean isInProgress() {
+        return inProgress;
+    }
+
+    public void setInProgress(boolean inProgress) {
+        this.inProgress = inProgress;
+    }
+
+    public boolean isUnmanaged() {
+        return unmanaged;
+    }
+
+    public void setUnmanaged(boolean unmanaged) {
+        this.unmanaged = unmanaged;
+    }
+
+    public int getRating() {
+        return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
+    }
+
+    public boolean isBan() {
+        return isBan;
+    }
+
+    public void setBan(boolean ban) {
+        isBan = ban;
     }
 
     public void recordTime(){
@@ -102,19 +159,14 @@ public class Complaint {
 
     @Override
     public String toString() {
-        return "Complaint{" +
-                "headComplaint='" + headComplaint + '\'' +
-                ", bodyComplaint='" + bodyComplaint + '\'' +
-                ", bodyComplaint1='" + bodyComplaint1 + '\'' +
-                ", category='" + category + '\'' +
-                '}';
+        return headComplaint;
     }
 
-    public String getBodyComplaint1() {
-        return bodyComplaint1;
+    public String getFixComplaint() {
+        return fixComplaint;
     }
 
-    public void setBodyComplaint1(String bodyComplaint1) {
-        this.bodyComplaint1 = bodyComplaint1;
+    public void setFixComplaint(String fixComplaint) {
+        this.fixComplaint = fixComplaint;
     }
 }

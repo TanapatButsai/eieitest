@@ -13,9 +13,14 @@
       -ทำหน้า Forgot password (นภกมล ปินตาพรหม)
       -ทำหน้า Credit (พีรพัฒน์ ภักดีพงษ์)
       
-## การส่งงานเพื่อนําเสนอความก้าวหน้า
 # ความก้าวหน้าของระบบครั้งที่ 2 ( 9 ก.ย. 17:00 น.)
       -ทำส่วน model user, userList, DataSource,ทำระบบ login,sign up, changepassword (ธนาภัทร บุตรใส)
       -ทำหน้าส่วน officer แก้ไขส่วน sign upเล็กน้อย (ธนภัทร ตันเจริญ)
       -ทำส่วนuser (หน้าร้องเรียน), ขึ้นโครง model complaint (นภกมล ปินตาพรหม)
       -ทำส่วน admin, แก้ไขcredit (พีรพัฒน์ ภักดีพงษ์)
+      
+# ความก้าวหน้าของระบบครั้งที่ 3 ( 30 ก.ย. 17:00 น.)
+      -ทำส่วน Model user, user account, ฟังชั่น login time, user upload profile, ทำให้complaint-user-adminทำงานร่วมกัน, ดูภาพรวมของโปรแกรม (ธนาภัทร บุตรใส)
+      -ทำให้ officer รับข้อมูลที่ตรงกับหน้าที่ของตัวเองได้โดยแสดงในlistview,สร้างoffficerIDเป็นUserของofficerและแบ่งหน้าที่ของofficer(ธนภัทร ตันเจริญ)
+      -ทำให้Userเพิ่มคำร้องเรียนในหน้า Normal/ Enroll/Place/ TeacherComplaintและบันทึกข้อมูล,ComplaintListDataSource,สร้างshowlistview ให้userเห็นคำร้องเรียนทั้งหมด (นภกมล ปินตาพรหม)
+      -ทำส่วน Admin ต่อจากครั้งก่อน, ทำviewสำหรับทำหน้าอื่นๆต่อ,ทำหน้าให้Adminดูเวลาผู้ใช้ทั้งหมดได้และเรียงตามเวลา (พีรพัฒน์ ภักดีพงษ์)
