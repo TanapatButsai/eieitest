@@ -91,13 +91,7 @@ public class HomeController {
     }
     @FXML
     public void handleStatusButton(ActionEvent actionEvent){
-        try {
-            com.github.saacsos.FXRouter.goTo("enrollcomplaint",user);
-        } catch (IOException e) {
-            System.err.println("ไปที่หน้า ร้องเรียนการลงทะเบียนเรียน ไม่ได้");
-            System.err.println("ให้ตรวจสอบการกำหนด route");
-            e.printStackTrace();
-        }
+        
     }
     @FXML
     void handleShowListView(){
@@ -113,13 +107,6 @@ public class HomeController {
     }
     @FXML
     public void handleVoteButton(ActionEvent actionEvent){
-        try {
-            com.github.saacsos.FXRouter.goTo("enrollcomplaint",user);
-        } catch (IOException e) {
-            System.err.println("ไปที่หน้า ร้องเรียนการลงทะเบียนเรียน ไม่ได้");
-            System.err.println("ให้ตรวจสอบการกำหนด route");
-            e.printStackTrace();
-        }
         complaintList.vote(complaint);
         dataSource.writeData(complaintList);
     }
