@@ -75,6 +75,13 @@ public class UserList{
                 "userList=" + userList +
                 '}';
     }
+
+    public void vote(String username){
+        Users user = findUser(username);
+        for (Users users:userList) {
+
+        }
+    }
 }
 
 

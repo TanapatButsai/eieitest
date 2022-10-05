@@ -13,7 +13,6 @@ import ku.cs.application.models.Users;
 import ku.cs.application.services.ComplaintListDataSource;
 
 import java.io.IOException;
-import java.util.Arrays;
 
 public class HomeController {
     private Users user;
@@ -35,10 +34,7 @@ public class HomeController {
         showListView();
         handleSelectListView();
     }
-    private void showListView() {
-       complaintListView.getItems().setAll(complaintList.getAllComplaint());
-        complaintListView.refresh();
-    }
+
     @FXML
     public void handleBackButton(ActionEvent actionEvent){
         try {
@@ -92,7 +88,7 @@ public class HomeController {
     @FXML
     public void handleCorruptComplaint(ActionEvent actionEvent){
         try {
-            com.github.saacsos.FXRouter.goTo("corruptcomplaint",user);
+            FXRouter.goTo("corruptcomplaint",user);
         } catch (IOException e) {
             System.err.println("ไปที่หน้า ร้องเรียนการลงทะเบียนเรียน ไม่ได้");
             System.err.println("ให้ตรวจสอบการกำหนด route");
@@ -102,7 +98,8 @@ public class HomeController {
 
     @FXML
     public void handleStatusButton(ActionEvent actionEvent){
-
+        complaintListView.getItems().setAll(complaintList.getAllComplaintSortByStatus());
+        complaintListView.refresh();
     }
     @FXML
     void handleShowListView(){
@@ -114,19 +111,22 @@ public class HomeController {
 
     @FXML
     void handleScoreButton(ActionEvent event) {
-
+        complaintListView.getItems().setAll(complaintList.getAllComplaintSortByRating());
+        complaintListView.refresh();
     }
     @FXML
     public void handleVoteButton(ActionEvent actionEvent){
         complaintList.vote(complaint);
         dataSource.writeData(complaintList);
     }
-
+    private void showListView() {
+        complaintListView.getItems().setAll(complaintList.getAllComplaint());
+        complaintListView.refresh();
+    }
     @FXML
     public void handleGoToUserAccountScene(ActionEvent actionEvent){
         try {
             FXRouter.goTo("user_account",user);
-
         } catch (IOException e) {
             System.err.println("ไปที่หน้า changepassword");
             System.err.println("ให้ตรวจสอบการกำหนด route");
@@ -142,8 +142,6 @@ public class HomeController {
             }
         });
     }
-
-
     private void selectComplaint(Complaint complaint){
         this.complaint = complaint;
     }

@@ -38,6 +38,7 @@ public class ProjectApplication extends Application {
         FXRouter.when("user_account",packageStr + "user_account.fxml");
         FXRouter.when("adminmanageban", packageStr + "admin_manage_ban.fxml");
         FXRouter.when("user_complaint_list",packageStr + "user_complaint_list.fxml");
+        FXRouter.when("corruptcomplaint",packageStr + "corruptcomplaint.fxml");
     }
 
     public static void main(String[] args) {
