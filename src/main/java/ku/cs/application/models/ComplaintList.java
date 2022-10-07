@@ -93,4 +93,15 @@ public class ComplaintList {
                 "complaintList=" + complaintList +
                 '}';
     }
+    public ArrayList<Complaint> getAllComplaintSortByTime(){
+        ArrayList<Complaint> temp = new ArrayList<>(complaintList);
+        temp.sort(new Comparator<Complaint>() {
+            @Override
+            public int compare(Complaint o1, Complaint o2) {
+                return Double.compare(o2.getTimeToSecond(), o1.getTimeToSecond());
+            }
+        });
+        return temp;
+    }
+
 }

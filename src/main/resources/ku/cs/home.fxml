@@ -63,11 +63,15 @@
                </font>
             </Button>
          </children></Pane>
-      <Button layoutX="281.0" layoutY="115.0" mnemonicParsing="false" onAction="#handleStatusButton" text="สถานะ" />
-      <Button layoutX="346.0" layoutY="116.0" mnemonicParsing="false" onAction="#handleTimeButton" text="เวลา" />
-      <Button layoutX="401.0" layoutY="116.0" mnemonicParsing="false" onAction="#handleScoreButton" text="คะแนน" />
-      <ListView fx:id="complaintListView" layoutX="281.0" layoutY="164.0" prefHeight="363.0" prefWidth="463.0" />
-      <Button layoutX="470.0" layoutY="117.0" mnemonicParsing="false" onAction="#handleShowListView" text="คำร้องเรียนทั้งหมด" />
+      <Button layoutX="268.0" layoutY="115.0" mnemonicParsing="false" onAction="#handleStatusButton" text="จัดการแล้ว" />
+      <Button layoutX="511.0" layoutY="115.0" mnemonicParsing="false" onAction="#handleTimeButton" text="เรื่องร้องเรียนล่าสุด" />
+      <Button layoutX="610.0" layoutY="115.0" mnemonicParsing="false" onAction="#handleScoreButton" text="คะแนนโหวต" />
+      <ListView fx:id="complaintListView" layoutX="281.0" layoutY="164.0" prefHeight="363.0" prefWidth="163.0" />
+      <Button layoutX="680.0" layoutY="115.0" mnemonicParsing="false" onAction="#handleShowListView" text="คำร้องเรียนทั้งหมด" />
       <Button layoutX="280.0" layoutY="548.0" mnemonicParsing="false" onAction="#handleVoteButton" text="โหวต" />
+      <ListView layoutX="443.0" layoutY="164.0" prefHeight="363.0" prefWidth="163.0" />
+      <ListView layoutX="606.0" layoutY="164.0" prefHeight="363.0" prefWidth="163.0" />
+      <Button layoutX="333.0" layoutY="115.0" mnemonicParsing="false" onAction="#handleStatusButton" text="อยู่ระหว่างดำเนินการ" />
+      <Button layoutX="443.0" layoutY="115.0" mnemonicParsing="false" onAction="#handleStatusButton" text="ยังไม่จัดการ" />
    </children>
 </AnchorPane>

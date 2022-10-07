@@ -182,4 +182,13 @@ public class Complaint implements Comparable<Complaint> {
     public int compareTo(Complaint o) {
         return Integer.compare(rating,o.getRating());
     }
+    public double getTimeToSecond(){
+        String[] timeArr = new String[time.length()];
+        timeArr = time.split("-");
+        return (Double.parseDouble(timeArr[0])*3600)+(Double.parseDouble(timeArr[1])*60)
+                +Double.parseDouble(timeArr[2])+(Double.parseDouble(timeArr[3])*86400)
+                +(Double.parseDouble(timeArr[4])*2629743);
+    }
+
+
 }

@@ -105,9 +105,8 @@ public class HomeController {
     void handleShowListView(){
         showListView();
     }
-    @FXML
-    void handleTimeButton(ActionEvent event) {
-    }
+
+
 
     @FXML
     void handleScoreButton(ActionEvent event) {
@@ -147,4 +146,9 @@ public class HomeController {
     }
 //    complaintList.vote(complaint);
 //    dataSource.writeData(complaintList);
+    @FXML
+    void handleTimeButton(ActionEvent event) {
+        complaintListView.getItems().setAll(complaintList.getAllComplaintSortByTime());
+        complaintListView.refresh();
+    }
 }
