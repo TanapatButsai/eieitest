@@ -1,6 +1,7 @@
 package ku.cs;
 
 import javafx.application.Application;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -39,6 +40,7 @@ public class ProjectApplication extends Application {
         FXRouter.when("user_account",packageStr + "user_account.fxml");
         FXRouter.when("adminmanageban", packageStr + "admin_manage_ban.fxml");
         FXRouter.when("user_complaint_list",packageStr + "user_complaint_list.fxml");
+        FXRouter.when("selected_complaint_detail",packageStr+"selected_complaint_detail.fxml");
     }
 
     public static void main(String[] args) {

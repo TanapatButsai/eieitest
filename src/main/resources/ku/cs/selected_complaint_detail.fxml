@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #D8D8D8;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.SelectedComplaintDetailController">
+   <children>
+      <Pane prefHeight="58.0" prefWidth="808.0" style="-fx-background-color: #2FB16E;">
+         <children>
+            <Button layoutX="734.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleBackButton" prefHeight="39.0" prefWidth="51.0" style="-fx-background-color: #BDBDBD;" text="ย้อนกลับ">
+               <font>
+                  <Font name="Cambria Bold" size="10.0" />
+               </font>
+            </Button>
+            <Label layoutX="240.0" layoutY="6.0" prefHeight="46.0" prefWidth="328.0" text="ระบบร้องเรียน, มหาวิทยาลัยเกษตรศาสตร์" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="userLabel" alignment="CENTER" layoutX="40.0" layoutY="17.0" prefHeight="26.0" prefWidth="133.0" style="-fx-background-color: #FE9A2E;" text="ddd">
+               <font>
+                  <Font name="Calibri Bold" size="11.0" />
+               </font></Label>
+         </children>
+      </Pane>
+      <Label fx:id="headLabel" alignment="CENTER" layoutX="198.0" layoutY="180.0" prefHeight="26.0" prefWidth="142.0" style="-fx-background-color: #E6E6E6;" text="head" wrapText="true" />
+      <Label fx:id="categoryLabel" alignment="CENTER" layoutX="198.0" layoutY="220.0" prefHeight="26.0" prefWidth="142.0" style="-fx-background-color: #E6E6E6;" text="categoryLabel" wrapText="true" />
+      <Label fx:id="bodyLabel" alignment="CENTER" layoutX="198.0" layoutY="270.0" prefHeight="138.0" prefWidth="411.0" style="-fx-background-color: #E6E6E6;" text="body" wrapText="true" />
+      <Label fx:id="spacificLabel" alignment="CENTER" layoutX="198.0" layoutY="430.0" prefHeight="114.0" prefWidth="411.0" style="-fx-background-color: #E6E6E6;" text="spacific" wrapText="true" />
+      <Label fx:id="ratingLabel" alignment="CENTER" layoutX="466.0" layoutY="180.0" prefHeight="26.0" prefWidth="142.0" style="-fx-background-color: #E6E6E6;" text="คะแนน" wrapText="true" />
+      <Label fx:id="timeLabel" alignment="CENTER" layoutX="466.0" layoutY="220.0" prefHeight="26.0" prefWidth="142.0" style="-fx-background-color: #E6E6E6;" text="เวลา" wrapText="true" />
+   </children>
+</AnchorPane>

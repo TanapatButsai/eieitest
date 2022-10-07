@@ -12,14 +12,6 @@ public class Complaint implements Comparable<Complaint> {
     private boolean inProgress;
     private boolean unmanaged;
     private int rating;
-
-    //private String detailComplaint; //
-    private String bodyComplaint1; //ข้อมูลที่ต้องการในหมวดหมู่นั้น
-//    private String category; //หมวดหมู่
-//    private String nameWriter;
-
-  //  private int rating;
-
     private String time;
     private boolean isBan;
 
@@ -167,9 +159,8 @@ public class Complaint implements Comparable<Complaint> {
 
     @Override
     public String toString() {
-        return headComplaint;
+        return headComplaint +" "+time +" "+ rating;
     }
-
     public String getFixComplaint() {
         return fixComplaint;
     }

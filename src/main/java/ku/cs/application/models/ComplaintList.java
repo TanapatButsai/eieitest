@@ -21,7 +21,33 @@ public class ComplaintList {
     public ArrayList<Complaint> getAllComplaint(){
         return complaintList;
     }
-
+    public ArrayList<Complaint> getDoneComplaint(){
+        ArrayList<Complaint> complaintListTemp = new ArrayList<>();
+        for (Complaint complaint:complaintList){
+            if (complaint.isDone()){
+                complaintListTemp.add(complaint);
+            }
+        }
+        return complaintListTemp;
+    }
+    public ArrayList<Complaint> getInProgressComplaint(){
+        ArrayList<Complaint> complaintListTemp = new ArrayList<>();
+        for (Complaint complaint:complaintList){
+            if (complaint.isInProgress()){
+                complaintListTemp.add(complaint);
+            }
+        }
+        return complaintListTemp;
+    }
+    public ArrayList<Complaint> getUnManageComplain(){
+        ArrayList<Complaint> complaintListTemp = new ArrayList<>();
+        for (Complaint complaint:complaintList){
+            if (complaint.isUnmanaged()){
+                complaintListTemp.add(complaint);
+            }
+        }
+        return complaintListTemp;
+    }
 //    public void recordTimeLogin(Users users){
 //        Users usersTemp = findUser(users.getUsername());
 //        LocalDateTime now = LocalDateTime.now();
@@ -50,24 +76,7 @@ public class ComplaintList {
         Collections.sort(temp, new Comparator<Complaint>() {
             @Override
             public int compare(Complaint o1, Complaint o2) {
-                int x = 0;
-                int y = 0;
-                if (o1.isUnmanaged()){
-                    x = 3;
-                } else if (o1.isInProgress()) {
-                    x = 2;
-                }else if(o1.isDone()){
-                    x = 1;
-                }
-
-                if (o2.isUnmanaged()){
-                    y = 3;
-                } else if (o2.isInProgress()) {
-                    y = 2;
-                }else if(o2.isDone()){
-                    y = 1;
-                }
-                return Integer.compare(x,y);
+                return 0;
             }
         });
         return temp;
@@ -93,7 +102,7 @@ public class ComplaintList {
                 "complaintList=" + complaintList +
                 '}';
     }
-    public ArrayList<Complaint> getAllComplaintSortByTime(){
+    public ArrayList<Complaint> getAllComplaintSortByTimeNew(){
         ArrayList<Complaint> temp = new ArrayList<>(complaintList);
         temp.sort(new Comparator<Complaint>() {
             @Override
@@ -103,5 +112,55 @@ public class ComplaintList {
         });
         return temp;
     }
+    public ArrayList<Complaint> getAllComplaintSortByTimeOld(){
+        ArrayList<Complaint> temp = new ArrayList<>(complaintList);
+        temp.sort(new Comparator<Complaint>() {
+            @Override
+            public int compare(Complaint o1, Complaint o2) {
+                return Double.compare(o1.getTimeToSecond(), o2.getTimeToSecond());
+            }
+        });
+        return temp;
+    }
 
+    public ArrayList<Complaint> sortTimeNew(ArrayList<Complaint> complaintList) {
+        ArrayList<Complaint> temp = new ArrayList<>(complaintList);
+        temp.sort(new Comparator<Complaint>() {
+            @Override
+            public int compare(Complaint o1, Complaint o2) {
+                return Double.compare(o2.getTimeToSecond(), o1.getTimeToSecond());
+            }
+        });
+        return temp;
+    }
+    public ArrayList<Complaint> sortTimeOld(ArrayList<Complaint> complaintList) {
+        ArrayList<Complaint> temp = new ArrayList<>(complaintList);
+        temp.sort(new Comparator<Complaint>() {
+            @Override
+            public int compare(Complaint o1, Complaint o2) {
+                return Double.compare(o1.getTimeToSecond(), o2.getTimeToSecond());
+            }
+        });
+        return temp;
+    }
+    public ArrayList<Complaint> sortRatingNew(ArrayList<Complaint> complaintList){
+        ArrayList<Complaint> temp = new ArrayList<>(complaintList);
+        temp.sort(new Comparator<Complaint>() {
+            @Override
+            public int compare(Complaint o1, Complaint o2) {
+                return Integer.compare(o2.getRating(),o1.getRating());
+            }
+        });
+        return temp;
+    }
+    public ArrayList<Complaint> sortRatingOld(ArrayList<Complaint> complaintList){
+        ArrayList<Complaint> temp = new ArrayList<>(complaintList);
+        temp.sort(new Comparator<Complaint>() {
+            @Override
+            public int compare(Complaint o1, Complaint o2) {
+                return Integer.compare(o1.getRating(),o2.getRating());
+            }
+        });
+        return temp;
+    }
 }
