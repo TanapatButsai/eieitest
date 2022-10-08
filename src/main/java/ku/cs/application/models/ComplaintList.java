@@ -83,16 +83,24 @@ public class ComplaintList {
     }
     public void add(Complaint complaint){complaintList.add(complaint);}
 
-    public Complaint findComlaint(Complaint complaint) {
+    public Complaint findComplaint(Complaint complaint) {
         for (Complaint complaintTemp : complaintList) {
             if (complaint.equals(complaintTemp)) {
                 return complaintTemp;
             }
         }return null;
     }
+    public Complaint findComplaintByTime(Complaint complaint) {
+        for (Complaint complaintTemp : complaintList) {
+            if (complaintTemp.getHeadComplaint().equals(complaint.getHeadComplaint())
+                    &&complaintTemp.getTime().equals(complaint.getTime())) {
+                return complaintTemp;
+            }
+        }return null;
+    }
     public void vote(Complaint complaint){
-        Complaint complaintTemp = findComlaint(complaint);
-        if (!(complaint == null)){
+        Complaint complaintTemp = findComplaint(complaint);
+        if (!(complaintTemp == null)){
             complaintTemp.setRating(complaintTemp.getRating()+1);
         }
     }
