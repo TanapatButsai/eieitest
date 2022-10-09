@@ -44,6 +44,9 @@ public class ReportComplaintController {
 
     @FXML
     void handleReportComplaint(ActionEvent event) {
-
+        String reason = reportTextArea.getText();
+        String complaintID = complaint.getHeadComplaint()+complaint.getNameWriter()+complaint.getTime();
+        report = new Report(user.getUsername(), complaint.getNameWriter(),reason,complaintID);
+        System.out.println(report);
     }
 }
