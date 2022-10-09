@@ -8,7 +8,15 @@ public class Report {
     private String objectID;
     private String reportTime;
 
-    public Report(String reporterUsername,String reportedUsername, String reason, String objectID ) {
+    public Report(String reporterUsername, String reportedUsername, String reason, String objectID, String reportTime) {
+        this.reporterUsername = reporterUsername;
+        this.reportedUsername = reportedUsername;
+        this.reason = reason;
+        this.objectID = objectID;
+        this.reportTime = reportTime;
+    }
+
+    public Report(String reporterUsername, String reportedUsername, String reason, String objectID ) {
         this.reporterUsername = reporterUsername;
         this.reason = reason;
         this.objectID = objectID;
@@ -26,6 +34,14 @@ public class Report {
 
     public String getReason() {
         return reason;
+    }
+
+    public String getReportedUsername() {
+        return reportedUsername;
+    }
+
+    public void setReportedUsername(String reportedUsername) {
+        this.reportedUsername = reportedUsername;
     }
 
     public void setReason(String reason) {
