@@ -28,8 +28,8 @@
       </Pane>
       <Label fx:id="headLabel" alignment="CENTER" layoutX="112.0" layoutY="128.0" prefHeight="26.0" prefWidth="142.0" style="-fx-background-color: #E6E6E6;" text="head" wrapText="true" />
       <Label fx:id="categoryLabel" alignment="CENTER" layoutX="112.0" layoutY="193.0" prefHeight="26.0" prefWidth="142.0" style="-fx-background-color: #E6E6E6;" text="categoryLabel" wrapText="true" />
-      <Label fx:id="bodyLabel" alignment="TOP_LEFT" layoutX="112.0" layoutY="251.0" prefHeight="138.0" prefWidth="411.0" style="-fx-background-color: #E6E6E6;" text="    body" wrapText="true" />
-      <Label fx:id="spacificLabel" alignment="TOP_LEFT" layoutX="112.0" layoutY="433.0" prefHeight="114.0" prefWidth="411.0" style="-fx-background-color: #E6E6E6;" text="    spacific" wrapText="true" />
+      <Label fx:id="bodyLabel" alignment="TOP_LEFT" layoutX="112.0" layoutY="251.0" prefHeight="138.0" prefWidth="508.0" style="-fx-background-color: #E6E6E6;" text="    body" wrapText="true" />
+      <Label fx:id="spacificLabel" alignment="TOP_LEFT" layoutX="112.0" layoutY="433.0" prefHeight="114.0" prefWidth="508.0" style="-fx-background-color: #E6E6E6;" text="    spacific" wrapText="true" />
       <Label fx:id="ratingLabel" alignment="CENTER" layoutX="380.0" layoutY="128.0" prefHeight="26.0" prefWidth="142.0" style="-fx-background-color: #E6E6E6;" text="คะแนน" wrapText="true" />
       <Label fx:id="timeLabel" alignment="CENTER" layoutX="380.0" layoutY="193.0" prefHeight="26.0" prefWidth="142.0" style="-fx-background-color: #E6E6E6;" text="เวลา" wrapText="true" />
       <Label layoutX="96.0" layoutY="110.0" text="หัวเรื่อง" />
@@ -38,6 +38,7 @@
       <Label layoutX="96.0" layoutY="415.0" text="ข้อมูลที่จำเป็น" />
       <Label layoutX="364.0" layoutY="110.0" text="คะแนนโหวด" />
       <Label layoutX="364.0" layoutY="171.0" text="เวลาที่ร้องเรียน" />
-      <Button layoutX="590.0" layoutY="521.0" mnemonicParsing="false" onAction="#handleVote" text="โหวด" />
+      <Button layoutX="600.0" layoutY="129.0" mnemonicParsing="false" onAction="#handleVote" text="โหวด" />
+      <Button layoutX="721.0" layoutY="119.0" mnemonicParsing="false" onAction="#handleReport" prefHeight="46.0" prefWidth="51.0" text="รายงานเนื้อหา" wrapText="true" />
    </children>
 </AnchorPane>

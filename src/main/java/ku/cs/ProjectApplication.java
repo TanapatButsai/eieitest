@@ -14,11 +14,7 @@ public class ProjectApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXRouter.bind(this, stage, "DingTwoProject", 800, 600);
         configRoute();
-
-
         FXRouter.goTo("login");
-
-
     }
 
     private static void configRoute() {
@@ -41,6 +37,7 @@ public class ProjectApplication extends Application {
         FXRouter.when("adminmanageban", packageStr + "admin_manage_ban.fxml");
         FXRouter.when("user_complaint_list",packageStr + "user_complaint_list.fxml");
         FXRouter.when("selected_complaint_detail",packageStr+"selected_complaint_detail.fxml");
+        FXRouter.when("report_complaint",packageStr+"report_complaint.fxml");
     }
 
     public static void main(String[] args) {

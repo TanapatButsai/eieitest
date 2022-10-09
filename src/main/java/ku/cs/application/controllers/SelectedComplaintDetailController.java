@@ -53,7 +53,14 @@ public class SelectedComplaintDetailController {
         System.out.println(user);
         System.out.println(complaintList);
     }
-
+    @FXML
+    void handleReport(ActionEvent event) {
+        try {
+            FXRouter.goTo("report_complaint",userAndComplaint);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     @FXML
     void handleBackButton(ActionEvent event) {
