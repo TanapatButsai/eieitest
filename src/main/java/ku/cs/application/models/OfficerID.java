@@ -32,7 +32,8 @@ public class OfficerID {
             return "[     เรื่องร้องเรียงอาคาร และ สถานที่     ]";
         } else if (role.equals("officer4")) {
             return  "[     เรื่องร้องเรียงการลงทะเบียนเรียน     ]";
-        }
+        } else if (role.equals("officer5"))
+            return "[     ร้องเรียนเกี่ยวกับการทุจริต     ]";
         return "";
     }
     @Override

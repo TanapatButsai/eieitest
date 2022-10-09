@@ -1,4 +1,8 @@
-ร้อนมาก,enroll1,enroll2,enroll,ILoveDog,14-40-58-29-09-22,false,false,false,1,false
-ครูดุ,enroll1dqwdwqdqwddddddddddddddddddddddddddddddddddddddddddd,enrolqwdqwdqwdwqdddddddddddddddddddddwqeqwl2,enroll,ILoveDog,14-40-58-29-09-22,false,false,false,1,false
-ลงทะเบียนเรียน,ลงทะเบียนเรียนลงทะเบียนเรียนลงทะเบียนเรียนลงทะเบียนเรียนลงทะเบียนเรียน,ลงทะเบียนเรียนลงทะเบียนเรียนลงทะเบียนเรียนลงทะเบียนเรียนลงทะเบียนเรียนลงทะเบียนเรียนลงทะเบียนเรียนลงทะเบียนเรียนลงทะเบียนเรียนลงทะเบียนเรียนลงทะเบียนเรียนลงทะเบียนเรียน,enroll,ILDog,18-15-25-03-10-22,false,false,false,0,false
-ห้องน้ำเหม็น,ห้องน้ำตึกsc45ชั้น8เหม็นมาก,ตึกsc45ห้องน้ำชาย,place,sky love family,01-23-42-04-10-22,false,false,false,1,false
+ร้อนมาก,enroll1,enroll2,enroll,ILoveDog,14-40-58-29-09-22,false,false,true,1,false
+ครูดุ,enroll1dqwdwqdqwddddddddddddddddddddddddddddddddddddddddddd,enrolqwdqwdqwdwqdddddddddddddddddddddwqeqwl2,enroll,ILoveDog,14-40-58-29-09-22,false,false,true,1,false
+ลงทะเบียนเรียน,ลงทะเบียนเรียนลงทะเบียนเรียนลงทะเบียนเรียนลงทะเบียนเรียนลงทะเบียนเรียน,ลงทะเบียนเรียนลงทะเบียนเรียนลงทะเบียนเรียนลงทะเบียนเรียนลงทะเบียนเรียนลงทะเบียนเรียนลงทะเบียนเรียนลงทะเบียนเรียนลงทะเบียนเรียนลงทะเบียนเรียนลงทะเบียนเรียนลงทะเบียนเรียน,enroll,ILDog,18-15-25-03-10-22,false,false,true,0,false
+ห้องน้ำเหม็น,ห้องน้ำตึกsc45ชั้น8เหม็นมาก,ตึกsc45ห้องน้ำชาย,place,sky love family,01-23-42-04-10-22,false,false,true,1,false
+teacher,bodyteacher,fixteacher,teacher,ธนาภัทร บุตรใส,13-58-27-09-10-22,false,false,true,0,false
+cheating,bodycheat,fixcheat,corrupt,ธนาภัทร บุตรใส,13-58-52-09-10-22,false,false,true,0,false
+normal2,bodynormal,fixnormal,normal,ธนาภัทร บุตรใส,14-02-14-09-10-22,false,false,true,0,false
+normal,bodynormal1,fix1,normal,ธนาภัทร บุตรใส,13-57-41-09-10-22,false,false,true,0,false
