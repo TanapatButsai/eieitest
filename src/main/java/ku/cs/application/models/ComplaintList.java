@@ -107,7 +107,7 @@ public class ComplaintList {
             if (temp.isDone() == complaint.isDone()
                     && temp.getCategory().equals(complaint.getCategory())
                     && temp.getNameWriter().equals(complaint.getNameWriter())
-
+                    && temp.getTime().equals(complaint.getTime())
             ) {
                 System.out.println("in loop");
                 complaintList.remove(temp);
