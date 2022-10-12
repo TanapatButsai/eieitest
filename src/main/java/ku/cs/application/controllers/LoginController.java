@@ -6,7 +6,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.control.TextField;
 import java.io.IOException;
-import java.util.Objects;
+
 import javafx.scene.control.Label;
 import com.github.saacsos.FXRouter;
 import ku.cs.application.models.*;
@@ -30,8 +30,8 @@ public class LoginController {
     private DataSource<UserList> dataSource;
     private UserList userList;
     private Users user;
-    private DataSource<OfficerIDList> dataSource1;
-    private OfficerIDList officerIDList;
+    private DataSource<OfficerList> dataSource1;
+    private OfficerList officerIDList;
 
     private DataSource<ComplaintList> dataSource2 = new ComplaintListDataSource("data","complaint");
 //    private ComplaintList complaintList;
@@ -42,7 +42,7 @@ public class LoginController {
         image_view_login.setImage(new Image(url));
         image_view_ku_logo.setImage(new Image(url2));
         dataSource = new UserListDataSource("data","user.csv");
-        dataSource1 = new OfficerIDListDataSource("data","officerID.csv");
+        dataSource1 = new OfficerIDListDataSource("data","officer.csv");
         userList = dataSource.readData();
 
 //        complaintList = dataSource2.readData();
@@ -65,18 +65,18 @@ public class LoginController {
         String username = inputUsername.getText();
         String password = inputPassword.getText();
         Users user = userList.findUser(username);
-        OfficerID officerID = officerIDList.findOfficer(username);
+        Officer officer = officerIDList.findOfficer(username);
         if (username.isEmpty() || password.isEmpty()){
             textError.setText("Enter username and password");
             System.err.println("TextField is empty");
         } else if (user == null || !user.getPassword().equals(password)
-                || officerID == null || !officerID.getOfficerPassword().equals(password)) {
-            if (officerID == null){
+                || officer == null || !officer.getOfficerPassword().equals(password)) {
+            if (officer == null){
                 System.err.println("Wrong username or password");
                 textError.setText("Wrong username or password");
-            }else if (isOfficer(username,password,officerID)){
+            }else if (isOfficer(username,password, officer)){
                 try {
-                    FXRouter.goTo("officer",officerID);
+                    FXRouter.goTo("officer", officer);
                 } catch (IOException e) {
                     System.err.println("ไปที่หน้า officer");
                     System.err.println("ให้ตรวจสอบการกำหนด route");
@@ -137,8 +137,8 @@ public class LoginController {
     public boolean isLogin(String username, String password,Users user){
         return username.equals(user.getUsername()) && password.equals(user.getPassword());
     }
-    public boolean isOfficer(String username, String password, OfficerID officerID){
-        return username.equals(officerID.getOfficerID()) && password.equals(officerID.getOfficerPassword());
+    public boolean isOfficer(String username, String password, Officer officer){
+        return username.equals(officer.getOfficerID()) && password.equals(officer.getOfficerPassword());
     }
 }
 

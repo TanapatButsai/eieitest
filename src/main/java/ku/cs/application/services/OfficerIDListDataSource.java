@@ -1,11 +1,11 @@
 package ku.cs.application.services;
 
-import ku.cs.application.models.OfficerID;
-import ku.cs.application.models.OfficerIDList;
+import ku.cs.application.models.Officer;
+import ku.cs.application.models.OfficerList;
 
 import java.io.*;
 
-public class OfficerIDListDataSource implements DataSource<OfficerIDList>{
+public class OfficerIDListDataSource implements DataSource<OfficerList>{
     private String directoryName;
     private String fileName;
 
@@ -30,8 +30,8 @@ public class OfficerIDListDataSource implements DataSource<OfficerIDList>{
         }
     }
     @Override
-    public OfficerIDList readData() {
-        OfficerIDList list = new OfficerIDList();
+    public OfficerList readData() {
+        OfficerList list = new OfficerList();
         String filePath = directoryName + File.separator + fileName;
         File file = new File(filePath);
         FileReader reader = null;
@@ -44,11 +44,11 @@ public class OfficerIDListDataSource implements DataSource<OfficerIDList>{
             String line = "";
             while ((line = buffer.readLine()) != null) {
                 String[] data = line.split(",");
-                OfficerID officerID = new OfficerID(
+                Officer officer = new Officer(
                         data[0].trim(),
                         data[1].trim(),
                         data[2].trim());
-                list.addOfficer(officerID);
+                list.addOfficer(officer);
             }
 
         } catch (FileNotFoundException e) {
@@ -66,7 +66,7 @@ public class OfficerIDListDataSource implements DataSource<OfficerIDList>{
         return list;
     }
     @Override
-    public void writeData(OfficerIDList officerIDList) {
+    public void writeData(OfficerList officerIDList) {
         String filePath = directoryName + File.separator + fileName;
         File file = new File(filePath);
 
@@ -75,11 +75,11 @@ public class OfficerIDListDataSource implements DataSource<OfficerIDList>{
         try {
             writer = new FileWriter(file);
             buffer = new BufferedWriter(writer);
-            for (OfficerID officerID : officerIDList.getAllOfficerID()) {
+            for (Officer officer : officerIDList.getAllOfficerID()) {
                 String line =
-                        officerID.getOfficerID() + ","
-                        + officerID.getOfficerPassword() + ","
-                        + officerID.setRole();
+                        officer.getOfficerID() + ","
+                        + officer.getOfficerPassword() + ","
+                        + officer.setRole();
                 buffer.append(line);
                 buffer.newLine();
             }

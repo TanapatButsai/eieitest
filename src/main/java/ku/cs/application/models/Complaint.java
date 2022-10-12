@@ -45,6 +45,9 @@ public class Complaint implements Comparable<Complaint> {
         this.fixComplaint = fixComplaint;
         this.category = category;
         this.nameWriter = nameWriter;
+        done = false;
+        inProgress = false;
+        unmanaged = true;
         isBan = false;
     } //construct ทั่วไป
     public Complaint(String headComplaint, String bodyComplaint, String fixComplaint, String category, String nameWriter, String time) {
@@ -54,6 +57,9 @@ public class Complaint implements Comparable<Complaint> {
         this.category = category;
         this.nameWriter = nameWriter;
         this.time = time;
+        done = false;
+        inProgress = false;
+        unmanaged = true;
         isBan = false;
     }
 
@@ -61,24 +67,12 @@ public class Complaint implements Comparable<Complaint> {
         return done;
     }
 
-    public void setDone(boolean done) {
-        this.done = done;
-    }
-
     public boolean isInProgress() {
         return inProgress;
     }
 
-    public void setInProgress(boolean inProgress) {
-        this.inProgress = inProgress;
-    }
-
     public boolean isUnmanaged() {
         return unmanaged;
-    }
-
-    public void setUnmanaged(boolean unmanaged) {
-        this.unmanaged = unmanaged;
     }
 
     public int getRating() {
@@ -163,6 +157,39 @@ public class Complaint implements Comparable<Complaint> {
 //                ", category='" + category + '\'' +
 //                '}';
 //    }
+
+//officer
+public String getStatus(){
+    if (isDone()){
+        //System.out.println("111");
+        return "ดำเนินการแล้ว";
+    }else if (isInProgress() == true){
+        //System.out.println("11");
+        return "อยู่ระหว่างการดำเนินการแล้ว";
+    }else if (isUnmanaged() == true){
+        //System.out.println("1");
+        return "ยังไม่ถูกจัดการ";
+    }
+    return "";
+}
+    public boolean setDone() {
+        done = true;
+        inProgress = false;
+        unmanaged = false;
+        return done;
+    }
+    public boolean setInProgress() {
+        inProgress = true;
+        done = false;
+        unmanaged =false;
+        return inProgress;
+    }
+    public boolean setUnmanaged() {
+        unmanaged = true;
+        done = false;
+        inProgress =false;
+        return unmanaged;
+    }
 
 
     @Override
