@@ -16,7 +16,7 @@ import java.io.IOException;
 
 public class OfficerController {
     private Complaint complaint;
-    private UserOfficer officer;
+    private Officer officer;
     private ComplaintList complaintList;
     private ComplaintList officerRoleList;
     private DataSource<ComplaintList> dataSource;
@@ -33,24 +33,24 @@ public class OfficerController {
     //นำlist
     @FXML
     public void initialize(){
-        officer = (UserOfficer)FXRouter.getData();
-        if (officer.getRole().equals("officer1")) {
+        officer = (Officer)FXRouter.getData();
+        if (officer.getRole().equals("normal")) {
             dataOfficer = new OfficerRoleDataSource("data","complaint.csv");
             officerRoleList = dataOfficer.readData1();
-            System.out.println("User is Officer1");
-        }else if (officer.getRole().equals("officer2")) {
+            System.out.println("User is Officer-normal");
+        }else if (officer.getRole().equals("teacher")) {
             dataOfficer = new OfficerRoleDataSource("data","complaint.csv");
             officerRoleList = dataOfficer.readData2();
-            System.out.println("User is Officer2");
-        }else if (officer.getRole().equals("officer3")) {
+            System.out.println("User is Officer-teacher");
+        }else if (officer.getRole().equals("place")) {
             dataOfficer = new OfficerRoleDataSource("data","complaint.csv");
             officerRoleList = dataOfficer.readData3();
-            System.out.println("User is Officer3");
-        }else if (officer.getRole().equals("officer4")) {
+            System.out.println("User is Officer-place");
+        }else if (officer.getRole().equals("enroll")) {
             dataOfficer = new OfficerRoleDataSource("data","complaint.csv");
             officerRoleList = dataOfficer.readData4();
-            System.out.println("User is Officer4");
-        }else if (officer.getRole().equals("officer5")){
+            System.out.println("User is Officer-enroll");
+        }else if (officer.getRole().equals("corrupt")){
             dataOfficer = new OfficerRoleDataSource("data","complaint.csv");
             officerRoleList = dataOfficer.readData5();
         }
@@ -137,6 +137,15 @@ public class OfficerController {
         }
     }
 
+    @FXML
+    public void handleChangePasswordButton(ActionEvent actionEvent) {
+        try {
+            com.github.saacsos.FXRouter.goTo("officer_change_password",officer);
+        } catch (IOException e) {
+            System.err.println("ไปที่หน้า login ไม่ได้");
+            System.err.println("ให้ตรวจสอบการกำหนด route");
+        }
+    }
     @FXML
     public void handleBackButton(ActionEvent actionEvent) {
         try {

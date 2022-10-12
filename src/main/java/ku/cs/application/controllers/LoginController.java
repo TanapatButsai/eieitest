@@ -12,7 +12,7 @@ import com.github.saacsos.FXRouter;
 import ku.cs.application.models.*;
 import ku.cs.application.services.ComplaintListDataSource;
 import ku.cs.application.services.DataSource;
-import ku.cs.application.services.OfficerIDListDataSource;
+import ku.cs.application.services.OfficerListDataSource;
 import ku.cs.application.services.UserListDataSource;
 
 public class LoginController {
@@ -30,7 +30,7 @@ public class LoginController {
     private DataSource<UserList> dataSource;
     private UserList userList;
     private Users user;
-    private DataSource<OfficerList> dataSource1;
+    private DataSource<OfficerList> officerDataSource;
     private OfficerList officerIDList;
 
     private DataSource<ComplaintList> dataSource2 = new ComplaintListDataSource("data","complaint");
@@ -42,7 +42,7 @@ public class LoginController {
         image_view_login.setImage(new Image(url));
         image_view_ku_logo.setImage(new Image(url2));
         dataSource = new UserListDataSource("data","user.csv");
-        dataSource1 = new OfficerIDListDataSource("data","officer.csv");
+        officerDataSource = new OfficerListDataSource("data","officer.csv");
         userList = dataSource.readData();
 
 //        complaintList = dataSource2.readData();
@@ -52,7 +52,7 @@ public class LoginController {
         } else {
             System.out.println("Can read file");
         }
-        officerIDList = dataSource1.readData();
+        officerIDList = officerDataSource.readData();
         if (officerIDList == null){
             System.err.println("Cannot read file");
         } else {

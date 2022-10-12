@@ -5,11 +5,11 @@ import ku.cs.application.models.OfficerList;
 
 import java.io.*;
 
-public class OfficerIDListDataSource implements DataSource<OfficerList>{
+public class OfficerListDataSource implements DataSource<OfficerList>{
     private String directoryName;
     private String fileName;
 
-    public OfficerIDListDataSource(String directoryName, String fileName) {
+    public OfficerListDataSource(String directoryName, String fileName) {
         this.directoryName = directoryName;
         this.fileName = fileName;
         checkFileIsExisted();
@@ -79,7 +79,7 @@ public class OfficerIDListDataSource implements DataSource<OfficerList>{
                 String line =
                         officer.getOfficerID() + ","
                         + officer.getOfficerPassword() + ","
-                        + officer.setRole();
+                        + officer.getRole();
                 buffer.append(line);
                 buffer.newLine();
             }
