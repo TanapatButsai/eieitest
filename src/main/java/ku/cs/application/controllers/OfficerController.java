@@ -16,7 +16,7 @@ import java.io.IOException;
 
 public class OfficerController {
     private Complaint complaint;
-    private OfficerID officerID;
+    private Officer officer;
     private ComplaintList complaintList;
     private ComplaintList officerRoleList;
     private DataSource<ComplaintList> dataSource;
@@ -33,24 +33,24 @@ public class OfficerController {
     //นำlist
     @FXML
     public void initialize(){
-        officerID = (OfficerID)FXRouter.getData();
-        if (officerID.getRole().equals("officer1")) {
+        officer = (Officer)FXRouter.getData();
+        if (officer.getRole().equals("officer1")) {
             dataOfficer = new OfficerRoleDataSource("data","complaint.csv");
             officerRoleList = dataOfficer.readData1();
             System.out.println("User is Officer1");
-        }else if (officerID.getRole().equals("officer2")) {
+        }else if (officer.getRole().equals("officer2")) {
             dataOfficer = new OfficerRoleDataSource("data","complaint.csv");
             officerRoleList = dataOfficer.readData2();
             System.out.println("User is Officer2");
-        }else if (officerID.getRole().equals("officer3")) {
+        }else if (officer.getRole().equals("officer3")) {
             dataOfficer = new OfficerRoleDataSource("data","complaint.csv");
             officerRoleList = dataOfficer.readData3();
             System.out.println("User is Officer3");
-        }else if (officerID.getRole().equals("officer4")) {
+        }else if (officer.getRole().equals("officer4")) {
             dataOfficer = new OfficerRoleDataSource("data","complaint.csv");
             officerRoleList = dataOfficer.readData4();
             System.out.println("User is Officer4");
-        }else if (officerID.getRole().equals("officer5")){
+        }else if (officer.getRole().equals("officer5")){
             dataOfficer = new OfficerRoleDataSource("data","complaint.csv");
             officerRoleList = dataOfficer.readData5();
         }
@@ -72,7 +72,7 @@ public class OfficerController {
         }else {
             complaintListView.getItems().addAll(officerRoleList.getAllComplaint());
             complaintListView.refresh();
-            officerLabel.setText(officerID.setRole());
+            officerLabel.setText(officer.setRole());
         }
 //        complaintListView.getItems().addAll(officerRoleList.getAllOfficer());
 //        complaintListView.refresh();

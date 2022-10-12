@@ -1,83 +1,49 @@
-//package ku.cs.application.models;
-//
-//public class Officer {
-//    private String officerName;
-//    private String role;
-//    private String topic;
-//    private String bodyComplaint;
-//    private String fixComplaint;
-//    private boolean done;
-//    private boolean inProgress;
-//    private boolean unmanaged;
-//
-//    public Officer(String name,String role,String topic, String bodyComplaint,String fixComplaint,boolean done, boolean inProgress, boolean unmanaged) {
-//        this.officerName = name;
-//        this.role = role;
-//        this.topic = topic;
-//        this.bodyComplaint = bodyComplaint;
-//        this.fixComplaint = fixComplaint;
-//        this.done = done;
-//        this.inProgress = inProgress;
-//        this.unmanaged = unmanaged;
-//    }
-//    //setProcess
-//    public boolean setDone() {
-//        done = true;
-//        inProgress = false;
-//        unmanaged = false;
-//        return done;
-//    }
-//    public boolean setInProgress() {
-//        inProgress = true;
-//        done = false;
-//        unmanaged =false;
-//        return inProgress;
-//    }
-//    public boolean setUnmanaged() {
-//        unmanaged = true;
-//        done = false;
-//        inProgress =false;
-//        return unmanaged;
-//    }
-//    public boolean isDone() {
-//        return done;
-//    }
-//    public boolean isInProgress() {
-//        return inProgress;
-//    }
-//    public boolean isUnmanaged() {
-//        return unmanaged;
-//    }
-//    //////
-//    public String getName() {
-//        return officerName;
-//    }
-//    public String getTopic() {
-//        return topic;
-//    }
-//    public  String getBody(){
-//        return bodyComplaint;
-//    }
-//    public String getFixComplaint() { return fixComplaint;}
-//
-//    public String getRole() {
-//        return role;
-//    }
-//    public String getStatus(){
-//        if (isDone()){
-//            //System.out.println("111");
-//            return "ดำเนินการแล้ว";
-//        }else if (isInProgress() == true){
-//            //System.out.println("11");
-//            return "อยู่ระหว่างการดำเนินการแล้ว";
-//        }else if (isUnmanaged() == true){
-//            //System.out.println("1");
-//            return "ยังไม่ถูกจัดการ";
-//        }
-//        return "";
-//    }
-//    @Override
-//    public String toString() {
-//        return topic;
-//    }
-//}
+package ku.cs.application.models;
+
+public class Officer {
+    private String officerID;
+    private String OfficerPassword;
+    private String role;
+///////
+    public Officer(String officerID, String officerPassword, String role) {
+        this.officerID = officerID;
+        OfficerPassword = officerPassword;
+        this.role = role;
+    }
+    public void setOfficerID(String officerID) {
+        this.officerID = officerID;
+    }
+    public void setOfficerPassword(String officerPassword) {
+        OfficerPassword = officerPassword;
+    }
+    public String getRole() { return role;}
+    public String getOfficerID() {
+        return officerID;
+    }
+    public String getOfficerPassword() {
+        return OfficerPassword;
+    }
+    public String setRole() {
+        if (role.equals("officer1")){
+            return "[     เรื่องร้องเรียงทั่วไป     ]";
+        } else if (role.equals("officer2")) {
+            return "[     เรื่องร้องเรียงอาจารย์/บุคลาการ     ]";
+        } else if (role.equals("officer3")){
+            return "[     เรื่องร้องเรียงอาคาร และ สถานที่     ]";
+        } else if (role.equals("officer4")) {
+            return  "[     เรื่องร้องเรียงการลงทะเบียนเรียน     ]";
+        } else if (role.equals("officer5"))
+            return "[     ร้องเรียนเกี่ยวกับการทุจริต     ]";
+        return "";
+    }
+    @Override
+    public String toString() {
+        return "OfficerID{" +
+                "officerID='" + officerID + '\'' +
+                ", OfficerPassword='" + OfficerPassword + '\'' +
+                ", role='" + role + '\'' +
+                '}';
+    }
+//////
+
+}
