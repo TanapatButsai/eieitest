@@ -104,6 +104,36 @@ public class ComplaintList {
             complaintTemp.setRating(complaintTemp.getRating()+1);
         }
     }
+    //officer
+    public void setDone(Complaint complaint){
+        complaint.setDone();
+    }
+    public void setInProgress(Complaint complaint) { complaint.setInProgress();}
+    public void setUnmanaged(Complaint complaint){complaint.setUnmanaged();}
+
+    public Complaint findData(Complaint complaint){
+        for (Complaint temp : complaintList) {
+            System.out.println(temp.getNameWriter());
+            System.out.println(temp.getCategory());
+            System.out.println("-----");
+            System.out.println(complaint.getNameWriter());
+            System.out.println(complaint.getCategory());
+            System.out.println("-----");
+            System.out.println(temp.isDone());
+            System.out.println(complaint.isDone());
+            if (temp.isDone() == complaint.isDone()
+                    && temp.getCategory().equals(complaint.getCategory())
+                    && temp.getNameWriter().equals(complaint.getNameWriter())
+                    && temp.getTime().equals(complaint.getTime())
+            ) {
+                System.out.println("in loop");
+                complaintList.remove(temp);
+                return complaint;
+            }
+            System.out.println("out loop");
+        }
+        return null;
+    }
     @Override
     public String toString() {
         return "ComplaintList{" +
