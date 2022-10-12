@@ -52,8 +52,12 @@ public class UserListDataSource implements DataSource<UserList> {
             while ((line = buffer.readLine()) != null) {
                 String[] data = line.split(",");
                 boolean isAdmin = false;
+                boolean isBan = false;
                 if (data[4].trim().equals("true")){
                     isAdmin = true;
+                }
+                if (data[7].trim().equals("true")){
+                    isBan = true;
                 }
                 Users user = new Users(data[0].trim(),
                         data[1].trim()
@@ -61,7 +65,9 @@ public class UserListDataSource implements DataSource<UserList> {
                         , data[3].trim()
                         ,isAdmin
                         ,data[5].trim()
-                        ,data[6].trim());
+                        ,data[6].trim()
+                        ,isBan)
+                        ;
                 list.addUser(user);
             }
 
@@ -100,7 +106,8 @@ public class UserListDataSource implements DataSource<UserList> {
                         + user.getPassword() + ","
                         + user.isAdmin()+","
                         + user.getLastTimeLogin()+","
-                        + user.getUserImage();
+                        + user.getUserImage()+","
+                        + user.isBan();
 
                 buffer.append(line);
                 buffer.newLine();

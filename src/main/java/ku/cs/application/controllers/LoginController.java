@@ -10,10 +10,7 @@ import java.util.Objects;
 import javafx.scene.control.Label;
 import com.github.saacsos.FXRouter;
 import ku.cs.application.models.*;
-import ku.cs.application.services.ComplaintListDataSource;
-import ku.cs.application.services.DataSource;
-import ku.cs.application.services.OfficerIDListDataSource;
-import ku.cs.application.services.UserListDataSource;
+import ku.cs.application.services.*;
 
 public class LoginController {
     @FXML private Label textError;
@@ -95,7 +92,12 @@ public class LoginController {
                         System.err.println("ให้ตรวจสอบการกำหนด route");
                         e.printStackTrace();
                     }
-                }else {
+                }
+//                if (user.isBan()){
+//                    BanListDataSource banListDataSource = new BanListDataSource("");
+//
+//                }
+                else {
                     try {
                         userList.recordTimeLogin(user);
                         dataSource.writeData(userList);

@@ -29,6 +29,17 @@ public class BanList {
         }
         return ban;
     }
+    public Ban findObjectID(String user, String objectID) {
+        Ban ban = null;
+        for (Ban temp : banList) {
+            if (objectID.equals(temp.getObjectID()) && user.equals(temp.getUser())) {
+                ban = temp;
+                break;
+            }
+        }
+        return ban;
+    }
+
 
 
 }

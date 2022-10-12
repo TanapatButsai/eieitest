@@ -66,8 +66,8 @@ public class BanListDataSource implements DataSource<BanList>{
                         .replace("\\[newline]","\n")
                         .replace("\\[doublequote]","\"")
                         .replace("\\[comma]",",");
-                Ban ban = new Ban(bannedID,user,bannedReason);
-                banList.addBan(ban);
+//                Ban ban = new Ban(bannedID,user,bannedReason);
+//                banList.addBan(ban);
             }
 
         } catch (FileNotFoundException e) {
