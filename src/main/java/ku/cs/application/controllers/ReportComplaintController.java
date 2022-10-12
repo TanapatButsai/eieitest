@@ -33,7 +33,6 @@ public class ReportComplaintController {
         userAndComplaint = (List<Object>) FXRouter.getData();
         user = (Users) userAndComplaint.get(0);
         complaint = (Complaint) userAndComplaint.get(1);
-
         dataSource = new ReportListDataSource("data","report.csv");
         reportList = dataSource.readData();
         System.out.println(user);
@@ -53,8 +52,10 @@ public class ReportComplaintController {
     @FXML
     void handleReportComplaint(ActionEvent event) {
         String reason = reportTextArea.getText();
-        String complaintID = complaint.getHeadComplaint()+complaint.getNameWriter()+complaint.getTime();
+        String complaintID = complaint.getHeadComplaint()+":"+complaint.getNameWriter()+":"+complaint.getTime();
         report = new Report(user.getUsername(), complaint.getNameWriter(),reason,complaintID);
+        reportList.add(report);
+        dataSource.writeData(reportList);
         System.out.println(report);
     }
 }

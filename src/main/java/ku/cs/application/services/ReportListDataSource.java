@@ -49,6 +49,7 @@ public class ReportListDataSource implements DataSource<ReportList> {
             buffer = new BufferedReader(reader);
 
             String line = "";
+            //reporterUsername,reportedUsername,reason,objectID,reportTime
             while ((line = buffer.readLine()) != null) {
                 String[] data = line.split("-");
                 String reporterUsername = data[0].trim();

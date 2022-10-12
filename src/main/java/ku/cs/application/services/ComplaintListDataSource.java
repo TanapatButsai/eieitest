@@ -54,6 +54,7 @@ public class ComplaintListDataSource implements DataSource<ComplaintList>{
             String line = "";
             while ((line = buffer.readLine()) != null) {
                 String[] data = line.split(",");
+                if (data[6].equals("isDone")) continue;
                 String headComplaint = data[0].trim();
                 String bodyComplaint = data[1].trim();
                 String fixComplaint = data[2].trim();
@@ -96,6 +97,9 @@ public class ComplaintListDataSource implements DataSource<ComplaintList>{
         try {
             writer = new FileWriter(file);
             buffer = new BufferedWriter(writer);
+            String header = "topic,body,detail,category,usernameWriter,time,isDone,isInProgress,isUnmanaged,vote,isBan";
+            buffer.append(header);
+            buffer.newLine();
             for (Complaint complaint : complaintList.getAllComplaint()) {
                 String line = complaint.getHeadComplaint() + ","
                         + complaint.getBodyComplaint() + ","
