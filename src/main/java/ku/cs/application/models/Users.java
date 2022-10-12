@@ -32,6 +32,11 @@ public class Users implements Comparable<Users> {
         this.lastTimeLogin = lastTimeLogin;
     }
 
+    public Users(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
     public boolean isAdmin() {
         return isAdmin;
     }

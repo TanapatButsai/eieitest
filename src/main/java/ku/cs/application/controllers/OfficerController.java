@@ -16,7 +16,7 @@ import java.io.IOException;
 
 public class OfficerController {
     private Complaint complaint;
-    private Officer officer;
+    private UserOfficer officer;
     private ComplaintList complaintList;
     private ComplaintList officerRoleList;
     private DataSource<ComplaintList> dataSource;
@@ -33,7 +33,7 @@ public class OfficerController {
     //นำlist
     @FXML
     public void initialize(){
-        officer = (Officer)FXRouter.getData();
+        officer = (UserOfficer)FXRouter.getData();
         if (officer.getRole().equals("officer1")) {
             dataOfficer = new OfficerRoleDataSource("data","complaint.csv");
             officerRoleList = dataOfficer.readData1();
