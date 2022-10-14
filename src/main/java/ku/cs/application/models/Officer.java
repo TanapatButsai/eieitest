@@ -14,7 +14,7 @@ public class Officer {
         this.officerID = officerID;
     }
     public void setOfficerPassword(String officerPassword) {
-        OfficerPassword = officerPassword;
+        this.OfficerPassword = officerPassword;
     }
     public String getRole() { return role;}
     public String getOfficerID() {
@@ -24,15 +24,15 @@ public class Officer {
         return OfficerPassword;
     }
     public String setRole() {
-        if (role.equals("officer1")){
+        if (role.equals("normal")){
             return "[     เรื่องร้องเรียงทั่วไป     ]";
-        } else if (role.equals("officer2")) {
+        } else if (role.equals("teacher")) {
             return "[     เรื่องร้องเรียงอาจารย์/บุคลาการ     ]";
-        } else if (role.equals("officer3")){
+        } else if (role.equals("place")){
             return "[     เรื่องร้องเรียงอาคาร และ สถานที่     ]";
-        } else if (role.equals("officer4")) {
+        } else if (role.equals("enroll")) {
             return  "[     เรื่องร้องเรียงการลงทะเบียนเรียน     ]";
-        } else if (role.equals("officer5"))
+        } else if (role.equals("corrupt"))
             return "[     ร้องเรียนเกี่ยวกับการทุจริต     ]";
         return "";
     }

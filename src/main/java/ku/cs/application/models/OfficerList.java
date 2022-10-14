@@ -25,4 +25,17 @@ public class OfficerList {
         }
         return officer;
     }
+    public Officer findChangeUser(String username) {
+        for (Officer officer : officerList) {
+            if (officer.getOfficerID().equals(username)) {
+                return officer;
+            }
+        }return null;
+    }
+    public void changePassword(String username,String newPassword){
+        Officer officer = findChangeUser(username);
+        if (officer != null) {
+            officer.setOfficerPassword(newPassword);
+        }
+    }
 }
