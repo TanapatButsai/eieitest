@@ -20,6 +20,7 @@ import ku.cs.application.services.Filterer;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class HomeController {
     private Users user;
@@ -78,8 +79,14 @@ public class HomeController {
 
     @FXML
     public void handleNormalComplaint(ActionEvent actionEvent) {
+        ArrayList<Object> object = new ArrayList<>();
+        String category ="normal";
+        String url = "/ku/cs/normalcomplaint_images/kasetsarts.jpeg";
+        object.add(user);
+        object.add(category);
+        object.add(url);
         try {
-            com.github.saacsos.FXRouter.goTo("normalcomplaint", user);
+            com.github.saacsos.FXRouter.goTo("normalcomplaint", object);
         } catch (IOException e) {
             System.err.println("ไปที่หน้า ร้องเรียนทั่วไป ไม่ได้");
             System.err.println("ให้ตรวจสอบการกำหนด route");
@@ -89,10 +96,16 @@ public class HomeController {
 
     @FXML
     public void handleTeacherComplaint(ActionEvent actionEvent) {
+        ArrayList<Object> object = new ArrayList<>();
+        String category ="teacher";
+        String url = "/ku/cs/teachercomplaint_images/KU_9non.jpeg";
+        object.add(user);
+        object.add(category);
+        object.add(url);
         try {
-            com.github.saacsos.FXRouter.goTo("teachercomplaint", user);
+            com.github.saacsos.FXRouter.goTo("normalcomplaint", object);
         } catch (IOException e) {
-            System.err.println("ไปที่หน้า ร้องเรียนอาจารย์/บุคลากร ไม่ได้");
+            System.err.println("ไปที่หน้า ร้องเรียนทั่วไป ไม่ได้");
             System.err.println("ให้ตรวจสอบการกำหนด route");
             e.printStackTrace();
         }
@@ -100,10 +113,16 @@ public class HomeController {
 
     @FXML
     public void handlePlaceComplaint(ActionEvent actionEvent) {
+        ArrayList<Object> object = new ArrayList<>();
+        String category ="place";
+        String url = "/ku/cs/placecomplaint_images/kuku.jpeg";
+        object.add(user);
+        object.add(category);
+        object.add(url);
         try {
-            com.github.saacsos.FXRouter.goTo("placecomplaint", user);
+            com.github.saacsos.FXRouter.goTo("normalcomplaint", object);
         } catch (IOException e) {
-            System.err.println("ไปที่หน้า ร้องเรียนอาคาร/สถานที่ ไม่ได้");
+            System.err.println("ไปที่หน้า ร้องเรียนทั่วไป ไม่ได้");
             System.err.println("ให้ตรวจสอบการกำหนด route");
             e.printStackTrace();
         }
@@ -111,10 +130,16 @@ public class HomeController {
 
     @FXML
     public void handleEnrollComplaint(ActionEvent actionEvent) {
+        ArrayList<Object> object = new ArrayList<>();
+        String category ="enroll";
+        String url = "/ku/cs/enrollcomplaint_images/scsc.jpeg";
+        object.add(user);
+        object.add(category);
+        object.add(url);
         try {
-            com.github.saacsos.FXRouter.goTo("enrollcomplaint", user);
+            com.github.saacsos.FXRouter.goTo("normalcomplaint", object);
         } catch (IOException e) {
-            System.err.println("ไปที่หน้า ร้องเรียนการลงทะเบียนเรียน ไม่ได้");
+            System.err.println("ไปที่หน้า ร้องเรียนทั่วไป ไม่ได้");
             System.err.println("ให้ตรวจสอบการกำหนด route");
             e.printStackTrace();
         }
@@ -122,10 +147,16 @@ public class HomeController {
 
     @FXML
     public void handleCorruptComplaint(ActionEvent actionEvent) {
+        ArrayList<Object> object = new ArrayList<>();
+        String category ="corrupt";
+        String url = "/ku/cs/corruptcomplaint_images/kukuku.jpeg";
+        object.add(user);
+        object.add(category);
+        object.add(url);
         try {
-            FXRouter.goTo("corruptcomplaint", user);
+            com.github.saacsos.FXRouter.goTo("normalcomplaint", object);
         } catch (IOException e) {
-            System.err.println("ไปที่หน้า ร้องเรียนการลงทะเบียนเรียน ไม่ได้");
+            System.err.println("ไปที่หน้า ร้องเรียนทั่วไป ไม่ได้");
             System.err.println("ให้ตรวจสอบการกำหนด route");
             e.printStackTrace();
         }
@@ -276,51 +307,6 @@ public class HomeController {
             this.complaintList.sortRatingNew();
         }
     }
-//    public void setMenuItemTime() {
-//
-//        menuItemNew.setOnAction(actionEvent -> {
-//            complaintListViewUnManage.getItems().setAll(complaintList.sortTimeNew(complaintList.filter(filtererUnmanaged)));
-//            complaintListViewInProgress.getItems().setAll(complaintList.sortTimeNew(complaintList.filter(filtererInProgress)));
-//            complaintListViewDone.getItems().setAll(complaintList.sortTimeNew(complaintList.filter(filtererDone)));
-//            refresh();
-//        });
-//        menuItemOld.setOnAction(actionEvent -> {
-//            complaintListViewUnManage.getItems().setAll(complaintList.sortTimeOld(complaintList.filter(filtererUnmanaged)));
-//            complaintListViewInProgress.getItems().setAll(complaintList.sortTimeOld(complaintList.filter(filtererInProgress)));
-//            complaintListViewDone.getItems().setAll(complaintList.sortTimeOld(complaintList.filter(filtererDone)));
-//            refresh();
-//        });
-//        menuItemAscending.setOnAction(actionEvent -> {
-//            complaintListViewUnManage.getItems().setAll(complaintList.sortRatingOld(complaintList.filter(filtererUnmanaged)));
-//            complaintListViewInProgress.getItems().setAll(complaintList.sortRatingOld(complaintList.filter(filtererInProgress)));
-//            complaintListViewDone.getItems().setAll(complaintList.sortRatingNew(complaintList.filter(filtererDone)));
-//            refresh();
-//        });
-//        menuItemDescending.setOnAction(actionEvent -> {
-//            complaintListViewUnManage.getItems().setAll(complaintList.sortRatingNew(complaintList.filter(filtererUnmanaged)));
-//            complaintListViewInProgress.getItems().setAll(complaintList.sortRatingNew(complaintList.filter(filtererInProgress)));
-//            complaintListViewDone.getItems().setAll(complaintList.sortRatingNew(complaintList.filter(filtererDone)));
-//            refresh();
-//        });
-//        normalMenuItem.setOnAction(actionEvent -> {
-//            Filterer<ComplaintList> filterer = new ComplaintCategoryFilterer("normal");
-//            this.complaintList = complaintList.filterCategory(filterer);
-//            complaintList.sortTimeNew();
-//            refresh();
-//        });
-//        enrollMenuItem.setOnAction(actionEvent -> {
-//            refresh();
-//        });
-//        placeMenuItem.setOnAction(actionEvent -> {
-//            refresh();
-//        });
-//        teacherMenuItem.setOnAction(actionEvent -> {
-//            refresh();
-//        });
-//        corruptMenuItem.setOnAction(actionEvent -> {
-//            refresh();
-//        });
-//    }
     @FXML
     void handleGoToSelectedComplaintDetail(ActionEvent event) {
         try {
@@ -338,5 +324,13 @@ public class HomeController {
         complaintListViewDone.refresh();
         complaintListViewUnManage.refresh();
         complaintListViewInProgress.refresh();
+    }
+
+    public void gotoComplaint(ArrayList<Object> objects){
+        try {
+            FXRouter.goTo("normalcomplaint",objects);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
