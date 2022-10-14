@@ -10,12 +10,15 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.MenuItem;
 import ku.cs.application.models.Complaint;
 import ku.cs.application.models.ComplaintList;
+import ku.cs.application.models.ComplaintStatus;
 import ku.cs.application.models.Users;
+import ku.cs.application.services.ComplaintCategoryFilterer;
 import ku.cs.application.services.ComplaintListDataSource;
+import ku.cs.application.services.ComplaintStatusFilterer;
+import ku.cs.application.services.Filterer;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 public class HomeController {
@@ -35,6 +38,18 @@ public class HomeController {
     @FXML private MenuItem menuItemOld;
     @FXML private MenuItem menuItemAscending;
     @FXML private MenuItem menuItemDescending;
+
+    @FXML private MenuItem enrollMenuItem;
+    @FXML private MenuItem placeMenuItem;
+    @FXML private MenuItem teacherMenuItem;
+    @FXML private MenuItem normalMenuItem;
+    @FXML private MenuItem corruptMenuItem;
+    Filterer<ComplaintList> filtererUnmanaged = new ComplaintStatusFilterer(ComplaintStatus.unmanaged);
+    Filterer<ComplaintList> filtererInProgress = new ComplaintStatusFilterer(ComplaintStatus.inProgress);
+    Filterer<ComplaintList> filtererDone = new ComplaintStatusFilterer(ComplaintStatus.done);
+    private enum Sorter{timeNew,timeOld,ratingAscending, ratingDescending}
+    private Sorter sorter;
+
 
     @FXML
     public void initialize() {
@@ -118,25 +133,21 @@ public class HomeController {
 
     @FXML
     void handleShowListView() {
+        complaintList = dataSource.readData();
         showListView();
     }
 
-    @FXML
-    void handleScoreButton(ActionEvent event) {
-        complaintListViewUnManage.getItems().setAll(complaintList.getAllComplaintSortByRating());
-        complaintListViewUnManage.refresh();
-    }
 
-    @FXML
-    public void handleVoteButton(ActionEvent actionEvent) {
-        complaintList.vote(complaint);
-        dataSource.writeData(complaintList);
-    }
+//    @FXML
+//    public void handleVoteButton(ActionEvent actionEvent) {
+//        complaintList.vote(complaint);
+//        dataSource.writeData(complaintList);
+//    }
 
     private void showListView() {
-        complaintListViewUnManage.getItems().setAll(complaintList.getUnManageComplain());
-        complaintListViewDone.getItems().setAll(complaintList.getDoneComplaint());
-        complaintListViewInProgress.getItems().setAll(complaintList.getInProgressComplaint());
+        complaintListViewUnManage.getItems().setAll(complaintList.filter(filtererUnmanaged));
+        complaintListViewDone.getItems().setAll(complaintList.filter(filtererDone));
+        complaintListViewInProgress.getItems().setAll(complaintList.filter(filtererInProgress));
         complaintListViewUnManage.refresh();
         complaintListViewInProgress.refresh();
         complaintListViewDone.refresh();
@@ -178,33 +189,138 @@ public class HomeController {
     }
 
     private void selectComplaint(Complaint complaint) {this.complaint = complaint;}
-
     public void setMenuItemTime() {
+
         menuItemNew.setOnAction(actionEvent -> {
-            complaintListViewUnManage.getItems().setAll(complaintList.sortTimeNew(complaintList.getUnManageComplain()));
-            complaintListViewInProgress.getItems().setAll(complaintList.sortTimeNew(complaintList.getInProgressComplaint()));
-            complaintListViewDone.getItems().setAll(complaintList.sortTimeNew(complaintList.getDoneComplaint()));
+            sorter = Sorter.timeNew;
+            sortComplaintList();
+            complaintListViewUnManage.getItems().setAll(complaintList.filter(filtererUnmanaged));
+            complaintListViewInProgress.getItems().setAll(complaintList.filter(filtererInProgress));
+            complaintListViewDone.getItems().setAll(complaintList.filter(filtererDone));
             refresh();
         });
         menuItemOld.setOnAction(actionEvent -> {
-            complaintListViewUnManage.getItems().setAll(complaintList.sortTimeOld(complaintList.getUnManageComplain()));
-            complaintListViewInProgress.getItems().setAll(complaintList.sortTimeOld(complaintList.getInProgressComplaint()));
-            complaintListViewDone.getItems().setAll(complaintList.sortTimeOld(complaintList.getDoneComplaint()));
+            sorter = Sorter.timeOld;
+            sortComplaintList();
+            complaintListViewUnManage.getItems().setAll(complaintList.filter(filtererUnmanaged));
+            complaintListViewInProgress.getItems().setAll(complaintList.filter(filtererInProgress));
+            complaintListViewDone.getItems().setAll(complaintList.filter(filtererDone));
             refresh();
         });
         menuItemAscending.setOnAction(actionEvent -> {
-            complaintListViewUnManage.getItems().setAll(complaintList.sortRatingOld(complaintList.getUnManageComplain()));
-            complaintListViewInProgress.getItems().setAll(complaintList.sortRatingOld(complaintList.getInProgressComplaint()));
-            complaintListViewDone.getItems().setAll(complaintList.sortRatingNew(complaintList.getDoneComplaint()));
+            sorter = Sorter.ratingAscending;
+            sortComplaintList();
+            complaintListViewUnManage.getItems().setAll(complaintList.filter(filtererUnmanaged));
+            complaintListViewInProgress.getItems().setAll(complaintList.filter(filtererInProgress));
+            complaintListViewDone.getItems().setAll(complaintList.filter(filtererDone));
             refresh();
         });
         menuItemDescending.setOnAction(actionEvent -> {
-            complaintListViewUnManage.getItems().setAll(complaintList.sortRatingNew(complaintList.getUnManageComplain()));
-            complaintListViewInProgress.getItems().setAll(complaintList.sortRatingNew(complaintList.getInProgressComplaint()));
-            complaintListViewDone.getItems().setAll(complaintList.sortRatingNew(complaintList.getDoneComplaint()));
+            sorter = Sorter.ratingDescending;
+            sortComplaintList();
+            complaintListViewUnManage.getItems().setAll(complaintList.filter(filtererUnmanaged));
+            complaintListViewInProgress.getItems().setAll(complaintList.filter(filtererInProgress));
+            complaintListViewDone.getItems().setAll(complaintList.filter(filtererDone));
+            refresh();
+        });
+
+        normalMenuItem.setOnAction(actionEvent -> {
+            complaintList = dataSource.readData();
+            Filterer<ComplaintList> filterer = new ComplaintCategoryFilterer("normal");
+            this.complaintList = complaintList.filterCategory(filterer);
+            sortComplaintList();
+            showListView();
+            refresh();
+        });
+        enrollMenuItem.setOnAction(actionEvent -> {
+            complaintList = dataSource.readData();
+            Filterer<ComplaintList> filterer = new ComplaintCategoryFilterer("enroll");
+            this.complaintList = complaintList.filterCategory(filterer);
+            sortComplaintList();
+            showListView();
+            refresh();
+        });
+        placeMenuItem.setOnAction(actionEvent -> {
+            complaintList = dataSource.readData();
+            Filterer<ComplaintList> filterer = new ComplaintCategoryFilterer("place");
+            this.complaintList = complaintList.filterCategory(filterer);
+            sortComplaintList();
+            showListView();
+            refresh();
+        });
+        teacherMenuItem.setOnAction(actionEvent -> {
+            complaintList = dataSource.readData();
+            Filterer<ComplaintList> filterer = new ComplaintCategoryFilterer("teacher");
+            this.complaintList = complaintList.filterCategory(filterer);
+            sortComplaintList();
+            showListView();
+            refresh();
+        });
+        corruptMenuItem.setOnAction(actionEvent -> {
+            complaintList = dataSource.readData();
+            Filterer<ComplaintList> filterer = new ComplaintCategoryFilterer("corrupt");
+            this.complaintList = complaintList.filterCategory(filterer);
+            sortComplaintList();
+            showListView();
             refresh();
         });
     }
+    public void sortComplaintList(){
+        if (sorter == Sorter.timeNew){
+            this.complaintList.sortTimeNew();
+        }else if (sorter == Sorter.timeOld){
+            this.complaintList.sortTimeOld();
+        }else if (sorter == Sorter.ratingAscending){
+            this.complaintList.sortRatingOld();
+        }else if (sorter == Sorter.ratingDescending){
+            this.complaintList.sortRatingNew();
+        }
+    }
+//    public void setMenuItemTime() {
+//
+//        menuItemNew.setOnAction(actionEvent -> {
+//            complaintListViewUnManage.getItems().setAll(complaintList.sortTimeNew(complaintList.filter(filtererUnmanaged)));
+//            complaintListViewInProgress.getItems().setAll(complaintList.sortTimeNew(complaintList.filter(filtererInProgress)));
+//            complaintListViewDone.getItems().setAll(complaintList.sortTimeNew(complaintList.filter(filtererDone)));
+//            refresh();
+//        });
+//        menuItemOld.setOnAction(actionEvent -> {
+//            complaintListViewUnManage.getItems().setAll(complaintList.sortTimeOld(complaintList.filter(filtererUnmanaged)));
+//            complaintListViewInProgress.getItems().setAll(complaintList.sortTimeOld(complaintList.filter(filtererInProgress)));
+//            complaintListViewDone.getItems().setAll(complaintList.sortTimeOld(complaintList.filter(filtererDone)));
+//            refresh();
+//        });
+//        menuItemAscending.setOnAction(actionEvent -> {
+//            complaintListViewUnManage.getItems().setAll(complaintList.sortRatingOld(complaintList.filter(filtererUnmanaged)));
+//            complaintListViewInProgress.getItems().setAll(complaintList.sortRatingOld(complaintList.filter(filtererInProgress)));
+//            complaintListViewDone.getItems().setAll(complaintList.sortRatingNew(complaintList.filter(filtererDone)));
+//            refresh();
+//        });
+//        menuItemDescending.setOnAction(actionEvent -> {
+//            complaintListViewUnManage.getItems().setAll(complaintList.sortRatingNew(complaintList.filter(filtererUnmanaged)));
+//            complaintListViewInProgress.getItems().setAll(complaintList.sortRatingNew(complaintList.filter(filtererInProgress)));
+//            complaintListViewDone.getItems().setAll(complaintList.sortRatingNew(complaintList.filter(filtererDone)));
+//            refresh();
+//        });
+//        normalMenuItem.setOnAction(actionEvent -> {
+//            Filterer<ComplaintList> filterer = new ComplaintCategoryFilterer("normal");
+//            this.complaintList = complaintList.filterCategory(filterer);
+//            complaintList.sortTimeNew();
+//            refresh();
+//        });
+//        enrollMenuItem.setOnAction(actionEvent -> {
+//            refresh();
+//        });
+//        placeMenuItem.setOnAction(actionEvent -> {
+//            refresh();
+//        });
+//        teacherMenuItem.setOnAction(actionEvent -> {
+//            refresh();
+//        });
+//        corruptMenuItem.setOnAction(actionEvent -> {
+//            refresh();
+//        });
+//    }
     @FXML
     void handleGoToSelectedComplaintDetail(ActionEvent event) {
         try {

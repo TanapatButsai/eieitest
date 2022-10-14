@@ -62,7 +62,7 @@ public class Users implements Comparable<Users> {
     public void setUserImage(String userImage) {
         this.userImage = userImage;
     }
-
+    
     @Override
     public String toString() {
         return "Users{" +

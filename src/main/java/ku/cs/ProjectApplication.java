@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import com.github.saacsos.FXRouter;
+import ku.cs.application.services.Filterer;
 
 import java.io.IOException;
 
@@ -38,6 +39,7 @@ public class ProjectApplication extends Application {
         FXRouter.when("user_complaint_list",packageStr + "user_complaint_list.fxml");
         FXRouter.when("selected_complaint_detail",packageStr+"selected_complaint_detail.fxml");
         FXRouter.when("report_complaint",packageStr+"report_complaint.fxml");
+        FXRouter.when("admin_selected_report_complaint",packageStr+"admin_selected_report_complaint.fxml");
     }
 
     public static void main(String[] args) {

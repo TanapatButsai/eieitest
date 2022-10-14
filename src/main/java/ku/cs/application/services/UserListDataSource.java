@@ -51,7 +51,7 @@ public class UserListDataSource implements DataSource<UserList> {
             String line = "";
             while ((line = buffer.readLine()) != null) {
                 String[] data = line.split(",");
-                if (data[5].trim().equals("isAdmin")) continue;
+                if (data[4].trim().equals("isAdmin")) continue;
                 //String name, String id, String username, String password, boolean isAdmin , String lastTimeLogin, String userImage, boolean isBan
                 String name = data[0].trim();
                 String id = data[1].trim();

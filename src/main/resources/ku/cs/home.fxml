@@ -69,25 +69,33 @@
             <Button contentDisplay="BOTTOM" layoutX="15.0" layoutY="490.0" mnemonicParsing="false" onAction="#handleGoToUserAccountScene" prefHeight="36.0" prefWidth="74.0" style="-fx-background-color: #BDBDBD;" text="ข้อมูลส่วนตัว" />
          </children></Pane>
       <ListView fx:id="complaintListViewUnManage" layoutX="280.0" layoutY="135.0" prefHeight="363.0" prefWidth="163.0" />
-      <Button layoutX="684.0" layoutY="100.0" mnemonicParsing="false" onAction="#handleShowListView" prefHeight="17.0" prefWidth="83.0" text="คำร้องเรียนทั้งหมด" textAlignment="CENTER" wrapText="true">
+      <Button layoutX="684.0" layoutY="106.0" mnemonicParsing="false" onAction="#handleShowListView" prefHeight="17.0" prefWidth="83.0" style="-fx-background-color: #BDBDBD;" text="แสดงผลทั้งหมด" textAlignment="CENTER" wrapText="true">
          <font>
             <Font size="10.0" />
          </font></Button>
-      <Button layoutX="280.0" layoutY="548.0" mnemonicParsing="false" onAction="#handleVoteButton" text="โหวต" />
       <ListView fx:id="complaintListViewInProgress" layoutX="442.0" layoutY="135.0" prefHeight="363.0" prefWidth="163.0" />
       <ListView fx:id="complaintListViewDone" layoutX="605.0" layoutY="135.0" prefHeight="363.0" prefWidth="163.0" />
-      <MenuButton layoutX="585.0" layoutY="74.0" mnemonicParsing="false" text="เรียงตามเวลา" textAlignment="CENTER">
+      <MenuButton layoutX="585.0" layoutY="74.0" mnemonicParsing="false" style="-fx-background-color: #BDBDBD;" text="เรียงตามเวลา" textAlignment="CENTER">
         <items>
             <MenuItem fx:id="menuItemOld" mnemonicParsing="false" text="เก่าสุด" />
           <MenuItem fx:id="menuItemNew" mnemonicParsing="false" text="ใหม่สุด" />
         </items>
       </MenuButton>
-      <MenuButton layoutX="677.0" layoutY="74.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="91.0" text="คะแนนโหวด" textAlignment="CENTER">
+      <MenuButton layoutX="677.0" layoutY="74.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="91.0" style="-fx-background-color: #BDBDBD;" text="คะแนนโหวด" textAlignment="CENTER">
         <items>
           <MenuItem fx:id="menuItemAscending" mnemonicParsing="false" text="น้อยสุด" />
           <MenuItem fx:id="menuItemDescending" mnemonicParsing="false" text="มากสุด" />
         </items>
       </MenuButton>
-      <Button layoutX="689.0" layoutY="548.0" mnemonicParsing="false" onAction="#handleGoToSelectedComplaintDetail" text="ดูรายละเอียด" />
+      <Button layoutX="689.0" layoutY="548.0" mnemonicParsing="false" onAction="#handleGoToSelectedComplaintDetail" style="-fx-background-color: #BDBDBD;" text="ดูรายละเอียด" />
+      <MenuButton layoutX="280.0" layoutY="74.0" mnemonicParsing="false" style="-fx-background-color: #BDBDBD;" text="หมวดหมู่">
+        <items>
+          <MenuItem fx:id="normalMenuItem" mnemonicParsing="false" text="ทั่วไป" />
+          <MenuItem fx:id="teacherMenuItem" mnemonicParsing="false" text="อาจารย์/บุคลากร" />
+            <MenuItem fx:id="placeMenuItem" mnemonicParsing="false" text="อาคารและสถานที่" />
+            <MenuItem fx:id="enrollMenuItem" mnemonicParsing="false" text="ลงทะเบียนเรียน" />
+            <MenuItem fx:id="corruptMenuItem" mnemonicParsing="false" text="การทุจริต" />
+        </items>
+      </MenuButton>
    </children>
 </AnchorPane>

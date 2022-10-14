@@ -57,5 +57,10 @@ public class ReportComplaintController {
         reportList.add(report);
         dataSource.writeData(reportList);
         System.out.println(report);
+        try {
+            FXRouter.goTo("home",user);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

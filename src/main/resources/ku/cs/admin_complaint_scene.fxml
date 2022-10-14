@@ -67,17 +67,17 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="570.0" layoutY="341.0" text="reasonLabel">
+      <Label fx:id="reasonLabel" alignment="TOP_LEFT" layoutX="568.0" layoutY="340.0" prefHeight="134.0" prefWidth="182.0" text="reasonLabel" wrapText="true">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="570.0" layoutY="297.0" text="detailLabel">
+      <Label fx:id="detailLabel" layoutX="570.0" layoutY="297.0" text="detailLabel">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Button layoutX="515.0" layoutY="521.0" mnemonicParsing="false" text="button" />
+      <Button layoutX="494.0" layoutY="534.0" mnemonicParsing="false" onAction="#handleGoToComplaintDetail" text="ดูลายละเอียดของเรื่องร้องเรียน" />
       <Separator layoutX="378.0" layoutY="63.0" orientation="VERTICAL" prefHeight="538.0" prefWidth="7.0" />
    </children>
 </AnchorPane>

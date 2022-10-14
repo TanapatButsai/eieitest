@@ -51,7 +51,9 @@ public class ReportListDataSource implements DataSource<ReportList> {
             String line = "";
             //reporterUsername,reportedUsername,reason,objectID,reportTime
             while ((line = buffer.readLine()) != null) {
-                String[] data = line.split("-");
+                String[] data = line.split(",");
+                String checkHeader = "reporterUsernamereportedUsernamereason";
+                if (checkHeader.equals((data[0].trim())+(data[1].trim())+(data[2].trim()))) continue;
                 String reporterUsername = data[0].trim();
                 String reportedUsername = data[1].trim();
                 String reason = data[2].trim();
@@ -88,6 +90,9 @@ public class ReportListDataSource implements DataSource<ReportList> {
         try {
             writer = new FileWriter(file);
             buffer = new BufferedWriter(writer);
+            String header = "reporterUsername,reportedUsername,reason,objectID,reportTime";
+            buffer.append(header);
+            buffer.newLine();
             for (Report report : reportList.getReportList()) {
                 String line = report.getReporterUsername() + ","
                         + report.getReportedUsername() + ","
