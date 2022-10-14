@@ -14,9 +14,7 @@ public class Users implements Comparable<Users> {
     private boolean isAdmin;
     private boolean isBan;
 
-    public boolean isBan() {
-        return isBan;
-    }
+
 
     public void setBan(boolean ban) {
         isBan = ban;
@@ -62,7 +60,9 @@ public class Users implements Comparable<Users> {
     public void setUserImage(String userImage) {
         this.userImage = userImage;
     }
-    
+
+    public boolean isBan() { return isBan; }
+
     @Override
     public String toString() {
         return "Users{" +
@@ -73,6 +73,7 @@ public class Users implements Comparable<Users> {
                 ", lastTimeLogin='" + lastTimeLogin + '\'' +
                 ", userImage='" + userImage + '\'' +
                 ", isAdmin=" + isAdmin +
+                ", isBan=" + isBan +
                 '}';
     }
 
