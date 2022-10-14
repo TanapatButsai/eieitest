@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #D8D8D8;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.AdminBanReasonController">
+   <children>
+      <Pane prefHeight="64.0" prefWidth="808.0" style="-fx-background-color: #2FB16E;">
+         <children>
+            <Label fx:id="userLabel" layoutX="75.0" layoutY="24.0" prefHeight="17.0" prefWidth="83.0" />
+            <Button layoutX="38.0" layoutY="19.0" mnemonicParsing="false" onAction="#handleBack" prefHeight="32.0" prefWidth="76.0" text="Back">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <TextArea fx:id="reasonTextArea" layoutX="224.0" layoutY="200.0" prefHeight="200.0" prefWidth="359.0" />
+      <Label layoutX="383.0" layoutY="161.0" text="เหตุผล">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="476.0" layoutY="441.0" mnemonicParsing="false" onAction="#handleBan" prefHeight="32.0" prefWidth="106.0" text="ระงับบัญชีผู้ใช้">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

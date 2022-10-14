@@ -41,6 +41,7 @@ public class ProjectApplication extends Application {
         FXRouter.when("selected_complaint_detail",packageStr+"selected_complaint_detail.fxml");
         FXRouter.when("report_complaint",packageStr+"report_complaint.fxml");
         FXRouter.when("admin_selected_report_complaint",packageStr+"admin_selected_report_complaint.fxml");
+        FXRouter.when("admin_ban_reason",packageStr + "admin_ban_reason.fxml");
     }
 
     public static void main(String[] args) {

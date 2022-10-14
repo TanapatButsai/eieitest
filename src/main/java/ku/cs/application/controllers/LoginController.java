@@ -2,6 +2,7 @@ package ku.cs.application.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.control.TextField;
@@ -10,10 +11,7 @@ import java.io.IOException;
 import javafx.scene.control.Label;
 import com.github.saacsos.FXRouter;
 import ku.cs.application.models.*;
-import ku.cs.application.services.ComplaintListDataSource;
-import ku.cs.application.services.DataSource;
-import ku.cs.application.services.OfficerListDataSource;
-import ku.cs.application.services.UserListDataSource;
+import ku.cs.application.services.*;
 
 public class LoginController {
     @FXML private Label textError;
@@ -34,6 +32,8 @@ public class LoginController {
     private OfficerList officerIDList;
 
     private DataSource<ComplaintList> dataSource2 = new ComplaintListDataSource("data","complaint");
+    private DataSource<BanList> banListDataSource;
+    private BanList banList;
 //    private ComplaintList complaintList;
 
     @FXML
@@ -43,8 +43,10 @@ public class LoginController {
         image_view_ku_logo.setImage(new Image(url2));
         dataSource = new UserListDataSource("data","user.csv");
         officerDataSource = new OfficerListDataSource("data","officer.csv");
+        banListDataSource = new BanListDataSource(true);
         userList = dataSource.readData();
-
+        banList = banListDataSource.readData();
+        System.out.println(banList);
 //        complaintList = dataSource2.readData();
 
         if (userList == null){
@@ -87,6 +89,7 @@ public class LoginController {
                 System.err.println("Wrong username or password");
                 textError.setText("Wrong username or password");
             } else if (isLogin(username,password,user)) {
+                textError.setText("");
                 if (user.isAdmin()){
                     try {
                         FXRouter.goTo("adminscene",user);
@@ -95,12 +98,7 @@ public class LoginController {
                         System.err.println("ให้ตรวจสอบการกำหนด route");
                         e.printStackTrace();
                     }
-                }
-//                if (user.isBan()){
-//                    BanListDataSource banListDataSource = new BanListDataSource("");
-//
-//                }
-                else {
+                } else {
                     try {
                         userList.recordTimeLogin(user);
                         dataSource.writeData(userList);
@@ -120,13 +118,6 @@ public class LoginController {
     }
     @FXML
     public void handleGoToHome(ActionEvent actionEvent){
-        try {
-            FXRouter.goTo("home");
-        } catch (IOException e) {
-            System.err.println("ไปที่หน้า home");
-            System.err.println("ให้ตรวจสอบการกำหนด route");
-            e.printStackTrace();
-        }
     }
     @FXML
     public void handleGoToRegister(ActionEvent actionEvent){

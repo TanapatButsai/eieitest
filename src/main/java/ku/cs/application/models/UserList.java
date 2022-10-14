@@ -61,6 +61,12 @@ public class UserList{
             user.setUserImage(imagePath);
         }
     }
+    public void setBan(String username){
+        Users user = findUser(username);
+        if (user != null) {
+            user.setBan(true);
+        }
+    }
     public Users findUser(String username) {
         for (Users user : userList) {
             if (user.getUsername().equals(username)) {

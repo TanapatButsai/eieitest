@@ -40,6 +40,23 @@ public class BanList {
         return ban;
     }
 
+    public Ban findBanByUsername(String username){
+        for (Ban ban : banList) {
+            if (username.equals(ban.getUser())) {
+                return ban;
+            }
+        }
+        return null;
+    }
 
+    @Override
+    public String toString() {
+        return "BanList{" +
+                "banList=" + banList +
+                '}';
+    }
 
+    public int getSize() {
+        return banList.size();
+    }
 }
