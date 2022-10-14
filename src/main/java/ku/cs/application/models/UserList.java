@@ -26,9 +26,6 @@ public class UserList{
             if (!userTemp.isAdmin()) {
                 userListTemp.add(userTemp);
             }
-            if (!userTemp.isBan()) {
-                userListTemp.add(userTemp);
-            }
         }
         Collections.sort(userListTemp);
         return userListTemp;

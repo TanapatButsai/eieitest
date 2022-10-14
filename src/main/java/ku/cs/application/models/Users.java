@@ -74,7 +74,7 @@ public class Users implements Comparable<Users> {
                 ", userImage='" + userImage + '\'' +
                 ", isAdmin=" + isAdmin +
                 ", isBan=" + isBan +
-                '}';
+                "}\n";
     }
 
     public void recordTimeLogin(){
