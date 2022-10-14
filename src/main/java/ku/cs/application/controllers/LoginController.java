@@ -98,7 +98,10 @@ public class LoginController {
                         System.err.println("ให้ตรวจสอบการกำหนด route");
                         e.printStackTrace();
                     }
-                } else {
+                } else if(user.isBan()){
+                    banAlert(user);
+                }
+                else {
                     try {
                         userList.recordTimeLogin(user);
                         dataSource.writeData(userList);
@@ -135,6 +138,18 @@ public class LoginController {
     }
     public boolean isOfficer(String username, String password, Officer officer){
         return username.equals(officer.getOfficerID()) && password.equals(officer.getOfficerPassword());
+    }
+    public void banAlert(Users user){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        Ban ban = banList.findBanByUsername(user.getUsername());
+        String reason = ban.getBannedReason();
+        alert.setTitle("ระงับบัญชี");
+        alert.setContentText(reason);
+        alert.setHeaderText("บัญชีของคุณถูกระงับ");
+        alert.showAndWait();
+        inputUsername.clear();// clear ช่อง TextField
+        inputPassword.clear();
+        textError.setText("");
     }
 }
 

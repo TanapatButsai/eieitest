@@ -55,6 +55,7 @@ public class NormalComplaintController {
         String bodyComplaint1 = bodyTextArea1.getText();
         Complaint complaint = new Complaint(headComplaint,bodyComplaint,bodyComplaint1,category,user.getUsername());
         complaint.recordTime();
+        complaint.setSolution("");
         complaintList.add(complaint);
         dataSource.writeData(complaintList);
     }

@@ -61,8 +61,9 @@ public class OfficerRoleDataSource implements OfficerDataSource<ComplaintList>{
                     boolean unmanaged = Boolean.parseBoolean(data[8].trim());
                     int rating = Integer.parseInt(data[9].trim());
                     boolean isBan = Boolean.parseBoolean(data[10].trim());
+                    String solution = data[11].trim();
                     Complaint complaint = new Complaint(headComplaint,bodyComplaint,fixComplaint,category,nameWriter
-                            ,time,done,inProgress,unmanaged,rating,isBan);
+                            ,time,done,inProgress,unmanaged,rating,isBan,solution);
                     list.add(complaint);
                 }
             }
@@ -110,8 +111,9 @@ public class OfficerRoleDataSource implements OfficerDataSource<ComplaintList>{
                     boolean unmanaged = Boolean.parseBoolean(data[8].trim());
                     int rating = Integer.parseInt(data[9].trim());
                     boolean isBan = Boolean.parseBoolean(data[10].trim());
+                    String solution = data[11].trim();
                     Complaint complaint = new Complaint(headComplaint,bodyComplaint,fixComplaint,category,nameWriter
-                            ,time,done,inProgress,unmanaged,rating,isBan);
+                            ,time,done,inProgress,unmanaged,rating,isBan,solution);
                     list.add(complaint);
                 }
             }
@@ -159,8 +161,9 @@ public class OfficerRoleDataSource implements OfficerDataSource<ComplaintList>{
                     boolean unmanaged = Boolean.parseBoolean(data[8].trim());
                     int rating = Integer.parseInt(data[9].trim());
                     boolean isBan = Boolean.parseBoolean(data[10].trim());
+                    String solution = data[11].trim();
                     Complaint complaint = new Complaint(headComplaint,bodyComplaint,fixComplaint,category,nameWriter
-                            ,time,done,inProgress,unmanaged,rating,isBan);
+                            ,time,done,inProgress,unmanaged,rating,isBan,solution);
                     list.add(complaint);
                 }
             }
@@ -208,8 +211,9 @@ public class OfficerRoleDataSource implements OfficerDataSource<ComplaintList>{
                     boolean unmanaged = Boolean.parseBoolean(data[8].trim());
                     int rating = Integer.parseInt(data[9].trim());
                     boolean isBan = Boolean.parseBoolean(data[10].trim());
+                    String solution = data[11].trim();
                     Complaint complaint = new Complaint(headComplaint,bodyComplaint,fixComplaint,category,nameWriter
-                            ,time,done,inProgress,unmanaged,rating,isBan);
+                            ,time,done,inProgress,unmanaged,rating,isBan,solution);
                     list.add(complaint);
                 }
             }
@@ -256,8 +260,9 @@ public class OfficerRoleDataSource implements OfficerDataSource<ComplaintList>{
                     boolean unmanaged = Boolean.parseBoolean(data[8].trim());
                     int rating = Integer.parseInt(data[9].trim());
                     boolean isBan = Boolean.parseBoolean(data[10].trim());
+                    String solution = data[11].trim();
                     Complaint complaint = new Complaint(headComplaint,bodyComplaint,fixComplaint,category,nameWriter
-                            ,time,done,inProgress,unmanaged,rating,isBan);
+                            ,time,done,inProgress,unmanaged,rating,isBan,solution);
                     list.add(complaint);
                 }
             }
@@ -298,7 +303,8 @@ public class OfficerRoleDataSource implements OfficerDataSource<ComplaintList>{
                         + complaint.isInProgress()+","
                         + complaint.isUnmanaged()+","
                         + complaint.getRating()+","
-                        + complaint.isBan();
+                        + complaint.isBan()+","
+                        + complaint.getSolution();
 
                 buffer.append(line);
                 buffer.newLine();
