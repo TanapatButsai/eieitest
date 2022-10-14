@@ -95,6 +95,15 @@ public class ComplaintList {
         Collections.sort(temp);
         return temp;
     }
+    public ComplaintList getOfficerComplaint(String role) {
+        ComplaintList complaintListTemp = new ComplaintList();
+        for (Complaint complaint : complaintList) {
+            if (complaint.getCategory().equals(role)) {
+                complaintListTemp.add(complaint);
+            }
+        }
+        return complaintListTemp;
+    }
 
 
     public void add(Complaint complaint) {
