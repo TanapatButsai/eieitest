@@ -48,7 +48,10 @@ public class BanList {
         }
         return null;
     }
-
+    public void tryLogin(String username){
+        Ban ban = findBanByUsername(username);
+        if (!(ban == null)){ban.setTryLogin(ban.getTryLogin()+1);}
+    }
     @Override
     public String toString() {
         return "BanList{" +

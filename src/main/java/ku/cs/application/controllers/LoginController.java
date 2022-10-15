@@ -43,7 +43,7 @@ public class LoginController {
         image_view_ku_logo.setImage(new Image(url2));
         dataSource = new UserListDataSource("data","user.csv");
         officerDataSource = new OfficerListDataSource("data","officer.csv");
-        banListDataSource = new BanListDataSource(true);
+        banListDataSource = new BanListDataSource(false);
         userList = dataSource.readData();
         banList = banListDataSource.readData();
         System.out.println(banList);
@@ -142,6 +142,8 @@ public class LoginController {
     public void banAlert(Users user){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         Ban ban = banList.findBanByUsername(user.getUsername());
+        banList.tryLogin(user.getUsername());
+        banListDataSource.writeData(banList);
         String reason = ban.getBannedReason();
         alert.setTitle("ระงับบัญชี");
         alert.setContentText(reason);

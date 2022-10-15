@@ -40,7 +40,7 @@ public class AdminSelectedReportComplaintController {
 
     @FXML public void initialize(){
         complaint = (Complaint) FXRouter.getData();
-        banListDataSource = new BanListDataSource(true);
+        banListDataSource = new BanListDataSource(false);
         userListDataSource = new UserListDataSource("data","user.csv");
         banList = banListDataSource.readData();
         userList = userListDataSource.readData();
