@@ -8,6 +8,9 @@ import com.github.saacsos.FXRouter;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.MenuItem;
+import javafx.scene.image.Image;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Circle;
 import ku.cs.application.models.Complaint;
 import ku.cs.application.models.ComplaintList;
 import ku.cs.application.models.ComplaintStatus;
@@ -50,6 +53,7 @@ public class HomeController {
     Filterer<ComplaintList> filtererDone = new ComplaintStatusFilterer(ComplaintStatus.done);
     private enum Sorter{timeNew,timeOld,ratingAscending, ratingDescending}
     private Sorter sorter;
+    @FXML private Circle userImageCircleView;
 
 
     @FXML
@@ -64,6 +68,7 @@ public class HomeController {
         setMenuItemTime();
         showListView();
         handleSelectListView();
+        showStudentImage();
     }
 
     @FXML
@@ -331,6 +336,13 @@ public class HomeController {
             FXRouter.goTo("normalcomplaint",objects);
         } catch (IOException e) {
             throw new RuntimeException(e);
+        }
+    }
+    @FXML void showStudentImage(){
+
+        if (user.getUserImage() != null){
+            Image im = (new Image("file:"+user.getUserImage()));
+            userImageCircleView.setFill(new ImagePattern(im));
         }
     }
 }
