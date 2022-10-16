@@ -60,6 +60,7 @@ public class BanListDataSource implements DataSource<BanList>{
             String line = "";
             while ((line = buffer.readLine()) != null) {
                 String[] data = line.split(",");
+                if (data[6].trim().equals("tryLogin")) continue;
                 String bannedID = data[0].trim();
                 String user = data[1].trim();
                 String bannedReason = data[2].trim()

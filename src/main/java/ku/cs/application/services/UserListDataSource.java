@@ -59,7 +59,7 @@ public class UserListDataSource implements DataSource<UserList> {
                 String password = data[3].trim();
                 boolean isAdmin = Boolean.parseBoolean(data[4].trim());
                 String lastTimeLogin = data[5].trim();
-                String userImage = data[6].trim();
+                String userImage = data[6].trim().replace("\\",File.separator);
                 boolean isBan = Boolean.parseBoolean(data[7].trim());
                 Users user = new Users(name, id, username, password,
                         isAdmin, lastTimeLogin, userImage, isBan);
@@ -103,7 +103,7 @@ public class UserListDataSource implements DataSource<UserList> {
                         + user.getPassword() + ","
                         + user.isAdmin()+","
                         + user.getLastTimeLogin()+","
-                        + user.getUserImage()+ ","
+                        + user.getUserImage().replace(File.separator,"\\")+ ","
                         + user.isBan();
 
                 buffer.append(line);
