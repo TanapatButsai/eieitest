@@ -10,7 +10,7 @@ import ku.cs.application.models.UserList;
 import ku.cs.application.models.Users;
 import ku.cs.application.services.DataSource;
 import ku.cs.application.services.UserListDataSource;
-
+import com.github.saacsos.FXRouter;
 import java.io.IOException;
 
 public class AdminController {
@@ -22,10 +22,12 @@ public class AdminController {
 
     private DataSource<UserList> ulds;
     private UserList userList;
+    private Users user ;
 
 
     @FXML
     public void initialize() {
+        user = (Users) FXRouter.getData();
         ulds = new UserListDataSource("data","user.csv");
         userList = ulds.readData();
         System.out.println(userList);
@@ -81,7 +83,7 @@ public class AdminController {
     @FXML
     public void handleAdminComplaint(ActionEvent event) {
         try {
-            com.github.saacsos.FXRouter.goTo("admincomplaint");
+            com.github.saacsos.FXRouter.goTo("admincomplaint",user);
         } catch (IOException e) {
             System.err.println("ไปที่หน้า complaint ไม่ได้");
             System.err.println("ให้ตรวจสอบการกำหนด route");
@@ -91,7 +93,7 @@ public class AdminController {
     @FXML
     public void handleManageBan(ActionEvent event) {
         try {
-            com.github.saacsos.FXRouter.goTo("adminmanageban");
+            com.github.saacsos.FXRouter.goTo("adminmanageban",user);
         } catch (IOException e) {
             System.err.println("ไปที่หน้า manageban ไม่ได้");
             System.err.println("ให้ตรวจสอบการกำหนด route");

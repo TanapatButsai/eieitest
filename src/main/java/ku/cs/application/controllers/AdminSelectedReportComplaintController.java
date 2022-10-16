@@ -10,6 +10,8 @@ import ku.cs.application.services.DataSource;
 import ku.cs.application.services.UserListDataSource;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Objects;
 
 public class AdminSelectedReportComplaintController {
 
@@ -37,15 +39,21 @@ public class AdminSelectedReportComplaintController {
     private DataSource<UserList> userListDataSource;
     private UserList userList;
     private Complaint complaint;
+    private Report report;
+    private ArrayList<Object> objects;
+    private Users admin;
 
     @FXML public void initialize(){
-        complaint = (Complaint) FXRouter.getData();
+        objects = (ArrayList<Object>) FXRouter.getData();
+        complaint = (Complaint) objects.get(0);
+        report = (Report) objects.get(1);
+        admin = (Users) objects.get(2);
         banListDataSource = new BanListDataSource(false);
         userListDataSource = new UserListDataSource("data","user.csv");
         banList = banListDataSource.readData();
         userList = userListDataSource.readData();
-        System.out.println(banList);
-        System.out.println(userList);
+        System.out.println(report);
+
         showComplaintLabel();
     }
 
@@ -75,7 +83,7 @@ public class AdminSelectedReportComplaintController {
 //        userList.setBan(complaint.getNameWriter());
 
         try {
-            FXRouter.goTo("admin_ban_reason",complaint);
+            FXRouter.goTo("admin_ban_reason",objects);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

@@ -1,25 +1,2 @@
 topic,body,detail,category,usernameWriter,time,isDone,isInProgress,isUnmanaged,vote,isBan
-อาจารโกงค่าขนม,อาจารที่ชื่อหวยโกง,โกงไป100000000,corrupt,ILoveDog,00-57-59-14-10-22,true,false,false,1,false,no
-โกงๆๆๆ,แคลลลล,ไม่รู้ๆๆ,corrupt,1234,16-03-28-07-10-22,false,true,false,2,false,no
-ทั่วไป3,ทั่วไป3,ทั่วไป3,normal,Titipat,01-05-49-14-10-22,true,false,false,0,false,no
-อาจาร1,อาจาร1,อาจาร1,teacher,ILoveDog,01-05-57-14-10-22,false,false,true,0,false,no
-อาจาร2,อาจาร2,อาจาร2,teacher,ILoveDog,01-06-02-14-10-22,false,true,false,0,false,no
-อาจาร3,อาจาร3,อาจาร3,teacher,ILoveDog,01-06-05-14-10-22,true,false,false,0,false,no
-enroll,enroll,enroll,enroll,Titipat,01-06-20-14-10-22,false,true,false,0,false,no
-enrollenrollenroll,enrollenrollenroll,enrollenrollenroll,enroll,ILoveDog,01-06-25-14-10-22,true,false,false,0,false,no
-cur,cur,cur,corrupt,ILoveDog,01-06-36-14-10-22,false,false,true,0,false,no
-curcur,curcur,curcur,corrupt,ILoveDog,01-06-38-14-10-22,false,false,true,3,false,no
-curcurcur,curcurcur,curcurcur,corrupt,Titipat,01-06-40-14-10-22,true,false,false,0,false,no
-curcurcurcur,curcurcurcur,curcurcurcur,corrupt,Titipat,01-06-42-14-10-22,true,false,false,0,false,no
-dwqdqw,dqwdqw,dqwdq,normal,ILoveDog,14-51-08-14-10-22,false,false,true,0,false,no
-123,123,213,normal,Titipat,15-15-29-14-10-22,false,false,true,0,false,no
-123,123,213,normal,ILoveDog,15-15-30-14-10-22,false,false,true,2,false,no
-123,123,123,teacher,ILoveDog,15-15-34-14-10-22,false,false,true,0,false,no
-234,234,234,place,Titipat,15-15-39-14-10-22,false,false,true,6,false,no
-34534,345,345,enroll,ILoveDog,15-15-45-14-10-22,false,false,true,0,false,no
-456,456,456,corrupt,Titipat,15-15-50-14-10-22,false,false,true,0,false,no
-plac1,plac1,plac1,place,Titipat,01-06-14-14-10-22,false,false,true,1,false,no
-ggggg,ggggggggggg,ggggggggggg,corrupt,12345,17-36-48-14-10-22,false,false,true,0,false,no
-เพื่อนโกงค่าอาหารปลา,ผมไปเที่ยวที่จังหวัดนิกาตะแล้วไปให้อาหารปลากัน แล้วเพื่อนโกง,โกงไป12456บาท,corrupt,ILoveDog,03-17-30-14-10-22,false,true,false,0,false,no
-ทั่วไป1,ทั่วไป1,ทั่วไป1,normal,Titipat,01-05-39-14-10-22,true,false,false,0,false,ตืบหน้า2
-ทั่วไป2,ทั่วไป2,ทั่วไป2,normal,ILoveDog,01-05-44-14-10-22,false,true,false,0,false,no
+dwq,dqw,dqw,normal,12345,00-23-19-17-10-22,false,false,true,0,false,no

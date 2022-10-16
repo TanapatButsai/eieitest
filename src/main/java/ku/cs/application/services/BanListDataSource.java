@@ -102,6 +102,8 @@ public class BanListDataSource implements DataSource<BanList>{
         try {
             writer = new FileWriter(file);
             buffer = new BufferedWriter(writer);
+            buffer.append("BanNumber,BannedUsername,reason,complaintObjectID,bannedTime,BannedActive,tryLogin,userRequestUnBan");
+            buffer.newLine();
             for (Ban ban  : banList.getBanList()) {
                 String line = ban.toCSV();
                 buffer.append(line);

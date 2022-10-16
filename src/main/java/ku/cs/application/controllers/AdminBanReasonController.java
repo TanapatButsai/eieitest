@@ -2,16 +2,15 @@ package ku.cs.application.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import ku.cs.application.models.*;
 import com.github.saacsos.FXRouter;
-import ku.cs.application.services.BanListDataSource;
-import ku.cs.application.services.ComplaintListDataSource;
-import ku.cs.application.services.DataSource;
-import ku.cs.application.services.UserListDataSource;
+import ku.cs.application.services.*;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class AdminBanReasonController {
 
@@ -26,22 +25,34 @@ public class AdminBanReasonController {
     private DataSource<UserList> dataSource;
     private DataSource<BanList> banListDataSource;
     private Users user;
+    private DataSource<ReportList> reportListDataSource;
+
+    private ReportList reportList;
+    private Report report;
+    private ArrayList<Object> objects;
+    private Users admin;
 
     @FXML private void initialize(){
         dataSource = new UserListDataSource("data","user.csv");
         banListDataSource = new BanListDataSource(true);
+        reportListDataSource = new ReportListDataSource("data","report.csv");
         userList = dataSource.readData();
         banList = banListDataSource.readData();
-        complaint = (Complaint) FXRouter.getData();
+        reportList =reportListDataSource.readData();
+        objects = (ArrayList<Object>) FXRouter.getData();
+        complaint = (Complaint) objects.get(0);
+        report = (Report) objects.get(1);
+        admin = (Users) objects.get(2);
+        System.out.println(report);
+        System.out.println(complaint);
         user = userList.findUser(complaint.getNameWriter());
-        System.out.println(banList);
         System.out.println(banList);
     }
 
     @FXML
     void handleBack(ActionEvent event) {
         try {
-            FXRouter.goTo("admincomplaint");
+            FXRouter.goTo("admin_selected_report_complaint",objects);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -49,7 +60,21 @@ public class AdminBanReasonController {
 
     @FXML
     public void handleBan(ActionEvent event) {
-        if (!(user == null) && !reasonTextArea.getText().equals("")) ban();
+        System.out.println(user);
+        if (!(user == null) && !reasonTextArea.getText().equals("")){
+            ban();
+            try {
+                FXRouter.goTo("admincomplaint",admin);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }else{
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("");
+            alert.setHeaderText("พบช่องว่าง");
+            alert.setContentText("กรุณากรอกข้อมูลให้ครบ");
+            alert.showAndWait();
+        }
     }
     public void ban(){
         userList.setBan(complaint.getNameWriter());
@@ -65,8 +90,11 @@ public class AdminBanReasonController {
         ban.setTime();
         banList.addBan(ban);
         banListDataSource.writeData(banList);
+        removeUsedReport(report);
     }
 
-
+    public void removeUsedReport(Report report){
+        reportList.remove(report);
+        reportListDataSource.writeData(reportList);
+    }
 }
-

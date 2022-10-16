@@ -7,15 +7,13 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
-import ku.cs.application.models.Complaint;
-import ku.cs.application.models.ComplaintList;
-import ku.cs.application.models.Report;
-import ku.cs.application.models.ReportList;
+import ku.cs.application.models.*;
 import ku.cs.application.services.ComplaintListDataSource;
 import ku.cs.application.services.DataSource;
 import ku.cs.application.services.ReportListDataSource;
 import com.github.saacsos.FXRouter;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class AdminComplaintController {
     @FXML private ListView<Report> reportListView;
@@ -26,6 +24,7 @@ public class AdminComplaintController {
     @FXML private Label detailLabel;
 
 
+
     private DataSource<ReportList> clds;
 //    private ComplaintList complaintList;
     private ReportList reportList;
@@ -33,11 +32,12 @@ public class AdminComplaintController {
     private ComplaintList complaintList = new ComplaintList();
     private  Complaint complaint;
     private Report report;
-
+    private Users admin;
 
     @FXML
     public void initialize(){
         clds = new ReportListDataSource("data","report.csv");
+        admin = (Users) FXRouter.getData();
         reportList = clds.readData();
         complaintList = dataSource.readData();
         System.out.println(reportList.toString());
@@ -58,10 +58,13 @@ public class AdminComplaintController {
                 System.out.println(t1);
                 findComplaint(t1);
                 showSelectedComplaint(t1,complaint);
+                selectedReport(t1);
             }
         });
     }
-
+    public void selectedReport(Report report){
+        this.report = report;
+    }
     private void showSelectedComplaint(Report report,Complaint complaint) {
         titleLabel.setText(complaint.getHeadComplaint());
         reportCategoryLabel.setText(complaint.getCategory());
@@ -85,7 +88,7 @@ public class AdminComplaintController {
     @FXML
     public void handleBack(ActionEvent event) {
         try {
-            com.github.saacsos.FXRouter.goTo("adminscene");
+            com.github.saacsos.FXRouter.goTo("adminscene",admin);
         } catch (IOException e) {
             System.err.println("ไปที่หน้า admin ไม่ได้");
             System.err.println("ให้ตรวจสอบการกำหนด route");
@@ -93,9 +96,13 @@ public class AdminComplaintController {
     }
     @FXML
     public void handleGoToComplaintDetail(ActionEvent actionEvent){
+        ArrayList<Object> objects = new ArrayList<>();
+        objects.add(complaint);
+        objects.add(report);
+        objects.add(admin);
         try {
             if (!(complaint == null))
-                FXRouter.goTo("admin_selected_report_complaint",complaint);
+                FXRouter.goTo("admin_selected_report_complaint",objects);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

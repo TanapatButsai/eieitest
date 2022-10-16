@@ -1,1 +1,2 @@
-1,12345,dqwdqwd\[comma]dqwdwqdqw,ggggg:12345:17-36-48-14-10-22,18-53-34-15-10-22,true,2,none
+BanNumber,BannedUsername,reason,complaintObjectID,bannedTime,BannedActive,tryLogin,userRequestUnBan
+1,12345,ทดลองระบบแบน,dwq:12345:00-23-19-17-10-22,00-39-47-17-10-22,true,3,none
