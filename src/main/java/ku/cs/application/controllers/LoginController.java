@@ -28,8 +28,8 @@ public class LoginController {
     private DataSource<UserList> dataSource;
     private UserList userList;
     private Users user;
-    private DataSource<OfficerList> officerDataSource;
-    private OfficerList officerIDList;
+    private DataSource<OfficeList> officerDataSource;
+    private OfficeList officerIDList;
 
     private DataSource<ComplaintList> dataSource2 = new ComplaintListDataSource("data","complaint");
     private DataSource<BanList> banListDataSource;
@@ -43,10 +43,12 @@ public class LoginController {
         image_view_ku_logo.setImage(new Image(url2));
         dataSource = new UserListDataSource("data","user.csv");
         officerDataSource = new OfficerListDataSource("data","officer.csv");
-        banListDataSource = new BanListDataSource(true);
+        banListDataSource = new BanListDataSource(false);
         userList = dataSource.readData();
         banList = banListDataSource.readData();
-        System.out.println(banList);
+        officerIDList = officerDataSource.readData();
+        System.out.println(officerIDList);
+
 //        complaintList = dataSource2.readData();
 
         if (userList == null){
@@ -67,24 +69,11 @@ public class LoginController {
         String username = inputUsername.getText();
         String password = inputPassword.getText();
         Users user = userList.findUser(username);
-        Officer officer = officerIDList.findOfficer(username);
+//        Officer officer = officerIDList.findOfficer(username);
         if (username.isEmpty() || password.isEmpty()){
             textError.setText("Enter username and password");
             System.err.println("TextField is empty");
-        } else if (user == null || !user.getPassword().equals(password)
-                || officer == null || !officer.getOfficerPassword().equals(password)) {
-            if (officer == null){
-                System.err.println("Wrong username or password");
-                textError.setText("Wrong username or password");
-            }else if (isOfficer(username,password, officer)){
-                try {
-                    FXRouter.goTo("officer", officer);
-                } catch (IOException e) {
-                    System.err.println("ไปที่หน้า officer");
-                    System.err.println("ให้ตรวจสอบการกำหนด route");
-                    e.printStackTrace();
-                }
-            }
+        }
             if (user == null){
                 System.err.println("Wrong username or password");
                 textError.setText("Wrong username or password");
@@ -93,6 +82,19 @@ public class LoginController {
                 if (user.isAdmin()){
                     try {
                         FXRouter.goTo("adminscene",user);
+                    } catch (IOException e) {
+                        System.err.println("ไปที่หน้า home");
+                        System.err.println("ให้ตรวจสอบการกำหนด route");
+                        e.printStackTrace();
+                    }
+                }
+                else if (user.isOfficer()){
+                    String role = officerIDList.findOfficerRole(user.getUsername());
+                    user = new Officer(user.getName(),user.getId()
+                            ,user.getUsername(),user.getPassword(),user.getLastTimeLogin(),user.getUserImage()
+                            ,role);
+                    try {
+                        FXRouter.goTo("officer",user);
                     } catch (IOException e) {
                         System.err.println("ไปที่หน้า home");
                         System.err.println("ให้ตรวจสอบการกำหนด route");
@@ -114,11 +116,11 @@ public class LoginController {
                     }
                 }
             }
-
-        }
         inputUsername.clear();// clear ช่อง TextField
         inputPassword.clear();
-    }
+        }
+
+
     @FXML
     public void handleGoToHome(ActionEvent actionEvent){
     }
@@ -136,12 +138,14 @@ public class LoginController {
     public boolean isLogin(String username, String password,Users user){
         return username.equals(user.getUsername()) && password.equals(user.getPassword());
     }
-    public boolean isOfficer(String username, String password, Officer officer){
-        return username.equals(officer.getOfficerID()) && password.equals(officer.getOfficerPassword());
-    }
+//    public boolean isOfficer(String username, String password, Officer officer){
+//        return username.equals(officer.getOfficerID()) && password.equals(officer.getOfficerPassword());
+//    }
     public void banAlert(Users user){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         Ban ban = banList.findBanByUsername(user.getUsername());
+        banList.tryLogin(user.getUsername());
+        banListDataSource.writeData(banList);
         String reason = ban.getBannedReason();
         alert.setTitle("ระงับบัญชี");
         alert.setContentText(reason);

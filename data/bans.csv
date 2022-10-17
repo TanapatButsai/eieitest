@@ -1,1 +1,2 @@
-1,12345,คุณโดนแบนเนื่องจากมีพฤติกรรมไม่เหมาะสม,ggggg:12345:17-36-48-14-10-22,21-34-30-14-10-22,true,0
+BanNumber,BannedUsername,reason,complaintObjectID,bannedTime,BannedActive,tryLogin,userRequestUnBan
+1,12345,ทดลองระบบแบน,dwq:12345:00-23-19-17-10-22,00-39-47-17-10-22,true,4,none

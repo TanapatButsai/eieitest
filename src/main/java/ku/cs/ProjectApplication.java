@@ -15,7 +15,10 @@ public class ProjectApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXRouter.bind(this, stage, "DingTwoProject", 800, 600);
         configRoute();
-        FXRouter.goTo("login");
+        FXRouter.setAnimationType("fade", 3000);
+        FXRouter.goTo("project_opening_scene");
+
+
     }
 
     private static void configRoute() {
@@ -42,6 +45,7 @@ public class ProjectApplication extends Application {
         FXRouter.when("report_complaint",packageStr+"report_complaint.fxml");
         FXRouter.when("admin_selected_report_complaint",packageStr+"admin_selected_report_complaint.fxml");
         FXRouter.when("admin_ban_reason",packageStr + "admin_ban_reason.fxml");
+        FXRouter.when("project_opening_scene",packageStr+"project_opening_scene.fxml");
     }
 
     public static void main(String[] args) {

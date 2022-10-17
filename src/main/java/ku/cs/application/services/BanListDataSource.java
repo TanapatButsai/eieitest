@@ -60,15 +60,20 @@ public class BanListDataSource implements DataSource<BanList>{
             String line = "";
             while ((line = buffer.readLine()) != null) {
                 String[] data = line.split(",");
+                if (data[6].trim().equals("tryLogin")) continue;
                 String bannedID = data[0].trim();
                 String user = data[1].trim();
-                String bannedReason = data[2].trim();
+                String bannedReason = data[2].trim()
+                        .replace("\\[newline]","\n")
+                        .replace("\\[doublequote]","\"")
+                        .replace("\\[comma]",",");
                 String bannedObjectID = data[3].trim();
                 String time = data[4].trim();
                 boolean isActive = Boolean.parseBoolean(data[5].trim());
                 int tryLogin = Integer.parseInt(data[6].trim());
+                String comment = data[7].trim();
 
-                Ban ban = new Ban(bannedID,user,bannedReason,bannedObjectID,time,isActive,tryLogin);
+                Ban ban = new Ban(bannedID,user,bannedReason,bannedObjectID,time,isActive,tryLogin,comment);
                 banList.addBan(ban);
             }
 
@@ -97,15 +102,10 @@ public class BanListDataSource implements DataSource<BanList>{
         try {
             writer = new FileWriter(file);
             buffer = new BufferedWriter(writer);
+            buffer.append("BanNumber,BannedUsername,reason,complaintObjectID,bannedTime,BannedActive,tryLogin,userRequestUnBan");
+            buffer.newLine();
             for (Ban ban  : banList.getBanList()) {
-                String line = ban.getBannedID() + ","
-                        + ban.getUser() + ","
-                        + ban.getBannedReason()+ ","
-                        + ban.getObjectID() + ","
-                        + ban.getTime() + ","
-                        + ban.isActive() + ","
-                        + ban.getTryLogin();
-
+                String line = ban.toCSV();
                 buffer.append(line);
                 buffer.newLine();
             }
