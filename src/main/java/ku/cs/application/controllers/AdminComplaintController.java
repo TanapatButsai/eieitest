@@ -9,52 +9,65 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import ku.cs.application.models.Complaint;
 import ku.cs.application.models.ComplaintList;
+import ku.cs.application.models.Report;
+import ku.cs.application.models.ReportList;
 import ku.cs.application.services.ComplaintListDataSource;
 import ku.cs.application.services.DataSource;
-
+import ku.cs.application.services.ReportListDataSource;
+import com.github.saacsos.FXRouter;
 import java.io.IOException;
 
 public class AdminComplaintController {
-    @FXML private ListView<Complaint> complaintListView;
+    @FXML private ListView<Report> reportListView;
     @FXML private Label reporterLabel;
     @FXML private Label reportCategoryLabel;
     @FXML private Label titleLabel;
-    @FXML private TextArea detailLabel;
-    private DataSource<ComplaintList> clds;
-    private ComplaintList complaintList;
+    @FXML private Label reasonLabel;
+    @FXML private Label detailLabel;
+
+
+    private DataSource<ReportList> clds;
+//    private ComplaintList complaintList;
+    private ReportList reportList;
+    private DataSource<ComplaintList> dataSource = new ComplaintListDataSource("data","complaint.csv");
+    private ComplaintList complaintList = new ComplaintList();
+    private  Complaint complaint;
+    private Report report;
+
 
     @FXML
     public void initialize(){
-        clds = new ComplaintListDataSource("data","complaint.csv");
-        complaintList = clds.readData();
-
-//        showListView();
-//        clearSelectedComplaint();
-//        handleSelectedListView();
+        clds = new ReportListDataSource("data","report.csv");
+        reportList = clds.readData();
+        complaintList = dataSource.readData();
+        System.out.println(reportList.toString());
+        showListView();
+        clearSelectedComplaint();
+        handleSelectedListView();
     }
 
     private void showListView() {
-        complaintListView.getItems().addAll(complaintList.getAllComplaint());
-        complaintListView.refresh();
+        reportListView.getItems().setAll(reportList.getReportList());
+        reportListView.refresh();
     }
 
     private void handleSelectedListView() {
-        complaintListView.getSelectionModel().selectedItemProperty().addListener(
-                new ChangeListener<Complaint>() {
-                    @Override
-                    public void changed(ObservableValue<? extends Complaint> observableValue,
-                                        Complaint complaint, Complaint c1) {
-                        System.out.println(c1 + "is selected");
-                        showSelectedComplaint(c1);
-                    }
-                });
+        reportListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Report>() {
+            @Override
+            public void changed(ObservableValue<? extends Report> observableValue, Report report, Report t1) {
+                System.out.println(t1);
+                findComplaint(t1);
+                showSelectedComplaint(t1,complaint);
+            }
+        });
     }
 
-    private void showSelectedComplaint(Complaint complaint) {
+    private void showSelectedComplaint(Report report,Complaint complaint) {
         titleLabel.setText(complaint.getHeadComplaint());
         reportCategoryLabel.setText(complaint.getCategory());
-        reporterLabel.setText(complaint.getNameWriter());
-        detailLabel.setText(complaint.getBodyComplaint());
+        reporterLabel.setText(report.getReporterUsername());
+        detailLabel.setText("");
+        reasonLabel.setText(report.getReason());
     }
 
     private void clearSelectedComplaint(){
@@ -62,6 +75,11 @@ public class AdminComplaintController {
         reportCategoryLabel.setText("");
         reporterLabel.setText("");
         detailLabel.setText("");
+        reasonLabel.setText("");
+    }
+    private void findComplaint(Report report){
+        complaint = complaintList.findComplaintByReported(report);
+        System.out.println(complaint);
     }
 
     @FXML
@@ -73,5 +91,13 @@ public class AdminComplaintController {
             System.err.println("ให้ตรวจสอบการกำหนด route");
         }
     }
-
+    @FXML
+    public void handleGoToComplaintDetail(ActionEvent actionEvent){
+        try {
+            if (!(complaint == null))
+                FXRouter.goTo("admin_selected_report_complaint",complaint);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

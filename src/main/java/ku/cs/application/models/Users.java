@@ -12,8 +12,15 @@ public class Users implements Comparable<Users> {
     private String lastTimeLogin;
     private String userImage;
     private boolean isAdmin;
+    private boolean isBan;
 
-    public Users(String name, String id, String username, String password, boolean isAdmin ,String lastTimeLogin, String userImage) {
+
+
+    public void setBan(boolean ban) {
+        isBan = ban;
+    }
+
+    public Users(String name, String id, String username, String password, boolean isAdmin , String lastTimeLogin, String userImage, boolean isBan) {
         this.name = name;
         this.id = id;
         this.userImage = userImage;
@@ -21,6 +28,7 @@ public class Users implements Comparable<Users> {
         this.password = password;
         this.isAdmin = isAdmin;
         this.lastTimeLogin = lastTimeLogin;
+        this.isBan = isBan;
     }
 
     public Users(String name, String id, String username, String password, boolean isAdmin, String lastTimeLogin) {
@@ -30,6 +38,11 @@ public class Users implements Comparable<Users> {
         this.password = password;
         this.isAdmin = isAdmin;
         this.lastTimeLogin = lastTimeLogin;
+    }
+
+    public Users(String username, String password) {
+        this.username = username;
+        this.password = password;
     }
 
     public boolean isAdmin() {
@@ -48,6 +61,8 @@ public class Users implements Comparable<Users> {
         this.userImage = userImage;
     }
 
+    public boolean isBan() { return isBan; }
+
     @Override
     public String toString() {
         return "Users{" +
@@ -58,7 +73,8 @@ public class Users implements Comparable<Users> {
                 ", lastTimeLogin='" + lastTimeLogin + '\'' +
                 ", userImage='" + userImage + '\'' +
                 ", isAdmin=" + isAdmin +
-                '}';
+                ", isBan=" + isBan +
+                "}\n";
     }
 
     public void recordTimeLogin(){

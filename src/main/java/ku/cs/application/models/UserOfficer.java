@@ -1,13 +1,14 @@
 package ku.cs.application.models;
 
-public class OfficerID {
+
+public class UserOfficer extends Users{
+    private String role;
     private String officerID;
     private String OfficerPassword;
-    private String role;
-///////
-    public OfficerID(String officerID, String officerPassword, String role) {
-        this.officerID = officerID;
-        OfficerPassword = officerPassword;
+    public UserOfficer(String username, String password,String role) {
+        super(username,password);
+        this.officerID = username;
+        this.OfficerPassword = password;
         this.role = role;
     }
     public void setOfficerID(String officerID) {
@@ -32,7 +33,8 @@ public class OfficerID {
             return "[     เรื่องร้องเรียงอาคาร และ สถานที่     ]";
         } else if (role.equals("officer4")) {
             return  "[     เรื่องร้องเรียงการลงทะเบียนเรียน     ]";
-        }
+        } else if (role.equals("officer5"))
+            return "[     ร้องเรียนเกี่ยวกับการทุจริต     ]";
         return "";
     }
     @Override
@@ -43,6 +45,4 @@ public class OfficerID {
                 ", role='" + role + '\'' +
                 '}';
     }
-//////
-
 }

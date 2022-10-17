@@ -28,7 +28,7 @@ public class AdminController {
     public void initialize() {
         ulds = new UserListDataSource("data","user.csv");
         userList = ulds.readData();
-
+        System.out.println(userList);
         showListView();
         clearSelectedUser();
         handleSelectedListView();
@@ -36,7 +36,7 @@ public class AdminController {
 
 
     private void showListView() {
-        userListView.getItems().addAll(userList.getAllUsers());
+        userListView.getItems().setAll(userList.getAllUsers());
         userListView.refresh();
     }
 

@@ -62,11 +62,13 @@ public class BanListDataSource implements DataSource<BanList>{
                 String[] data = line.split(",");
                 String bannedID = data[0].trim();
                 String user = data[1].trim();
-                String bannedReason = data[2].trim()
-                        .replace("\\[newline]","\n")
-                        .replace("\\[doublequote]","\"")
-                        .replace("\\[comma]",",");
-                Ban ban = new Ban(bannedID,user,bannedReason);
+                String bannedReason = data[2].trim();
+                String bannedObjectID = data[3].trim();
+                String time = data[4].trim();
+                boolean isActive = Boolean.parseBoolean(data[5].trim());
+                int tryLogin = Integer.parseInt(data[6].trim());
+
+                Ban ban = new Ban(bannedID,user,bannedReason,bannedObjectID,time,isActive,tryLogin);
                 banList.addBan(ban);
             }
 
@@ -82,7 +84,7 @@ public class BanListDataSource implements DataSource<BanList>{
                 throw new RuntimeException(e);
             }
         }
-        return list;
+        return banList;
     }
 
     @Override
@@ -98,7 +100,11 @@ public class BanListDataSource implements DataSource<BanList>{
             for (Ban ban  : banList.getBanList()) {
                 String line = ban.getBannedID() + ","
                         + ban.getUser() + ","
-                        + ban.getBannedReason();
+                        + ban.getBannedReason()+ ","
+                        + ban.getObjectID() + ","
+                        + ban.getTime() + ","
+                        + ban.isActive() + ","
+                        + ban.getTryLogin();
 
                 buffer.append(line);
                 buffer.newLine();

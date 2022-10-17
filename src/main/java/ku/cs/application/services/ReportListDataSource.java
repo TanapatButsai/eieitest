@@ -1,19 +1,25 @@
 package ku.cs.application.services;
 
-import ku.cs.application.models.OfficerID;
-import ku.cs.application.models.OfficerIDList;
+import ku.cs.application.models.*;
 
 import java.io.*;
 
-public class OfficerIDListDataSource implements DataSource<OfficerIDList>{
+public class ReportListDataSource implements DataSource<ReportList> {
     private String directoryName;
     private String fileName;
+    private ReportList reportList;
 
-    public OfficerIDListDataSource(String directoryName, String fileName) {
+    public ReportListDataSource(String directoryName, String fileName) {
         this.directoryName = directoryName;
         this.fileName = fileName;
         checkFileIsExisted();
     }
+
+    public ReportListDataSource() {
+        ComplaintList ComplaintList = new ComplaintList();
+        readData();
+    }
+
     private void checkFileIsExisted() {
         File file = new File(directoryName);
         if (!file.exists()) {
@@ -29,9 +35,10 @@ public class OfficerIDListDataSource implements DataSource<OfficerIDList>{
             }
         }
     }
+
     @Override
-    public OfficerIDList readData() {
-        OfficerIDList list = new OfficerIDList();
+    public ReportList readData() {
+        ReportList list = new ReportList();
         String filePath = directoryName + File.separator + fileName;
         File file = new File(filePath);
         FileReader reader = null;
@@ -42,13 +49,18 @@ public class OfficerIDListDataSource implements DataSource<OfficerIDList>{
             buffer = new BufferedReader(reader);
 
             String line = "";
+            //reporterUsername,reportedUsername,reason,objectID,reportTime
             while ((line = buffer.readLine()) != null) {
                 String[] data = line.split(",");
-                OfficerID officerID = new OfficerID(
-                        data[0].trim(),
-                        data[1].trim(),
-                        data[2].trim());
-                list.addOfficer(officerID);
+                String checkHeader = "reporterUsernamereportedUsernamereason";
+                if (checkHeader.equals((data[0].trim())+(data[1].trim())+(data[2].trim()))) continue;
+                String reporterUsername = data[0].trim();
+                String reportedUsername = data[1].trim();
+                String reason = data[2].trim();
+                String objectID = data[3].trim();
+                String timeReported = data[4].trim();
+                Report report = new Report(reporterUsername,reportedUsername,reason,objectID,timeReported);
+                list.add(report);
             }
 
         } catch (FileNotFoundException e) {
@@ -65,21 +77,29 @@ public class OfficerIDListDataSource implements DataSource<OfficerIDList>{
         }
         return list;
     }
+
     @Override
-    public void writeData(OfficerIDList officerIDList) {
+    public void writeData(ReportList reportList) {
         String filePath = directoryName + File.separator + fileName;
         File file = new File(filePath);
 
         FileWriter writer = null;
         BufferedWriter buffer = null;
+//        newUser = new Users("jaja123","456","780","123");
+//        String newUserString = newUser.getName()+","+newUser.getId()+","+ newUser.getUsername()+","+ newUser.getPassword();
         try {
             writer = new FileWriter(file);
             buffer = new BufferedWriter(writer);
-            for (OfficerID officerID : officerIDList.getAllOfficerID()) {
-                String line =
-                        officerID.getOfficerID() + ","
-                        + officerID.getOfficerPassword() + ","
-                        + officerID.setRole();
+            String header = "reporterUsername,reportedUsername,reason,objectID,reportTime";
+            buffer.append(header);
+            buffer.newLine();
+            for (Report report : reportList.getReportList()) {
+                String line = report.getReporterUsername() + ","
+                        + report.getReportedUsername() + ","
+                        + report.getReason() + ","
+                        + report.getObjectID() + ","
+                        + report.getReportTime();
+
                 buffer.append(line);
                 buffer.newLine();
             }

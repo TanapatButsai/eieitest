@@ -7,26 +7,21 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
-import ku.cs.application.models.Officer;
+import ku.cs.application.models.*;
 import com.github.saacsos.FXRouter;
-import ku.cs.application.models.OfficerID;
-import ku.cs.application.models.OfficerList;
-import ku.cs.application.services.DataSource;
-import ku.cs.application.services.OfficerDataSource;
-import ku.cs.application.services.OfficersListDataSource;
-import ku.cs.application.services.OfficerRoleDataSource;
+import ku.cs.application.services.*;
 
 
 import java.io.IOException;
 
 public class OfficerController {
+    private Complaint complaint;
     private Officer officer;
-    private OfficerID officerID;
-    private OfficerList officerList;
-    private OfficerList officerRoleList;
-    private DataSource<OfficerList> dataSource;
+    private ComplaintList complaintList;
+    private ComplaintList officerRoleList;
+    private DataSource<ComplaintList> dataSource;
 
-    private OfficerDataSource<OfficerList> dataOfficer;
+    private OfficerDataSource<ComplaintList> dataOfficer;
     @FXML private Label topicLabel;
     @FXML private Label officerLabel;
     @FXML private Label statusLabel;
@@ -35,55 +30,62 @@ public class OfficerController {
     @FXML private TextArea bodyTextArea;
 
 
+    //นำlist
     @FXML
     public void initialize(){
-        officerID = (OfficerID)FXRouter.getData();
-        if (officerID.getRole().equals("officer1")) {
-            dataOfficer = new OfficerRoleDataSource("data","officer.csv");
+        officer = (Officer)FXRouter.getData();
+        if (officer.getRole().equals("normal")) {
+            dataOfficer = new OfficerRoleDataSource("data","complaint.csv");
             officerRoleList = dataOfficer.readData1();
-            System.out.println("User is Officer1");
-        }else if (officerID.getRole().equals("officer2")) {
-            dataOfficer = new OfficerRoleDataSource("data","officer.csv");
+            System.out.println("User is Officer-normal");
+        }else if (officer.getRole().equals("teacher")) {
+            dataOfficer = new OfficerRoleDataSource("data","complaint.csv");
             officerRoleList = dataOfficer.readData2();
-            System.out.println("User is Officer2");
-        }else if (officerID.getRole().equals("officer3")) {
-            dataOfficer = new OfficerRoleDataSource("data","officer.csv");
+            System.out.println("User is Officer-teacher");
+        }else if (officer.getRole().equals("place")) {
+            dataOfficer = new OfficerRoleDataSource("data","complaint.csv");
             officerRoleList = dataOfficer.readData3();
-            System.out.println("User is Officer3");
-        }else if (officerID.getRole().equals("officer4")) {
-            dataOfficer = new OfficerRoleDataSource("data","officer.csv");
+            System.out.println("User is Officer-place");
+        }else if (officer.getRole().equals("enroll")) {
+            dataOfficer = new OfficerRoleDataSource("data","complaint.csv");
             officerRoleList = dataOfficer.readData4();
-            System.out.println("User is Officer4");
+            System.out.println("User is Officer-enroll");
+        }else if (officer.getRole().equals("corrupt")){
+            dataOfficer = new OfficerRoleDataSource("data","complaint.csv");
+            officerRoleList = dataOfficer.readData5();
         }
         System.out.println("initialize ListData");
-        dataSource = new OfficersListDataSource("data","officer.csv");
-        officerList = dataSource.readData();
+        dataSource = new ComplaintListDataSource("data","complaint.csv");
+        complaintList = dataSource.readData();
         topicLabel.setText("");
         statusLabel.setText("");
         fixTopicLabel.setText("");
         showOfficerData();
         handleSelectedListView();
     }
+    //แสดงหน้าที่ของ officer
     public void showOfficerData(){
         if (officerRoleList == null){
-            complaintListView.getItems().addAll(officerList.getAllOfficer());
+            complaintListView.getItems().addAll(complaintList.getAllComplaint());
             complaintListView.refresh();
             officerLabel.setText("[     Officer all     ]");
         }else {
-            complaintListView.getItems().addAll(officerRoleList.getAllOfficer());
+            complaintListView.getItems().addAll(officerRoleList.getAllComplaint());
             complaintListView.refresh();
-            officerLabel.setText(officerID.setRole());
+            officerLabel.setText(officer.setRole());
         }
 //        complaintListView.getItems().addAll(officerRoleList.getAllOfficer());
 //        complaintListView.refresh();
 //        officerLabel.setText(officerID.setRole());
     }
+
+    //การเลือกค่าในList view
     private void handleSelectedListView(){
         complaintListView.getSelectionModel().selectedItemProperty().addListener(
-                new ChangeListener<Officer>() {
+                new ChangeListener<Complaint>() {
                     @Override
-                    public void changed(ObservableValue<? extends Officer> observable,
-                                        Officer oldValue, Officer newValue) {
+                    public void changed(ObservableValue<? extends Complaint> observable,
+                                        Complaint oldValue, Complaint newValue) {
                         System.out.println(newValue + " is selected");
                         showSelectedOfficerData(newValue);
                         setSelectedOfficerData(newValue);
@@ -91,47 +93,59 @@ public class OfficerController {
                 });
 
     }
-    private void showSelectedOfficerData(Officer data){
+
+    private void showSelectedOfficerData(Complaint data){
         statusLabel.setText(data.getStatus());
-        topicLabel.setText(data.getTopic());
+        topicLabel.setText(data.getHeadComplaint());
         fixTopicLabel.setText(data.getFixComplaint());
-        bodyTextArea.setText(data.getBody());
+        bodyTextArea.setText(data.getBodyComplaint());
         bodyTextArea.setEditable(false);
     }
-    private void  setSelectedOfficerData(Officer data){
-        officer = data;
+    //นำ ค่าofficer จาก listที่ถูกเลือก
+    private void  setSelectedOfficerData(Complaint data){
+        complaint = data;
     }
+    //ปุ่มกำหนดสถานะ
     @FXML private void handleDoneButton(ActionEvent actionEvent){
-        if (officer != null){
-            officerList.findData(officer);
-            officerList.setDone(officer);
+        if (complaint != null){
+            complaintList.findData(complaint);
+            complaintList.setDone(complaint);
             //officerRoleList.setDone(officer);
-            statusLabel.setText(officer.getStatus());
-            officerList.add(officer);
-            dataSource.writeData(officerList);
+            statusLabel.setText(complaint.getStatus());
+            complaintList.add(complaint);
+            dataSource.writeData(complaintList);
         }
     }
     @FXML private void handleInProgress(ActionEvent actionEvent){
-        if (officer != null){
-            officerList.findData(officer);
-            officerList.setInProgress(officer);
+        if (complaint != null){
+            complaintList.findData(complaint);
+            complaintList.setInProgress(complaint);
             //officerRoleList.setInProgress(officer);
-            statusLabel.setText(officer.getStatus());
-            officerList.add(officer);
-            dataSource.writeData(officerList);
+            statusLabel.setText(complaint.getStatus());
+            complaintList.add(complaint);
+            dataSource.writeData(complaintList);
         }
     }
     @FXML private void handleUnmanagedButton(ActionEvent actionEvent){
-        if (officer != null){
-            officerList.findData(officer);
-            officerList.setUnmanaged(officer);
+        if (complaint != null){
+            complaintList.findData(complaint);
+            complaintList.setUnmanaged(complaint);
             //officerRoleList.setInProgress(officer);
-            statusLabel.setText(officer.getStatus());
-            officerList.add(officer);
-            dataSource.writeData(officerList);
+            statusLabel.setText(complaint.getStatus());
+            complaintList.add(complaint);
+            dataSource.writeData(complaintList);
         }
     }
 
+    @FXML
+    public void handleChangePasswordButton(ActionEvent actionEvent) {
+        try {
+            com.github.saacsos.FXRouter.goTo("officer_change_password",officer);
+        } catch (IOException e) {
+            System.err.println("ไปที่หน้า login ไม่ได้");
+            System.err.println("ให้ตรวจสอบการกำหนด route");
+        }
+    }
     @FXML
     public void handleBackButton(ActionEvent actionEvent) {
         try {

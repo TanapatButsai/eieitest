@@ -2,18 +2,16 @@ package ku.cs.application.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.control.TextField;
 import java.io.IOException;
-import java.util.Objects;
+
 import javafx.scene.control.Label;
 import com.github.saacsos.FXRouter;
 import ku.cs.application.models.*;
-import ku.cs.application.services.ComplaintListDataSource;
-import ku.cs.application.services.DataSource;
-import ku.cs.application.services.OfficerIDListDataSource;
-import ku.cs.application.services.UserListDataSource;
+import ku.cs.application.services.*;
 
 public class LoginController {
     @FXML private Label textError;
@@ -30,10 +28,12 @@ public class LoginController {
     private DataSource<UserList> dataSource;
     private UserList userList;
     private Users user;
-    private DataSource<OfficerIDList> dataSource1;
-    private OfficerIDList officerIDList;
+    private DataSource<OfficerList> officerDataSource;
+    private OfficerList officerIDList;
 
     private DataSource<ComplaintList> dataSource2 = new ComplaintListDataSource("data","complaint");
+    private DataSource<BanList> banListDataSource;
+    private BanList banList;
 //    private ComplaintList complaintList;
 
     @FXML
@@ -42,9 +42,11 @@ public class LoginController {
         image_view_login.setImage(new Image(url));
         image_view_ku_logo.setImage(new Image(url2));
         dataSource = new UserListDataSource("data","user.csv");
-        dataSource1 = new OfficerIDListDataSource("data","officerID.csv");
+        officerDataSource = new OfficerListDataSource("data","officer.csv");
+        banListDataSource = new BanListDataSource(true);
         userList = dataSource.readData();
-
+        banList = banListDataSource.readData();
+        System.out.println(banList);
 //        complaintList = dataSource2.readData();
 
         if (userList == null){
@@ -52,7 +54,7 @@ public class LoginController {
         } else {
             System.out.println("Can read file");
         }
-        officerIDList = dataSource1.readData();
+        officerIDList = officerDataSource.readData();
         if (officerIDList == null){
             System.err.println("Cannot read file");
         } else {
@@ -65,18 +67,18 @@ public class LoginController {
         String username = inputUsername.getText();
         String password = inputPassword.getText();
         Users user = userList.findUser(username);
-        OfficerID officerID = officerIDList.findOfficer(username);
+        Officer officer = officerIDList.findOfficer(username);
         if (username.isEmpty() || password.isEmpty()){
             textError.setText("Enter username and password");
             System.err.println("TextField is empty");
         } else if (user == null || !user.getPassword().equals(password)
-                || officerID == null || !officerID.getOfficerPassword().equals(password)) {
-            if (officerID == null){
+                || officer == null || !officer.getOfficerPassword().equals(password)) {
+            if (officer == null){
                 System.err.println("Wrong username or password");
                 textError.setText("Wrong username or password");
-            }else if (isOfficer(username,password,officerID)){
+            }else if (isOfficer(username,password, officer)){
                 try {
-                    FXRouter.goTo("officer",officerID);
+                    FXRouter.goTo("officer", officer);
                 } catch (IOException e) {
                     System.err.println("ไปที่หน้า officer");
                     System.err.println("ให้ตรวจสอบการกำหนด route");
@@ -87,6 +89,7 @@ public class LoginController {
                 System.err.println("Wrong username or password");
                 textError.setText("Wrong username or password");
             } else if (isLogin(username,password,user)) {
+                textError.setText("");
                 if (user.isAdmin()){
                     try {
                         FXRouter.goTo("adminscene",user);
@@ -95,7 +98,10 @@ public class LoginController {
                         System.err.println("ให้ตรวจสอบการกำหนด route");
                         e.printStackTrace();
                     }
-                }else {
+                } else if(user.isBan()){
+                    banAlert(user);
+                }
+                else {
                     try {
                         userList.recordTimeLogin(user);
                         dataSource.writeData(userList);
@@ -115,13 +121,6 @@ public class LoginController {
     }
     @FXML
     public void handleGoToHome(ActionEvent actionEvent){
-        try {
-            FXRouter.goTo("home");
-        } catch (IOException e) {
-            System.err.println("ไปที่หน้า home");
-            System.err.println("ให้ตรวจสอบการกำหนด route");
-            e.printStackTrace();
-        }
     }
     @FXML
     public void handleGoToRegister(ActionEvent actionEvent){
@@ -137,8 +136,20 @@ public class LoginController {
     public boolean isLogin(String username, String password,Users user){
         return username.equals(user.getUsername()) && password.equals(user.getPassword());
     }
-    public boolean isOfficer(String username, String password, OfficerID officerID){
-        return username.equals(officerID.getOfficerID()) && password.equals(officerID.getOfficerPassword());
+    public boolean isOfficer(String username, String password, Officer officer){
+        return username.equals(officer.getOfficerID()) && password.equals(officer.getOfficerPassword());
+    }
+    public void banAlert(Users user){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        Ban ban = banList.findBanByUsername(user.getUsername());
+        String reason = ban.getBannedReason();
+        alert.setTitle("ระงับบัญชี");
+        alert.setContentText(reason);
+        alert.setHeaderText("บัญชีของคุณถูกระงับ");
+        alert.showAndWait();
+        inputUsername.clear();// clear ช่อง TextField
+        inputPassword.clear();
+        textError.setText("");
     }
 }
 

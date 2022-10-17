@@ -54,6 +54,7 @@ public class ComplaintListDataSource implements DataSource<ComplaintList>{
             String line = "";
             while ((line = buffer.readLine()) != null) {
                 String[] data = line.split(",");
+                if (data[6].equals("isDone")) continue;
                 String headComplaint = data[0].trim();
                 String bodyComplaint = data[1].trim();
                 String fixComplaint = data[2].trim();
@@ -65,8 +66,9 @@ public class ComplaintListDataSource implements DataSource<ComplaintList>{
                 boolean unmanaged = Boolean.parseBoolean(data[8].trim());
                 int rating = Integer.parseInt(data[9].trim());
                 boolean isBan = Boolean.parseBoolean(data[10].trim());
+                String solution = data[11].trim();
                 Complaint complaint = new Complaint(headComplaint,bodyComplaint,fixComplaint,category,nameWriter
-                        ,time,done,inProgress,unmanaged,rating,isBan);
+                        ,time,done,inProgress,unmanaged,rating,isBan,solution);
                 list.add(complaint);
             }
         } catch (FileNotFoundException e) {
@@ -96,6 +98,9 @@ public class ComplaintListDataSource implements DataSource<ComplaintList>{
         try {
             writer = new FileWriter(file);
             buffer = new BufferedWriter(writer);
+            String header = "topic,body,detail,category,usernameWriter,time,isDone,isInProgress,isUnmanaged,vote,isBan";
+            buffer.append(header);
+            buffer.newLine();
             for (Complaint complaint : complaintList.getAllComplaint()) {
                 String line = complaint.getHeadComplaint() + ","
                         + complaint.getBodyComplaint() + ","
@@ -107,7 +112,8 @@ public class ComplaintListDataSource implements DataSource<ComplaintList>{
                         + complaint.isInProgress()+","
                         + complaint.isUnmanaged()+","
                         + complaint.getRating()+","
-                        + complaint.isBan();
+                        + complaint.isBan()+","
+                        + complaint.getSolution();
 
 
                 buffer.append(line);

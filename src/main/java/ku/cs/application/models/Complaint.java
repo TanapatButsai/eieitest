@@ -12,19 +12,13 @@ public class Complaint implements Comparable<Complaint> {
     private boolean inProgress;
     private boolean unmanaged;
     private int rating;
-
-    //private String detailComplaint; //
-    private String bodyComplaint1; //ข้อมูลที่ต้องการในหมวดหมู่นั้น
-//    private String category; //หมวดหมู่
-//    private String nameWriter;
-
-  //  private int rating;
-
     private String time;
     private boolean isBan;
 
+    private String solution;
+
     public Complaint(String headComplaint, String bodyComplaint, String fixComplaint, String category, String nameWriter,
-                     String time, boolean done, boolean inProgress, boolean unmanaged, int rating, boolean isBan) {
+                     String time, boolean done, boolean inProgress, boolean unmanaged, int rating, boolean isBan,String solution) {
         this.headComplaint = headComplaint;
         this.bodyComplaint = bodyComplaint;
         this.fixComplaint = fixComplaint;
@@ -36,6 +30,7 @@ public class Complaint implements Comparable<Complaint> {
         this.rating = rating;
         this.time = time;
         this.isBan = isBan;
+        this.solution = solution;
     }//CONSTRUCTOR FOR READ,WRITE DATA
 
     public Complaint(String headComplaint, String bodyComplaint, String fixComplaint,
@@ -45,6 +40,9 @@ public class Complaint implements Comparable<Complaint> {
         this.fixComplaint = fixComplaint;
         this.category = category;
         this.nameWriter = nameWriter;
+        done = false;
+        inProgress = false;
+        unmanaged = true;
         isBan = false;
     } //construct ทั่วไป
     public Complaint(String headComplaint, String bodyComplaint, String fixComplaint, String category, String nameWriter, String time) {
@@ -54,6 +52,9 @@ public class Complaint implements Comparable<Complaint> {
         this.category = category;
         this.nameWriter = nameWriter;
         this.time = time;
+        done = false;
+        inProgress = false;
+        unmanaged = true;
         isBan = false;
     }
 
@@ -61,24 +62,12 @@ public class Complaint implements Comparable<Complaint> {
         return done;
     }
 
-    public void setDone(boolean done) {
-        this.done = done;
-    }
-
     public boolean isInProgress() {
         return inProgress;
     }
 
-    public void setInProgress(boolean inProgress) {
-        this.inProgress = inProgress;
-    }
-
     public boolean isUnmanaged() {
         return unmanaged;
-    }
-
-    public void setUnmanaged(boolean unmanaged) {
-        this.unmanaged = unmanaged;
     }
 
     public int getRating() {
@@ -164,12 +153,44 @@ public class Complaint implements Comparable<Complaint> {
 //                '}';
 //    }
 
+//officer
+public String getStatus(){
+    if (isDone()){
+        //System.out.println("111");
+        return "ดำเนินการแล้ว";
+    }else if (isInProgress() == true){
+        //System.out.println("11");
+        return "อยู่ระหว่างการดำเนินการแล้ว";
+    }else if (isUnmanaged() == true){
+        //System.out.println("1");
+        return "ยังไม่ถูกจัดการ";
+    }
+    return "";
+}
+    public boolean setDone() {
+        done = true;
+        inProgress = false;
+        unmanaged = false;
+        return done;
+    }
+    public boolean setInProgress() {
+        inProgress = true;
+        done = false;
+        unmanaged =false;
+        return inProgress;
+    }
+    public boolean setUnmanaged() {
+        unmanaged = true;
+        done = false;
+        inProgress =false;
+        return unmanaged;
+    }
+
 
     @Override
     public String toString() {
-        return headComplaint;
+        return headComplaint +" "+time +" "+ rating;
     }
-
     public String getFixComplaint() {
         return fixComplaint;
     }
@@ -191,4 +212,11 @@ public class Complaint implements Comparable<Complaint> {
     }
 
 
+    public String getSolution() {
+        return solution;
+    }
+
+    public void setSolution(String solution) {
+        this.solution = solution;
+    }
 }

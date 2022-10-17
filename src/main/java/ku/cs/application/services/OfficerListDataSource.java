@@ -5,16 +5,15 @@ import ku.cs.application.models.OfficerList;
 
 import java.io.*;
 
-public class OfficersListDataSource implements DataSource<OfficerList>{
+public class OfficerListDataSource implements DataSource<OfficerList>{
     private String directoryName;
     private String fileName;
 
-    public OfficersListDataSource(String directoryName, String fileName){
+    public OfficerListDataSource(String directoryName, String fileName) {
         this.directoryName = directoryName;
         this.fileName = fileName;
         checkFileIsExisted();
     }
-
     private void checkFileIsExisted() {
         File file = new File(directoryName);
         if (!file.exists()) {
@@ -30,7 +29,6 @@ public class OfficersListDataSource implements DataSource<OfficerList>{
             }
         }
     }
-
     @Override
     public OfficerList readData() {
         OfficerList list = new OfficerList();
@@ -46,27 +44,11 @@ public class OfficersListDataSource implements DataSource<OfficerList>{
             String line = "";
             while ((line = buffer.readLine()) != null) {
                 String[] data = line.split(",");
-                boolean isDone = false;
-                boolean isInProgress = false;
-                boolean isUnmanaged = false;
-                if (data[5].trim().equals("true")) {
-                    isDone = true;
-                }else if (data[6].trim().equals("true")) {
-                    isInProgress = true;
-                }if (data[7].trim().equals("true")) {
-                    isUnmanaged = true;
-                }
                 Officer officer = new Officer(
                         data[0].trim(),
                         data[1].trim(),
-                        data[2].trim(),
-                        data[3].trim(),
-                        data[4].trim(),
-                        isDone,
-                        isInProgress,
-                        isUnmanaged
-                        );
-                list.add(officer);
+                        data[2].trim());
+                list.addOfficer(officer);
             }
 
         } catch (FileNotFoundException e) {
@@ -83,56 +65,29 @@ public class OfficersListDataSource implements DataSource<OfficerList>{
         }
         return list;
     }
-
-//    @Override
-//    public OfficerList readData2() {
-//        return null;
-//    }
-//
-//    @Override
-//    public OfficerList readData3() {
-//        return null;
-//    }
-//
-//    @Override
-//    public OfficerList readData4() {
-//        return null;
-//    }
-
     @Override
-    public void writeData(OfficerList officerList) {
+    public void writeData(OfficerList officerIDList) {
         String filePath = directoryName + File.separator + fileName;
         File file = new File(filePath);
 
         FileWriter writer = null;
         BufferedWriter buffer = null;
-        try{
+        try {
             writer = new FileWriter(file);
             buffer = new BufferedWriter(writer);
-            for (Officer officer : officerList.getAllOfficer()) {
-                String line = officer.getName() + ","
-                        + officer.getRole() + ","
-                        + officer.getTopic()+","
-                        + officer.getBody()+","
-                        + officer.getFixComplaint()+","
-                        + officer.isDone()+","
-                        + officer.isInProgress()+","
-                        + officer.isUnmanaged()+",";
-
+            for (Officer officer : officerIDList.getAllOfficerID()) {
+                String line =
+                        officer.getOfficerID() + ","
+                        + officer.getOfficerPassword() + ","
+                        + officer.getRole();
                 buffer.append(line);
                 buffer.newLine();
             }
-
+//            buffer.append(newUserString);
+            buffer.close();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException();
         }
-        finally {
-            try {
-                buffer.close();
-                writer.close();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        }
+
     }
-    }
+}

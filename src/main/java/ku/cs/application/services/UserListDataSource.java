@@ -51,17 +51,18 @@ public class UserListDataSource implements DataSource<UserList> {
             String line = "";
             while ((line = buffer.readLine()) != null) {
                 String[] data = line.split(",");
-                boolean isAdmin = false;
-                if (data[4].trim().equals("true")){
-                    isAdmin = true;
-                }
-                Users user = new Users(data[0].trim(),
-                        data[1].trim()
-                        , data[2].trim()
-                        , data[3].trim()
-                        ,isAdmin
-                        ,data[5].trim()
-                        ,data[6].trim());
+                if (data[4].trim().equals("isAdmin")) continue;
+                //String name, String id, String username, String password, boolean isAdmin , String lastTimeLogin, String userImage, boolean isBan
+                String name = data[0].trim();
+                String id = data[1].trim();
+                String username = data[2].trim();
+                String password = data[3].trim();
+                boolean isAdmin = Boolean.parseBoolean(data[4].trim());
+                String lastTimeLogin = data[5].trim();
+                String userImage = data[6].trim();
+                boolean isBan = Boolean.parseBoolean(data[7].trim());
+                Users user = new Users(name, id, username, password,
+                        isAdmin, lastTimeLogin, userImage, isBan);
                 list.addUser(user);
             }
 
@@ -88,11 +89,13 @@ public class UserListDataSource implements DataSource<UserList> {
 
         FileWriter writer = null;
         BufferedWriter buffer = null;
-//        newUser = new Users("jaja123","456","780","123");
-//        String newUserString = newUser.getName()+","+newUser.getId()+","+ newUser.getUsername()+","+ newUser.getPassword();
+
         try {
             writer = new FileWriter(file);
             buffer = new BufferedWriter(writer);
+            String header = "fullName,ID,username,password,isAdmin,lastTimeLogin,image,isBan";
+            buffer.append(header);
+            buffer.newLine();
             for (Users user : userList.getAllCards()) {
                 String line = user.getName() + ","
                         + user.getId() + ","
@@ -100,7 +103,8 @@ public class UserListDataSource implements DataSource<UserList> {
                         + user.getPassword() + ","
                         + user.isAdmin()+","
                         + user.getLastTimeLogin()+","
-                        + user.getUserImage();
+                        + user.getUserImage()+ ","
+                        + user.isBan();
 
                 buffer.append(line);
                 buffer.newLine();

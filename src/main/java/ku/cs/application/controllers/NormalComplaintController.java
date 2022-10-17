@@ -12,6 +12,8 @@ import ku.cs.application.services.ComplaintListDataSource;
 import ku.cs.application.services.DataSource;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Objects;
 
 
 public class NormalComplaintController {
@@ -23,6 +25,19 @@ public class NormalComplaintController {
     private Users user;
     @FXML
     private ImageView kasetsartImage;
+    private ArrayList<Object> objects;
+    private String category;
+    @FXML
+    public void initialize() {
+        dataSource = new ComplaintListDataSource("data","complaint.csv");
+        complaintList = dataSource.readData();
+        objects = (ArrayList<Object>) com.github.saacsos.FXRouter.getData();
+        user = (Users) objects.get(0);
+        category = (String) objects.get(1);
+        String imagePath = (String) objects.get(2);
+        String url = getClass().getResource(imagePath).toExternalForm();
+        kasetsartImage.setImage(new Image(url));
+    }
     public void handleBackHomeButton(ActionEvent actionEvent){
         try {
             com.github.saacsos.FXRouter.goTo("home");
@@ -32,23 +47,15 @@ public class NormalComplaintController {
             e.printStackTrace();
         }
     }
-    @FXML
-    public void initialize() {
-        String url = getClass().getResource("/ku/cs/normalcomplaint_images/kasetsarts.jpeg").toExternalForm();
-        kasetsartImage.setImage(new Image(url));
 
-        dataSource = new ComplaintListDataSource("data","complaint.csv");
-        complaintList = dataSource.readData();
-        user = (Users) com.github.saacsos.FXRouter.getData();
-
-    }
     @FXML
     public void handlePushComplaint(ActionEvent actionEvent){
         String headComplaint = headTextField.getText();
         String bodyComplaint = bodyTextArea.getText();
         String bodyComplaint1 = bodyTextArea1.getText();
-        Complaint complaint = new Complaint(headComplaint,bodyComplaint,bodyComplaint1,"normal",user.getName());
+        Complaint complaint = new Complaint(headComplaint,bodyComplaint,bodyComplaint1,category,user.getUsername());
         complaint.recordTime();
+        complaint.setSolution("");
         complaintList.add(complaint);
         dataSource.writeData(complaintList);
     }
