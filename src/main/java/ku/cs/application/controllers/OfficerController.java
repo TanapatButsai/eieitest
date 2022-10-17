@@ -16,12 +16,10 @@ import java.io.IOException;
 
 public class OfficerController {
     private Complaint complaint;
-    private Officer officer;
+    private Officer userOfficer;
     private ComplaintList complaintList;
     private ComplaintList officerRoleList;
     private DataSource<ComplaintList> dataSource;
-
-    private OfficerDataSource<ComplaintList> dataOfficer;
     @FXML private Label topicLabel;
     @FXML private Label officerLabel;
     @FXML private Label statusLabel;
@@ -29,12 +27,9 @@ public class OfficerController {
     @FXML private Label errorLabel;
     @FXML private ListView complaintListView;
     @FXML private TextArea bodyTextArea;
-
     @FXML private TextArea fixBodyTextArea;
-
     @FXML private DataSource<ComplaintList> complaintListDataSource;
     private ComplaintList complaintListNaJa;
-
     private ComplaintList complaintListTuaJing;
 
     //นำlist
@@ -42,20 +37,20 @@ public class OfficerController {
     public void initialize(){
         complaintListDataSource = new ComplaintListDataSource("data","complaint.csv");
         complaintListNaJa = complaintListDataSource.readData();
-        officer = (Officer)FXRouter.getData();
-        if (officer.getRole().equals("normal")) {
+        userOfficer = (Officer) FXRouter.getData();
+        if (userOfficer.getRole().equals("normal")) {
             complaintListTuaJing = complaintListNaJa.getOfficerComplaint("normal");
             System.out.println("User is Officer-normal");
-        }else if (officer.getRole().equals("teacher")) {
+        }else if (userOfficer.getRole().equals("teacher")) {
             complaintListTuaJing = complaintListNaJa.getOfficerComplaint("teacher");
             System.out.println("User is Officer-teacher");
-        }else if (officer.getRole().equals("place")) {
+        }else if (userOfficer.getRole().equals("place")) {
             complaintListTuaJing = complaintListNaJa.getOfficerComplaint("place");
             System.out.println("User is Officer-place");
-        }else if (officer.getRole().equals("enroll")) {
+        }else if (userOfficer.getRole().equals("enroll")) {
             complaintListTuaJing = complaintListNaJa.getOfficerComplaint("enroll");
             System.out.println("User is Officer-enroll");
-        }else if (officer.getRole().equals("corrupt")){
+        }else if (userOfficer.getRole().equals("corrupt")){
             complaintListTuaJing = complaintListNaJa.getOfficerComplaint("corrupt");
         }
         System.out.println("initialize ListData");
@@ -77,8 +72,18 @@ public class OfficerController {
         }else {
             complaintListView.getItems().setAll(complaintListTuaJing.getAllComplaint());
             complaintListView.refresh();
-            officerLabel.setText(officer.setRole());
+            officerLabel.setText(userOfficer.getRole());
         }
+        if (userOfficer.getRole().equals("normal")){
+            officerLabel.setText("[     เรื่องร้องเรียงทั่วไป     ]");
+        } else if (userOfficer.getRole().equals("teacher")) {
+            officerLabel.setText("[     เรื่องร้องเรียงอาจารย์/บุคลาการ     ]");
+        } else if (userOfficer.getRole().equals("place")){
+            officerLabel.setText("[     เรื่องร้องเรียงอาคาร และ สถานที่     ]");
+        } else if (userOfficer.getRole().equals("enroll")) {
+            officerLabel.setText("[     เรื่องร้องเรียงการลงทะเบียนเรียน     ]");
+        } else if (userOfficer.getRole().equals("corrupt"))
+            officerLabel.setText("[     ร้องเรียนเกี่ยวกับการทุจริต     ]");
 //        complaintListView.getItems().addAll(officerRoleList.getAllOfficer());
 //        complaintListView.refresh();
 //        officerLabel.setText(officerID.setRole());
@@ -160,7 +165,7 @@ public class OfficerController {
     @FXML
     public void handleChangePasswordButton(ActionEvent actionEvent) {
         try {
-            com.github.saacsos.FXRouter.goTo("officer_change_password",officer);
+            com.github.saacsos.FXRouter.goTo("officer_change_password",userOfficer);
         } catch (IOException e) {
             System.err.println("ไปที่หน้า login ไม่ได้");
             System.err.println("ให้ตรวจสอบการกำหนด route");

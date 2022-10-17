@@ -61,8 +61,9 @@ public class UserListDataSource implements DataSource<UserList> {
                 String lastTimeLogin = data[5].trim();
                 String userImage = data[6].trim().replace("\\",File.separator);
                 boolean isBan = Boolean.parseBoolean(data[7].trim());
+                boolean isOfficer = Boolean.parseBoolean(data[8].trim());
                 Users user = new Users(name, id, username, password,
-                        isAdmin, lastTimeLogin, userImage, isBan);
+                        isAdmin, lastTimeLogin, userImage, isBan,isOfficer);
                 list.addUser(user);
             }
 
@@ -104,7 +105,8 @@ public class UserListDataSource implements DataSource<UserList> {
                         + user.isAdmin()+","
                         + user.getLastTimeLogin()+","
                         + user.getUserImage().replace(File.separator,"\\")+ ","
-                        + user.isBan();
+                        + user.isBan() + ","
+                        + user.isOfficer();
 
                 buffer.append(line);
                 buffer.newLine();

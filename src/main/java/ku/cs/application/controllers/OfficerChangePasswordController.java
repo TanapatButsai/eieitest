@@ -7,9 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import ku.cs.application.models.Officer;
-import ku.cs.application.models.OfficerList;
-import ku.cs.application.models.UserList;
+import ku.cs.application.models.*;
 import ku.cs.application.services.DataSource;
 import ku.cs.application.services.OfficerListDataSource;
 import ku.cs.application.services.UserListDataSource;
@@ -17,9 +15,10 @@ import ku.cs.application.services.UserListDataSource;
 import java.io.IOException;
 
 public class OfficerChangePasswordController {
-    private Officer officer;
-    private OfficerList officerList;
-    @FXML private DataSource<OfficerList> dataSource;
+    private Officer userOfficer;
+    private OfficeList officeList;
+    private UserList userList;
+    @FXML private DataSource<OfficeList> dataSource;
     @FXML private Label errorLabel;
     @FXML private Label successLabel;
     @FXML private TextField officerTextField;
@@ -28,19 +27,20 @@ public class OfficerChangePasswordController {
     @FXML private TextField newConfirmPasswordTextField;
     @FXML private ImageView logoku;
     @FXML private ImageView change_bg;
-
+    private DataSource<UserList> userListDataSource = new UserListDataSource("data","user.csv");
 
 
     @FXML
     public void initialize(){
-        officer = (Officer)FXRouter.getData();
+        userOfficer = (Officer)FXRouter.getData();
         String url1 = getClass().getResource("/ku/cs/officer_images/logoku.png").toExternalForm();
         logoku.setImage(new Image(url1));
         String url2 = getClass().getResource("/ku/cs/officer_images/changebg.jpg").toExternalForm();
         change_bg.setImage(new Image(url2));
         dataSource = new OfficerListDataSource("data", "officer.csv");
-        officerList = dataSource.readData();
-        officerTextField.setText(officer.getOfficerID());
+        userList = userListDataSource.readData();
+        officeList = dataSource.readData();
+        officerTextField.setText(userOfficer.getUsername());
         officerTextField.setEditable(false);
         errorLabel.setText("");
         successLabel.setText("");
@@ -48,7 +48,7 @@ public class OfficerChangePasswordController {
     @FXML
     public void handleBackButton(ActionEvent actionEvent) {
         try {
-            com.github.saacsos.FXRouter.goTo("officer", officer);
+            com.github.saacsos.FXRouter.goTo("officer", userOfficer);
         } catch (IOException e) {
             System.err.println("ไปที่หน้า login ไม่ได้");
             System.err.println("ให้ตรวจสอบการกำหนด route");
@@ -66,9 +66,12 @@ public class OfficerChangePasswordController {
         String oldPassword = oldPasswordTextField.getText();
         String newPassword = newPasswordTextField.getText();
         String confirmNewPassword = newConfirmPasswordTextField.getText();
+        Users user = new Users(userOfficer.getName(),userOfficer.getId(), userOfficer.getUsername()
+                ,userOfficer.getPassword(),userOfficer.isAdmin(), userOfficer.getLastTimeLogin()
+                ,userOfficer.getUserImage(),userOfficer.isBan(),true);
         if (oldPasswordTextField.getText().isEmpty() || newPasswordTextField.getText().isEmpty()
                 || newConfirmPasswordTextField.getText().isEmpty()
-                || !oldPasswordTextField.getText().equals(officer.getOfficerPassword())
+                || !oldPasswordTextField.getText().equals(userOfficer.getPassword())
                 || !newPassword.equals(confirmNewPassword)){
             oldPasswordTextField.clear();
             newConfirmPasswordTextField.clear();
@@ -77,7 +80,8 @@ public class OfficerChangePasswordController {
             if (oldPasswordTextField.getText().isEmpty()){
                 System.out.println("error1");
                 errorLabel.setText("Please enter");
-            } else if (!oldPasswordTextField.getText().equals(officer.getOfficerPassword())) {
+            }
+            else if (!oldPasswordTextField.getText().equals(userOfficer.getPassword())) {
                 System.out.println("error2");
                 errorLabel.setText("Wrong password");
             }
@@ -88,13 +92,8 @@ public class OfficerChangePasswordController {
             return false;
         }
         System.out.println("Can change password");
-//            Users userDelete = userList.findUser(user.getUsername());
-//            userList.removeUser(userDelete);
-//              userList.changePassword(user.getUsername(), newPasswordTextField.getText());
-//            userList.addUser(user);
-//            dataSource.writeData(userList);
-        officerList.changePassword(officer.getOfficerID(), confirmNewPassword);
-        dataSource.writeData(officerList);
+        userList.changePassword(user.getUsername(), confirmNewPassword);
+        userListDataSource.writeData(userList);
         return true;
     }
 
