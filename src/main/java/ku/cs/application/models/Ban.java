@@ -38,7 +38,10 @@ public class Ban {
     public String getBannedReason() {
         return bannedReason;
     }
-    public String getObjectID() {return  objectID;}
+
+    public String getObjectID() {
+        return objectID;
+    }
 
     public String toCSV() {
         String banrs = bannedReason.replace("\n", "\\[newline]")
