@@ -13,7 +13,7 @@ import ku.cs.application.models.ComplaintList;
 import ku.cs.application.models.Users;
 import ku.cs.application.services.ComplaintListDataSource;
 import ku.cs.application.services.DataSource;
-
+import com.github.saacsos.FXRouter;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.FileSystems;
@@ -68,7 +68,6 @@ public class NormalComplaintController {
         String bodyComplaint = bodyTextArea.getText();
         String bodyComplaint1 = bodyTextArea1.getText();
         Complaint complaint = new Complaint(headComplaint,bodyComplaint,bodyComplaint1,category,user.getUsername());
-        String complaintImageUrl = null;
         if (complaintImageUrl == null){complaintImageUrl = "data\\images\\complaint\\default_complaint.png";}
         complaint.setImageUrl(complaintImageUrl);
         complaint.recordTime();
@@ -77,7 +76,6 @@ public class NormalComplaintController {
         dataSource.writeData(complaintList);
         if (!(bodyTextArea.getText().equals("") || bodyTextArea1.getText().equals("")
                 || headTextField.getText().equals(""))){
-            boolean isAddFile = false;
             if (isAddFile){saveFile();}
             try {
                 com.github.saacsos.FXRouter.goTo("home",user);
@@ -90,7 +88,7 @@ public class NormalComplaintController {
         FileChooser fileChooser = new FileChooser();
 //        fileChooser.setInitialDirectory(new File(System.getProperty("complaint.dir")));
         fileChooser.getExtensionFilters().add
-                (new FileChooser.ExtensionFilter("images PNG JPG", ".png", ".jpg", "*.jpeg"));
+                (new FileChooser.ExtensionFilter("images PNG JPG", "*.png", "*.jpg", "*.jpeg"));
         Node source = (Node) actionEvent.getSource();
         file = fileChooser.showOpenDialog(source.getScene().getWindow());
         if (file != null){
