@@ -17,8 +17,8 @@ sunnyzyza,1234567890,sunny,123,false,15-31-54-17-10-22,data\images\profile\2022-
 ธนาภัทร บุตรใส,6410451059,maomao,1234,false,15-47-52-17-10-22,data\images\profile\2022-09-29_1664453890530.jpg,false,false
 1,1234567890,1,1,false,22-52-17-03-10-22,data\images\profile\2022-10-03_1664812275102.PNG,false,false
 jiragit jaja,6410459999,jiragit,123,false,01-41-13-15-10-22,data\images\profile\default.png,false,false
-1234,1111111111,officer1,123,false,21-50-33-16-10-23,data\images\profile\default.png,false,true
-1234,1111111112,officer2,1234,false,21-50-33-16-10-24,data\images\profile\default.png,false,true
-1234,1111111113,officer3,111,false,21-50-33-16-10-25,data\images\profile\default.png,false,true
-1234,1111111114,officer4,123,false,21-50-33-16-10-26,data\images\profile\default.png,false,true
-1234,1111111115,officer5,123,false,21-50-33-16-10-27,data\images\profile\default.png,false,true
+officerNormal,1111111111,officer1,123,false,21-50-33-16-10-23,data\images\profile\default.png,false,true
+officerTeacher,1111111112,officer2,1234,false,21-50-33-16-10-24,data\images\profile\default.png,false,true
+officerPlace,1111111113,officer3,111,false,21-50-33-16-10-25,data\images\profile\default.png,false,true
+officerEnroll,1111111114,officer4,123,false,21-50-33-16-10-26,data\images\profile\default.png,false,true
+officerCorrupt,1111111115,officer5,123,false,21-50-33-16-10-27,data\images\profile\default.png,false,true

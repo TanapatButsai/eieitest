@@ -74,16 +74,7 @@ public class Users implements Comparable<Users> {
 
     @Override
     public String toString() {
-        return "Users{" +
-                "name='" + name + '\'' +
-                ", id='" + id + '\'' +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", lastTimeLogin='" + lastTimeLogin + '\'' +
-                ", userImage='" + userImage + '\'' +
-                ", isAdmin=" + isAdmin +
-                ", isBan=" + isBan +
-                "}\n";
+        return username;
     }
 
     public void recordTimeLogin(){
@@ -141,4 +132,5 @@ public class Users implements Comparable<Users> {
     public int compareTo(Users o) {
         return Double.compare(o.getLastTimeLoginToSecond(), getLastTimeLoginToSecond());
     }
+
 }
