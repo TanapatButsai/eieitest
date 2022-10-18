@@ -13,14 +13,14 @@ public class Users implements Comparable<Users> {
     private String userImage;
     private boolean isAdmin;
     private boolean isBan;
-
+    private boolean isOfficer;
 
 
     public void setBan(boolean ban) {
         isBan = ban;
     }
 
-    public Users(String name, String id, String username, String password, boolean isAdmin , String lastTimeLogin, String userImage, boolean isBan) {
+    public Users(String name, String id, String username, String password, boolean isAdmin , String lastTimeLogin, String userImage, boolean isBan ,boolean isOfficer) {
         this.name = name;
         this.id = id;
         this.userImage = userImage;
@@ -29,6 +29,7 @@ public class Users implements Comparable<Users> {
         this.isAdmin = isAdmin;
         this.lastTimeLogin = lastTimeLogin;
         this.isBan = isBan;
+        this.isOfficer = isOfficer;
     }
 
     public Users(String name, String id, String username, String password, boolean isAdmin, String lastTimeLogin) {
@@ -43,6 +44,14 @@ public class Users implements Comparable<Users> {
     public Users(String username, String password) {
         this.username = username;
         this.password = password;
+    }
+
+    public boolean isOfficer() {
+        return isOfficer;
+    }
+
+    public void setOfficer(boolean officer) {
+        isOfficer = officer;
     }
 
     public boolean isAdmin() {

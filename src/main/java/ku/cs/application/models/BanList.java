@@ -39,7 +39,12 @@ public class BanList {
         }
         return ban;
     }
-
+    public void setRequestUnban(String username,String request){
+        Ban ban = findBanByUsername(username);
+        if (ban != null) {
+            ban.setRequest(request);
+        }
+    }
     public Ban findBanByUsername(String username){
         for (Ban ban : banList) {
             if (username.equals(ban.getUser())) {
@@ -48,7 +53,10 @@ public class BanList {
         }
         return null;
     }
-
+    public void tryLogin(String username){
+        Ban ban = findBanByUsername(username);
+        if (!(ban == null)){ban.setTryLogin(ban.getTryLogin()+1);}
+    }
     @Override
     public String toString() {
         return "BanList{" +

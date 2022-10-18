@@ -71,6 +71,7 @@
             <Font size="15.0" />
          </font>
       </Button>
+
       <Pane layoutX="508.0" layoutY="160.0" prefHeight="39.0" prefWidth="211.0" style="-fx-background-color: #0d8637; -fx-background-radius: 30;">
          <children>
             <Label layoutX="36.0" prefHeight="40.0" prefWidth="161.0" text="รายละเอียดผู้ใช้" textFill="#f6f1f1">
@@ -81,5 +82,6 @@
          </children>
       </Pane>
       <Button layoutX="582.0" layoutY="454.0" mnemonicParsing="false" onAction="#handleGoToOfficerSignUp" text="ลงทะเบียน" />
+
    </children>
 </AnchorPane>

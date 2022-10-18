@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.CubicCurve?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #BDBDBD;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.ProjectOpeningController">
+   <children>
+      <CubicCurve cache="true" controlX1="-296.80706787109375" controlX2="-411.4822998046875" controlY1="-185.1999969482422" controlY2="-315.6008605957031" endX="648.9999389648438" endY="-132.0" fill="#2fb16e" layoutX="151.0" layoutY="132.0" opacity="0.62" startX="-151.0" startY="468.0" stroke="BLACK" />
+      <Label alignment="CENTER" layoutX="85.0" layoutY="257.0" prefHeight="86.0" prefWidth="297.0" text="DingTwo's" textFill="#eadede">
+         <font>
+            <Font name="Orbitron Bold" size="48.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="377.0" layoutY="243.0" prefHeight="114.0" prefWidth="345.0" text="  Production" textFill="#cc0c0c">
+         <font>
+            <Font name="Orbitron Bold" size="48.0" />
+         </font>
+      </Label>
+      <Button mnemonicParsing="false" onAction="#goToLogin" opacity="0.0" prefHeight="601.0" prefWidth="801.0" />
+   </children>
+</AnchorPane>

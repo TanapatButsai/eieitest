@@ -54,7 +54,7 @@
          </font>
       </Label>
       <Label fx:id="officerLabel" layoutX="129.0" layoutY="70.0" text="officerLabel" textAlignment="CENTER" />
-      <TextArea fx:id="bodyTextArea" layoutX="362.0" layoutY="179.0" prefHeight="356.0" prefWidth="419.0" />
+      <TextArea fx:id="bodyTextArea" layoutX="362.0" layoutY="179.0" prefHeight="204.0" prefWidth="419.0" />
       <Button layoutX="362.0" layoutY="546.0" mnemonicParsing="false" onAction="#handleDoneButton" text="ดำเนินการแล้ว" />
       <Button layoutX="455.0" layoutY="546.0" mnemonicParsing="false" onAction="#handleInProgress" text="อยู่ระหว่างการดำเนินการแล้ว" />
       <Button layoutX="614.0" layoutY="546.0" mnemonicParsing="false" onAction="#handleUnmanagedButton" text="ยังไม่ถูกจัดการ" />
@@ -70,5 +70,12 @@
          </font>
       </Label>
       <Label fx:id="fixTopicLabel" layoutX="479.0" layoutY="127.0" text="fixTopicLabel" />
+      <Label layoutX="362.0" layoutY="385.0" prefHeight="30.0" prefWidth="91.0" text="ความคืบหน้า:" textFill="#2e2e2e">
+         <font>
+            <Font name="Cambria" size="15.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="fixBodyTextArea" layoutX="362.0" layoutY="413.0" prefHeight="102.0" prefWidth="419.0" />
+      <Label fx:id="errorLabel" layoutX="362.0" layoutY="522.0" text="errorLabel" textFill="RED" />
    </children>
 </AnchorPane>

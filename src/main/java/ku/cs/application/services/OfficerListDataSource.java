@@ -1,11 +1,13 @@
 package ku.cs.application.services;
 
-import ku.cs.application.models.Officer;
-import ku.cs.application.models.OfficerList;
+import ku.cs.application.models.Office;
+import ku.cs.application.models.OfficeList;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
-public class OfficerListDataSource implements DataSource<OfficerList>{
+public class OfficerListDataSource implements DataSource<OfficeList>{
     private String directoryName;
     private String fileName;
 
@@ -30,8 +32,8 @@ public class OfficerListDataSource implements DataSource<OfficerList>{
         }
     }
     @Override
-    public OfficerList readData() {
-        OfficerList list = new OfficerList();
+    public OfficeList readData() {
+        OfficeList list = new OfficeList();
         String filePath = directoryName + File.separator + fileName;
         File file = new File(filePath);
         FileReader reader = null;
@@ -44,11 +46,9 @@ public class OfficerListDataSource implements DataSource<OfficerList>{
             String line = "";
             while ((line = buffer.readLine()) != null) {
                 String[] data = line.split(",");
-                Officer officer = new Officer(
-                        data[0].trim(),
-                        data[1].trim(),
-                        data[2].trim());
-                list.addOfficer(officer);
+                Office office = new Office(
+                        data[0].trim(), new ArrayList<String>(List.of(data[1].trim().split("-"))));
+                list.addOfficer(office);
             }
 
         } catch (FileNotFoundException e) {
@@ -66,7 +66,7 @@ public class OfficerListDataSource implements DataSource<OfficerList>{
         return list;
     }
     @Override
-    public void writeData(OfficerList officerIDList) {
+    public void writeData(OfficeList officerIDList) {
         String filePath = directoryName + File.separator + fileName;
         File file = new File(filePath);
 
@@ -75,11 +75,13 @@ public class OfficerListDataSource implements DataSource<OfficerList>{
         try {
             writer = new FileWriter(file);
             buffer = new BufferedWriter(writer);
-            for (Officer officer : officerIDList.getAllOfficerID()) {
-                String line =
-                        officer.getOfficerID() + ","
-                        + officer.getOfficerPassword() + ","
-                        + officer.getRole();
+            for (Office office : officerIDList.getAllOfficerID()) {
+                StringBuilder officerIDArrayList = new StringBuilder();
+                for (String s : office.getAllOfficerUsername()){
+                    officerIDArrayList.append(s).append("-");
+                }
+                String line = office.getRole() +","
+                        + officerIDArrayList;
                 buffer.append(line);
                 buffer.newLine();
             }
