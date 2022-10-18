@@ -1,4 +1,4 @@
-fullName,ID,username,password,isAdmin,lastTimeLogin,image,isBan
+fullName,ID,username,password,isAdmin,lastTimeLogin,image,isBan,isOfficer
 tanapat butsai,6514123455,tanapatbutsai,Summao41773@,false,21-52-21-29-09-22,data\images\profile\default.png,false,false
 Nama Toda,6410450000,usernameTest,12345,false,12-34-56-25-09-22,data\images\profile\default.png,false,false
 JoJaCoLa,1234567890,edwqdqwdqwdqw,111111,false,14-23-52-29-09-22,data\images\profile\default.png,false,false

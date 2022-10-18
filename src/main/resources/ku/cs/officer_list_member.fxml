@@ -33,23 +33,39 @@
       <Label fx:id="officerLabel" layoutX="138.0" layoutY="70.0" text="officerLabel" textAlignment="CENTER" />
       <Separator layoutX="354.0" layoutY="59.0" orientation="VERTICAL" prefHeight="538.0" prefWidth="4.0" />
       <ListView fx:id="officerMemberListView" layoutX="14.0" layoutY="89.0" prefHeight="478.0" prefWidth="314.0" />
-      <Label fx:id="officerUsernameLabel" layoutX="533.0" layoutY="408.0" text="officerUsernameLabel" textAlignment="CENTER" />
+      <Label fx:id="officerUsernameLabel" layoutX="540.0" layoutY="400.0" prefHeight="0.0" prefWidth="144.0" text="officerUsernameLabel" textAlignment="CENTER">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
       <ImageView fx:id="OfficerImageView" fitHeight="246.0" fitWidth="359.0" layoutX="409.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true" />
       <Label layoutX="558.0" layoutY="72.0" prefHeight="30.0" prefWidth="43.0" text="ข้อมูล" textFill="#2e2e2e">
          <font>
             <Font name="Cambria" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="392.0" layoutY="401.0" prefHeight="30.0" prefWidth="141.0" text="Officer Username :" textFill="#2e2e2e">
+      <Label layoutX="400.0" layoutY="400.0" prefHeight="17.0" prefWidth="141.0" text="Officer Username :" textFill="#2e2e2e">
          <font>
             <Font name="Cambria" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="392.0" layoutY="431.0" prefHeight="30.0" prefWidth="55.0" text="ชื่อ  :" textFill="#2e2e2e">
+      <Label layoutX="400.0" layoutY="440.0" prefHeight="0.0" prefWidth="55.0" text="ชื่อ  :" textFill="#2e2e2e">
          <font>
             <Font name="Cambria" size="15.0" />
          </font>
       </Label>
-      <Label fx:id="officerNameLabel" layoutX="447.0" layoutY="438.0" text="officerNameLabel" textAlignment="CENTER" />
+      <Label fx:id="officerNameLabel" layoutX="540.0" layoutY="440.0" text="officerNameLabel" textAlignment="CENTER">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+      <Label layoutX="400.0" layoutY="480.0" prefHeight="0.0" prefWidth="82.0" text="เข้าใช้ล่าสุด  :" textFill="#2e2e2e">
+         <font>
+            <Font name="Cambria" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="officerLastLoginLabel" layoutX="540.0" layoutY="480.0" text="officerLastLoginLabel" textAlignment="CENTER">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

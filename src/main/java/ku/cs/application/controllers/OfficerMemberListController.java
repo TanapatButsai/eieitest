@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import ku.cs.application.models.*;
 import ku.cs.application.services.DataSource;
@@ -18,6 +19,7 @@ public class OfficerMemberListController {
     private Officer userOfficer;
     @FXML private Label officerUsernameLabel;
     @FXML private Label officerNameLabel;
+    @FXML private Label officerLastLoginLabel;
     @FXML private ListView<String> officerMemberListView;
     @FXML private ImageView OfficerImageView;
     private DataSource<UserList> ulds;
@@ -35,6 +37,7 @@ public class OfficerMemberListController {
         handleSelectedListView();
         officerNameLabel.setText("");
         officerUsernameLabel.setText("");
+        officerLastLoginLabel.setText("");
     }
     private void showListView() {
         officerMemberListView.getItems().setAll(userList.getAllRoleOfficers(userOfficer.getRole(), officerIDList));
@@ -54,6 +57,8 @@ public class OfficerMemberListController {
         Users data = userList.find(newValue);
         officerUsernameLabel.setText(data.getUsername());
         officerNameLabel.setText(data.getName());
+        officerLastLoginLabel.setText(data.getLastTimeLogin());
+        OfficerImageView.setImage(new Image("file:"+data.getUserImage()));
     }
 
 
