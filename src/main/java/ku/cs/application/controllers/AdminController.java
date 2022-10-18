@@ -6,6 +6,8 @@ import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import ku.cs.application.models.UserList;
 import ku.cs.application.models.Users;
 import ku.cs.application.services.DataSource;
@@ -19,9 +21,11 @@ public class AdminController {
     @FXML private Label usernameLabel;
     @FXML private Label intuitionLabel;
     @FXML private Label lastLoginLabel;
+    @FXML private ImageView rainbow;
 
     private DataSource<UserList> ulds;
     private UserList userList;
+
 
 
     @FXML
@@ -32,6 +36,8 @@ public class AdminController {
         showListView();
         clearSelectedUser();
         handleSelectedListView();
+        String url2 = getClass().getResource("/ku/cs/admin_scence_images/rainbow.jpg").toExternalForm();
+        rainbow.setImage(new Image(url2));
     }
 
 
@@ -95,6 +101,17 @@ public class AdminController {
         } catch (IOException e) {
             System.err.println("ไปที่หน้า manageban ไม่ได้");
             System.err.println("ให้ตรวจสอบการกำหนด route");
+        }
+    }
+
+    @FXML
+    public void handleGoToOfficerSignUp(ActionEvent actionEvent) {
+        try {
+            com.github.saacsos.FXRouter.goTo("admin_signup_officer");
+        } catch (IOException e) {
+            System.err.println("ไปที่หน้า admin signup ไม่ได้");
+            System.err.println("ให้ตรวจสอบการกำหนด route");
+            e.printStackTrace();
         }
     }
 }

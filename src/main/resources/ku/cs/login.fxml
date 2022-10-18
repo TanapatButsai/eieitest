@@ -10,11 +10,19 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="loginAnchorPane" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #D8D8D8;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.LoginController">
+<AnchorPane fx:id="loginAnchorPane" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.LoginController">
    <children>
-      <PasswordField fx:id="inputPassword" layoutX="518.0" layoutY="405.0" prefHeight="26.0" prefWidth="250.0" promptText="such as 1********" style="-fx-background-color: #fff;" />
+      <Pane layoutX="518.0" layoutY="405.0" prefHeight="33.0" prefWidth="258.0" style="-fx-background-color: #D8D8D8; -fx-background-radius: 30;">
+         <children>
+            <PasswordField fx:id="inputPassword" layoutX="4.0" layoutY="4.0" prefHeight="26.0" prefWidth="250.0" promptText="such as 1********" style="-fx-background-color: #D8D8D8;" />
+         </children>
+      </Pane>
       <Separator layoutX="490.0" orientation="VERTICAL" prefHeight="600.0" prefWidth="0.0" />
-      <TextField fx:id="inputUsername" layoutX="518.0" layoutY="350.0" prefHeight="26.0" prefWidth="250.0" promptText="such as ta*******" style="-fx-background-color: #fff;" styleClass="t" />
+      <Pane layoutX="518.0" layoutY="350.0" prefHeight="33.0" prefWidth="258.0" style="-fx-background-color: #D8D8D8; -fx-background-radius: 30;">
+         <children>
+            <TextField fx:id="inputUsername" layoutX="4.0" layoutY="4.0" prefHeight="26.0" prefWidth="250.0" promptText="such as ta*******" style="-fx-background-color: #D8D8D8;" styleClass="t" />
+         </children>
+      </Pane>
       <ImageView fx:id="image_view_login" fitHeight="600.0" fitWidth="492.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true" />
       <Label layoutX="523.0" layoutY="330.0" prefHeight="19.0" prefWidth="58.0" text="username">
          <font>

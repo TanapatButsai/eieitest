@@ -2,17 +2,13 @@
 
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #D8D8D8;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.AdminSignupOfficer">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #D8D8D8;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.AdminOfficerController">
    <children>
-      <Label layoutX="296.0" layoutY="39.0" prefHeight="43.0" prefWidth="209.0" text="Sign Up Officer">
-         <font>
-            <Font size="29.0" />
-         </font>
-      </Label>
       <Label layoutX="523.0" layoutY="194.0" text="Username" />
       <TextField layoutX="511.0" layoutY="217.0" />
       <Label layoutX="525.0" layoutY="250.0" text="Password" />
@@ -23,5 +19,20 @@
       <TextField layoutX="511.0" layoutY="317.0" />
       <TextField layoutX="511.0" layoutY="267.0" />
       <TextField layoutX="511.0" layoutY="424.0" />
+      <HBox layoutX="-3.0" prefHeight="51.0" prefWidth="807.0" style="-fx-background-color: #2FB16E;">
+         <children>
+            <Label prefHeight="51.0" prefWidth="680.0" textFill="WHITE">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <Label layoutX="488.0" layoutY="121.0" prefHeight="43.0" prefWidth="283.0" text="Sign Up Officer" textFill="#4e4d4d">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="549.0" fitWidth="412.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

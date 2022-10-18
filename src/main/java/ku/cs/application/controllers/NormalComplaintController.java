@@ -1,6 +1,7 @@
 package ku.cs.application.controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -50,13 +51,33 @@ public class NormalComplaintController {
 
     @FXML
     public void handlePushComplaint(ActionEvent actionEvent){
-        String headComplaint = headTextField.getText();
-        String bodyComplaint = bodyTextArea.getText();
-        String bodyComplaint1 = bodyTextArea1.getText();
-        Complaint complaint = new Complaint(headComplaint,bodyComplaint,bodyComplaint1,category,user.getUsername());
-        complaint.recordTime();
-        complaint.setSolution("");
-        complaintList.add(complaint);
-        dataSource.writeData(complaintList);
+        Alert alert;
+        if (!(headTextField.getText().equals("") || bodyTextArea.getText().equals("") || bodyTextArea1.getText().equals(""))){
+            String headComplaint = headTextField.getText();
+            String bodyComplaint = bodyTextArea.getText();
+            String bodyComplaint1 = bodyTextArea1.getText();
+            Complaint complaint = new Complaint(headComplaint,bodyComplaint,bodyComplaint1,category,user.getUsername());
+            complaint.recordTime();
+            complaint.setSolution("");
+            complaint.setSolution("no");
+            complaintList.add(complaint);
+            dataSource.writeData(complaintList);
+            alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("");
+            alert.setHeaderText("ส่งคำร้องเรียนเสร็จสิ้น");
+            alert.setContentText("ขอบคุณสำหรับการร้องเรียน\nทางเราจะนำคำร้องเรียนส่งไปยังหน่วยงานที่เกี่ยวข้อง\nและดำเนินการให้เร็วที่สุด");
+            alert.showAndWait();
+            try {
+                com.github.saacsos.FXRouter.goTo("home",user);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }else {
+            alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("");
+            alert.setHeaderText("พบช่องว่าง");
+            alert.setContentText("กรุณากรอกข้อมูลให้ครบ");
+            alert.showAndWait();
+        }
     }
 }

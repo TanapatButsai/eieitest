@@ -11,16 +11,16 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #D8D8D8;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.HomeController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #D8D8D8;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.HomeController">
    <children>
       <Pane layoutX="-6.0" layoutY="-5.0" prefHeight="64.0" prefWidth="808.0" style="-fx-background-color: #2FB16E;">
          <children>
-            <Button layoutX="719.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleBackButton" prefHeight="39.0" prefWidth="47.0" style="-fx-background-color: #BDBDBD;" text="log out">
+            <Button layoutX="688.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleBackButton" prefHeight="17.0" prefWidth="83.0" style="-fx-background-color: #BDBDBD;" text="ออกจากระบบ">
                <font>
                   <Font name="Cambria Bold" size="10.0" />
                </font>
             </Button>
-            <Label layoutX="294.0" layoutY="9.0" prefHeight="46.0" prefWidth="314.0" text="Complaint System, Kasetsart University" textFill="WHITE">
+            <Label layoutX="313.0" layoutY="9.0" prefHeight="46.0" prefWidth="295.0" text="ระบบร้องเรียนเรื่องภายในมหาวิทยาลัย" textFill="WHITE">
                <font>
                   <Font name="Cambria" size="18.0" />
                </font>
@@ -41,12 +41,12 @@
                         <Font size="16.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#handleEnrollComplaint" prefHeight="0.0" prefWidth="223.0" style="-fx-background-color: #606261 #606261 #606261 #606261;" text="ร้องเรียนการลงทะเบียนเรียน" textFill="#f2ecec">
+                  <Button mnemonicParsing="false" onAction="#handleEnrollComplaint" prefHeight="36.0" prefWidth="222.0" style="-fx-background-color: #606261 #606261 #606261 #606261;" text="ร้องเรียนการลงทะเบียนเรียน" textFill="#f2ecec">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#handleCorruptComplaint" prefHeight="31.0" prefWidth="223.0" style="-fx-background-color: #606261 #606261 #606261 #606261 #606261 #606261 #606261 #606261;" text="ร้องเรียนเกี่ยวกับการทุจริต" textFill="#f2ecec">
+                  <Button mnemonicParsing="false" onAction="#handleCorruptComplaint" prefHeight="36.0" prefWidth="222.0" style="-fx-background-color: #606261 #606261 #606261 #606261 #606261 #606261 #606261 #606261;" text="ร้องเรียนเกี่ยวกับการทุจริต" textFill="#f2ecec">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -68,7 +68,7 @@
                   <Font size="16.0" />
                </font>
             </Button>
-            <Button contentDisplay="BOTTOM" layoutX="15.0" layoutY="490.0" mnemonicParsing="false" onAction="#handleGoToUserAccountScene" prefHeight="36.0" prefWidth="74.0" style="-fx-background-color: #BDBDBD;" text="ข้อมูลส่วนตัว" />
+            <Button contentDisplay="BOTTOM" layoutX="15.0" layoutY="490.0" mnemonicParsing="false" onAction="#handleGoToUserAccountScene" prefHeight="36.0" prefWidth="133.0" style="-fx-background-color: #BDBDBD;" text="ข้อมูลส่วนตัว" />
          </children></Pane>
       <ListView fx:id="complaintListViewUnManage" layoutX="280.0" layoutY="135.0" prefHeight="363.0" prefWidth="163.0" />
       <Button layoutX="684.0" layoutY="106.0" mnemonicParsing="false" onAction="#handleShowListView" prefHeight="17.0" prefWidth="83.0" style="-fx-background-color: #BDBDBD;" text="แสดงผลทั้งหมด" textAlignment="CENTER" wrapText="true">
@@ -99,5 +99,8 @@
             <MenuItem fx:id="corruptMenuItem" mnemonicParsing="false" text="การทุจริต" />
         </items>
       </MenuButton>
+      <Label layoutX="338.0" layoutY="516.0" text="ยังไม่ถูกจัดการ" />
+      <Label layoutX="491.0" layoutY="516.0" text="กำลังดำเนินการ" />
+      <Label layoutX="651.0" layoutY="516.0" text="จัดการแล้ว" />
    </children>
 </AnchorPane>
