@@ -30,7 +30,9 @@ public class Office {
     public void setAllOfficerUsername(ArrayList<String> allOfficerUsername) {
         this.allOfficerUsername = allOfficerUsername;
     }
-
+    public void addOfficer(String username){
+        this.allOfficerUsername.add(username);
+    }
     public String getRole() { return role;}
     public String setRole() {
         if (role.equals("normal")){

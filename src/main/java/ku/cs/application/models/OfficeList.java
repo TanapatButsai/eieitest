@@ -26,7 +26,6 @@ public class OfficeList {
 //        return officer;
 //    }
     public String findOfficerRole(String username){
-        Office office = null;
         for (Office temp : officeList) {
             ArrayList<String> sss = temp.getAllOfficerUsername();
             for (String s:sss) {
@@ -37,20 +36,16 @@ public class OfficeList {
         }
         return null;
     }
-//    public Officer findChangeUser(String username) {
-//        for (Officer officer : officerList) {
-//            if (officer.getOfficerID().equals(username)) {
-//                return officer;
-//            }
-//        }return null;
 
-//    public void changePassword(String username,String newPassword){
-//        Officer officer = findChangeUser(username);
-//        if (officer != null) {
-//            officer.setOfficerPassword(newPassword);
-//        }
-//    }
 
+    public void addOfficerINOffice(String username, String role){
+        for (Office office : officeList){
+            if (office.getRole().equals(role)){
+                office.addOfficer(username);
+            }
+
+        }
+    }
     @Override
     public String toString() {
         return "OfficerList{" +

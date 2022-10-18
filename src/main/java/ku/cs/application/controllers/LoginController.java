@@ -3,10 +3,12 @@ package ku.cs.application.controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.control.TextField;
 import java.io.IOException;
+import java.util.Optional;
 
 import javafx.scene.control.Label;
 import com.github.saacsos.FXRouter;
@@ -27,7 +29,6 @@ public class LoginController {
     private ImageView image_view_ku_logo; //imageViewKULogin
     private DataSource<UserList> dataSource;
     private UserList userList;
-    private Users user;
     private DataSource<OfficeList> officerDataSource;
     private OfficeList officerIDList;
 
@@ -142,7 +143,7 @@ public class LoginController {
 //        return username.equals(officer.getOfficerID()) && password.equals(officer.getOfficerPassword());
 //    }
     public void banAlert(Users user){
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         Ban ban = banList.findBanByUsername(user.getUsername());
         banList.tryLogin(user.getUsername());
         banListDataSource.writeData(banList);
@@ -150,7 +151,17 @@ public class LoginController {
         alert.setTitle("ระงับบัญชี");
         alert.setContentText(reason);
         alert.setHeaderText("บัญชีของคุณถูกระงับ");
-        alert.showAndWait();
+
+        Optional<ButtonType> result = alert.showAndWait();
+            if(result.get() == ButtonType.OK){
+                try {
+                    FXRouter.goTo("user_request_unban",user);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }else if (result.get() == ButtonType.CANCEL){
+                System.out.println("no");
+            }
         inputUsername.clear();// clear ช่อง TextField
         inputPassword.clear();
         textError.setText("");

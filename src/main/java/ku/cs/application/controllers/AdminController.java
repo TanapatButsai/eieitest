@@ -93,10 +93,20 @@ public class AdminController {
     @FXML
     public void handleManageBan(ActionEvent event) {
         try {
-            com.github.saacsos.FXRouter.goTo("adminmanageban",user);
+            FXRouter.goTo("adminmanageban",user);
         } catch (IOException e) {
             System.err.println("ไปที่หน้า manageban ไม่ได้");
             System.err.println("ให้ตรวจสอบการกำหนด route");
         }
     }
+    @FXML
+    public void handleGoToOfficerSignUp(ActionEvent actionEvent){
+        try {
+            FXRouter.goTo("admin_signup_officer",user);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
 }
