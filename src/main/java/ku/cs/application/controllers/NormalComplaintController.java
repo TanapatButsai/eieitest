@@ -1,18 +1,26 @@
 package ku.cs.application.controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.FileChooser;
 import ku.cs.application.models.Complaint;
 import ku.cs.application.models.ComplaintList;
 import ku.cs.application.models.Users;
 import ku.cs.application.services.ComplaintListDataSource;
 import ku.cs.application.services.DataSource;
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.FileSystems;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -28,6 +36,11 @@ public class NormalComplaintController {
     private ImageView kasetsartImage;
     private ArrayList<Object> objects;
     private String category;
+    private String complaintImageUrl;
+    Path target;
+    File file;
+    private boolean isAddFile = false;
+
     @FXML
     public void initialize() {
         dataSource = new ComplaintListDataSource("data","complaint.csv");
@@ -51,33 +64,61 @@ public class NormalComplaintController {
 
     @FXML
     public void handlePushComplaint(ActionEvent actionEvent){
-        Alert alert;
-        if (!(headTextField.getText().equals("") || bodyTextArea.getText().equals("") || bodyTextArea1.getText().equals(""))){
-            String headComplaint = headTextField.getText();
-            String bodyComplaint = bodyTextArea.getText();
-            String bodyComplaint1 = bodyTextArea1.getText();
-            Complaint complaint = new Complaint(headComplaint,bodyComplaint,bodyComplaint1,category,user.getUsername());
-            complaint.recordTime();
-            complaint.setSolution("");
-            complaint.setSolution("no");
-            complaintList.add(complaint);
-            dataSource.writeData(complaintList);
-            alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("");
-            alert.setHeaderText("ส่งคำร้องเรียนเสร็จสิ้น");
-            alert.setContentText("ขอบคุณสำหรับการร้องเรียน\nทางเราจะนำคำร้องเรียนส่งไปยังหน่วยงานที่เกี่ยวข้อง\nและดำเนินการให้เร็วที่สุด");
-            alert.showAndWait();
+        String headComplaint = headTextField.getText();
+        String bodyComplaint = bodyTextArea.getText();
+        String bodyComplaint1 = bodyTextArea1.getText();
+        Complaint complaint = new Complaint(headComplaint,bodyComplaint,bodyComplaint1,category,user.getUsername());
+        String complaintImageUrl = null;
+        if (complaintImageUrl == null){complaintImageUrl = "data\\images\\complaint\\default_complaint.png";}
+        complaint.setImageUrl(complaintImageUrl);
+        complaint.recordTime();
+        complaint.setSolution("no");
+        complaintList.add(complaint);
+        dataSource.writeData(complaintList);
+        if (!(bodyTextArea.getText().equals("") || bodyTextArea1.getText().equals("")
+                || headTextField.getText().equals(""))){
+            boolean isAddFile = false;
+            if (isAddFile){saveFile();}
             try {
                 com.github.saacsos.FXRouter.goTo("home",user);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-        }else {
-            alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("");
-            alert.setHeaderText("พบช่องว่าง");
-            alert.setContentText("กรุณากรอกข้อมูลให้ครบ");
-            alert.showAndWait();
+        }
+    }
+    @FXML public void handleAddPicture(ActionEvent actionEvent){
+        FileChooser fileChooser = new FileChooser();
+//        fileChooser.setInitialDirectory(new File(System.getProperty("complaint.dir")));
+        fileChooser.getExtensionFilters().add
+                (new FileChooser.ExtensionFilter("images PNG JPG", ".png", ".jpg", "*.jpeg"));
+        Node source = (Node) actionEvent.getSource();
+        file = fileChooser.showOpenDialog(source.getScene().getWindow());
+        if (file != null){
+            // CREATE FOLDER IF NOT EXIST
+            File destDir = new File("data/images/complaint/");
+
+            if (!destDir.exists()) destDir.mkdirs();
+            // RENAME FILE
+            String[] fileSplit = file.getName().split("\\.");
+
+            String filename = LocalDate.now() + "_"+System.currentTimeMillis() + "."
+                    + fileSplit[fileSplit.length - 1];
+
+            target = FileSystems.getDefault().getPath(
+                    destDir.getAbsolutePath()+System.getProperty("file.separator")+filename);
+            // COPY WITH FLAG REPLACE FILE IF FILE IS EXIST
+            complaintImageUrl = (destDir + File.separator + filename).replace(File.separator,"\\");
+                    isAddFile = true;
+            // SET NEW FILE PATH TO IMAGE
+        }
+        System.out.println(complaintImageUrl);
+    }
+    private void saveFile(){
+        try {
+
+            Files.copy(file.toPath(), target, StandardCopyOption.REPLACE_EXISTING );
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 }

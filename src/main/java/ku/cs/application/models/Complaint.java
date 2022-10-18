@@ -18,7 +18,8 @@ public class Complaint implements Comparable<Complaint> {
     private String solution;
 
     public Complaint(String headComplaint, String bodyComplaint, String fixComplaint, String category, String nameWriter,
-                     String time, boolean done, boolean inProgress, boolean unmanaged, int rating, boolean isBan,String solution) {
+                     String time, boolean done, boolean inProgress, boolean unmanaged, int rating, boolean isBan
+            ,String solution, String imageUrl) {
         this.headComplaint = headComplaint;
         this.bodyComplaint = bodyComplaint;
         this.fixComplaint = fixComplaint;
@@ -31,6 +32,7 @@ public class Complaint implements Comparable<Complaint> {
         this.time = time;
         this.isBan = isBan;
         this.solution = solution;
+        this.imageUrl = imageUrl;
     }//CONSTRUCTOR FOR READ,WRITE DATA
 
     public Complaint(String headComplaint, String bodyComplaint, String fixComplaint,
@@ -218,5 +220,15 @@ public String getStatus(){
 
     public void setSolution(String solution) {
         this.solution = solution;
+    }
+    private String imageUrl;
+
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }
