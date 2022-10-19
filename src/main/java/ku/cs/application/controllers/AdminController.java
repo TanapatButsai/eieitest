@@ -22,10 +22,12 @@ public class AdminController {
     @FXML private Label intuitionLabel;
     @FXML private Label lastLoginLabel;
     @FXML private ImageView userImage;
+    @FXML private ImageView rainbow;
 
     private DataSource<UserList> dataSource;
     private UserList userList;
     private Users user ;
+
 
 
     @FXML
@@ -37,6 +39,8 @@ public class AdminController {
         showListView();
         clearSelectedUser();
         handleSelectedListView();
+        String url2 = getClass().getResource("/ku/cs/admin_scence_images/rainbow.jpg").toExternalForm();
+        rainbow.setImage(new Image(url2));
     }
 
 
@@ -100,7 +104,7 @@ public class AdminController {
     @FXML
     public void handleManageBan(ActionEvent event) {
         try {
-            com.github.saacsos.FXRouter.goTo("adminmanageban",user);
+            FXRouter.goTo("adminmanageban",user);
         } catch (IOException e) {
             System.err.println("ไปที่หน้า manageban ไม่ได้");
             System.err.println("ให้ตรวจสอบการกำหนด route");
@@ -110,10 +114,18 @@ public class AdminController {
     @FXML
     public void handleAdminAccount(ActionEvent event) {
         try {
-            com.github.saacsos.FXRouter.goTo("admin_account",user);
+            com.github.saacsos.FXRouter.goTo("admin_account", user);
         } catch (IOException e) {
             System.err.println("ไปที่หน้า admin_account ไม่ได้");
             System.err.println("ให้ตรวจสอบการกำหนด route");
+        }
+    }
+    @FXML
+    public void handleGoToOfficerSignUp(ActionEvent actionEvent){
+        try {
+            FXRouter.goTo("admin_signup_officer",user);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 }

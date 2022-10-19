@@ -43,8 +43,8 @@ public class UserAccountController {
     DataSource<UserList> dataSource = new UserListDataSource("data","user.csv");
     @FXML private void initialize(){
         user = (Users)FXRouter.getData();
-        String url = getClass().getResource("/ku/cs/user_account_scene_image/logoku.png").toExternalForm();
-        String url1 = getClass().getResource("/ku/cs/user_account_scene_image/background.jpg").toExternalForm();
+        String url = getClass().getResource("/ku/cs/user_account_scene_image/bird.jpg").toExternalForm();
+        String url1 = getClass().getResource("/ku/cs/user_account_scene_image/greenposter.jpg").toExternalForm();
         imageBackGroundUrl.setImage(new Image(url1));
         logoku.setImage(new Image(url));
         userList = dataSource.readData();

@@ -123,36 +123,39 @@ public class OfficerController {
     //ปุ่มกำหนดสถานะ
     @FXML private void handleDoneButton(ActionEvent actionEvent){
         if (complaint != null){
-            complaintList.findData(complaint);
-            complaintList.setDone(complaint);
-            complaint.setSolution(fixBodyTextArea.getText());
             if (fixBodyTextArea.getText().equals("")){
                 errorLabel.setText("*กรุณาใส่ช้อมูล*");
                 complaint.setSolution("no");
+            }else {
+                complaintList.findData(complaint);
+                complaintList.setDone(complaint);
+                complaint.setSolution(fixBodyTextArea.getText());
+                //officerRoleList.setDone(officer);
+                statusLabel.setText(complaint.getStatus());
+                complaintList.add(complaint);
+                dataSource.writeData(complaintList);
             }
-            //officerRoleList.setDone(officer);
-            statusLabel.setText(complaint.getStatus());
-            complaintList.add(complaint);
-            dataSource.writeData(complaintList);
         }
     }
     @FXML private void handleInProgress(ActionEvent actionEvent){
         if (complaint != null){
-            complaintList.findData(complaint);
-            complaintList.setInProgress(complaint);
-            complaint.setSolution(fixBodyTextArea.getText());
             if (fixBodyTextArea.getText().equals("")){
                 errorLabel.setText("*กรุณาใส่ช้อมูล*");
                 complaint.setSolution("no");
+            }else {
+                complaintList.findData(complaint);
+                complaintList.setInProgress(complaint);
+                complaint.setSolution(fixBodyTextArea.getText());
+                //officerRoleList.setInProgress(officer);
+                statusLabel.setText(complaint.getStatus());
+                complaintList.add(complaint);
+                dataSource.writeData(complaintList);
             }
-            //officerRoleList.setInProgress(officer);
-            statusLabel.setText(complaint.getStatus());
-            complaintList.add(complaint);
-            dataSource.writeData(complaintList);
         }
     }
     @FXML private void handleUnmanagedButton(ActionEvent actionEvent){
         if (complaint != null){
+            errorLabel.setText("");
             complaintList.findData(complaint);
             complaintList.setUnmanaged(complaint);
             //officerRoleList.setInProgress(officer);

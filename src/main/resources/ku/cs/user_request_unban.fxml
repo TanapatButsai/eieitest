@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="loginAnchorPane" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #D8D8D8;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.UserRequestUnbanController">
+   <children>
+      <Separator layoutX="490.0" orientation="VERTICAL" prefHeight="600.0" prefWidth="0.0" />
+      <TextField fx:id="inputUsername" layoutX="518.0" layoutY="132.0" prefHeight="26.0" prefWidth="250.0" promptText="ตัวอย่างเช่น ta*******" style="-fx-background-color: #fff;" styleClass="t" />
+      <ImageView fx:id="image_view_login" fitHeight="600.0" fitWidth="492.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="523.0" layoutY="112.0" prefHeight="19.0" prefWidth="70.0" text="ชื่อบัญชีผู้ใช้">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <Label layoutX="524.0" layoutY="167.0" prefHeight="19.0" prefWidth="124.0" text="สาเหตุการโดนระงับบัญชี">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <Label alignment="CENTER" layoutX="98.0" layoutY="27.0" prefHeight="46.0" prefWidth="279.0" text="ระบบร้องเรียนภายในมหาวิทยาลัยเกษตรศาสตร์" wrapText="true">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="592.0" layoutY="495.0" mnemonicParsing="false" onAction="#handleSentRequest" prefHeight="46.0" prefWidth="102.0" style="-fx-background-color: #BDBDBD;" stylesheets="@common_button_reactive.css" text="ส่งคำร้อง">
+         <font>
+            <Font name="Corbel Bold" size="14.0" />
+         </font>
+      </Button>
+
+
+      <Button layoutX="696.0" layoutY="27.0" mnemonicParsing="false" onAction="#handleBack" prefHeight="20.0" prefWidth="92.0" style="-fx-background-color: #BDBDBD;" stylesheets="@common_button_reactive.css" text="ลงทะเบียน">
+
+         <font>
+            <Font name="Corbel Bold" size="10.0" />
+         </font>
+      </Button>
+      <Label fx:id="textError" layoutX="558.0" layoutY="438.0" prefHeight="18.0" prefWidth="170.0" textAlignment="CENTER" textFill="RED" />
+      <Label layoutX="55.0" layoutY="74.0" style="-fx-background-color: #D8D8D8;" text="ANNOUNCE">
+         <font>
+            <Font name="Calibri Bold" size="14.0" />
+         </font>
+      </Label>
+      <Pane layoutX="43.0" layoutY="59.0" opacity="0.27" prefHeight="247.0" prefWidth="404.0" style="-fx-background-color: #ffffff;" />
+      <Label layoutX="524.0" layoutY="269.0" prefHeight="19.0" prefWidth="124.0" text="คำร้อง">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="requestTextField" layoutX="518.0" layoutY="306.0" prefHeight="122.0" prefWidth="250.0" wrapText="true" />
+      <TextArea fx:id="inputReason" layoutX="518.0" layoutY="196.0" prefHeight="58.0" prefWidth="250.0" wrapText="true" />
+   </children>
+</AnchorPane>

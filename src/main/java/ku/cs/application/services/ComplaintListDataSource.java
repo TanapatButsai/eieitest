@@ -67,8 +67,9 @@ public class ComplaintListDataSource implements DataSource<ComplaintList>{
                 int rating = Integer.parseInt(data[9].trim());
                 boolean isBan = Boolean.parseBoolean(data[10].trim());
                 String solution = data[11].trim();
+                String url = data[12].trim().replace("\\",File.separator);
                 Complaint complaint = new Complaint(headComplaint,bodyComplaint,fixComplaint,category,nameWriter
-                        ,time,done,inProgress,unmanaged,rating,isBan,solution);
+                        ,time,done,inProgress,unmanaged,rating,isBan,solution,url);
                 list.add(complaint);
             }
         } catch (FileNotFoundException e) {
@@ -90,11 +91,8 @@ public class ComplaintListDataSource implements DataSource<ComplaintList>{
     public void writeData(ComplaintList complaintList) {
         String filePath = directoryName + File.separator + fileName;
         File file = new File(filePath);
-
         FileWriter writer = null;
         BufferedWriter buffer = null;
-//        newUser = new Users("jaja123","456","780","123");
-//        String newUserString = newUser.getName()+","+newUser.getId()+","+ newUser.getUsername()+","+ newUser.getPassword();
         try {
             writer = new FileWriter(file);
             buffer = new BufferedWriter(writer);
@@ -113,13 +111,11 @@ public class ComplaintListDataSource implements DataSource<ComplaintList>{
                         + complaint.isUnmanaged()+","
                         + complaint.getRating()+","
                         + complaint.isBan()+","
-                        + complaint.getSolution();
-
-
+                        + complaint.getSolution() +","
+                        + complaint.getImageUrl().replace(File.separator,"\\");
                 buffer.append(line);
                 buffer.newLine();
             }
-//            buffer.append(newUserString);
             buffer.close();
         } catch (IOException e) {
             throw new RuntimeException();

@@ -5,75 +5,81 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #D8D8D8;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.AdminController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.AdminController">
    <children>
-      <ListView fx:id="userListView" layoutX="68.0" layoutY="106.0" prefHeight="455.0" prefWidth="311.0" />
-      <Label layoutX="562.0" layoutY="58.0" text=" User Detail">
-         <font>
-            <Font size="28.0" />
-         </font>
-      </Label>
-      <Label layoutX="445.0" layoutY="317.0" text="Full name">
-         <font>
-            <Font size="16.0" />
-         </font></Label>
-      <Label layoutX="443.0" layoutY="357.0" text="Username">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
-      <Label layoutX="443.0" layoutY="401.0" text="Intuition">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
-      <Label layoutX="439.0" layoutY="444.0" text="Last login">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
-      <Label fx:id="fnLabel" layoutX="574.0" layoutY="317.0" text="fnLabel">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
-      <Label fx:id="usernameLabel" layoutX="574.0" layoutY="357.0" text="usernameLabel">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
-      <Label fx:id="intuitionLabel" layoutX="574.0" layoutY="401.0" text="intuitionLabel">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
-      <Label fx:id="lastLoginLabel" layoutX="573.0" layoutY="444.0" text="lastloginLabel">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
-      <Button layoutX="292.0" layoutY="26.0" mnemonicParsing="false" onAction="#handleAdminComplaint" prefHeight="32.0" prefWidth="76.0" text="Report">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Button>
-      <Button layoutX="30.0" layoutY="26.0" mnemonicParsing="false" onAction="#handleBack" prefHeight="32.0" prefWidth="76.0" text="Back">
+      <ListView fx:id="userListView" layoutX="28.0" layoutY="106.0" prefHeight="455.0" prefWidth="389.0" />
+      <ImageView fx:id="rainbow" fitHeight="292.0" fitWidth="324.0" layoutX="582.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true" />
+      <Pane layoutX="442.0" layoutY="229.0" prefHeight="186.0" prefWidth="344.0" style="-fx-background-color: #becfa6; -fx-background-radius: 30;">
+         <children>
+            <Label layoutX="32.0" layoutY="14.0" text="ชื่อ">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="30.0" layoutY="54.0" text="ชื่อผู้ใช้">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="fnLabel" layoutX="208.0" layoutY="14.0" text="fnLabel">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="usernameLabel" layoutX="206.0" layoutY="54.0" text="usernameLabel">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="32.0" layoutY="91.0" text="รหัสนิสิต">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="32.0" layoutY="134.0" text="ประวัติการใช้งานล่าสุด">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="intuitionLabel" layoutX="204.0" layoutY="91.0" text="intuitionLabel">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lastLoginLabel" layoutX="204.0" layoutY="134.0" text="lastloginLabel">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Button layoutX="341.0" layoutY="26.0" mnemonicParsing="false" onAction="#handleAdminComplaint" prefHeight="32.0" prefWidth="76.0" text="รายงาน">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="165.0" layoutY="26.0" mnemonicParsing="false" onAction="#handleManageBan" prefHeight="32.0" prefWidth="76.0" text="Manage Ban">
+      <Button layoutX="30.0" layoutY="26.0" mnemonicParsing="false" onAction="#handleBack" prefHeight="32.0" prefWidth="65.0" text="กลับ">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <ImageView fx:id="userImage" fitHeight="185.0" fitWidth="247.0" layoutX="515.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true" />
-      <Button layoutX="407.0" layoutY="26.0" mnemonicParsing="false" onAction="#handleAdminAccount" prefHeight="32.0" prefWidth="76.0" text="Account">
+      <Button layoutX="142.0" layoutY="26.0" mnemonicParsing="false" onAction="#handleManageBan" prefHeight="32.0" prefWidth="161.0" text="รายงานความไม่เหมาะสม">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
+      <Pane layoutX="508.0" layoutY="160.0" prefHeight="39.0" prefWidth="211.0" style="-fx-background-color: #0d8637; -fx-background-radius: 30;">
+         <children>
+            <Label layoutX="36.0" prefHeight="40.0" prefWidth="161.0" text="รายละเอียดผู้ใช้" textFill="#f6f1f1">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Button layoutX="582.0" layoutY="454.0" mnemonicParsing="false" onAction="#handleGoToOfficerSignUp" text="ลงทะเบียน" />
    </children>
 </AnchorPane>

@@ -9,9 +9,9 @@ public class Ban {
     private String time;
     private boolean active;
     private int tryLogin;
-    private String comment;
+    private String request;
 
-    public Ban(String bannedID, String user, String bannedReason, String objectID, String time, boolean active,int tryLogin,String comment) {
+    public Ban(String bannedID, String user, String bannedReason, String objectID, String time, boolean active,int tryLogin,String request) {
         this.bannedID = bannedID;
         this.user = user;
         this.bannedReason = bannedReason;
@@ -19,7 +19,7 @@ public class Ban {
         this.time = time;
         this.active = active;
         this.tryLogin = tryLogin;
-        this.comment = comment;
+        this.request = request;
     }
     public Ban(String bannedID, String user, String bannedReason, String objectID, boolean active) {
         this.bannedID = bannedID;
@@ -28,7 +28,7 @@ public class Ban {
         this.objectID = objectID;
         this.setTime();
         this.active = active;
-        this.comment = "none";
+        this.request = "none";
     }
     public String getBannedID() {
         return bannedID;
@@ -50,12 +50,12 @@ public class Ban {
         this.time = time;
     }
 
-    public String getComment() {
-        return comment;
+    public String getRequest() {
+        return request;
     }
 
-    public void setComment(String comment) {
-        this.comment = comment;
+    public void setRequest(String request) {
+        this.request = request;
     }
 
     public String toCSV() {
@@ -69,7 +69,7 @@ public class Ban {
                 time + "," +
                 Boolean.toString(isActive()) + "," +
                 Integer.toString(tryLogin) + "," +
-                comment;
+                request;
     }
 
     public void setBannedID(String bannedID) {

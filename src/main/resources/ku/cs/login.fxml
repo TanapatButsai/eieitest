@@ -10,35 +10,45 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="loginAnchorPane" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #D8D8D8;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.LoginController">
+<AnchorPane fx:id="loginAnchorPane" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.LoginController">
    <children>
-      <PasswordField fx:id="inputPassword" layoutX="518.0" layoutY="405.0" prefHeight="26.0" prefWidth="250.0" promptText="such as 1********" style="-fx-background-color: #fff;" />
+
+      <Pane layoutX="518.0" layoutY="405.0" prefHeight="33.0" prefWidth="258.0" style="-fx-background-color: #D8D8D8; -fx-background-radius: 30;">
+         <children>
+            <PasswordField fx:id="inputPassword" layoutX="4.0" layoutY="4.0" prefHeight="26.0" prefWidth="250.0" promptText="such as 1********" style="-fx-background-color: #D8D8D8;" />
+         </children>
+      </Pane>
       <Separator layoutX="490.0" orientation="VERTICAL" prefHeight="600.0" prefWidth="0.0" />
-      <TextField fx:id="inputUsername" layoutX="518.0" layoutY="350.0" prefHeight="26.0" prefWidth="250.0" promptText="such as ta*******" style="-fx-background-color: #fff;" styleClass="t" />
+      <Pane layoutX="518.0" layoutY="350.0" prefHeight="33.0" prefWidth="258.0" style="-fx-background-color: #D8D8D8; -fx-background-radius: 30;">
+         <children>
+            <TextField fx:id="inputUsername" layoutX="4.0" layoutY="4.0" prefHeight="26.0" prefWidth="250.0" promptText="such as ta*******" style="-fx-background-color: #D8D8D8;" styleClass="t" />
+         </children>
+      </Pane>
+
       <ImageView fx:id="image_view_login" fitHeight="600.0" fitWidth="492.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true" />
-      <Label layoutX="523.0" layoutY="330.0" prefHeight="19.0" prefWidth="58.0" text="username">
+      <Label layoutX="523.0" layoutY="330.0" prefHeight="19.0" prefWidth="70.0" text="ชื่อบัญชีผู้ใช้">
          <font>
             <Font size="13.0" />
          </font></Label>
-      <Label layoutX="524.0" layoutY="385.0" prefHeight="19.0" prefWidth="58.0" text="password">
+      <Label layoutX="524.0" layoutY="385.0" prefHeight="19.0" prefWidth="58.0" text="รหัสผ่าน">
          <font>
             <Font size="13.0" />
          </font></Label>
       <Button layoutX="710.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleGoToHome" style="-fx-background-color: #BDBDBD;" text="Home(test)" />
       <ImageView fx:id="image_view_ku_logo" fitHeight="236.0" fitWidth="198.0" layoutX="544.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true" />
-      <Label layoutX="573.0" layoutY="280.0" prefHeight="20.0" prefWidth="153.0" text="Sign in to KU Complaint">
+      <Label alignment="CENTER" layoutX="98.0" layoutY="27.0" prefHeight="46.0" prefWidth="279.0" text="ระบบร้องเรียนภายในมหาวิทยาลัยเกษตรศาสตร์" wrapText="true">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Button layoutX="597.0" layoutY="466.0" mnemonicParsing="false" onAction="#handleSignIn" prefHeight="46.0" prefWidth="92.0" style="-fx-background-color: #BDBDBD;" text="sign in">
+      <Button layoutX="591.0" layoutY="466.0" mnemonicParsing="false" onAction="#handleSignIn" prefHeight="46.0" prefWidth="102.0" style="-fx-background-color: #BDBDBD;" stylesheets="@common_button_reactive.css" text="เข้าสู่ระบบ">
          <font>
-            <Font name="Corbel Bold" size="18.0" />
+            <Font name="Corbel Bold" size="14.0" />
          </font>
       </Button>
 
 
-      <Button layoutX="676.0" layoutY="566.0" mnemonicParsing="false" onAction="#handleGoToRegister" prefHeight="20.0" prefWidth="92.0" style="-fx-background-color: #BDBDBD;" text="sign up">
+      <Button layoutX="676.0" layoutY="566.0" mnemonicParsing="false" onAction="#handleGoToRegister" prefHeight="20.0" prefWidth="92.0" style="-fx-background-color: #BDBDBD;" stylesheets="@common_button_reactive.css" text="ลงทะเบียน">
 
          <font>
             <Font name="Corbel Bold" size="10.0" />
@@ -51,6 +61,10 @@
          </font>
       </Label>
       <Pane layoutX="43.0" layoutY="59.0" opacity="0.27" prefHeight="247.0" prefWidth="404.0" style="-fx-background-color: #ffffff;" />
-      <Label layoutX="61.0" layoutY="98.0" prefHeight="46.0" prefWidth="361.0" text="        อยู่ในช่วงของการทดสอบโปรแกรม รหัสของ administrator คือ username = admin, password = 123456" wrapText="true" />
+      <Label alignment="CENTER" layoutX="503.0" layoutY="268.0" prefHeight="46.0" prefWidth="279.0" text="เข้าสู่ระบบ" wrapText="true">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
