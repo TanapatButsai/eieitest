@@ -7,7 +7,6 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
@@ -20,55 +19,50 @@
                   <Font name="Cambria Bold" size="10.0" />
                </font>
             </Button>
-            <Label layoutX="313.0" layoutY="9.0" prefHeight="46.0" prefWidth="295.0" text="ระบบร้องเรียนเรื่องภายในมหาวิทยาลัย" textFill="WHITE">
+            <Label layoutX="313.0" layoutY="9.0" prefHeight="46.0" prefWidth="352.0" text="ระบบร้องเรียน , มหาวิทยาลัยเกษตรศาสตร์" textFill="WHITE">
                <font>
-                  <Font name="Cambria" size="18.0" />
+                  <Font name="Cambria Bold" size="18.0" />
                </font>
             </Label>
-            <Label fx:id="userLabel" alignment="CENTER" layoutX="95.0" layoutY="20.0" prefHeight="26.0" prefWidth="139.0" style="-fx-background-color: #FE9A2E;" text="dasdas">
+            <Label fx:id="userLabel" alignment="CENTER" layoutX="78.0" layoutY="21.0" prefHeight="26.0" prefWidth="139.0" style="-fx-background-color: #d1f4d6; -fx-background-radius: 30;" text="dasdas">
                <font>
                   <Font name="Calibri Bold" size="11.0" />
                </font></Label>
             <Circle fx:id="userImageCircleView" fill="#2fb16e" layoutX="48.0" layoutY="34.0" radius="20.0" stroke="#2fb16e" strokeType="INSIDE" />
          </children>
       </Pane>
-      <Pane layoutY="59.0" prefHeight="548.0" prefWidth="220.0" style="-fx-background-color: #606261 #606261 #606261 #606261 #606261 #606261 #606261 #606261;">
+      <Pane layoutY="59.0" prefHeight="548.0" prefWidth="222.0" style="-fx-background-color: #606261 #606261 #606261 #606261 #606261 #606261 #606261 #606261;">
          <children>
-            <VBox layoutX="-3.0" layoutY="108.0" prefHeight="384.0" prefWidth="225.0">
-               <children>
-                  <Button mnemonicParsing="false" onAction="#handlePlaceComplaint" prefHeight="0.0" prefWidth="222.0" style="-fx-background-color: #606261 #606261 #606261 #606261;" text="ร้องเรียนอาคารและสถานที่" textFill="#f8f3f3">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Button>
-                  <Button mnemonicParsing="false" onAction="#handleEnrollComplaint" prefHeight="36.0" prefWidth="222.0" style="-fx-background-color: #606261 #606261 #606261 #606261;" text="ร้องเรียนการลงทะเบียนเรียน" textFill="#f2ecec">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Button>
-                  <Button mnemonicParsing="false" onAction="#handleCorruptComplaint" prefHeight="36.0" prefWidth="222.0" style="-fx-background-color: #606261 #606261 #606261 #606261 #606261 #606261 #606261 #606261;" text="ร้องเรียนเกี่ยวกับการทุจริต" textFill="#f2ecec">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Button>
-               </children>
-            </VBox>
-            <Label layoutX="-2.0" layoutY="-1.0" prefHeight="46.0" prefWidth="222.0" style="-fx-background-color: #BDBDBD #BDBDBD;" text="            ประเภทการร้องเรียน" textFill="#252424">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-            <Button layoutX="-2.0" layoutY="48.0" mnemonicParsing="false" onAction="#handleNormalComplaint" prefHeight="31.0" prefWidth="220.0" style="-fx-background-color: #606261 #606261 #606261 #606261 #606261 #606261 #606261 #606261;" text="ร้องเรียนทั่วไป" textFill="#fcf6f6">
+            <Button contentDisplay="BOTTOM" layoutX="11.0" layoutY="364.0" mnemonicParsing="false" onAction="#handleGoToUserAccountScene" prefHeight="46.0" prefWidth="211.0" stylesheets="@../../home2.css" text="ข้อมูลส่วนตัว" textFill="#f8f3f3">
                <font>
                   <Font size="16.0" />
                </font>
             </Button>
-            <Button layoutX="-2.0" layoutY="79.0" mnemonicParsing="false" onAction="#handleTeacherComplaint" prefHeight="0.0" prefWidth="222.0" style="-fx-background-color: #606261 #606261 #606261 #606261 #606261 #606261 #606261 #606261;" text="ร้องเรียนอาจารย์/บุคลากร" textFill="#f8f6f6">
+            <Button layoutX="11.0" layoutY="123.0" mnemonicParsing="false" onAction="#handleCorruptComplaint" prefHeight="46.0" prefWidth="211.0" stylesheets="@../../home.css" text="ร้องเรียนเกี่ยวกับการทุจริต" textFill="#f8f3f3">
                <font>
                   <Font size="16.0" />
                </font>
             </Button>
-            <Button contentDisplay="BOTTOM" layoutX="15.0" layoutY="490.0" mnemonicParsing="false" onAction="#handleGoToUserAccountScene" prefHeight="36.0" prefWidth="133.0" style="-fx-background-color: #BDBDBD;" text="ข้อมูลส่วนตัว" />
+            <Button layoutX="11.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleEnrollComplaint" prefHeight="46.0" prefWidth="211.0" stylesheets="@../../home.css" text="ร้องเรียนการลงทะเบียนเรียน" textFill="#f2ecec">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button layoutX="11.0" layoutY="245.0" mnemonicParsing="false" onAction="#handlePlaceComplaint" prefHeight="46.0" prefWidth="211.0" stylesheets="@../../home.css" text="ร้องเรียนอาคารและสถานที่" textFill="#f8f3f3">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button layoutX="11.0" layoutY="304.0" mnemonicParsing="false" onAction="#handleNormalComplaint" prefHeight="46.0" prefWidth="211.0" stylesheets="@../../home.css" text="ร้องเรียนทั่วไป" textFill="#fcf6f6">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button layoutX="11.0" layoutY="65.0" mnemonicParsing="false" onAction="#handleTeacherComplaint" prefHeight="46.0" prefWidth="211.0" stylesheets="@../../home.css" text="ร้องเรียนอาจารย์/บุคลากร" textFill="#f8f6f6">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
          </children></Pane>
       <ListView fx:id="complaintListViewUnManage" layoutX="280.0" layoutY="135.0" prefHeight="363.0" prefWidth="163.0" />
       <Button layoutX="684.0" layoutY="106.0" mnemonicParsing="false" onAction="#handleShowListView" prefHeight="17.0" prefWidth="83.0" style="-fx-background-color: #BDBDBD;" text="แสดงผลทั้งหมด" textAlignment="CENTER" wrapText="true">
@@ -89,7 +83,6 @@
           <MenuItem fx:id="menuItemDescending" mnemonicParsing="false" text="มากสุด" />
         </items>
       </MenuButton>
-      <Button layoutX="689.0" layoutY="548.0" mnemonicParsing="false" onAction="#handleGoToSelectedComplaintDetail" style="-fx-background-color: #BDBDBD;" text="ดูรายละเอียด" />
       <MenuButton layoutX="280.0" layoutY="74.0" mnemonicParsing="false" style="-fx-background-color: #BDBDBD;" text="หมวดหมู่">
         <items>
           <MenuItem fx:id="normalMenuItem" mnemonicParsing="false" text="ทั่วไป" />
@@ -99,8 +92,25 @@
             <MenuItem fx:id="corruptMenuItem" mnemonicParsing="false" text="การทุจริต" />
         </items>
       </MenuButton>
-      <Label layoutX="338.0" layoutY="516.0" text="ยังไม่ถูกจัดการ" />
-      <Label layoutX="491.0" layoutY="516.0" text="กำลังดำเนินการ" />
-      <Label layoutX="651.0" layoutY="516.0" text="จัดการแล้ว" />
+      <Pane layoutX="329.0" layoutY="512.0" prefHeight="26.0" prefWidth="83.0" style="-fx-background-color: #d1f4d6; -fx-background-radius: 20;">
+         <children>
+            <Label layoutX="9.0" layoutY="5.0" text="ยังไม่ถูกจัดการ" />
+         </children>
+      </Pane>
+      <Pane layoutX="485.0" layoutY="512.0" prefHeight="26.0" prefWidth="83.0" style="-fx-background-color: #d1f4d6; -fx-background-radius: 20;">
+         <children>
+            <Label layoutX="6.0" layoutY="5.0" text="กำลังดำเนินการ" />
+         </children>
+      </Pane>
+      <Pane layoutX="634.0" layoutY="512.0" prefHeight="26.0" prefWidth="83.0" style="-fx-background-color: #d1f4d6; -fx-background-radius: 20;">
+         <children>
+            <Label layoutX="17.0" layoutY="5.0" text="จัดการแล้ว" />
+         </children>
+      </Pane>
+      <Button layoutX="590.0" layoutY="547.0" mnemonicParsing="false" onAction="#handleGoToSelectedComplaintDetail" prefHeight="46.0" prefWidth="211.0" stylesheets="@../../home2.css" text="ดูรายละเอียด" textFill="#f8f3f3">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

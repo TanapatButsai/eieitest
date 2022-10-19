@@ -38,7 +38,7 @@ public class AdminController {
         showListView();
         clearSelectedUser();
         handleSelectedListView();
-        String url2 = getClass().getResource("/ku/cs/admin_scence_images/rainbow.jpg").toExternalForm();
+        String url2 = getClass().getResource("/ku/cs/admin_scence_images/rainbow.png").toExternalForm();
         rainbow.setImage(new Image(url2));
     }
 

@@ -39,7 +39,7 @@ public class UserComplaintListController {
         user = (Users) com.github.saacsos.FXRouter.getData();
         System.out.println(user.getUsername());
         String url = getClass().getResource("/ku/cs/user_account_scene_image/logoku.png").toExternalForm();
-        String url1 = getClass().getResource("/ku/cs/user_account_scene_image/background.jpg").toExternalForm();
+        String url1 = getClass().getResource("/ku/cs/user_account_scene_image/background.png").toExternalForm();
         dataSource = new ComplaintListDataSource("data","complaint.csv");
         imageBackGroundUrl.setImage(new Image(url1));
         logoku.setImage(new Image(url));
@@ -50,7 +50,7 @@ public class UserComplaintListController {
         clearSelectedComplaint();
     }
     private void showListView(){
-        complaintListView.getItems().setAll(complaintList.getUserComplaint(user.getName()));
+        complaintListView.getItems().setAll(complaintList.getUserComplaint(user.getUsername()));
         complaintListView.refresh();
     }
     private void handleSelectListView(){
@@ -68,6 +68,7 @@ public class UserComplaintListController {
         bodyLabel.setText(complaint.getBodyComplaint());
         headLabel.setText(complaint.getHeadComplaint());
         categoryLabel.setText(complaint.getCategory());
+        userImage.setImage(new Image("file:"+complaint.getImageUrl()));
     }
     private void clearSelectedComplaint(){
         bodyLabel.setText("");

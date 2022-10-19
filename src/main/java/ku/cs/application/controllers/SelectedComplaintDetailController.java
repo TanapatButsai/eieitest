@@ -8,6 +8,8 @@ import java.util.List;
 
 import com.github.saacsos.FXRouter;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import ku.cs.application.models.Complaint;
 import ku.cs.application.models.ComplaintList;
 import ku.cs.application.models.Users;
@@ -40,6 +42,7 @@ public class SelectedComplaintDetailController {
     @FXML
     private DataSource<ComplaintList> dataSource;
     private ComplaintList complaintList;
+    @FXML private ImageView selectComplaintImage;
 
     @FXML void initialize(){
         userAndComplaint = (List) FXRouter.getData();
@@ -84,6 +87,7 @@ public class SelectedComplaintDetailController {
         String time = arr[0] + ":" + arr[1] + ":" + arr[2] + " " + arr[3] + "-" + arr[4] + "-" + arr[5];
         timeLabel.setText(time);
         ratingLabel.setText(Integer.toString(complaint.getRating()));
+        selectComplaintImage.setImage(new Image("file:"+complaint.getImageUrl()));
 
     }
     @FXML
