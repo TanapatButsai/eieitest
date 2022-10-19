@@ -101,14 +101,13 @@ public class SelectedComplaintDetailController {
                             ,user.getUsername());
                     System.out.println(voteList);
                     voteListDataSource.writeData(voteList);
-
+                    complaint.setRating(complaint.getRating()+1);
                     complaintList.vote(complaintList.findComplaintByTime(complaint));
                     dataSource.writeData(complaintList);
+                    clearLabel();
+                    showComplaintDetail();
                 }
-
         }
-        clearLabel();
-        showComplaintDetail();
     }
     public void clearLabel(){
         timeLabel.setText("");
