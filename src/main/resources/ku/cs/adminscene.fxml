@@ -79,5 +79,7 @@
             <Button layoutX="709.0" layoutY="20.0" mnemonicParsing="false" onAction="#handleBack" prefHeight="19.0" prefWidth="51.0" text="กลับ" />
          </children>
       </Pane>
+      <ImageView fx:id="userImage" fitHeight="150.0" fitWidth="200.0" layoutX="595.0" layoutY="420.0" pickOnBounds="true" preserveRatio="true" />
+      <Button layoutX="453.0" layoutY="557.0" mnemonicParsing="false" text="บัญชีผู้ใช้" />
    </children>
 </AnchorPane>
