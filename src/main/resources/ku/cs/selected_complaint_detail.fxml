@@ -21,7 +21,7 @@
                   <Font name="Arial Bold" size="18.0" />
                </font>
             </Label>
-            <Label fx:id="userLabel" alignment="CENTER" layoutX="40.0" layoutY="17.0" prefHeight="26.0" prefWidth="133.0" style="-fx-background-color: #FE9A2E;" text="ddd">
+            <Label fx:id="userLabel" alignment="CENTER" layoutX="40.0" layoutY="17.0" prefHeight="26.0" prefWidth="133.0" style="-fx-background-color: #d1f4d6; -fx-background-radius: 30;" text="ddd">
                <font>
                   <Font name="Calibri Bold" size="11.0" />
                </font></Label>
@@ -39,8 +39,8 @@
       <Label layoutX="96.0" layoutY="415.0" text="ข้อมูลที่จำเป็น" />
       <Label layoutX="364.0" layoutY="110.0" text="คะแนนโหวด" />
       <Label layoutX="364.0" layoutY="171.0" text="เวลาที่ร้องเรียน" />
-      <Button layoutX="600.0" layoutY="129.0" mnemonicParsing="false" onAction="#handleVote" text="โหวต" />
-      <Button layoutX="721.0" layoutY="119.0" mnemonicParsing="false" onAction="#handleReport" prefHeight="46.0" prefWidth="51.0" text="รายงานเนื้อหา" wrapText="true" />
-      <ImageView fx:id="selectComplaintImage" fitHeight="150.0" fitWidth="200.0" layoutX="563.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true" />
+      <Button layoutX="599.0" layoutY="389.0" mnemonicParsing="false" onAction="#handleVote" text="โหวต" />
+      <Button layoutX="671.0" layoutY="389.0" mnemonicParsing="false" onAction="#handleReport" prefHeight="26.0" prefWidth="91.0" text="รายงานเนื้อหา" wrapText="true" />
+      <ImageView fx:id="selectComplaintImage" fitHeight="164.0" fitWidth="200.0" layoutX="580.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>
