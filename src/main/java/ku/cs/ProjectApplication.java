@@ -37,6 +37,7 @@ public class ProjectApplication extends Application {
         FXRouter.when("adminscene",packageStr + "adminscene.fxml");
         FXRouter.when("officer",packageStr + "officer.fxml");
         FXRouter.when("officer_change_password",packageStr + "officer_change_password.fxml");
+        FXRouter.when("officer_list_member",packageStr + "officer_list_member.fxml");
         FXRouter.when("admincomplaint",packageStr + "admin_complaint_scene.fxml");
         FXRouter.when("user_account",packageStr + "user_account.fxml");
         FXRouter.when("adminmanageban", packageStr + "admin_manage_ban.fxml");
@@ -46,6 +47,8 @@ public class ProjectApplication extends Application {
         FXRouter.when("admin_selected_report_complaint",packageStr+"admin_selected_report_complaint.fxml");
         FXRouter.when("admin_ban_reason",packageStr + "admin_ban_reason.fxml");
         FXRouter.when("project_opening_scene",packageStr+"project_opening_scene.fxml");
+        FXRouter.when("admin_account",packageStr+"admin_account.fxml");
+        FXRouter.when("admin_change_password",packageStr+"admin_change_password.fxml");
         FXRouter.when("admin_signup_officer",packageStr+"admin_signup_officer.fxml");
         FXRouter.when("user_request_unban",packageStr+"user_request_unban.fxml");
     }

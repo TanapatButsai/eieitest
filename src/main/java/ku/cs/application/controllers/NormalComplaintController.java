@@ -8,11 +8,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
-import ku.cs.application.models.Complaint;
-import ku.cs.application.models.ComplaintList;
-import ku.cs.application.models.Users;
+import ku.cs.application.models.*;
 import ku.cs.application.services.ComplaintListDataSource;
 import ku.cs.application.services.DataSource;
+import com.github.saacsos.FXRouter;
+import ku.cs.application.services.VoteListDataSource;
 
 import java.io.File;
 import java.io.IOException;
@@ -30,6 +30,7 @@ public class NormalComplaintController {
     @FXML private TextArea bodyTextArea1;
     @FXML private TextField headTextField;
     private DataSource<ComplaintList> dataSource;
+    private DataSource<VoteList> voteListDataSource;
     private ComplaintList complaintList;
     private Users user;
     @FXML
@@ -40,12 +41,14 @@ public class NormalComplaintController {
     Path target;
     File file;
     private boolean isAddFile = false;
-
+    private VoteList voteList;
     @FXML
     public void initialize() {
         dataSource = new ComplaintListDataSource("data","complaint.csv");
+        voteListDataSource = new VoteListDataSource("data","vote.csv");
+        voteList = voteListDataSource.readData();
         complaintList = dataSource.readData();
-        objects = (ArrayList<Object>) com.github.saacsos.FXRouter.getData();
+        objects = (ArrayList<Object>) FXRouter.getData();
         user = (Users) objects.get(0);
         category = (String) objects.get(1);
         String imagePath = (String) objects.get(2);
@@ -68,16 +71,18 @@ public class NormalComplaintController {
         String bodyComplaint = bodyTextArea.getText();
         String bodyComplaint1 = bodyTextArea1.getText();
         Complaint complaint = new Complaint(headComplaint,bodyComplaint,bodyComplaint1,category,user.getUsername());
-        String complaintImageUrl = null;
         if (complaintImageUrl == null){complaintImageUrl = "data\\images\\complaint\\default_complaint.png";}
         complaint.setImageUrl(complaintImageUrl);
         complaint.recordTime();
         complaint.setSolution("no");
         complaintList.add(complaint);
         dataSource.writeData(complaintList);
+        Vote vote = new Vote(complaint.getHeadComplaint()+":"+complaint.getNameWriter()
+                            +":"+complaint.getTime());
+        voteList.add(vote);
+        voteListDataSource.writeData(voteList);
         if (!(bodyTextArea.getText().equals("") || bodyTextArea1.getText().equals("")
                 || headTextField.getText().equals(""))){
-            boolean isAddFile = false;
             if (isAddFile){saveFile();}
             try {
                 com.github.saacsos.FXRouter.goTo("home",user);
@@ -90,7 +95,7 @@ public class NormalComplaintController {
         FileChooser fileChooser = new FileChooser();
 //        fileChooser.setInitialDirectory(new File(System.getProperty("complaint.dir")));
         fileChooser.getExtensionFilters().add
-                (new FileChooser.ExtensionFilter("images PNG JPG", ".png", ".jpg", "*.jpeg"));
+                (new FileChooser.ExtensionFilter("images PNG JPG", "*.png", "*.jpg", "*.jpeg"));
         Node source = (Node) actionEvent.getSource();
         file = fileChooser.showOpenDialog(source.getScene().getWindow());
         if (file != null){

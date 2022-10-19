@@ -26,7 +26,7 @@ public class CreditController {
         String url3
                 = getClass().getResource("/ku/cs/creditImages/creditmember3.jpg").toExternalForm();
         String url4
-                = getClass().getResource("/ku/cs/creditImages/creditmember4.png").toExternalForm();
+                = getClass().getResource("/ku/cs/creditImages/creditmember4.jpg").toExternalForm();
     @FXML
     public void initialize() {
         image1.setImage(new Image(url));

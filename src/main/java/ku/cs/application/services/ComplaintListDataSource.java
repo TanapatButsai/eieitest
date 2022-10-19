@@ -96,7 +96,7 @@ public class ComplaintListDataSource implements DataSource<ComplaintList>{
         try {
             writer = new FileWriter(file);
             buffer = new BufferedWriter(writer);
-            String header = "topic,body,detail,category,usernameWriter,time,isDone,isInProgress,isUnmanaged,vote,isBan";
+            String header = "topic,body,detail,category,usernameWriter,time,isDone,isInProgress,isUnmanaged,vote,isBan,isOfficer";
             buffer.append(header);
             buffer.newLine();
             for (Complaint complaint : complaintList.getAllComplaint()) {

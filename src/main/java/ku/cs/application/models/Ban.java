@@ -41,7 +41,10 @@ public class Ban {
     public String getBannedReason() {
         return bannedReason;
     }
-    public String getObjectID() {return  objectID;}
+
+    public String getObjectID() {
+        return objectID;
+    }
 
     public void setTime(String time) {
         this.time = time;

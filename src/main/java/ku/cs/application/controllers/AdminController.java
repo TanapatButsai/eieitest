@@ -21,9 +21,10 @@ public class AdminController {
     @FXML private Label usernameLabel;
     @FXML private Label intuitionLabel;
     @FXML private Label lastLoginLabel;
+    @FXML private ImageView userImage;
     @FXML private ImageView rainbow;
 
-    private DataSource<UserList> ulds;
+    private DataSource<UserList> dataSource;
     private UserList userList;
     private Users user ;
 
@@ -32,8 +33,8 @@ public class AdminController {
     @FXML
     public void initialize() {
         user = (Users) FXRouter.getData();
-        ulds = new UserListDataSource("data","user.csv");
-        userList = ulds.readData();
+        dataSource = new UserListDataSource("data","user.csv");
+        userList = dataSource.readData();
         System.out.println(userList);
         showListView();
         clearSelectedUser();
@@ -72,18 +73,22 @@ public class AdminController {
     }
     private void showSelectedUser(Users user) {
         fnLabel.setText(user.getName());
-        intuitionLabel.setText(user.getId());
         usernameLabel.setText(user.getUsername());
+        intuitionLabel.setText(user.getId());
         String[] timeArr = user.getLastTimeLogin().split("-");
         String time = timeArr[0]+":"+timeArr[1]+":"+timeArr[2]+" "+timeArr[3]+"-"+timeArr[4]+"-"+timeArr[5];
         lastLoginLabel.setText(time);
+        userImage.setImage(new Image("file:"+user.getUserImage()));
     }
+
 
     private void clearSelectedUser(){
         fnLabel.setText("");
         intuitionLabel.setText("");
         usernameLabel.setText("");
         lastLoginLabel.setText("");
+        userImage.setImage(null);
+
     }
 
     @FXML
@@ -106,6 +111,15 @@ public class AdminController {
         }
     }
 
+    @FXML
+    public void handleAdminAccount(ActionEvent event) {
+        try {
+            com.github.saacsos.FXRouter.goTo("admin_account", user);
+        } catch (IOException e) {
+            System.err.println("ไปที่หน้า admin_account ไม่ได้");
+            System.err.println("ให้ตรวจสอบการกำหนด route");
+        }
+    }
     @FXML
     public void handleGoToOfficerSignUp(ActionEvent actionEvent){
         try {

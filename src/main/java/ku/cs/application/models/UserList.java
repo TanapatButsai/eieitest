@@ -8,6 +8,7 @@ import java.time.format.DateTimeFormatter;
 public class UserList{
     private ArrayList<Users> userList;
 
+
     public UserList() {
         userList = new ArrayList<>();
     }
@@ -29,6 +30,29 @@ public class UserList{
         }
         Collections.sort(userListTemp);
         return userListTemp;
+    }
+    public ArrayList<String> getAllRoleOfficers(String role, OfficeList officeList){
+        ArrayList<String> officerTemp = new ArrayList<>();
+        for (Users userTemp:userList) {
+            if (userTemp.isOfficer()) {
+                Officer officer = new Officer(userTemp.getName(), userTemp.getId(), userTemp.getUsername()
+                        , userTemp.getPassword(), userTemp.getLastTimeLogin(), userTemp.getUserImage()
+                        , officeList.findOfficerRole(userTemp.getUsername()));
+                if (officer.getRole().equals(role)){
+                    String officerID = userTemp.getUsername();
+                    officerTemp.add(officerID);
+                }
+            }
+        }
+        return officerTemp;
+    }
+    public Users find(String username){
+        for (Users temp:userList){
+            if (temp.getUsername().equals(username)){
+                return temp;
+            }
+        }
+        return null;
     }
 
     public void removeUser(Users user){
@@ -88,6 +112,7 @@ public class UserList{
 
         }
     }
+
 }
 
 

@@ -61,7 +61,7 @@
 
       <Pane layoutX="453.0" layoutY="158.0" prefHeight="39.0" prefWidth="211.0" style="-fx-background-color: #0d8637; -fx-background-radius: 30;">
          <children>
-            <Label layoutX="36.0" prefHeight="40.0" prefWidth="161.0" text="รายละเอียดผู้ใช้" textFill="#f6f1f1">
+            <Label layoutX="34.0" layoutY="-6.0" prefHeight="40.0" prefWidth="161.0" text="รายละเอียดผู้ใช้" textFill="#f6f1f1">
                <font>
                   <Font size="24.0" />
                </font>
@@ -79,6 +79,5 @@
             <Button layoutX="709.0" layoutY="20.0" mnemonicParsing="false" onAction="#handleBack" prefHeight="19.0" prefWidth="51.0" text="กลับ" />
          </children>
       </Pane>
-
    </children>
 </AnchorPane>

@@ -7,27 +7,26 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #D8D8D8;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.CreditController">
    <children>
-      <ImageView fx:id="image1" fitHeight="150.0" fitWidth="200.0" layoutX="26.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="image1" fitHeight="150.0" fitWidth="200.0" layoutX="25.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@creditImages/creditmember1.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="image2" fitHeight="150.0" fitWidth="154.0" layoutX="26.0" layoutY="181.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="image2" fitHeight="166.0" fitWidth="167.0" layoutX="542.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@creditImages/creditmember2.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="image3" fitHeight="150.0" fitWidth="200.0" layoutX="26.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="image3" fitHeight="150.0" fitWidth="200.0" layoutX="534.0" layoutY="418.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@creditImages/creditmember3.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="image4" fitHeight="125.0" fitWidth="200.0" layoutX="20.0" layoutY="461.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="image4" fitHeight="182.0" fitWidth="149.0" layoutX="33.0" layoutY="264.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@creditImages/creditmember4.png" />
+            <Image url="@creditImages/creditmember4.jpg" />
          </image>
       </ImageView>
       <Label layoutX="252.0" layoutY="323.0" prefHeight="32.0" prefWidth="167.0" text="พีรพัฒน์ ภักดีพงษ์">
@@ -35,33 +34,38 @@
             <Font size="22.0" />
          </font>
       </Label>
-      <Label layoutX="269.0" layoutY="53.0" text="ธนาภัทร บุตรใส">
+      <Label layoutX="262.0" layoutY="53.0" text="ธนาภัทร บุตรใส">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
-      <Label layoutX="257.0" layoutY="181.0" text="นภกมล ปินตาพรหม">
+      <Label layoutX="336.0" layoutY="181.0" text="นภกมล ปินตาพรหม">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
-      <Label layoutX="258.0" layoutY="217.0" text="6410451113">
+      <Label layoutX="353.0" layoutY="229.0" text="6410451113">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
-      <Label layoutX="252.0" layoutY="367.0" text="6410451229">
+      <Label layoutX="267.0" layoutY="367.0" text="6410451229">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
-      <Label layoutX="257.0" layoutY="477.0" text="ธนภัทร ตันเจริญ">
+      <Label layoutX="344.0" layoutY="470.0" text="ธนภัทร ตันเจริญ">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
-      <Button layoutX="708.0" layoutY="28.0" mnemonicParsing="false" text="Back" onAction="#handleBackButton" />
-      <Label layoutX="257.0" layoutY="524.0" text="6410451024">
+      <Button layoutX="708.0" layoutY="28.0" mnemonicParsing="false" onAction="#handleBackButton" text="Back" />
+      <Label layoutX="353.0" layoutY="524.0" text="6410451024">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="276.0" layoutY="94.0" text="6410451059">
          <font>
             <Font size="22.0" />
          </font>

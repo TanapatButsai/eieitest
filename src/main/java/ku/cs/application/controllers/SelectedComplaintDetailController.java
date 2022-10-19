@@ -10,11 +10,10 @@ import com.github.saacsos.FXRouter;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import ku.cs.application.models.Complaint;
-import ku.cs.application.models.ComplaintList;
-import ku.cs.application.models.Users;
+import ku.cs.application.models.*;
 import ku.cs.application.services.ComplaintListDataSource;
 import ku.cs.application.services.DataSource;
+import ku.cs.application.services.VoteListDataSource;
 
 public class SelectedComplaintDetailController {
     private List<Object> userAndComplaint;
@@ -44,12 +43,18 @@ public class SelectedComplaintDetailController {
     private ComplaintList complaintList;
     @FXML private ImageView selectComplaintImage;
 
+    private DataSource<VoteList> voteListDataSource;
+    private VoteList voteList;
+
+
     @FXML void initialize(){
         userAndComplaint = (List) FXRouter.getData();
         user = (Users) userAndComplaint.get(0);
         complaint = (Complaint) userAndComplaint.get(1);
         dataSource = new ComplaintListDataSource("data", "complaint.csv");
+        voteListDataSource = new VoteListDataSource("data","vote.csv");
         complaintList = dataSource.readData();
+        voteList =voteListDataSource.readData();
 
         showUserInfo();
         showComplaintDetail();
@@ -92,8 +97,22 @@ public class SelectedComplaintDetailController {
     }
     @FXML
     public void handleVote(ActionEvent actionEvent) {
-        complaintList.vote(complaintList.findComplaintByTime(complaint));
-        dataSource.writeData(complaintList);
+        Vote vote = voteList.find(complaint.getHeadComplaint()+":"
+                                    +complaint.getNameWriter()+":"+complaint.getTime());
+        System.out.println(vote);
+        if (!(vote ==null)){
+                if (!vote.isVote(user.getUsername())){
+                    voteList.add(complaint.getHeadComplaint()+":"
+                                    +complaint.getNameWriter()+":"+complaint.getTime()
+                            ,user.getUsername());
+                    System.out.println(voteList);
+                    voteListDataSource.writeData(voteList);
+
+                    complaintList.vote(complaintList.findComplaintByTime(complaint));
+                    dataSource.writeData(complaintList);
+                }
+
+        }
         clearLabel();
         showComplaintDetail();
     }
