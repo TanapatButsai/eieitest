@@ -4,51 +4,54 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #D8D8D8#D8D8D8;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.AdminAccountController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #D8D8D8#D8D8D8;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.AdminAccountController">
    <children>
-      <ImageView fx:id="userImage" fitHeight="203.0" fitWidth="247.0" layoutX="277.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true" />
-      <Label layoutX="119.0" layoutY="362.0" text="Username">
+      <Pane layoutX="138.0" layoutY="93.0" prefHeight="489.0" prefWidth="513.0" style="-fx-background-color: #d1f4d6; -fx-background-radius: 30;" />
+      <ImageView fx:id="userImage" fitHeight="203.0" fitWidth="247.0" layoutX="261.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="238.0" layoutY="425.0" text="บัญชีผู้ใช้">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="118.0" layoutY="414.0" text="Name">
+      <Label layoutX="237.0" layoutY="477.0" text="ชื่อ-นามสกุล">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="116.0" layoutY="465.0" text="Student ID">
+      <Label layoutX="235.0" layoutY="528.0" text="รหัสนิสิต">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Button layoutX="347.0" layoutY="300.0" mnemonicParsing="false" onAction="#handleUpdateButton" text="Upload">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Button>
-      <Button layoutX="37.0" layoutY="29.0" mnemonicParsing="false" onAction="#handleBack" text="Back" />
-      <Button layoutX="630.0" layoutY="26.0" mnemonicParsing="false" onAction="#handleGoToAdminChangePassword" text="Change Password">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Button>
-      <Label fx:id="usernameLabel" layoutX="302.0" layoutY="362.0" text="usernameLabel">
+      <Button layoutX="333.0" layoutY="333.0" mnemonicParsing="false" onAction="#handleUpdateButton" text="เพิ่มรูปโปรไฟล์" />
+      <Button layoutX="331.0" layoutY="369.0" mnemonicParsing="false" onAction="#handleGoToAdminChangePassword" text="เปลี่ยนรหัสผ่าน" />
+      <Label fx:id="usernameLabel" layoutX="421.0" layoutY="425.0" text="usernameLabel">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="nameLabel" layoutX="302.0" layoutY="414.0" text="nameLabel">
+      <Label fx:id="nameLabel" layoutX="421.0" layoutY="477.0" text="nameLabel">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="studentIDLabel" layoutX="300.0" layoutY="465.0" text="studentIDLabel">
+      <Label fx:id="studentIDLabel" layoutX="419.0" layoutY="528.0" text="studentIDLabel">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
+      <Pane layoutX="-15.0" prefHeight="64.0" prefWidth="833.0" style="-fx-background-color: #2FB16E;">
+         <children>
+            <Label layoutX="220.0" layoutY="9.0" prefHeight="46.0" prefWidth="352.0" text="ระบบร้องเรียน , มหาวิทยาลัยเกษตรศาสตร์" textFill="WHITE">
+               <font>
+                  <Font name="Cambria Bold" size="18.0" />
+               </font>
+            </Label>
+            <Button layoutX="756.0" layoutY="22.0" mnemonicParsing="false" onAction="#handleBack" text="กลับ" />
+         </children>
+      </Pane>
    </children>
 </AnchorPane>
