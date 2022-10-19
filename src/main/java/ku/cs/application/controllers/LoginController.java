@@ -90,6 +90,8 @@ public class LoginController {
                     }
                 }
                 else if (user.isOfficer()){
+                    userList.recordTimeLogin(user);
+                    dataSource.writeData(userList);
                     String role = officerIDList.findOfficerRole(user.getUsername());
                     user = new Officer(user.getName(),user.getId()
                             ,user.getUsername(),user.getPassword(),user.getLastTimeLogin(),user.getUserImage()

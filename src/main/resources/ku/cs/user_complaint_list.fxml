@@ -5,21 +5,36 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #D8D8D8#D8D8D8;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.UserComplaintListController">
+<AnchorPane prefHeight="599.0" prefWidth="804.0" style="-fx-background-color: #D8D8D8#D8D8D8;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.UserComplaintListController">
     <children>
-        <ImageView fx:id="imageBackGroundUrl" fitHeight="642.0" fitWidth="484.0" pickOnBounds="true" preserveRatio="true" />
-        <ImageView fx:id="logoku" fitHeight="222.0" fitWidth="340.0" layoutX="582.0" layoutY="-46.0" pickOnBounds="true" preserveRatio="true" />
-        <ImageView fx:id="userImage" fitHeight="185.0" fitWidth="247.0" layoutX="119.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true" />
-        <Label layoutX="518.0" layoutY="195.0" text="หมวดหมู่" textFill="#999999" />
-        <Label layoutX="519.0" layoutY="157.0" prefHeight="18.0" prefWidth="38.0" text="หัวเรื่อง" textFill="#999999" />
-        <Label layoutX="519.0" layoutY="229.0" text="เนื้อหา" textFill="#999999" />
-      <ListView fx:id="complaintListView" layoutX="119.0" layoutY="99.0" prefHeight="379.0" prefWidth="300.0" style="-fx-background-color: #E6E6E6;" />
-      <Label layoutX="515.0" layoutY="382.0" text="Specifics" textFill="#999999" />
-      <Label fx:id="bodyLabel" alignment="TOP_LEFT" contentDisplay="TOP" layoutX="582.0" layoutY="247.0" lineSpacing="1.0" prefHeight="120.0" prefWidth="222.0" wrapText="true" />
-      <Label fx:id="specificsLabel" alignment="TOP_LEFT" contentDisplay="TOP" layoutX="582.0" layoutY="400.0" lineSpacing="1.0" prefHeight="94.0" prefWidth="222.0" wrapText="true" />
-      <Label fx:id="headLabel" layoutX="582.0" layoutY="158.0" prefHeight="18.0" prefWidth="180.0" />
-      <Label fx:id="categoryLabel" layoutX="582.0" layoutY="195.0" prefHeight="18.0" prefWidth="180.0" />
-      <Button layoutX="119.0" layoutY="40.0" mnemonicParsing="false" onAction="#handleGoToHome" text="Back" />
+      <ListView fx:id="complaintListView" layoutX="50.0" layoutY="119.0" prefHeight="431.0" prefWidth="327.0" style="-fx-background-color: #E6E6E6;" />
+        <ImageView fx:id="imageBackGroundUrl" fitHeight="273.0" fitWidth="302.0" layoutY="341.0" pickOnBounds="true" preserveRatio="true" />
+      <Pane layoutX="-50.0" prefHeight="64.0" prefWidth="854.0" style="-fx-background-color: #2FB16E;">
+         <children>
+            <Label layoutX="277.0" layoutY="11.0" prefHeight="46.0" prefWidth="357.0" text="ระบบร้องเรียน , มหาวิทยาลัยเกษตรศาสตร์" textFill="WHITE">
+               <font>
+                  <Font name="Cambria Bold" size="18.0" />
+               </font>
+            </Label>
+            <Button layoutX="744.0" layoutY="21.0" mnemonicParsing="false" onAction="#handleGoToHome" text="กลับ" />
+         </children>
+      </Pane>
+      <Pane layoutX="428.0" layoutY="110.0" prefHeight="476.0" prefWidth="339.0" style="-fx-background-color: #d1f4d6; -fx-background-radius: 30;">
+         <children>
+              <ImageView fx:id="logoku" fitHeight="152.0" fitWidth="144.0" layoutX="233.0" layoutY="-51.0" pickOnBounds="true" preserveRatio="true" />
+              <Label layoutX="23.0" layoutY="209.0" text="หมวดหมู่" textFill="#1f1e1e" />
+              <Label layoutX="24.0" layoutY="178.0" prefHeight="18.0" prefWidth="38.0" text="หัวเรื่อง" textFill="#262525" />
+              <Label layoutX="28.0" layoutY="293.0" text="เนื้อหา" textFill="#242121" />
+            <Label layoutX="34.0" layoutY="385.0" text="Specifics" textFill="#262020" />
+            <Label fx:id="bodyLabel" alignment="TOP_LEFT" contentDisplay="TOP" layoutX="95.0" layoutY="293.0" lineSpacing="1.0" prefHeight="74.0" prefWidth="213.0" wrapText="true" />
+            <Label fx:id="specificsLabel" alignment="TOP_LEFT" contentDisplay="TOP" layoutX="95.0" layoutY="385.0" lineSpacing="1.0" prefHeight="74.0" prefWidth="213.0" wrapText="true" />
+            <Label fx:id="headLabel" layoutX="95.0" layoutY="178.0" prefHeight="18.0" prefWidth="180.0" />
+            <Label fx:id="categoryLabel" layoutX="95.0" layoutY="209.0" prefHeight="18.0" prefWidth="180.0" />
+              <ImageView fx:id="userImage" fitHeight="120.0" fitWidth="154.0" layoutX="79.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </Pane>
     </children>
 </AnchorPane>

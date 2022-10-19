@@ -41,17 +41,17 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Button layoutX="591.0" layoutY="466.0" mnemonicParsing="false" onAction="#handleSignIn" prefHeight="46.0" prefWidth="102.0" style="-fx-background-color: #BDBDBD;" stylesheets="@common_button_reactive.css" text="เข้าสู่ระบบ">
+      <Button layoutX="591.0" layoutY="466.0" mnemonicParsing="false" onAction="#handleSignIn" prefHeight="46.0" prefWidth="102.0" style="-fx-background-color: #d1f4d6;" stylesheets="@common_button_reactive.css" text="เข้าสู่ระบบ">
          <font>
             <Font name="Corbel Bold" size="14.0" />
          </font>
       </Button>
 
 
-      <Button layoutX="676.0" layoutY="566.0" mnemonicParsing="false" onAction="#handleGoToRegister" prefHeight="20.0" prefWidth="92.0" style="-fx-background-color: #BDBDBD;" stylesheets="@common_button_reactive.css" text="ลงทะเบียน">
+      <Button layoutX="676.0" layoutY="566.0" mnemonicParsing="false" onAction="#handleGoToRegister" prefHeight="20.0" prefWidth="92.0" style="-fx-background-color: #d1f4d6;" stylesheets="@common_button_reactive.css" text="ลงทะเบียน">
 
          <font>
-            <Font name="Corbel Bold" size="10.0" />
+            <Font name="Corbel" size="10.0" />
          </font>
       </Button>
       <Label fx:id="textError" layoutX="558.0" layoutY="438.0" prefHeight="18.0" prefWidth="170.0" textAlignment="CENTER" textFill="RED" />

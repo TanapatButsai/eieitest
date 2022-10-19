@@ -25,33 +25,32 @@ public class OfficerController {
     @FXML private Label statusLabel;
     @FXML private Label fixTopicLabel;
     @FXML private Label errorLabel;
+
     @FXML private ListView complaintListView;
     @FXML private TextArea bodyTextArea;
     @FXML private TextArea fixBodyTextArea;
     @FXML private DataSource<ComplaintList> complaintListDataSource;
-    private ComplaintList complaintListNaJa;
-    private ComplaintList complaintListTuaJing;
 
     //นำlist
     @FXML
     public void initialize(){
         complaintListDataSource = new ComplaintListDataSource("data","complaint.csv");
-        complaintListNaJa = complaintListDataSource.readData();
+        complaintList = complaintListDataSource.readData();
         userOfficer = (Officer) FXRouter.getData();
         if (userOfficer.getRole().equals("normal")) {
-            complaintListTuaJing = complaintListNaJa.getOfficerComplaint("normal");
+            officerRoleList = complaintList.getOfficerComplaint("normal");
             System.out.println("User is Officer-normal");
         }else if (userOfficer.getRole().equals("teacher")) {
-            complaintListTuaJing = complaintListNaJa.getOfficerComplaint("teacher");
+            officerRoleList = complaintList.getOfficerComplaint("teacher");
             System.out.println("User is Officer-teacher");
         }else if (userOfficer.getRole().equals("place")) {
-            complaintListTuaJing = complaintListNaJa.getOfficerComplaint("place");
+            officerRoleList = complaintList.getOfficerComplaint("place");
             System.out.println("User is Officer-place");
         }else if (userOfficer.getRole().equals("enroll")) {
-            complaintListTuaJing = complaintListNaJa.getOfficerComplaint("enroll");
+            officerRoleList = complaintList.getOfficerComplaint("enroll");
             System.out.println("User is Officer-enroll");
         }else if (userOfficer.getRole().equals("corrupt")){
-            complaintListTuaJing = complaintListNaJa.getOfficerComplaint("corrupt");
+            officerRoleList = complaintList.getOfficerComplaint("corrupt");
         }
         System.out.println("initialize ListData");
         dataSource = new ComplaintListDataSource("data","complaint.csv");
@@ -65,15 +64,9 @@ public class OfficerController {
     }
     //แสดงหน้าที่ของ officer
     public void showOfficerData(){
-        if (complaintListNaJa == null){
-            complaintListView.getItems().setAll(complaintList.getAllComplaint());
-            complaintListView.refresh();
-            officerLabel.setText("[     Officer all     ]");
-        }else {
-            complaintListView.getItems().setAll(complaintListTuaJing.getAllComplaint());
+            complaintListView.getItems().setAll(officerRoleList.getAllComplaint());
             complaintListView.refresh();
             officerLabel.setText(userOfficer.getRole());
-        }
         if (userOfficer.getRole().equals("normal")){
             officerLabel.setText("[     เรื่องร้องเรียงทั่วไป     ]");
         } else if (userOfficer.getRole().equals("teacher")) {
@@ -156,6 +149,8 @@ public class OfficerController {
     @FXML private void handleUnmanagedButton(ActionEvent actionEvent){
         if (complaint != null){
             errorLabel.setText("");
+            complaint.setSolution("no");
+            fixBodyTextArea.clear();
             complaintList.findData(complaint);
             complaintList.setUnmanaged(complaint);
             //officerRoleList.setInProgress(officer);
@@ -169,6 +164,15 @@ public class OfficerController {
     public void handleChangePasswordButton(ActionEvent actionEvent) {
         try {
             com.github.saacsos.FXRouter.goTo("officer_change_password",userOfficer);
+        } catch (IOException e) {
+            System.err.println("ไปที่หน้า login ไม่ได้");
+            System.err.println("ให้ตรวจสอบการกำหนด route");
+        }
+    }
+    @FXML
+    public void handleOfficerMemberButton(ActionEvent actionEvent) {
+        try {
+            com.github.saacsos.FXRouter.goTo("officer_list_member",userOfficer);
         } catch (IOException e) {
             System.err.println("ไปที่หน้า login ไม่ได้");
             System.err.println("ให้ตรวจสอบการกำหนด route");

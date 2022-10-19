@@ -7,43 +7,38 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #D8D8D8;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.AdminOfficerController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #D8D8D8;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.AdminOfficerController">
    <children>
-      <Label layoutX="489.0" layoutY="93.0" prefHeight="43.0" prefWidth="209.0" text="Sign Up Officer">
+      <Pane layoutX="203.0" layoutY="90.0" prefHeight="488.0" prefWidth="401.0" style="-fx-background-color: #d1f4d6; -fx-background-radius: 30;" />
+      <Label layoutX="244.0" layoutY="115.0" prefHeight="46.0" prefWidth="314.0" text="สร้างบัญชีผู้ใช้ของเจ้าหน้าที่">
          <font>
             <Font size="29.0" />
          </font>
       </Label>
 
-      <Label layoutX="523.0" layoutY="194.0" text="Username" />
-      <TextField fx:id="usernameTextField" layoutX="511.0" layoutY="217.0" />
-      <Label layoutX="525.0" layoutY="250.0" text="Password" />
-      <Label layoutX="523.0" layoutY="407.0" text="Institution" />
-      <Label layoutX="521.0" layoutY="300.0" text="Confirm Password" />
-      <Label layoutX="523.0" layoutY="354.0" text="Officer Name" />
+      <Label layoutX="330.0" layoutY="186.0" text="บัญชีผู้ใช้" />
+      <TextField fx:id="usernameTextField" layoutX="318.0" layoutY="209.0" />
+      <Label layoutX="332.0" layoutY="242.0" text="รหัสผ่าน" />
+      <Label layoutX="330.0" layoutY="427.0" text="รหัสประจำตัว" />
+      <Label layoutX="328.0" layoutY="292.0" text="ยืนยันรหัสผ่าน" />
+      <Label layoutX="330.0" layoutY="346.0" text="ชื่อของผู้ใช้" />
 
-      <TextField fx:id="nameTextField" layoutX="511.0" layoutY="371.0" />
-      <TextField fx:id="confirmPasswordTextField" layoutX="511.0" layoutY="317.0" />
-      <TextField fx:id="passwordTextField" layoutX="511.0" layoutY="267.0" />
-      <TextField fx:id="InstitutionTextField" layoutX="511.0" layoutY="424.0" />
-      <Pane prefHeight="64.0" prefWidth="808.0" style="-fx-background-color: #2FB16E;">
+      <TextField fx:id="nameTextField" layoutX="318.0" layoutY="363.0" />
+      <TextField fx:id="confirmPasswordTextField" layoutX="318.0" layoutY="309.0" />
+      <TextField fx:id="passwordTextField" layoutX="318.0" layoutY="259.0" />
+      <TextField fx:id="InstitutionTextField" layoutX="318.0" layoutY="444.0" />
+      <Pane prefHeight="64.0" prefWidth="883.0" style="-fx-background-color: #2FB16E;">
          <children>
-            <Button layoutX="719.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleBackButton" prefHeight="39.0" prefWidth="47.0" style="-fx-background-color: #BDBDBD;" text="กลับ">
-               <font>
-                  <Font name="Cambria Bold" size="10.0" />
-               </font>
-            </Button>
-            <Label layoutX="294.0" layoutY="9.0" prefHeight="46.0" prefWidth="314.0" text="Complaint System, Kasetsart University" textFill="WHITE">
+            <Label layoutX="294.0" layoutY="9.0" prefHeight="46.0" prefWidth="314.0" text="ระบบร้องเรียน มหาวิทยาลัยเกษตรศาสตร์" textFill="WHITE">
                <font>
                   <Font name="Cambria" size="18.0" />
                </font>
             </Label>
-            <Label fx:id="userLabel" alignment="CENTER" layoutX="68.0" layoutY="21.0" prefHeight="26.0" prefWidth="139.0" style="-fx-background-color: #FE9A2E;" text="dasdas">
+            <Label fx:id="userLabel" alignment="CENTER" layoutX="79.0" layoutY="21.0" prefHeight="26.0" prefWidth="139.0" style="-fx-background-color: #d1f4d6; -fx-background-radius: 30;" text="dasdas">
                <font>
                   <Font name="Calibri Bold" size="11.0" />
                </font>
@@ -51,8 +46,8 @@
             <Circle fx:id="userImageCircleView" fill="#2fb16e" layoutX="48.0" layoutY="34.0" radius="20.0" stroke="#2fb16e" strokeType="INSIDE" />
          </children>
       </Pane>
-      <Button defaultButton="true" layoutX="609.0" layoutY="495.0" mnemonicParsing="false" onAction="#handleSignUp" prefHeight="46.0" prefWidth="71.0" style="-fx-background-color: #BDBDBD;" text="สร้างบัญชี" />
-      <MenuButton fx:id="roleMenuBar" layoutX="681.0" layoutY="371.0" mnemonicParsing="false" text="เลือกหน่วยงาน">
+      <Button defaultButton="true" layoutX="348.0" layoutY="489.0" mnemonicParsing="false" onAction="#handleSignUp" prefHeight="26.0" prefWidth="89.0" style="-fx-background-color: #BDBDBD;" text="สร้างบัญชี" />
+      <MenuButton fx:id="roleMenuBar" layoutX="318.0" layoutY="388.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="102.0" text="เลือกหน่วยงาน">
         <items>
           <MenuItem fx:id="normal" mnemonicParsing="false" text="งานบริหารงานทั่วไป" />
           <MenuItem fx:id="teacher" mnemonicParsing="false" text="กองบริหารงานบุคคล" />
@@ -61,6 +56,13 @@
             <MenuItem fx:id="corrupt" mnemonicParsing="false" text="หน่วยงานตรวจสอบการทุจริต" />
         </items>
       </MenuButton>
-      <Button layoutX="703.0" layoutY="217.0" mnemonicParsing="false" onAction="#handleCheckUsername" prefHeight="0.0" prefWidth="54.0" stylesheets="@common_button_reactive.css" text="Button" />
+      <Button layoutX="494.0" layoutY="209.0" mnemonicParsing="false" onAction="#handleCheckUsername" prefHeight="25.0" prefWidth="71.0" stylesheets="@common_button_reactive.css" text="ตรวจสอบ" />
+      <Button layoutX="348.0" layoutY="523.0" mnemonicParsing="false" onAction="#handleBackButton" prefHeight="25.0" prefWidth="89.0" style="-fx-background-color: #BDBDBD;" text="กลับ">
+         <font>
+            <Font name="Cambria" size="10.0" />
+         </font>
+      </Button>
+      <ImageView fx:id="imageBackGround" fitHeight="452.0" fitWidth="451.0" layoutY="155.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imageBackGround2" fitHeight="291.0" fitWidth="279.0" layoutX="604.0" layoutY="334.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

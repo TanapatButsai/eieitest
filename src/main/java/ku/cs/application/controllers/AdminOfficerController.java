@@ -6,6 +6,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.shape.Circle;
 import ku.cs.application.models.*;
 import com.github.saacsos.FXRouter;
@@ -53,6 +55,13 @@ public class AdminOfficerController {
     @FXML private MenuItem teacher;
     @FXML
     private MenuButton roleMenuBar;
+    private String imageUrl;
+    @FXML
+    private ImageView imageBackGround;
+    @FXML
+    private ImageView imageBackGround2;
+    @FXML
+    private ImageView minimal;
     @FXML
     public void initialize(){
         admin = (Users) FXRouter.getData();
@@ -62,6 +71,10 @@ public class AdminOfficerController {
         officeListDataSource = new OfficerListDataSource("data","officer.csv");
         officeList = officeListDataSource.readData();
         System.out.println(userList);
+        String url = getClass().getResource("/ku/cs/user_account_scene_image/minimal.png").toExternalForm();
+        String url1 = getClass().getResource("/ku/cs/user_account_scene_image/announce.png").toExternalForm();
+        imageBackGround.setImage(new Image(url));
+        imageBackGround2.setImage(new Image(url1));
 
         setMenuItemTime();
     }
