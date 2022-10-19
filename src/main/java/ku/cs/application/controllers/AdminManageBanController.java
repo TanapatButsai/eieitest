@@ -6,8 +6,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import ku.cs.application.models.Ban;
 import ku.cs.application.models.BanList;
+import ku.cs.application.models.Complaint;
 import ku.cs.application.models.Users;
 import ku.cs.application.services.BanListDataSource;
 import ku.cs.application.services.DataSource;
@@ -19,6 +22,7 @@ public class AdminManageBanController {
     @FXML private ListView<Ban> banListView;
     @FXML private Label nameLabel;
     @FXML private Label tryLogInLabel;
+    @FXML private TextArea reasonTextArea;
 
     private DataSource<BanList> banListDataSource;
     private BanList banList;
@@ -43,7 +47,7 @@ public class AdminManageBanController {
     @FXML
     public void handleBack(ActionEvent event) {
         try {
-            com.github.saacsos.FXRouter.goTo("login");
+            com.github.saacsos.FXRouter.goTo("adminscene");
         } catch (IOException e) {
             System.err.println("ไปที่หน้า login ไม่ได้");
             System.err.println("ให้ตรวจสอบการกำหนด route");
@@ -64,14 +68,17 @@ public class AdminManageBanController {
         nameLabel.setText(ban.getUser());
         String tl = String.valueOf(ban.getTryLogin());
         tryLogInLabel.setText(tl);
+        reasonTextArea.setText(ban.getBannedReason());
     }
 
     private void clearSelectedBan(){
         nameLabel.setText("");
         tryLogInLabel.setText("");
+        reasonTextArea.setText("");
     }
-
-    private void handleUnBanButton() {
-
+    @FXML
+    private void handleUnBanButton(ActionEvent event) {
+        banList.unban(ban.getBannedID());
+//กูมั่ว
     }
-}
+    }

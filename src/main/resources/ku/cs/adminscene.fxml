@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="826.0" style="-fx-background-color: #D8D8D8;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.AdminController">
+<AnchorPane prefHeight="600.0" prefWidth="826.0" style="-fx-background-color: #D8D8D8;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.AdminController">
    <children>
       <ListView fx:id="userListView" layoutX="28.0" layoutY="106.0" prefHeight="455.0" prefWidth="389.0" />
       <ImageView fx:id="rainbow" fitHeight="292.0" fitWidth="211.0" layoutX="614.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true" />
@@ -80,6 +80,6 @@
          </children>
       </Pane>
       <ImageView fx:id="userImage" fitHeight="150.0" fitWidth="200.0" layoutX="595.0" layoutY="420.0" pickOnBounds="true" preserveRatio="true" />
-      <Button layoutX="453.0" layoutY="557.0" mnemonicParsing="false" text="บัญชีผู้ใช้" />
+      <Button layoutX="453.0" layoutY="557.0" mnemonicParsing="false" onAction="#handleAdminAccount" text="บัญชีผู้ใช้" />
    </children>
 </AnchorPane>
