@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #D8D8D8#D8D8D8;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.AdminAccountController">
+   <children>
+      <ImageView fx:id="userImage" fitHeight="203.0" fitWidth="247.0" layoutX="277.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="119.0" layoutY="362.0" text="Username">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="118.0" layoutY="414.0" text="Name">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="116.0" layoutY="465.0" text="Student ID">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="347.0" layoutY="300.0" mnemonicParsing="false" onAction="#handleUpdateButton" text="Upload">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="37.0" layoutY="29.0" mnemonicParsing="false" onAction="#handleBack" text="Back" />
+      <Button layoutX="630.0" layoutY="26.0" mnemonicParsing="false" onAction="#handleGoToAdminChangePassword" text="Change Password">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Label fx:id="usernameLabel" layoutX="302.0" layoutY="362.0" text="usernameLabel">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="nameLabel" layoutX="302.0" layoutY="414.0" text="nameLabel">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="studentIDLabel" layoutX="300.0" layoutY="465.0" text="studentIDLabel">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

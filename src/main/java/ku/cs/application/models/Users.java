@@ -132,5 +132,5 @@ public class Users implements Comparable<Users> {
     public int compareTo(Users o) {
         return Double.compare(o.getLastTimeLoginToSecond(), getLastTimeLoginToSecond());
     }
-
+    
 }

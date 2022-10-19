@@ -4,69 +4,39 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import com.github.saacsos.FXRouter;
 import javafx.stage.FileChooser;
 import ku.cs.application.models.UserList;
 import ku.cs.application.models.Users;
-import javafx.scene.control.Button;
 import ku.cs.application.services.DataSource;
 import ku.cs.application.services.UserListDataSource;
+import com.github.saacsos.FXRouter;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.*;
+import java.nio.file.FileSystems;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import java.time.LocalDate;
 
-public class UserAccountController {
-    private Users user;
-    @FXML
-    private ImageView imageBackGroundUrl;
-    @FXML
-    private ImageView logoku;
+public class AdminAccountController {
     @FXML private ImageView userImage;
-    @FXML
-    private Label promptNewPassword;
-    @FXML
-    private Label promptPassword;
-    @FXML
-    private Label promptUsername;
-    @FXML private Button updateInfoButton;
-
-    @FXML private Label nameLabel;
-    @FXML private Label idLabel;
     @FXML private Label usernameLabel;
+    @FXML private Label nameLabel;
+    @FXML private Label studentIDLabel;
+    private Users user;
     private UserList userList;
-    private String imageUrl;
     DataSource<UserList> dataSource = new UserListDataSource("data","user.csv");
+
+
     @FXML private void initialize(){
         user = (Users)FXRouter.getData();
-        String url = getClass().getResource("/ku/cs/user_account_scene_image/bird.jpg").toExternalForm();
-        String url1 = getClass().getResource("/ku/cs/user_account_scene_image/greenposter.jpg").toExternalForm();
-        imageBackGroundUrl.setImage(new Image(url1));
-        logoku.setImage(new Image(url));
         userList = dataSource.readData();
-        showStudentInfo();
-    }
-    @FXML
-    void handleGoToChangPassword(ActionEvent event) {
-        try {
-            FXRouter.goTo("changepassword",user);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        showAdminInfo();
     }
 
-    @FXML
-    void handleGoToHome(ActionEvent event) {
-        try {
-            FXRouter.goTo("home",user);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
     @FXML
     public void handleUpdateButton(ActionEvent actionEvent){
         FileChooser fileChooser = new FileChooser();
@@ -108,28 +78,47 @@ public class UserAccountController {
                 e.printStackTrace();
             }
 
-            showStudentImage();
+            showAdminImage();
         }
     }
-    @FXML void showStudentInfo(){
-        usernameLabel.setText(user.getUsername());
-        idLabel.setText(user.getId());
-        nameLabel.setText(user.getName());
-        showStudentImage();
-    }
-    @FXML void showStudentImage(){
 
+    @FXML void showAdminInfo() {
+        usernameLabel.setText(user.getUsername());
+        nameLabel.setText(user.getName());
+        studentIDLabel.setText(user.getId());
+        showAdminImage();
+    }
+
+
+    @FXML void showAdminImage(){
         if (user.getUserImage() != null){
             userImage.setImage(new Image("file:"+user.getUserImage()));
         }
     }
-    @FXML void handleGoToUserComplaint(){
+
+    @FXML
+    public void handleGoToAdminChangePassword(ActionEvent event) {
         try {
-            FXRouter.goTo("user_complaint_list",user);
+            com.github.saacsos.FXRouter.goTo("admin_change_password",user);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            System.err.println("ไปที่หน้า admin_change_password ไม่ได้");
+            System.err.println("ให้ตรวจสอบการกำหนด route");
         }
     }
+
+    @FXML
+    public void handleBack(ActionEvent event) {
+        try {
+            com.github.saacsos.FXRouter.goTo("adminscene",user);
+        } catch (IOException e) {
+            System.err.println("ไปที่หน้า admin_scene ไม่ได้");
+            System.err.println("ให้ตรวจสอบการกำหนด route");
+        }
+    }
+
+
+
+
+
+
 }
-
-
