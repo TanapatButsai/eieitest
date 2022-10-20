@@ -79,12 +79,7 @@
             <Button layoutX="709.0" layoutY="20.0" mnemonicParsing="false" onAction="#handleBack" prefHeight="19.0" prefWidth="51.0" text="กลับ" />
          </children>
       </Pane>
-<<<<<<< HEAD
-      <ImageView fx:id="userImage" fitHeight="150.0" fitWidth="200.0" layoutX="590.0" layoutY="394.0" pickOnBounds="true" preserveRatio="true" />
-      <Button layoutX="457.0" layoutY="407.0" mnemonicParsing="false" text="บัญชีผู้ใช้" />
-=======
       <ImageView fx:id="userImage" fitHeight="150.0" fitWidth="200.0" layoutX="595.0" layoutY="420.0" pickOnBounds="true" preserveRatio="true" />
       <Button layoutX="453.0" layoutY="557.0" mnemonicParsing="false" onAction="#handleAdminAccount" text="บัญชีผู้ใช้" />
->>>>>>> 8f178ecf39d6b3b6810349c4fdfde33361b5132a
    </children>
 </AnchorPane>

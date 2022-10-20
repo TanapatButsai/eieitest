@@ -16,7 +16,7 @@ public class ProjectApplication extends Application {
         FXRouter.bind(this, stage, "DingTwoProject", 800, 600);
         configRoute();
         FXRouter.setAnimationType("fade", 3000);
-        FXRouter.goTo("admin_manage_ban");
+        FXRouter.goTo("project_opening_scene");
 
 
     }

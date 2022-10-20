@@ -66,11 +66,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-<<<<<<< HEAD
-      <Button layoutX="512.0" layoutY="566.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="92.0" style="-fx-background-color: #d1f4d6;" stylesheets="@common_button_reactive.css" text="ผู้จัดทำ">
-=======
       <Button layoutX="512.0" layoutY="566.0" mnemonicParsing="false" onAction="#handleCreditButton" prefHeight="20.0" prefWidth="92.0" style="-fx-background-color: #d1f4d6;" stylesheets="@common_button_reactive.css" text="ผู้จัดทำ">
->>>>>>> 8f178ecf39d6b3b6810349c4fdfde33361b5132a
          <font>
             <Font name="Corbel" size="10.0" />
          </font>
