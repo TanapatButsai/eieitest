@@ -28,7 +28,6 @@
 ## การวงโครงสร้างไฟล์
 - data
   - images
-    - complaint
     - profile
   - bans.csv
   - complaint.csv
@@ -45,25 +44,26 @@
             - AdminAccountController.java
             - AdminBanReasonController.java
             - AdminChangePassword.java
-            - AdminComplaintController.java
             - AdminController.java
             - AdminManageBanController.java
             - AdminOfficerController.java
+            - AdminReportListController.java
             - AdminSelectedReportComplaintController.java
-            - ChangePasswprdController.java
             - CreditController.java
-            - HomeController.java
             - LoginController.java
-            - NormalComplaintController.java
             - OfficerChangePasswordController.java
+            - OfficerController.java
+            - OfficerMemberListController.java
             - ProjectOpeningController.java
-            - RegisterController.java
-            - ReportComplaintController.java
-            - SelectedComplaintDetailController.java
-            - StudentListController.java
             - UserAccountController.java
+            - UserChangePassword.java
+            - UserComplaintController.java
             - UserComplaintListController.java
+            - UserHomeController.java
+            - UserRegisterController.java
+            - UserReportComplaintController.java
             - UserRequestUnbanController.java
+            - UserSelectedComplaintDetailController.java
           - models
             - Ban.java
             - BanList.java
@@ -76,7 +76,6 @@
             - Report.java
             - ReportList.java
             - UserList.java
-            - UserOfficer.java
             - Users.java
             - Vote.java
             - VoteList.java
@@ -88,6 +87,8 @@
             - DataSource.java
             - Filterer.java
             - OfficerListDataSource.java
+            - ReportListDataSource
+            - UserListDataSource
             - VoteListDataSource.java
         - com.github.saacsos.fxrouter-1.0.0
         - Main.java
@@ -112,30 +113,26 @@
           - admin_account.fxml
           - admin_ban_reason.fxml
           - admin_change_password.fxml
-          - admin_complaint_scene.fxml
           - admin_manage_ban.fxml
+          - admin_report_scene.fxml
+          - admin_scene.fxml
           - admin_selected_report_complaint.fxml
           - admin_signup_officer.fxml
-          - adminscene.fxml
-          - changepassword.fxml
           - common_button_reactive.css
-          - corruptcomplaint.fxml
           - credit.fxml
-          - enrollcomplaint.fxml
-          - home.fxml
           - login.fxml
-          - normalcomplaint.fxml
-          - officer,fxml
           - officer_change_password.fxml
+          - officer_home.fxml
           - officer_list_member.fxml
-          - placecomplaint.fxml
           - project_opening_scene.fxml
-          - register.fxml
-          - report_complaint.fxml
-          - selected_complaint_detail.fxml
-          - teachercomplaint.fxml
           - user_account.fxml
+          - user_change_password.fxml
+          - user_complaint.fxml
           - user_complaint_list.fxml
+          - user_home.fxml
+          - user_register.fxml
+          - user_report_complaint.fxml
           - user_request_unban.fxml
+          - user_selected_complaint_detail.fxml
       - home.css
       - home2.css
