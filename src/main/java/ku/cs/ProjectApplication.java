@@ -40,7 +40,7 @@ public class ProjectApplication extends Application {
         FXRouter.when("officer_list_member",packageStr + "officer_list_member.fxml");
         FXRouter.when("admincomplaint",packageStr + "admin_complaint_scene.fxml");
         FXRouter.when("user_account",packageStr + "user_account.fxml");
-        FXRouter.when("adminmanageban", packageStr + "admin_manage_ban.fxml");
+        FXRouter.when("admin_manage_ban",packageStr + "admin_manage_ban.fxml");
         FXRouter.when("user_complaint_list",packageStr + "user_complaint_list.fxml");
         FXRouter.when("selected_complaint_detail",packageStr+"selected_complaint_detail.fxml");
         FXRouter.when("report_complaint",packageStr+"report_complaint.fxml");
