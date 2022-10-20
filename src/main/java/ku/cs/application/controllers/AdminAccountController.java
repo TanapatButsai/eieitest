@@ -27,11 +27,13 @@ public class AdminAccountController {
     @FXML private Label nameLabel;
     @FXML private Label studentIDLabel;
     private Users user;
+    private Users admin;
     private UserList userList;
     DataSource<UserList> dataSource = new UserListDataSource("data","user.csv");
 
 
     @FXML private void initialize(){
+        admin = (Users) FXRouter.getData();
         user = (Users)FXRouter.getData();
         userList = dataSource.readData();
         showAdminInfo();
@@ -99,7 +101,7 @@ public class AdminAccountController {
     @FXML
     public void handleGoToAdminChangePassword(ActionEvent event) {
         try {
-            com.github.saacsos.FXRouter.goTo("admin_change_password",user);
+            com.github.saacsos.FXRouter.goTo("admin_change_password",admin);
         } catch (IOException e) {
             System.err.println("ไปที่หน้า admin_change_password ไม่ได้");
             System.err.println("ให้ตรวจสอบการกำหนด route");
@@ -109,7 +111,7 @@ public class AdminAccountController {
     @FXML
     public void handleBack(ActionEvent event) {
         try {
-            com.github.saacsos.FXRouter.goTo("adminscene",user);
+            com.github.saacsos.FXRouter.goTo("adminscene",admin);
         } catch (IOException e) {
             System.err.println("ไปที่หน้า admin_scene ไม่ได้");
             System.err.println("ให้ตรวจสอบการกำหนด route");

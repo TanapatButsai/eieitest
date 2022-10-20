@@ -1,6 +1,8 @@
 package ku.cs.application.models;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 public class BanList {
 
@@ -10,6 +12,17 @@ public class BanList {
     }
     public  ArrayList<Ban> getBanList() {
         return banList;
+    }
+
+    public ArrayList<Ban> getAllReqUnBan() {
+        ArrayList<Ban> banListTemp = new ArrayList<>();
+        for (Ban banTemp:banList){
+            if (banTemp.getRequest() != "none") {
+                banListTemp.add(banTemp);
+            }
+        }
+        //Collections.sort(banListTemp);
+        return banListTemp;
     }
     public void addBan(Ban ban) {
         banList.add(ban);

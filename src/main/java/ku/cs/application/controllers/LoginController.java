@@ -168,6 +168,17 @@ public class LoginController {
         inputPassword.clear();
         textError.setText("");
     }
+    @FXML
+    public void handleCreditButton(ActionEvent actionEvent) {
+        try {
+            FXRouter.goTo("credit");
+
+        } catch (IOException e) {
+            System.err.println("ไปที่หน้า credit ไม่ได้");
+            System.err.println("ให้ตรวจสอบการกำหนด route");
+        }
+    }
+
 }
 
 

@@ -27,12 +27,14 @@ public class AdminController {
     private DataSource<UserList> dataSource;
     private UserList userList;
     private Users user ;
+    private Users admin;
 
 
 
     @FXML
     public void initialize() {
         user = (Users) FXRouter.getData();
+        admin = (Users) FXRouter.getData();
         dataSource = new UserListDataSource("data","user.csv");
         userList = dataSource.readData();
         System.out.println(userList);
@@ -94,7 +96,7 @@ public class AdminController {
     @FXML
     public void handleAdminComplaint(ActionEvent event) {
         try {
-            com.github.saacsos.FXRouter.goTo("admincomplaint",user);
+            com.github.saacsos.FXRouter.goTo("admincomplaint",admin);
         } catch (IOException e) {
             System.err.println("ไปที่หน้า complaint ไม่ได้");
             System.err.println("ให้ตรวจสอบการกำหนด route");
@@ -104,9 +106,9 @@ public class AdminController {
     @FXML
     public void handleManageBan(ActionEvent event) {
         try {
-            FXRouter.goTo("adminmanageban",user);
+            com.github.saacsos.FXRouter.goTo("admin_manage_ban", admin);
         } catch (IOException e) {
-            System.err.println("ไปที่หน้า manageban ไม่ได้");
+            System.err.println("ไปที่หน้า admin_manage_ban ไม่ได้");
             System.err.println("ให้ตรวจสอบการกำหนด route");
         }
     }
@@ -114,7 +116,7 @@ public class AdminController {
     @FXML
     public void handleAdminAccount(ActionEvent event) {
         try {
-            com.github.saacsos.FXRouter.goTo("admin_account", user);
+            com.github.saacsos.FXRouter.goTo("admin_account", admin);
         } catch (IOException e) {
             System.err.println("ไปที่หน้า admin_account ไม่ได้");
             System.err.println("ให้ตรวจสอบการกำหนด route");
@@ -123,7 +125,7 @@ public class AdminController {
     @FXML
     public void handleGoToOfficerSignUp(ActionEvent actionEvent){
         try {
-            FXRouter.goTo("admin_signup_officer",user);
+            FXRouter.goTo("admin_signup_officer", admin);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
