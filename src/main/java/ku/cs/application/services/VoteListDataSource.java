@@ -6,6 +6,7 @@ import ku.cs.application.models.Vote;
 import ku.cs.application.models.VoteList;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,7 +44,7 @@ public class VoteListDataSource implements DataSource<VoteList>{
         BufferedReader buffer = null;
 
         try {
-            reader = new FileReader(file);
+            reader = new FileReader(file, StandardCharsets.UTF_8);
             buffer = new BufferedReader(reader);
 
             String line = "";
@@ -77,7 +78,7 @@ public class VoteListDataSource implements DataSource<VoteList>{
         FileWriter writer = null;
         BufferedWriter buffer = null;
         try {
-            writer = new FileWriter(file);
+            writer = new FileWriter(file, StandardCharsets.UTF_8);
             buffer = new BufferedWriter(writer);
             for (Vote vote : voteList.getAllVotes()) {
                 buffer.append(vote.toString().replaceAll(" ",""));

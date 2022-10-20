@@ -4,6 +4,7 @@ import ku.cs.application.models.Complaint;
 import ku.cs.application.models.ComplaintList;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 
 public class ComplaintListDataSource implements DataSource<ComplaintList>{
     private String directoryName;
@@ -48,7 +49,7 @@ public class ComplaintListDataSource implements DataSource<ComplaintList>{
         BufferedReader buffer = null;
 
         try {
-            reader = new FileReader(file);
+            reader = new FileReader(file, StandardCharsets.UTF_8);
             buffer = new BufferedReader(reader);
 
             String line = "";
@@ -94,7 +95,7 @@ public class ComplaintListDataSource implements DataSource<ComplaintList>{
         FileWriter writer = null;
         BufferedWriter buffer = null;
         try {
-            writer = new FileWriter(file);
+            writer = new FileWriter(file, StandardCharsets.UTF_8);
             buffer = new BufferedWriter(writer);
             String header = "topic,body,detail,category,usernameWriter,time,isDone,isInProgress,isUnmanaged,vote,isBan,isOfficer";
             buffer.append(header);

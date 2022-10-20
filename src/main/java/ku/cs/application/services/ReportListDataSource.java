@@ -3,6 +3,7 @@ package ku.cs.application.services;
 import ku.cs.application.models.*;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 
 public class ReportListDataSource implements DataSource<ReportList> {
     private String directoryName;
@@ -45,7 +46,7 @@ public class ReportListDataSource implements DataSource<ReportList> {
         BufferedReader buffer = null;
 
         try {
-            reader = new FileReader(file);
+            reader = new FileReader(file, StandardCharsets.UTF_8);
             buffer = new BufferedReader(reader);
 
             String line = "";
@@ -88,7 +89,7 @@ public class ReportListDataSource implements DataSource<ReportList> {
 //        newUser = new Users("jaja123","456","780","123");
 //        String newUserString = newUser.getName()+","+newUser.getId()+","+ newUser.getUsername()+","+ newUser.getPassword();
         try {
-            writer = new FileWriter(file);
+            writer = new FileWriter(file, StandardCharsets.UTF_8);
             buffer = new BufferedWriter(writer);
             String header = "reporterUsername,reportedUsername,reason,objectID,reportTime";
             buffer.append(header);

@@ -6,6 +6,7 @@ import ku.cs.application.models.UserList;
 import ku.cs.application.models.Users;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 
 public class BanListDataSource implements DataSource<BanList>{
 
@@ -54,7 +55,7 @@ public class BanListDataSource implements DataSource<BanList>{
         BufferedReader buffer = null;
 
         try {
-            reader = new FileReader(file);
+            reader = new FileReader(file, StandardCharsets.UTF_8);
             buffer = new BufferedReader(reader);
 
             String line = "";
@@ -100,7 +101,7 @@ public class BanListDataSource implements DataSource<BanList>{
         FileWriter writer = null;
         BufferedWriter buffer = null;
         try {
-            writer = new FileWriter(file);
+            writer = new FileWriter(file, StandardCharsets.UTF_8);
             buffer = new BufferedWriter(writer);
             buffer.append("BanNumber,BannedUsername,reason,complaintObjectID,bannedTime,BannedActive,tryLogin,userRequestUnBan");
             buffer.newLine();

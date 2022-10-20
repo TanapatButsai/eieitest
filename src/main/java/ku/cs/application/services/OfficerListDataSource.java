@@ -4,6 +4,7 @@ import ku.cs.application.models.Office;
 import ku.cs.application.models.OfficeList;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,7 +41,7 @@ public class OfficerListDataSource implements DataSource<OfficeList>{
         BufferedReader buffer = null;
 
         try {
-            reader = new FileReader(file);
+            reader = new FileReader(file, StandardCharsets.UTF_8);
             buffer = new BufferedReader(reader);
 
             String line = "";
@@ -73,7 +74,7 @@ public class OfficerListDataSource implements DataSource<OfficeList>{
         FileWriter writer = null;
         BufferedWriter buffer = null;
         try {
-            writer = new FileWriter(file);
+            writer = new FileWriter(file, StandardCharsets.UTF_8);
             buffer = new BufferedWriter(writer);
             for (Office office : officerIDList.getAllOfficerID()) {
                 StringBuilder officerIDArrayList = new StringBuilder();

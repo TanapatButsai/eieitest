@@ -3,6 +3,7 @@ package ku.cs.application.services;
 import ku.cs.application.models.UserList;
 import ku.cs.application.models.Users;
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 
 public class UserListDataSource implements DataSource<UserList> {
     private String directoryName;
@@ -45,7 +46,7 @@ public class UserListDataSource implements DataSource<UserList> {
         BufferedReader buffer = null;
 
         try {
-            reader = new FileReader(file);
+            reader = new FileReader(file, StandardCharsets.UTF_8);
             buffer = new BufferedReader(reader);
 
             String line = "";
@@ -92,7 +93,7 @@ public class UserListDataSource implements DataSource<UserList> {
         BufferedWriter buffer = null;
 
         try {
-            writer = new FileWriter(file);
+            writer = new FileWriter(file, StandardCharsets.UTF_8);
             buffer = new BufferedWriter(writer);
             String header = "fullName,ID,username,password,isAdmin,lastTimeLogin,image,isBan";
             buffer.append(header);
