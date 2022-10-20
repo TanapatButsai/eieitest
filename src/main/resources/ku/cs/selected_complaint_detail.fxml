@@ -11,7 +11,7 @@
    <children>
       <Pane prefHeight="58.0" prefWidth="808.0" style="-fx-background-color: #2FB16E;">
          <children>
-            <Button layoutX="734.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleBackButton" prefHeight="39.0" prefWidth="51.0" style="-fx-background-color: #BDBDBD;" text="ย้อนกลับ">
+            <Button layoutX="708.0" layoutY="19.0" mnemonicParsing="false" onAction="#handleBackButton" prefHeight="17.0" prefWidth="73.0" style="-fx-background-color: #BDBDBD;" text="กลับ">
                <font>
                   <Font name="Cambria Bold" size="10.0" />
                </font>
@@ -36,11 +36,11 @@
       <Label layoutX="96.0" layoutY="110.0" text="หัวเรื่อง" />
       <Label layoutX="96.0" layoutY="171.0" text="หมวดหมู่เรื่องร้องเรียน" />
       <Label layoutX="96.0" layoutY="233.0" text="รายละเอียดเรื่องร้องเรียน" />
-      <Label layoutX="96.0" layoutY="415.0" text="ข้อมูลที่จำเป็น" />
+      <Label layoutX="96.0" layoutY="415.0" text="สถานที่เกิดเรื่อง" />
       <Label layoutX="364.0" layoutY="110.0" text="คะแนนโหวด" />
       <Label layoutX="364.0" layoutY="171.0" text="เวลาที่ร้องเรียน" />
-      <Button layoutX="599.0" layoutY="389.0" mnemonicParsing="false" onAction="#handleVote" text="โหวต" />
-      <Button layoutX="671.0" layoutY="389.0" mnemonicParsing="false" onAction="#handleReport" prefHeight="26.0" prefWidth="91.0" text="รายงานเนื้อหา" wrapText="true" />
-      <ImageView fx:id="selectComplaintImage" fitHeight="164.0" fitWidth="200.0" layoutX="580.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true" />
+      <Button layoutX="565.0" layoutY="320.0" mnemonicParsing="false" onAction="#handleVote" prefHeight="25.0" prefWidth="81.0" text="โหวต" />
+      <Button layoutX="565.0" layoutY="351.0" mnemonicParsing="false" onAction="#handleReport" prefHeight="26.0" prefWidth="81.0" text="รายงานเนื้อหา" wrapText="true" />
+      <ImageView fx:id="selectComplaintImage" fitHeight="164.0" fitWidth="200.0" layoutX="565.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

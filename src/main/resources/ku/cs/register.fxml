@@ -19,7 +19,7 @@
             <Font size="24.0" />
          </font>
       </Text>
-      <Text layoutX="545.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ชื่อผู้ใช้">
+      <Text layoutX="545.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ชื่อบัญชีผู้ใช้">
          <font>
             <Font size="14.0" />
          </font>

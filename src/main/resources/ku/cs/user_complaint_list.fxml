@@ -28,7 +28,7 @@
               <Label layoutX="23.0" layoutY="209.0" text="หมวดหมู่" textFill="#1f1e1e" />
               <Label layoutX="24.0" layoutY="178.0" prefHeight="18.0" prefWidth="38.0" text="หัวเรื่อง" textFill="#262525" />
               <Label layoutX="28.0" layoutY="293.0" text="เนื้อหา" textFill="#242121" />
-            <Label layoutX="34.0" layoutY="385.0" text="Specifics" textFill="#262020" />
+            <Label layoutX="34.0" layoutY="385.0" text="สถานที่" textFill="#262020" />
             <Label fx:id="bodyLabel" alignment="TOP_LEFT" contentDisplay="TOP" layoutX="95.0" layoutY="293.0" lineSpacing="1.0" prefHeight="74.0" prefWidth="213.0" wrapText="true" />
             <Label fx:id="specificsLabel" alignment="TOP_LEFT" contentDisplay="TOP" layoutX="95.0" layoutY="385.0" lineSpacing="1.0" prefHeight="74.0" prefWidth="213.0" wrapText="true" />
             <Label fx:id="headLabel" layoutX="95.0" layoutY="178.0" prefHeight="18.0" prefWidth="180.0" />
