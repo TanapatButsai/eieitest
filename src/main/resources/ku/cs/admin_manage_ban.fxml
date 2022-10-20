@@ -7,10 +7,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.AdminManageBanController">
    <children>
-      <ListView layoutX="42.0" layoutY="119.0" prefHeight="417.0" prefWidth="333.0" />
+      <ListView fx:id="banListView" layoutX="42.0" layoutY="119.0" prefHeight="417.0" prefWidth="333.0" />
       <Pane layoutX="417.0" layoutY="110.0" prefHeight="450.0" prefWidth="432.0" style="-fx-background-color: #d1f4d6; -fx-background-radius: 30;" />
       <Label layoutX="530.0" layoutY="130.0" text="จัดการการระงับ">
 
