@@ -41,11 +41,6 @@ public class Ban {
     public String getBannedReason() {
         return bannedReason;
     }
-
-    public String getObjectID() {
-        return objectID;
-    }
-
     public void setTime(String time) {
         this.time = time;
     }
@@ -72,20 +67,8 @@ public class Ban {
                 request;
     }
 
-    public void setBannedID(String bannedID) {
-        this.bannedID = bannedID;
-    }
-
     public void setUser(String user) {
         this.user = user;
-    }
-
-    public void setBannedReason(String bannedReason) {
-        this.bannedReason = bannedReason;
-    }
-
-    public void setObjectID(String objectID) {
-        this.objectID = objectID;
     }
 
     public String getTime() {
@@ -100,10 +83,6 @@ public class Ban {
 
     public boolean isActive() {
         return active;
-    }
-
-    public void setActive(boolean active) {
-        this.active = active;
     }
 
     public int getTryLogin() {

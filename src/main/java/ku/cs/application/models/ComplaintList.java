@@ -89,11 +89,7 @@ public class ComplaintList {
         }
         return complaintListTemp;
     }
-    public ArrayList<Complaint> getAllComplaintSortByRating() {
-        ArrayList<Complaint> temp = new ArrayList<>(complaintList);
-        Collections.sort(temp);
-        return temp;
-    }
+
     public ComplaintList getOfficerComplaint(String role) {
         ComplaintList complaintListTemp = new ComplaintList();
         for (Complaint complaint : complaintList) {
@@ -109,10 +105,7 @@ public class ComplaintList {
         complaintList.add(complaint);
     }
 
-    public void remove(Complaint complaint) {
-        Complaint complaint1 = findComplaint(complaint);
-        complaintList.remove(complaint1);
-    }
+
 
     public Complaint findComplaint(Complaint complaint) {
         for (Complaint complaintTemp : complaintList) {

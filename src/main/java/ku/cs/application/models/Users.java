@@ -77,9 +77,6 @@ public class Users implements Comparable<Users> {
         return username;
     }
 
-    public void recordTimeLogin(){
-
-    }
 
     //getter-setter---------------
     public String getName() {

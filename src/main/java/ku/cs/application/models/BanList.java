@@ -13,7 +13,6 @@ public class BanList {
     public  ArrayList<Ban> getBanList() {
         return banList;
     }
-
     public ArrayList<Ban> getAllReqUnBan() {
         ArrayList<Ban> banListTemp = new ArrayList<>();
         for (Ban banTemp:banList){
@@ -31,21 +30,10 @@ public class BanList {
         Ban ban = findID(bannedID);
         banList.remove(ban);
     }
-
     public Ban findID(String bannedID) {
         Ban ban = null;
         for (Ban temp : banList) {
             if (bannedID.equals(temp.getBannedID())){
-                ban = temp;
-                break;
-            }
-        }
-        return ban;
-    }
-    public Ban findObjectID(String user, String objectID) {
-        Ban ban = null;
-        for (Ban temp : banList) {
-            if (objectID.equals(temp.getObjectID()) && user.equals(temp.getUser())) {
                 ban = temp;
                 break;
             }

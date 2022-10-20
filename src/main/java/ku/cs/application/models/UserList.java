@@ -17,7 +17,6 @@ public class UserList{
 
         userList.add(user);
     }
-
     public ArrayList<Users> getAllCards(){
         return userList;
     }
@@ -55,10 +54,6 @@ public class UserList{
         return null;
     }
 
-    public void removeUser(Users user){
-        userList.remove(user);
-    }
-
     public boolean checkUsernameIsExistedInUserList(String username){
         Users user = findUser(username);
         return user != null;
@@ -67,12 +62,6 @@ public class UserList{
         users.updateTimeNow();
     }
 
-    public void recordTimeLogin(String username){
-        Users user = findUser(username);
-        if (user != null) {
-            user.updateTimeNow();
-        }
-    }
     public void changePassword(String username,String newPassword){
         Users user = findUser(username);
         if (user != null) {

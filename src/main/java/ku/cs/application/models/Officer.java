@@ -13,7 +13,5 @@ public class Officer extends Users{
         return role;
     }
 
-    public void setRole(String role) {
-        this.role = role;
-    }
+
 }

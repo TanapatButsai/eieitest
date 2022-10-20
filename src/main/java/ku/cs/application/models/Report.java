@@ -28,9 +28,6 @@ public class Report {
         return reporterUsername;
     }
 
-    public void setReporterUsername(String reporterUsername) {
-        this.reporterUsername = reporterUsername;
-    }
 
     public String getReason() {
         return reason;
@@ -40,28 +37,11 @@ public class Report {
         return reportedUsername;
     }
 
-    public void setReportedUsername(String reportedUsername) {
-        this.reportedUsername = reportedUsername;
-    }
-
-    public void setReason(String reason) {
-        this.reason = reason;
-    }
-
     public String getObjectID() {
         return objectID;
     }
-
-    public void setObjectID(String objectID) {
-        this.objectID = objectID;
-    }
-
     public String getReportTime() {
         return reportTime;
-    }
-
-    public void setReportTime(String reportTime) {
-        this.reportTime = reportTime;
     }
 
     public void setTime(){

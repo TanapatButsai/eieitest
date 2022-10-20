@@ -86,9 +86,6 @@ public class Complaint implements Comparable<Complaint> {
         return isBan;
     }
 
-    public void setBan(boolean ban) {
-        isBan = ban;
-    }
 
     public void recordTime(){
         LocalDateTime now = LocalDateTime.now();
@@ -109,9 +106,6 @@ public class Complaint implements Comparable<Complaint> {
         return nameWriter;
     }
 
-    public void setNameWriter(String nameWriter) {
-        this.nameWriter = nameWriter;
-    }
 
     public Complaint(String headComplaint, String bodyComplaint, String category) {
         this.headComplaint = headComplaint;
@@ -119,43 +113,21 @@ public class Complaint implements Comparable<Complaint> {
         this.category = category;
     }
 
-     public void donBan(){ // func ban user
-        isBan = true;
-    }
+
     public String getHeadComplaint() {
         return headComplaint;
     }
-    public void setHeadComplaint(String headComplaint) {
-        this.headComplaint = headComplaint;
-    }
+
     public String getBodyComplaint() {
         return bodyComplaint;
     }
 
-    public void setBodyComplaint(String bodyComplaint) {
-        this.bodyComplaint = bodyComplaint;
-    }
-//    public String getDetailComplaint() {
-//        return detailComplaint;
-//    }
-//    public void setDetailComplaint(String detailComplaint) {
-//        this.detailComplaint = detailComplaint;
-//    }
+
+
     public String getCategory() {
         return category;
     }
-    public void setCategory(String category) {
-        this.category = category;
-    }
-//    @Override
-//    public String toString() {
-//        return "Complaint{" +
-//                "headComplaint='" + headComplaint + '\'' +
-//                ", bodyComplaint='" + bodyComplaint + '\''
-//                +'\'' +
-//                ", category='" + category + '\'' +
-//                '}';
-//    }
+
 
 //officer
 public String getStatus(){
@@ -199,9 +171,7 @@ public String getStatus(){
         return fixComplaint;
     }
 
-    public void setFixComplaint(String fixComplaint) {
-        this.fixComplaint = fixComplaint;
-    }
+
     @Override
     public int compareTo(Complaint o) {
         return Integer.compare(rating,o.getRating());

@@ -13,10 +13,6 @@ public class VoteList {
     public void add(Vote vote){
         votes.add(vote);
     }
-    public void addVotedUsername(Vote vote,String username){
-        Vote found = find(vote.getComplaintObject());
-        found.addUsername(username);
-    }
     public ArrayList<Vote> getAllVotes() {
         return votes;
     }
@@ -38,13 +34,6 @@ public class VoteList {
             vote.addUsername(newUsername);
         }
     }
-    public Vote findUser(String object) {
-        for (Vote vote : votes) {
-            if (vote.getComplaintObject().equals(object)) {
-                return vote;
-            }
-        }return null;
-    }
 
     @Override
     public String toString() {
@@ -53,11 +42,4 @@ public class VoteList {
                 '}';
     }
 
-    public ArrayList<Vote> getVotes() {
-        return votes;
-    }
-
-    public void setVotes(ArrayList<Vote> votes) {
-        this.votes = votes;
-    }
 }

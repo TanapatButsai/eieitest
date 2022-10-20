@@ -17,13 +17,9 @@ public class Vote {
         this.usernameVotedList .add("-");
     }
 
-    public ArrayList<String> getUsernameVotedList() {
-        return usernameVotedList;
-    }
 
-    public void setUsernameVotedList(ArrayList<String> usernameVotedList) {
-        this.usernameVotedList = usernameVotedList;
-    }
+
+
     public void addUsername(String username){
         usernameVotedList.add(username);
     }
