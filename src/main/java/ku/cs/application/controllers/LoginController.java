@@ -19,14 +19,14 @@ public class LoginController {
     @FXML private Label textError;
     @FXML private TextField inputUsername;
     @FXML private TextField inputPassword;
-    String url
+    private String url
             = getClass().getResource("/ku/cs/login_images/ku_view.jpg").toExternalForm();
-    String url2
+    private String url2
             = getClass().getResource("/ku/cs/login_images/KU_SubLogo_Thai.png").toExternalForm();
     @FXML
-    private ImageView image_view_login;
+    private ImageView imageViewLogin;
     @FXML
-    private ImageView image_view_ku_logo; //imageViewKULogin
+    private ImageView imageViewKULogo; //imageViewKULogin
     private DataSource<UserList> dataSource;
     private UserList userList;
     private DataSource<OfficeList> officerDataSource;
@@ -35,22 +35,19 @@ public class LoginController {
     private DataSource<ComplaintList> dataSource2 = new ComplaintListDataSource("data","complaint");
     private DataSource<BanList> banListDataSource;
     private BanList banList;
-//    private ComplaintList complaintList;
 
     @FXML
     public void initialize() {
         //officer1 = new Officer("nenny","เรื่องร้องเรียงทั่วไป","teacher","study too much");
-        image_view_login.setImage(new Image(url));
-        image_view_ku_logo.setImage(new Image(url2));
+        imageViewLogin.setImage(new Image(url));
+        imageViewKULogo.setImage(new Image(url2));
         dataSource = new UserListDataSource("data","user.csv");
-        officerDataSource = new OfficerListDataSource("data","officer.csv");
+        officerDataSource = new OfficeListDataSource("data","officer.csv");
         banListDataSource = new BanListDataSource(false);
         userList = dataSource.readData();
         banList = banListDataSource.readData();
         officerIDList = officerDataSource.readData();
         System.out.println(officerIDList);
-
-//        complaintList = dataSource2.readData();
 
         if (userList == null){
             System.err.println("Cannot read file");
@@ -70,7 +67,6 @@ public class LoginController {
         String username = inputUsername.getText();
         String password = inputPassword.getText();
         Users user = userList.findUser(username);
-//        Officer officer = officerIDList.findOfficer(username);
         if (username.isEmpty() || password.isEmpty()){
             textError.setText("Enter username and password");
             System.err.println("TextField is empty");
@@ -123,10 +119,6 @@ public class LoginController {
         inputPassword.clear();
         }
 
-
-    @FXML
-    public void handleGoToHome(ActionEvent actionEvent){
-    }
     @FXML
     public void handleGoToRegister(ActionEvent actionEvent){
         try {
@@ -141,18 +133,16 @@ public class LoginController {
     public boolean isLogin(String username, String password,Users user){
         return username.equals(user.getUsername()) && password.equals(user.getPassword());
     }
-//    public boolean isOfficer(String username, String password, Officer officer){
-//        return username.equals(officer.getOfficerID()) && password.equals(officer.getOfficerPassword());
-//    }
+
     public void banAlert(Users user){
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         Ban ban = banList.findBanByUsername(user.getUsername());
         banList.tryLogin(user.getUsername());
         banListDataSource.writeData(banList);
         String reason = ban.getBannedReason();
-        alert.setTitle("ระงับบัญชี");
-        alert.setContentText(reason);
-        alert.setHeaderText("บัญชีของคุณถูกระงับ");
+        alert.setTitle("บัญชีของคุณถูกระงับ");
+        alert.setContentText("ต้องการยื่นคำร้องขอคืนสิทธิ์การถูกระงับหรือไม่");
+        alert.setHeaderText(reason);
 
         Optional<ButtonType> result = alert.showAndWait();
             if(result.get() == ButtonType.OK){
@@ -178,7 +168,6 @@ public class LoginController {
             System.err.println("ให้ตรวจสอบการกำหนด route");
         }
     }
-
 }
 
 

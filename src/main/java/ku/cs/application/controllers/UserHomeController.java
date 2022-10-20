@@ -23,9 +23,8 @@ import ku.cs.application.services.Filterer;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
-public class HomeController {
+public class UserHomeController {
     private Users user;
     @FXML
     private ListView<Complaint> complaintListViewUnManage;

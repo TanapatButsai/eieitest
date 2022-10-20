@@ -6,7 +6,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import javafx.scene.control.TextArea;
 import ku.cs.application.models.*;
 import ku.cs.application.services.ComplaintListDataSource;
 import ku.cs.application.services.DataSource;
@@ -15,7 +14,7 @@ import com.github.saacsos.FXRouter;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class AdminComplaintController {
+public class AdminReportListController {
     @FXML private ListView<Report> reportListView;
     @FXML private Label reporterLabel;
     @FXML private Label reportCategoryLabel;

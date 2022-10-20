@@ -53,7 +53,6 @@ public class AdminChangePassword {
     }
 
     private boolean isChangePassword() {
-
         String oldPassword = oldPasswordTextField.getText();
         String newPassword = newPasswordTextField.getText();
         String confirmNewPassword = confirmPasswordTextField.getText();
@@ -64,7 +63,6 @@ public class AdminChangePassword {
             oldPasswordTextField.clear();
             confirmPasswordTextField.clear();
             newPasswordTextField.clear();
-
             if (oldPasswordTextField.getText().isEmpty()){
                 promptOldPassword.setText("Please enter");
             } else if (!oldPasswordTextField.getText().equals(user.getPassword())) {

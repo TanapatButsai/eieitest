@@ -14,10 +14,9 @@ import ku.cs.application.services.DataSource;
 import ku.cs.application.services.ReportListDataSource;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
-public class ReportComplaintController {
+public class UserReportComplaintController {
     private List userAndComplaint;
     private Users user;
     private Complaint complaint;

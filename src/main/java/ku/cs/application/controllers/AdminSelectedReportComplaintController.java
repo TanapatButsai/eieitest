@@ -11,7 +11,6 @@ import ku.cs.application.services.UserListDataSource;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class AdminSelectedReportComplaintController {
 
@@ -28,7 +27,7 @@ public class AdminSelectedReportComplaintController {
     private Label ratingLabel;
 
     @FXML
-    private Label spacificLabel;
+    private Label specificLabel;
 
     @FXML
     private Label timeLabel;
@@ -70,7 +69,7 @@ public class AdminSelectedReportComplaintController {
         headLabel.setText(complaint.getHeadComplaint());
         bodyLabel.setText(complaint.getBodyComplaint());
         categoryLabel.setText(complaint.getCategory());
-        spacificLabel.setText(complaint.getFixComplaint());
+        specificLabel.setText(complaint.getFixComplaint());
         ratingLabel.setText(Integer.toString(complaint.getRating()));
         timeLabel.setText(complaint.getTime());
 

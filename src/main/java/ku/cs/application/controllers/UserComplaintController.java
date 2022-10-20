@@ -2,7 +2,6 @@ package ku.cs.application.controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.control.Alert;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -22,10 +21,9 @@ import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Objects;
 
 
-public class NormalComplaintController {
+public class UserComplaintController {
     @FXML private TextArea bodyTextArea;
     @FXML private TextArea bodyTextArea1;
     @FXML private TextField headTextField;

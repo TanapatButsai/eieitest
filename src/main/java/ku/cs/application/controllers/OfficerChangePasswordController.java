@@ -9,7 +9,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import ku.cs.application.models.*;
 import ku.cs.application.services.DataSource;
-import ku.cs.application.services.OfficerListDataSource;
+import ku.cs.application.services.OfficeListDataSource;
 import ku.cs.application.services.UserListDataSource;
 
 import java.io.IOException;
@@ -37,7 +37,7 @@ public class OfficerChangePasswordController {
         logoku.setImage(new Image(url1));
         String url2 = getClass().getResource("/ku/cs/officer_images/changebg.jpg").toExternalForm();
         change_bg.setImage(new Image(url2));
-        dataSource = new OfficerListDataSource("data", "officer.csv");
+        dataSource = new OfficeListDataSource("data", "officer.csv");
         userList = userListDataSource.readData();
         officeList = dataSource.readData();
         officerTextField.setText(userOfficer.getUsername());

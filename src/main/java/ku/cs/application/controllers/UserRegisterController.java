@@ -13,7 +13,7 @@ import ku.cs.application.services.UserListDataSource;
 import com.github.saacsos.FXRouter;
 import java.io.IOException;
 
-public class RegisterController {
+public class UserRegisterController {
     @FXML private ImageView bg;
     @FXML private ImageView logo01;
     @FXML private TextField usernameTextField;
@@ -27,7 +27,6 @@ public class RegisterController {
     @FXML private Label promptCheckID;
     private DataSource<UserList> dataSource;
     private UserList userList;
-    private Users newUser;
     private boolean usernameIsInUsers = false;
     private boolean usernameAlreadyCheck = false;
     private boolean usernameCanBeUse = false;

@@ -14,7 +14,7 @@ import com.github.saacsos.FXRouter;
 import java.io.IOException;
 
 
-public class ChangePasswordController {
+public class UserChangePasswordController {
     @FXML private ImageView scku;
     @FXML private ImageView logoku;
     @FXML private TextField newConfirmPasswordTextField;

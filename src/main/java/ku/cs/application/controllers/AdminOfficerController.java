@@ -65,7 +65,7 @@ public class AdminOfficerController {
         dataSource = new UserListDataSource("data", "user.csv");
         userList = dataSource.readData();
 
-        officeListDataSource = new OfficerListDataSource("data","officer.csv");
+        officeListDataSource = new OfficeListDataSource("data","officer.csv");
         officeList = officeListDataSource.readData();
         System.out.println(userList);
         String url = getClass().getResource("/ku/cs/user_account_scene_image/minimal.png").toExternalForm();

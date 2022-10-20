@@ -16,7 +16,6 @@ public class AdminBanReasonController {
 
     @FXML
     private TextArea reasonTextArea;
-
     @FXML
     private Label userLabel;
     private UserList userList;
@@ -26,16 +25,19 @@ public class AdminBanReasonController {
     private DataSource<BanList> banListDataSource;
     private Users user;
     private DataSource<ReportList> reportListDataSource;
-
+    private DataSource<VoteList> voteListDataSource;
     private ReportList reportList;
     private Report report;
     private ArrayList<Object> objects;
     private Users admin;
+    private VoteList voteList;
 
     @FXML private void initialize(){
         dataSource = new UserListDataSource("data","user.csv");
         banListDataSource = new BanListDataSource(false);
         reportListDataSource = new ReportListDataSource("data","report.csv");
+        voteListDataSource = new VoteListDataSource("data","vote.csv");
+        voteList = voteListDataSource.readData();
         userList = dataSource.readData();
         banList = banListDataSource.readData();
         reportList =reportListDataSource.readData();
@@ -79,6 +81,7 @@ public class AdminBanReasonController {
     public void ban(){
         userList.setBan(complaint.getNameWriter());
         dataSource.writeData(userList);
+        voteList.remove(complaint.getHeadComplaint()+":"+complaint.getNameWriter()+":"+complaint.getTime());
         createBanUser();
     }
     public void createBanUser(){

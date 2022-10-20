@@ -10,7 +10,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import ku.cs.application.models.*;
 import ku.cs.application.services.DataSource;
-import ku.cs.application.services.OfficerListDataSource;
+import ku.cs.application.services.OfficeListDataSource;
 import ku.cs.application.services.UserListDataSource;
 
 import java.io.IOException;
@@ -31,7 +31,7 @@ public class OfficerMemberListController {
         userOfficer = (Officer) com.github.saacsos.FXRouter.getData();
         ulds = new UserListDataSource("data","user.csv");
         userList = ulds.readData();
-        officerDataSource = new OfficerListDataSource("data","officer.csv");
+        officerDataSource = new OfficeListDataSource("data","officer.csv");
         officerIDList = officerDataSource.readData();
         showListView();
         handleSelectedListView();

@@ -10,13 +10,12 @@ import com.github.saacsos.FXRouter;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.paint.ImagePattern;
 import ku.cs.application.models.*;
 import ku.cs.application.services.ComplaintListDataSource;
 import ku.cs.application.services.DataSource;
 import ku.cs.application.services.VoteListDataSource;
 
-public class SelectedComplaintDetailController {
+public class UserSelectedComplaintDetailController {
     private List<Object> userAndComplaint;
     private Users user;
     private Complaint complaint;

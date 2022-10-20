@@ -63,8 +63,7 @@ public class AdminAccountController {
                         destDir.getAbsolutePath()+System.getProperty("file.separator")+filename);
                 Files.copy(file.toPath(), target, StandardCopyOption.REPLACE_EXISTING );
                 //Delete previous picture
-                if (!user.getUserImage().equals("data" + File.separator + "images" + File.separator
-                        + "profile" + File.separator + "default.png")){
+                if (!user.getUserImage().equals("/ku/cs/student_image/default.png")){
                     File deleteDestDir = new File("");
                     Path pathDelete = FileSystems.getDefault().getPath(deleteDestDir.getAbsolutePath()
                             +System.getProperty("file.separator")+user.getUserImage());
@@ -80,7 +79,7 @@ public class AdminAccountController {
                 e.printStackTrace();
             }
 
-            showAdminImage();
+//            showStudentImage();
         }
     }
 

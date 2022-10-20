@@ -8,11 +8,11 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OfficerListDataSource implements DataSource<OfficeList>{
+public class OfficeListDataSource implements DataSource<OfficeList>{
     private String directoryName;
     private String fileName;
 
-    public OfficerListDataSource(String directoryName, String fileName) {
+    public OfficeListDataSource(String directoryName, String fileName) {
         this.directoryName = directoryName;
         this.fileName = fileName;
         checkFileIsExisted();
