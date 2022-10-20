@@ -81,6 +81,7 @@ public class VoteListDataSource implements DataSource<VoteList>{
             buffer = new BufferedWriter(writer);
             for (Vote vote : voteList.getAllVotes()) {
                 buffer.append(vote.toString().replaceAll(" ",""));
+                buffer.append("-");
                 buffer.newLine();
             }
 //            buffer.append(newUserString);

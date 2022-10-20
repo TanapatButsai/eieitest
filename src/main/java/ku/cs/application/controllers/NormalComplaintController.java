@@ -71,7 +71,7 @@ public class NormalComplaintController {
         String bodyComplaint = bodyTextArea.getText();
         String bodyComplaint1 = bodyTextArea1.getText();
         Complaint complaint = new Complaint(headComplaint,bodyComplaint,bodyComplaint1,category,user.getUsername());
-        if (complaintImageUrl == null){complaintImageUrl = "data\\images\\complaint\\default_complaint.png";}
+        if (complaintImageUrl == null){complaintImageUrl = "/ku/cs/complaint_images/default_complaint.png";}
         complaint.setImageUrl(complaintImageUrl);
         complaint.recordTime();
         complaint.setSolution("no");

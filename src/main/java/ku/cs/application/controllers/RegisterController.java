@@ -138,7 +138,7 @@ public class RegisterController {
             return false;
         }
             Users newUser = new Users(newUserFullName,newUserID,newUserUsername,newUserPasswordUsername
-                    ,false,"0-0-0-0-0-0","data\\images\\profile\\default.png",false,false);
+                    ,false,"0-0-0-0-0-0","/ku/cs/student_image/default.png",false,false);
             userList.addUser(newUser);
             dataSource.writeData(userList);
             usernameCanBeUse = false;

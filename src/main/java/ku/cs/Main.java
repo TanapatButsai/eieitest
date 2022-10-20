@@ -10,10 +10,6 @@ import java.nio.file.Path;
 
 public class Main {
     public static void main(String[] args) {
-        File destDir = new File("");
-        String filename = "default.png";
-        Path delete = FileSystems.getDefault().getPath(
-                destDir.getAbsolutePath()+"\\data\\images\\profile\\2022-10-03_1664812275102.PNG");
-        System.out.println(delete);
+        ProjectApplication.main(args);
     }
 }

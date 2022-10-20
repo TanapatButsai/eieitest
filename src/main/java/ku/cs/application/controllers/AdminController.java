@@ -78,7 +78,11 @@ public class AdminController {
         String[] timeArr = user.getLastTimeLogin().split("-");
         String time = timeArr[0]+":"+timeArr[1]+":"+timeArr[2]+" "+timeArr[3]+"-"+timeArr[4]+"-"+timeArr[5];
         lastLoginLabel.setText(time);
-        userImage.setImage(new Image("file:"+user.getUserImage()));
+        if (!user.getUserImage().equals("/ku/cs/student_image/default.png")){
+            userImage.setImage(new Image("file:"+user.getUserImage()));
+        }else {
+            userImage.setImage(new Image(getClass().getResource("/ku/cs/student_image/default.png").toExternalForm()));
+        }
     }
 
 

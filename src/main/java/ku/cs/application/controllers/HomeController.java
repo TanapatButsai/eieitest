@@ -38,22 +38,34 @@ public class HomeController {
     private ComplaintListDataSource dataSource;
     private ComplaintList complaintList;
     private Complaint complaint;
-    @FXML private MenuItem menuItemNew;
-    @FXML private MenuItem menuItemOld;
-    @FXML private MenuItem menuItemAscending;
-    @FXML private MenuItem menuItemDescending;
+    @FXML
+    private MenuItem menuItemNew;
+    @FXML
+    private MenuItem menuItemOld;
+    @FXML
+    private MenuItem menuItemAscending;
+    @FXML
+    private MenuItem menuItemDescending;
 
-    @FXML private MenuItem enrollMenuItem;
-    @FXML private MenuItem placeMenuItem;
-    @FXML private MenuItem teacherMenuItem;
-    @FXML private MenuItem normalMenuItem;
-    @FXML private MenuItem corruptMenuItem;
+    @FXML
+    private MenuItem enrollMenuItem;
+    @FXML
+    private MenuItem placeMenuItem;
+    @FXML
+    private MenuItem teacherMenuItem;
+    @FXML
+    private MenuItem normalMenuItem;
+    @FXML
+    private MenuItem corruptMenuItem;
     Filterer<ComplaintList> filtererUnmanaged = new ComplaintStatusFilterer(ComplaintStatus.unmanaged);
     Filterer<ComplaintList> filtererInProgress = new ComplaintStatusFilterer(ComplaintStatus.inProgress);
     Filterer<ComplaintList> filtererDone = new ComplaintStatusFilterer(ComplaintStatus.done);
-    private enum Sorter{timeNew,timeOld,ratingAscending, ratingDescending}
+
+    private enum Sorter {timeNew, timeOld, ratingAscending, ratingDescending}
+
     private Sorter sorter;
-    @FXML private Circle userImageCircleView;
+    @FXML
+    private Circle userImageCircleView;
 
 
     @FXML
@@ -85,7 +97,7 @@ public class HomeController {
     @FXML
     public void handleNormalComplaint(ActionEvent actionEvent) {
         ArrayList<Object> object = new ArrayList<>();
-        String category ="normal";
+        String category = "normal";
         String url = "/ku/cs/normalcomplaint_images/kasetsarts.jpeg";
         object.add(user);
         object.add(category);
@@ -102,7 +114,7 @@ public class HomeController {
     @FXML
     public void handleTeacherComplaint(ActionEvent actionEvent) {
         ArrayList<Object> object = new ArrayList<>();
-        String category ="teacher";
+        String category = "teacher";
         String url = "/ku/cs/teachercomplaint_images/KU_9non.jpeg";
         object.add(user);
         object.add(category);
@@ -119,7 +131,7 @@ public class HomeController {
     @FXML
     public void handlePlaceComplaint(ActionEvent actionEvent) {
         ArrayList<Object> object = new ArrayList<>();
-        String category ="place";
+        String category = "place";
         String url = "/ku/cs/placecomplaint_images/kuku.jpeg";
         object.add(user);
         object.add(category);
@@ -136,7 +148,7 @@ public class HomeController {
     @FXML
     public void handleEnrollComplaint(ActionEvent actionEvent) {
         ArrayList<Object> object = new ArrayList<>();
-        String category ="enroll";
+        String category = "enroll";
         String url = "/ku/cs/enrollcomplaint_images/scsc.jpeg";
         object.add(user);
         object.add(category);
@@ -153,7 +165,7 @@ public class HomeController {
     @FXML
     public void handleCorruptComplaint(ActionEvent actionEvent) {
         ArrayList<Object> object = new ArrayList<>();
-        String category ="corrupt";
+        String category = "corrupt";
         String url = "/ku/cs/corruptcomplaint_images/kukuku.jpeg";
         object.add(user);
         object.add(category);
@@ -224,7 +236,10 @@ public class HomeController {
         });
     }
 
-    private void selectComplaint(Complaint complaint) {this.complaint = complaint;}
+    private void selectComplaint(Complaint complaint) {
+        this.complaint = complaint;
+    }
+
     public void setMenuItemTime() {
 
         menuItemNew.setOnAction(actionEvent -> {
@@ -301,48 +316,61 @@ public class HomeController {
             refresh();
         });
     }
-    public void sortComplaintList(){
-        if (sorter == Sorter.timeNew){
+
+    public void sortComplaintList() {
+        if (sorter == Sorter.timeNew) {
             this.complaintList.sortTimeNew();
-        }else if (sorter == Sorter.timeOld){
+        } else if (sorter == Sorter.timeOld) {
             this.complaintList.sortTimeOld();
-        }else if (sorter == Sorter.ratingAscending){
+        } else if (sorter == Sorter.ratingAscending) {
             this.complaintList.sortRatingOld();
-        }else if (sorter == Sorter.ratingDescending){
+        } else if (sorter == Sorter.ratingDescending) {
             this.complaintList.sortRatingNew();
         }
     }
+
     @FXML
     void handleGoToSelectedComplaintDetail(ActionEvent event) {
         try {
-            if (!(complaint == null)){
+            if (!(complaint == null)) {
                 List<Object> userAndComplaint = new ArrayList<>();
                 userAndComplaint.add(user);
                 userAndComplaint.add(complaint);
-                FXRouter.goTo("selected_complaint_detail",userAndComplaint);
+                FXRouter.goTo("selected_complaint_detail", userAndComplaint);
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
-    public void refresh(){
+
+    public void refresh() {
         complaintListViewDone.refresh();
         complaintListViewUnManage.refresh();
         complaintListViewInProgress.refresh();
     }
 
-    public void gotoComplaint(ArrayList<Object> objects){
+    public void gotoComplaint(ArrayList<Object> objects) {
         try {
-            FXRouter.goTo("normalcomplaint",objects);
+            FXRouter.goTo("normalcomplaint", objects);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
-    @FXML void showStudentImage(){
 
-        if (user.getUserImage() != null){
-            Image im = (new Image("file:"+user.getUserImage()));
-            userImageCircleView.setFill(new ImagePattern(im));
+    @FXML
+    void showStudentImage() {
+
+        if (user.getUserImage() != null) {
+            if (user.getUserImage().equals("/ku/cs/student_image/default.png")) {
+                Image im = (new Image(getClass().getResource("/ku/cs/student_image/default.png").toExternalForm()));
+                userImageCircleView.setFill(new ImagePattern(im));
+//            Image im = (new Image("file:"+user.getUserImage()));
+            }else {
+                Image im = (new Image("file:"+user.getUserImage()));
+                userImageCircleView.setFill(new ImagePattern(im));
+            }
         }
+//        Image im = (new Image(getClass().getResource("/ku/cs/student_image/default.png").toExternalForm()));
+//        userImageCircleView.setFill(new ImagePattern(im));
     }
 }

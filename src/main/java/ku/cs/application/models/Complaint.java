@@ -1,4 +1,6 @@
 package ku.cs.application.models;
+import javafx.scene.image.Image;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 public class Complaint implements Comparable<Complaint> {
@@ -200,7 +202,6 @@ public String getStatus(){
     public void setFixComplaint(String fixComplaint) {
         this.fixComplaint = fixComplaint;
     }
-
     @Override
     public int compareTo(Complaint o) {
         return Integer.compare(rating,o.getRating());
@@ -223,7 +224,15 @@ public String getStatus(){
     }
     private String imageUrl;
 
-
+    public String getImage(){
+        String url;
+        if (imageUrl.equals("ku/cs/complaint_images/default_complaint.png")){
+            url =  getClass().getResource("ku/cs/complaint_images/default_complaint.png").toExternalForm();
+        }else {
+            url = "file:"+ imageUrl;
+        }
+        return url;
+    }
     public String getImageUrl() {
         return imageUrl;
     }

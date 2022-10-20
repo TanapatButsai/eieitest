@@ -8,6 +8,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import com.github.saacsos.FXRouter;
+import javafx.scene.paint.ImagePattern;
 import javafx.stage.FileChooser;
 import ku.cs.application.models.UserList;
 import ku.cs.application.models.Users;
@@ -91,8 +92,7 @@ public class UserAccountController {
                         destDir.getAbsolutePath()+System.getProperty("file.separator")+filename);
                 Files.copy(file.toPath(), target, StandardCopyOption.REPLACE_EXISTING );
                 //Delete previous picture
-                if (!user.getUserImage().equals("data" + File.separator + "images" + File.separator
-                        + "profile" + File.separator + "default.png")){
+                if (!user.getUserImage().equals("/ku/cs/student_image/default.png")){
                     File deleteDestDir = new File("");
                     Path pathDelete = FileSystems.getDefault().getPath(deleteDestDir.getAbsolutePath()
                             +System.getProperty("file.separator")+user.getUserImage());
@@ -119,9 +119,18 @@ public class UserAccountController {
     }
     @FXML void showStudentImage(){
 
-        if (user.getUserImage() != null){
-            userImage.setImage(new Image("file:"+user.getUserImage()));
+        if (user.getUserImage() != null) {
+            if (user.getUserImage().equals("/ku/cs/student_image/default.png")) {
+                String im = (getClass().getResource("/ku/cs/student_image/default.png").toExternalForm());
+                userImage.setImage(new Image(getClass().getResource("/ku/cs/student_image/default.png").toExternalForm()));
+
+            }else {
+                String im = ("file:"+user.getUserImage());
+                userImage.setImage(new Image(im));
+            }
         }
+//            userImage.setImage(new Image("file:"+user.getUserImage()));
+
     }
     @FXML void handleGoToUserComplaint(){
         try {

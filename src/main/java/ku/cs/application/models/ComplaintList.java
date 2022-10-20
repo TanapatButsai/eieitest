@@ -89,7 +89,6 @@ public class ComplaintList {
         }
         return complaintListTemp;
     }
-
     public ArrayList<Complaint> getAllComplaintSortByRating() {
         ArrayList<Complaint> temp = new ArrayList<>(complaintList);
         Collections.sort(temp);

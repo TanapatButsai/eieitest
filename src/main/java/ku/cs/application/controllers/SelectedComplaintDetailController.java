@@ -10,6 +10,7 @@ import com.github.saacsos.FXRouter;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.paint.ImagePattern;
 import ku.cs.application.models.*;
 import ku.cs.application.services.ComplaintListDataSource;
 import ku.cs.application.services.DataSource;
@@ -92,8 +93,11 @@ public class SelectedComplaintDetailController {
         String time = arr[0] + ":" + arr[1] + ":" + arr[2] + " " + arr[3] + "-" + arr[4] + "-" + arr[5];
         timeLabel.setText(time);
         ratingLabel.setText(Integer.toString(complaint.getRating()));
-        selectComplaintImage.setImage(new Image("file:"+complaint.getImageUrl()));
-
+        if (!complaint.getImageUrl().equals("/ku/cs/complaint_images/default_complaint.png")){
+            selectComplaintImage.setImage(new Image("file:"+complaint.getImageUrl()));
+        }else {
+            selectComplaintImage.setImage(new Image(getClass().getResource("/ku/cs/complaint_images/default_complaint.png").toExternalForm()));
+        }
     }
     @FXML
     public void handleVote(ActionEvent actionEvent) {
