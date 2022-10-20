@@ -113,4 +113,18 @@ public class Ban {
     public void setTryLogin(int tryLogin) {
         this.tryLogin = tryLogin;
     }
+
+    @Override
+    public String toString() {
+        return "Ban{" +
+                "bannedID='" + bannedID + '\'' +
+                ", user='" + user + '\'' +
+                ", bannedReason='" + bannedReason + '\'' +
+                ", objectID='" + objectID + '\'' +
+                ", time='" + time + '\'' +
+                ", active=" + active +
+                ", tryLogin=" + tryLogin +
+                ", request='" + request + '\'' +
+                '}';
+    }
 }

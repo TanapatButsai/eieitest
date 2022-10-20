@@ -34,7 +34,7 @@ public class AdminBanReasonController {
 
     @FXML private void initialize(){
         dataSource = new UserListDataSource("data","user.csv");
-        banListDataSource = new BanListDataSource(true);
+        banListDataSource = new BanListDataSource(false);
         reportListDataSource = new ReportListDataSource("data","report.csv");
         userList = dataSource.readData();
         banList = banListDataSource.readData();

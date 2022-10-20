@@ -1,4 +1,6 @@
 fullName,ID,username,password,isAdmin,lastTimeLogin,image,isBan
-1,1111111111,1,1,false,22-39-01-20-10-22,data\images\profile\2022-10-20_1666274813761.jpg,false,false
 1,1111111111,admin,123,true,21-06-45-20-10-22,data\images\profile\2022-10-20_1666274813761.jpg,false,false
 dqw,1234567890,dqwd,dqw,false,0-0-0-0-0-0,/ku/cs/student_image/default.png,false,false
+1,1234567890,1,1,false,23-15-02-20-10-22,/ku/cs/student_image/default.png,true,false
+หัวหน้าป๋าพีพี,0000000001,normal,123,false,23-20-22-20-10-22,data\images\profile\default.png,false,true
+123345,1234567890,aaa,12345,false,23-41-37-20-10-22,/ku/cs/student_image/default.png,false,false

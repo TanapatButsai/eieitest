@@ -38,8 +38,8 @@ public class NormalComplaintController {
     private ArrayList<Object> objects;
     private String category;
     private String complaintImageUrl;
-    Path target;
-    File file;
+    private Path target;
+    private File file;
     private boolean isAddFile = false;
     private VoteList voteList;
     @FXML
@@ -67,27 +67,29 @@ public class NormalComplaintController {
 
     @FXML
     public void handlePushComplaint(ActionEvent actionEvent){
-        String headComplaint = headTextField.getText();
-        String bodyComplaint = bodyTextArea.getText();
-        String bodyComplaint1 = bodyTextArea1.getText();
-        Complaint complaint = new Complaint(headComplaint,bodyComplaint,bodyComplaint1,category,user.getUsername());
-        if (complaintImageUrl == null){complaintImageUrl = "/ku/cs/complaint_images/default_complaint.png";}
-        complaint.setImageUrl(complaintImageUrl);
-        complaint.recordTime();
-        complaint.setSolution("no");
-        complaintList.add(complaint);
-        dataSource.writeData(complaintList);
-        Vote vote = new Vote(complaint.getHeadComplaint()+":"+complaint.getNameWriter()
-                            +":"+complaint.getTime());
-        voteList.add(vote);
-        voteListDataSource.writeData(voteList);
-        if (!(bodyTextArea.getText().equals("") || bodyTextArea1.getText().equals("")
-                || headTextField.getText().equals(""))){
-            if (isAddFile){saveFile();}
-            try {
-                com.github.saacsos.FXRouter.goTo("home",user);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
+        if (!(headTextField.getText().isEmpty() || bodyTextArea1.getText().isEmpty()||bodyTextArea1.getText().isEmpty())){
+            String headComplaint = headTextField.getText();
+            String bodyComplaint = bodyTextArea.getText();
+            String bodyComplaint1 = bodyTextArea1.getText();
+            Complaint complaint = new Complaint(headComplaint,bodyComplaint,bodyComplaint1,category,user.getUsername());
+            if (complaintImageUrl == null){complaintImageUrl = "/ku/cs/complaint_images/default_complaint.png";}
+            complaint.setImageUrl(complaintImageUrl);
+            complaint.recordTime();
+            complaint.setSolution("no");
+            complaintList.add(complaint);
+            dataSource.writeData(complaintList);
+            Vote vote = new Vote(complaint.getHeadComplaint()+":"+complaint.getNameWriter()
+                    +":"+complaint.getTime());
+            voteList.add(vote);
+            voteListDataSource.writeData(voteList);
+            if (!(bodyTextArea.getText().equals("") || bodyTextArea1.getText().equals("")
+                    || headTextField.getText().equals(""))){
+                if (isAddFile){saveFile();}
+                try {
+                    com.github.saacsos.FXRouter.goTo("home",user);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
             }
         }
     }

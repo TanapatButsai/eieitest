@@ -2,10 +2,7 @@ package ku.cs.application.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.MenuButton;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Circle;
@@ -177,6 +174,7 @@ public class AdminOfficerController {
     @FXML public void handleCheckUsername(ActionEvent actionEvent) {
         username = usernameTextField.getText();
         usernameIsInUsers = userList.checkUsernameIsExistedInUserList(username);
+        usernameCanBeUse = false;
         usernameAlreadyCheck = true;
         if (username.equals("")) {
 //            promptCheckUsername.setText("Please enter ID");
@@ -191,6 +189,14 @@ public class AdminOfficerController {
                 usernameCanBeUse = true;
                 usernameHasComma = false;
             }
+        }
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        if (!usernameCanBeUse || usernameHasComma){
+            alert.setContentText("ไม่สามารถใช้ได้");
+            alert.showAndWait();
+        }else{
+            alert.setContentText("สามารถใช้ได้");
+            alert.showAndWait();
         }
         System.out.println("ID is in user = " + usernameIsInUsers + " | Already click check =" + usernameAlreadyCheck);
     }

@@ -79,6 +79,12 @@ public class UserList{
             user.setPassword(newPassword);
         }
     }
+    public void unban(String username){
+        Users user = findUser(username);
+        if (user != null) {
+            user.setBan(false);
+        }
+    }
     public void setImageStudent(String username, String imagePath){
         Users user = findUser(username);
         if (user != null) {
