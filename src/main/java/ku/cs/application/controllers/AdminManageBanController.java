@@ -32,7 +32,6 @@ public class AdminManageBanController {
 
     @FXML
     public void initialize() {
-        ban = (Ban) FXRouter.getData();
         admin = (Users) FXRouter.getData();
         banListDataSource = new BanListDataSource(true);
         banList = banListDataSource.readData();

@@ -7,10 +7,27 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.AdminManageBanController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.AdminManageBanController">
    <children>
       <ListView fx:id="banListView" layoutX="42.0" layoutY="119.0" prefHeight="417.0" prefWidth="333.0" />
-      <Pane layoutX="417.0" layoutY="110.0" prefHeight="450.0" prefWidth="432.0" style="-fx-background-color: #d1f4d6; -fx-background-radius: 30;" />
+      <Pane layoutX="417.0" layoutY="110.0" prefHeight="450.0" prefWidth="432.0" style="-fx-background-color: #d1f4d6; -fx-background-radius: 30;">
+         <children>
+            <Label fx:id="reasonLabel" layoutX="202.0" layoutY="200.0" text="reasonLabel">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="reqLabel" layoutX="202.0" layoutY="252.0" text="reqLabel">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="40.0" layoutY="251.0" text="คำร้องขอคืนสิทธิ์">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+         </children></Pane>
       <Label layoutX="530.0" layoutY="130.0" text="จัดการการระงับ">
 
          <font>
@@ -48,20 +65,5 @@
          </font>
       </Button>
       <Button layoutX="46.0" layoutY="39.0" mnemonicParsing="false" onAction="#handleBack" text="Back" />
-      <Label fx:id="reasonLabel" layoutX="537.0" layoutY="251.0" text="reasonLabel">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
-      <Label layoutX="427.0" layoutY="301.0" text="Req">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </Label>
-      <Label fx:id="reqLabel" layoutX="537.0" layoutY="302.0" text="reqLabel">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
    </children>
 </AnchorPane>

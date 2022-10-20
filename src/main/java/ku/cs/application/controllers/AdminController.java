@@ -106,7 +106,7 @@ public class AdminController {
     @FXML
     public void handleManageBan(ActionEvent event) {
         try {
-            com.github.saacsos.FXRouter.goTo("admin_manage_ban", admin);
+            FXRouter.goTo("admin_manage_ban");
         } catch (IOException e) {
             System.err.println("ไปที่หน้า admin_manage_ban ไม่ได้");
             System.err.println("ให้ตรวจสอบการกำหนด route");
