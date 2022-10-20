@@ -11,37 +11,50 @@
 <AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #D8D8D8;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.AdminComplaintController">
    <children>
       <ListView fx:id="reportListView" layoutX="27.0" layoutY="90.0" prefHeight="470.0" prefWidth="338.0" />
-      <Label fx:id="reportCategoryLabel" layoutX="570.0" layoutY="192.0" text="reportcategoryLabel">
+      <Pane layoutX="394.0" layoutY="102.0" prefHeight="470.0" prefWidth="383.0" style="-fx-background-color: #d1f4d6; -fx-background-radius: 30;">
+         <children>
+            <Pane layoutX="46.0" layoutY="30.0" prefHeight="46.0" prefWidth="263.0" style="-fx-background-color: #ffffff; -fx-background-radius: 30;">
+               <children>
+                  <Label layoutX="6.0" prefHeight="46.0" prefWidth="252.0" text=" ระบบรายงานความไม่เหมาะสม" textFill="#282424">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Label fx:id="reportCategoryLabel" layoutX="605.0" layoutY="252.0" text="reportcategoryLabel">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="410.0" layoutY="296.0" text="เนื้อหา">
+      <Label layoutX="445.0" layoutY="356.0" text="เนื้อหา">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="410.0" layoutY="142.0" text="หัวเรื่อง">
+      <Label layoutX="445.0" layoutY="202.0" text="หัวเรื่อง">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="410.0" layoutY="192.0" text="หมวดหมู่">
+      <Label layoutX="445.0" layoutY="252.0" text="หมวดหมู่">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label fx:id="titleLabel" layoutX="570.0" layoutY="142.0" text="titleLabel">
+      <Label fx:id="titleLabel" layoutX="605.0" layoutY="202.0" text="titleLabel">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="410.0" layoutY="243.0" text="ชื่อผู้รายงาน">
+      <Label layoutX="445.0" layoutY="303.0" text="ชื่อผู้รายงาน">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label fx:id="reporterLabel" layoutX="570.0" layoutY="243.0" text="reporterLabel">
+      <Label fx:id="reporterLabel" layoutX="605.0" layoutY="303.0" text="reporterLabel">
          <font>
             <Font size="15.0" />
          </font>
@@ -54,30 +67,30 @@
                </font>
             </Label>
             <Label fx:id="userLabel" layoutX="75.0" layoutY="24.0" prefHeight="17.0" prefWidth="83.0" />
-            <Label layoutX="184.0" layoutY="4.0" prefHeight="67.0" prefWidth="525.0" text="              ระบบรายงานความไม่เหมาะสม" textFill="WHITE">
+            <Button layoutX="45.0" layoutY="21.0" mnemonicParsing="false" onAction="#handleBack" text="กลับ" />
+            <Label layoutX="294.0" layoutY="9.0" prefHeight="46.0" prefWidth="314.0" text="ระบบร้องเรียน มหาวิทยาลัยเกษตรศาสตร์" textFill="WHITE">
                <font>
-                  <Font size="21.0" />
+                  <Font name="Cambria" size="18.0" />
                </font>
             </Label>
-            <Button layoutX="45.0" layoutY="21.0" mnemonicParsing="false" onAction="#handleBack" text="กลับ" />
          </children>
       </Pane>
-      <Label layoutX="410.0" layoutY="340.0" text="สาเหตุการร้องเรียน">
+      <Label layoutX="445.0" layoutY="400.0" text="สาเหตุการร้องเรียน">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label fx:id="reasonLabel" alignment="TOP_LEFT" layoutX="568.0" layoutY="340.0" prefHeight="134.0" prefWidth="182.0" text="reasonLabel" wrapText="true">
+      <Label fx:id="reasonLabel" alignment="TOP_LEFT" layoutX="603.0" layoutY="400.0" prefHeight="134.0" prefWidth="182.0" text="reasonLabel" wrapText="true">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label fx:id="detailLabel" layoutX="570.0" layoutY="297.0" text="detailLabel">
+      <Label fx:id="detailLabel" layoutX="605.0" layoutY="357.0" text="detailLabel">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Button layoutX="494.0" layoutY="534.0" mnemonicParsing="false" onAction="#handleGoToComplaintDetail" text="ดูลายละเอียดของเรื่องร้องเรียน" />
+      <Button layoutX="494.0" layoutY="534.0" mnemonicParsing="false" onAction="#handleGoToComplaintDetail" text="ดูรายละเอียดของเรื่องร้องเรียน" />
       <Separator layoutX="378.0" layoutY="63.0" orientation="VERTICAL" prefHeight="538.0" prefWidth="7.0" />
    </children>
 </AnchorPane>
