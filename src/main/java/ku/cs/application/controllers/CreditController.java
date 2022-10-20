@@ -4,9 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import com.github.saacsos.FXRouter;
 
-import java.io.File;
 import java.io.IOException;
 
 public class CreditController {
@@ -20,13 +18,13 @@ public class CreditController {
     private ImageView image4;
 
         String url
-                = getClass().getResource("/ku/cs/creditImages/creditmember1.jpg").toExternalForm();
+                = getClass().getResource("/ku/cs/credit_images/creditmember1.jpg").toExternalForm();
         String url2
-                = getClass().getResource("/ku/cs/creditImages/creditmember2.jpg").toExternalForm();
+                = getClass().getResource("/ku/cs/credit_images/creditmember2.jpg").toExternalForm();
         String url3
-                = getClass().getResource("/ku/cs/creditImages/creditmember3.jpg").toExternalForm();
+                = getClass().getResource("/ku/cs/credit_images/creditmember3.jpg").toExternalForm();
         String url4
-                = getClass().getResource("/ku/cs/creditImages/creditmember4.jpg").toExternalForm();
+                = getClass().getResource("/ku/cs/credit_images/creditmember4.jpg").toExternalForm();
     @FXML
     public void initialize() {
         image1.setImage(new Image(url));

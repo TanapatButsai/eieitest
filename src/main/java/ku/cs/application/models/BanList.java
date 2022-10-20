@@ -17,7 +17,7 @@ public class BanList {
     public ArrayList<Ban> getAllReqUnBan() {
         ArrayList<Ban> banListTemp = new ArrayList<>();
         for (Ban banTemp:banList){
-            if (banTemp.getRequest() != "none") {
+            if (!banTemp.getRequest().equals("none")) {
                 banListTemp.add(banTemp);
             }
         }

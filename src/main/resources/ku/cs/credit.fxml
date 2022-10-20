@@ -11,22 +11,22 @@
    <children>
       <ImageView fx:id="image1" fitHeight="150.0" fitWidth="200.0" layoutX="25.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@creditImages/creditmember1.jpg" />
+            <Image url="@credit_images/creditmember1.jpg" />
          </image>
       </ImageView>
       <ImageView fx:id="image2" fitHeight="166.0" fitWidth="167.0" layoutX="542.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@creditImages/creditmember2.jpg" />
+            <Image url="@credit_images/creditmember2.jpg" />
          </image>
       </ImageView>
       <ImageView fx:id="image3" fitHeight="150.0" fitWidth="200.0" layoutX="534.0" layoutY="418.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@creditImages/creditmember3.jpg" />
+            <Image url="@credit_images/creditmember3.jpg" />
          </image>
       </ImageView>
       <ImageView fx:id="image4" fitHeight="182.0" fitWidth="149.0" layoutX="33.0" layoutY="264.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@creditImages/creditmember4.jpg" />
+            <Image url="@credit_images/creditmember4.jpg" />
          </image>
       </ImageView>
       <Label layoutX="252.0" layoutY="323.0" prefHeight="32.0" prefWidth="167.0" text="พีรพัฒน์ ภักดีพงษ์">
