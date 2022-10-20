@@ -89,56 +89,8 @@ public class UserChangePasswordController {
                 return false;
             }
             System.out.println("Can change password");
-//            Users userDelete = userList.findUser(user.getUsername());
-//            userList.removeUser(userDelete);
-//              userList.changePassword(user.getUsername(), newPasswordTextField.getText());
-//            userList.addUser(user);
-//            dataSource.writeData(userList);
             userList.changePassword(user.getUsername(), confirmNewPassword);
             dataSource.writeData(userList);
             return true;
         }
     }
-
-
-
-
-//    private boolean isChangePassword() {
-//        Users user = userList.findUser(usernameTextField.getText());
-//        String usernameUser = user.getUsername();
-//        String passwordUser = user.getPassword();
-//        if (usernameTextField.getText().isEmpty() || oldPasswordTextField.getText().isEmpty()
-//                || newPasswordTextField.getText().isEmpty() || newPasswordTextField.getText().contains(",")
-//                || !oldPasswordTextField.getText().equals(passwordUser)) {
-//            if (newPasswordTextField.getText().contains(",")){
-//                System.err.println("cannot use \" , \"");
-//                promptNewPassword.setText("cannot use \" , \"");
-//            }
-//            if (usernameTextField.getText().isEmpty()){
-//                System.err.println("Username TextField is empty");
-//                promptUsername.setText("Enter username");
-//            }
-//            if (oldPasswordTextField.getText().isEmpty()){
-//                System.err.println("Old password TextField is empty");
-//                promptPassword.setText("Enter password");
-//            } else if (!oldPasswordTextField.getText().equals(passwordUser)) {
-//                System.err.println("Old password TextField is not match");
-//                promptPassword.setText("Wrong password");
-//            }
-//            if (newPasswordTextField.getText().isEmpty()){
-//                System.err.println("New  username TextField is empty");
-//                promptNewPassword.setText("Enter new password");
-//            }
-//            if (!usernameTextField.getText().equals(usernameUser)) {
-//                System.err.println("Wrong username : input username is not exist");
-//            }
-//            return false;
-//        } else {
-//            System.out.println("Can change password");
-//            userList.removeUser(user);
-//            user.setPassword(newPasswordTextField.getText());
-//            userList.addUser(user);
-//            dataSource.writeData(userList);
-//            return true;
-//        }
-//    }

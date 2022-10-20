@@ -2,6 +2,7 @@ package ku.cs.application.controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -31,8 +32,7 @@ public class UserComplaintController {
     private DataSource<VoteList> voteListDataSource;
     private ComplaintList complaintList;
     private Users user;
-    @FXML
-    private ImageView kasetsartImage;
+    @FXML private ImageView kasetsartImage;
     private ArrayList<Object> objects;
     private String category;
     private String complaintImageUrl;
@@ -40,6 +40,7 @@ public class UserComplaintController {
     private File file;
     private boolean isAddFile = false;
     private VoteList voteList;
+    @FXML private Label detailLabel;
     @FXML
     public void initialize() {
         dataSource = new ComplaintListDataSource("data","complaint.csv");
@@ -52,6 +53,8 @@ public class UserComplaintController {
         String imagePath = (String) objects.get(2);
         String url = getClass().getResource(imagePath).toExternalForm();
         kasetsartImage.setImage(new Image(url));
+        detailLabel.setText((String) objects.get(3));
+
     }
     public void handleBackHomeButton(ActionEvent actionEvent){
         try {

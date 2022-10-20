@@ -32,7 +32,6 @@ public class AdminSelectedReportComplaintController {
     @FXML
     private Label timeLabel;
 
-    private Ban ban;
     private BanList banList;
     private DataSource<BanList> banListDataSource;
     private DataSource<UserList> userListDataSource;
@@ -59,7 +58,7 @@ public class AdminSelectedReportComplaintController {
     @FXML
     public void handleBack(ActionEvent event) {
         try {
-            FXRouter.goTo("admincomplaint");
+            FXRouter.goTo("admincomplaint",admin);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -77,10 +76,6 @@ public class AdminSelectedReportComplaintController {
 
     @FXML
     void handleApprove(ActionEvent event) {
-//        Users users = userList.findUser(complaint.getNameWriter());
-//        System.out.println(users);
-//        userList.setBan(complaint.getNameWriter());
-
         try {
             FXRouter.goTo("admin_ban_reason",objects);
         } catch (Exception e) {

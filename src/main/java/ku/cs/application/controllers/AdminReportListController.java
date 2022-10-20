@@ -24,7 +24,7 @@ public class AdminReportListController {
 
 
 
-    private DataSource<ReportList> clds;
+    private DataSource<ReportList> reportListDataSource;
 //    private ComplaintList complaintList;
     private ReportList reportList;
     private DataSource<ComplaintList> dataSource = new ComplaintListDataSource("data","complaint.csv");
@@ -35,9 +35,9 @@ public class AdminReportListController {
 
     @FXML
     public void initialize(){
-        clds = new ReportListDataSource("data","report.csv");
+        reportListDataSource = new ReportListDataSource("data","report.csv");
         admin = (Users) FXRouter.getData();
-        reportList = clds.readData();
+        reportList = reportListDataSource.readData();
         complaintList = dataSource.readData();
         System.out.println(reportList.toString());
         showListView();

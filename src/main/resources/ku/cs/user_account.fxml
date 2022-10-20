@@ -55,6 +55,6 @@
             <Button layoutX="717.0" layoutY="20.0" mnemonicParsing="false" onAction="#handleGoToHome" prefHeight="16.0" prefWidth="62.0" text="กลับ" />
          </children>
       </Pane>
-      <ImageView fx:id="logoku" fitHeight="235.0" fitWidth="183.0" layoutX="644.0" layoutY="367.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="logoKU" fitHeight="235.0" fitWidth="183.0" layoutX="644.0" layoutY="367.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

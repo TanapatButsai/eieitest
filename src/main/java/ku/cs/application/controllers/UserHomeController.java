@@ -101,6 +101,7 @@ public class UserHomeController {
         object.add(user);
         object.add(category);
         object.add(url);
+        object.add("บุคลากร,หน่วยงานที่เกี่ยวข้องหรือสภานที่ที่เกี่ยวข้อง");
         try {
             com.github.saacsos.FXRouter.goTo("normalcomplaint", object);
         } catch (IOException e) {
@@ -118,6 +119,7 @@ public class UserHomeController {
         object.add(user);
         object.add(category);
         object.add(url);
+        object.add("บุคคลหรือองค์การที่เกี่ยวข้อง");
         try {
             com.github.saacsos.FXRouter.goTo("normalcomplaint", object);
         } catch (IOException e) {
@@ -135,6 +137,7 @@ public class UserHomeController {
         object.add(user);
         object.add(category);
         object.add(url);
+        object.add("สถานที่เกิดเหตุ");
         try {
             com.github.saacsos.FXRouter.goTo("normalcomplaint", object);
         } catch (IOException e) {
@@ -152,6 +155,7 @@ public class UserHomeController {
         object.add(user);
         object.add(category);
         object.add(url);
+        object.add("ภาควิชาหรือองค์การที่เกี่ยวข้อง");
         try {
             com.github.saacsos.FXRouter.goTo("normalcomplaint", object);
         } catch (IOException e) {
@@ -169,6 +173,7 @@ public class UserHomeController {
         object.add(user);
         object.add(category);
         object.add(url);
+        object.add("บุคคลหรือองค์การที่เกี่ยวกับการทุจริต");
         try {
             com.github.saacsos.FXRouter.goTo("normalcomplaint", object);
         } catch (IOException e) {

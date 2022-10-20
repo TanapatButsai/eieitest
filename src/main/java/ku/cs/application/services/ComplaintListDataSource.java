@@ -9,7 +9,6 @@ import java.nio.charset.StandardCharsets;
 public class ComplaintListDataSource implements DataSource<ComplaintList>{
     private String directoryName;
     private String fileName;
-    private ComplaintList complaintList;
     public ComplaintListDataSource(String directoryName, String fileName) {
         this.directoryName = directoryName;
         this.fileName = fileName;
@@ -129,10 +128,6 @@ public class ComplaintListDataSource implements DataSource<ComplaintList>{
                 "directoryName='" + directoryName + '\'' +
                 ", fileName='" + fileName + '\'' +
                 '}';
-    }
-
-    public ComplaintList getComplaintList() {
-        return complaintList;
     }
     //--------
 

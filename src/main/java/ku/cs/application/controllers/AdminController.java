@@ -26,14 +26,12 @@ public class AdminController {
 
     private DataSource<UserList> dataSource;
     private UserList userList;
-    private Users user ;
     private Users admin;
 
 
 
     @FXML
     public void initialize() {
-        user = (Users) FXRouter.getData();
         admin = (Users) FXRouter.getData();
         dataSource = new UserListDataSource("data","user.csv");
         userList = dataSource.readData();
