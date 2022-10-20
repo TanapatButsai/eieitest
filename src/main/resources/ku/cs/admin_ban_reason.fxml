@@ -17,6 +17,11 @@
                   <Font size="15.0" />
                </font>
             </Button>
+            <Label layoutX="247.0" layoutY="12.0" prefHeight="46.0" prefWidth="314.0" text="ระบบร้องเรียน มหาวิทยาลัยเกษตรศาสตร์" textFill="WHITE">
+               <font>
+                  <Font name="Cambria" size="18.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
       <TextArea fx:id="reasonTextArea" layoutX="224.0" layoutY="200.0" prefHeight="200.0" prefWidth="359.0" />

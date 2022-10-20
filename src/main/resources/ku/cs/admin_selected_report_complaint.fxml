@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.AdminSelectedReportComplaintController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.AdminSelectedReportComplaintController">
    <children>
       <Pane layoutX="-14.0" prefHeight="64.0" prefWidth="813.0" style="-fx-background-color: #2FB16E;">
          <children>
@@ -15,28 +15,37 @@
                   <Font name="Cambria" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="189.0" prefHeight="67.0" prefWidth="525.0" text="              ระบบรายงานความไม่เหมาะสม" textFill="WHITE">
+            <Button layoutX="45.0" layoutY="21.0" mnemonicParsing="false" onAction="#handleBack" text="กลับ" />
+            <Label layoutX="238.0" layoutY="11.0" prefHeight="46.0" prefWidth="352.0" text="ระบบร้องเรียน , มหาวิทยาลัยเกษตรศาสตร์" textFill="WHITE">
                <font>
-                  <Font size="21.0" />
+                  <Font name="Cambria Bold" size="18.0" />
                </font>
             </Label>
-            <Button layoutX="45.0" layoutY="21.0" mnemonicParsing="false" onAction="#handleBack" text="Back" />
          </children>
       </Pane>
-      <Label fx:id="headLabel" alignment="CENTER" layoutX="115.0" layoutY="121.0" prefHeight="26.0" prefWidth="142.0" style="-fx-background-color: #E6E6E6;" text="head" wrapText="true" />
-      <Label fx:id="categoryLabel" alignment="CENTER" layoutX="115.0" layoutY="186.0" prefHeight="26.0" prefWidth="142.0" style="-fx-background-color: #E6E6E6;" text="categoryLabel" wrapText="true" />
-      <Label fx:id="ratingLabel" alignment="CENTER" layoutX="383.0" layoutY="121.0" prefHeight="26.0" prefWidth="142.0" style="-fx-background-color: #E6E6E6;" text="คะแนน" wrapText="true" />
-      <Label fx:id="timeLabel" alignment="CENTER" layoutX="383.0" layoutY="186.0" prefHeight="26.0" prefWidth="142.0" style="-fx-background-color: #E6E6E6;" text="เวลา" wrapText="true" />
-      <Label layoutX="99.0" layoutY="103.0" text="หัวเรื่อง" />
-      <Label layoutX="99.0" layoutY="164.0" text="หมวดหมู่เรื่องร้องเรียน" />
-      <Label layoutX="367.0" layoutY="103.0" text="คะแนนโหวด" />
-      <Label layoutX="367.0" layoutY="164.0" text="เวลาที่ร้องเรียน" />
-      <Label fx:id="bodyLabel" alignment="TOP_LEFT" layoutX="115.0" layoutY="256.0" prefHeight="138.0" prefWidth="410.0" style="-fx-background-color: #E6E6E6;" text="    body" wrapText="true" />
-      <Label fx:id="spacificLabel" alignment="TOP_LEFT" layoutX="115.0" layoutY="438.0" prefHeight="114.0" prefWidth="410.0" style="-fx-background-color: #E6E6E6;" text="    spacific" wrapText="true" />
-      <Label layoutX="99.0" layoutY="238.0" text="รายละเอียดเรื่องร้องเรียน" />
-      <Label layoutX="99.0" layoutY="420.0" text="ข้อมูลที่จำเป็น" />
-      <Button layoutX="608.0" layoutY="280.0" mnemonicParsing="false" onAction="#handleReject" text="ปฏิเสธ" />
-      <Button layoutX="663.0" layoutY="280.0" mnemonicParsing="false" onAction="#handleApprove" prefHeight="26.0" prefWidth="46.0" text="อนุมัติ" />
-      <Label layoutX="612.0" layoutY="204.0" prefHeight="67.0" prefWidth="86.0" style="-fx-background-color: #E6E6E6;" text="พิจารณารายงานนี้สมเหตุสมผลหรือไม่" wrapText="true" />
+      <Label fx:id="headLabel" alignment="CENTER" layoutX="111.0" layoutY="155.0" prefHeight="26.0" prefWidth="142.0" style="-fx-background-color: #E6E6E6;" text="head" wrapText="true" />
+      <Label fx:id="categoryLabel" alignment="CENTER" layoutX="111.0" layoutY="220.0" prefHeight="26.0" prefWidth="142.0" style="-fx-background-color: #E6E6E6;" text="categoryLabel" wrapText="true" />
+      <Label fx:id="ratingLabel" alignment="CENTER" layoutX="379.0" layoutY="155.0" prefHeight="26.0" prefWidth="142.0" style="-fx-background-color: #E6E6E6;" text="คะแนน" wrapText="true" />
+      <Label fx:id="timeLabel" alignment="CENTER" layoutX="379.0" layoutY="220.0" prefHeight="26.0" prefWidth="142.0" style="-fx-background-color: #E6E6E6;" text="เวลา" wrapText="true" />
+      <Label layoutX="95.0" layoutY="137.0" text="หัวเรื่อง" />
+      <Label layoutX="95.0" layoutY="198.0" text="หมวดหมู่เรื่องร้องเรียน" />
+      <Label layoutX="379.0" layoutY="137.0" text="คะแนนโหวต" />
+      <Label layoutX="363.0" layoutY="198.0" text="เวลาที่ร้องเรียน" />
+      <Label fx:id="bodyLabel" alignment="TOP_LEFT" layoutX="111.0" layoutY="290.0" prefHeight="138.0" prefWidth="410.0" style="-fx-background-color: #E6E6E6;" text="    body" wrapText="true" />
+      <Label fx:id="spacificLabel" alignment="TOP_LEFT" layoutX="111.0" layoutY="472.0" prefHeight="114.0" prefWidth="410.0" style="-fx-background-color: #E6E6E6;" text="    spacific" wrapText="true" />
+      <Label layoutX="95.0" layoutY="272.0" text="รายละเอียดเรื่องร้องเรียน" />
+      <Label layoutX="95.0" layoutY="454.0" text="ข้อมูลที่จำเป็น" />
+      <Button layoutX="604.0" layoutY="314.0" mnemonicParsing="false" onAction="#handleReject" text="ปฏิเสธ" />
+      <Button layoutX="659.0" layoutY="314.0" mnemonicParsing="false" onAction="#handleApprove" prefHeight="26.0" prefWidth="46.0" text="อนุมัติ" />
+      <Label layoutX="608.0" layoutY="238.0" prefHeight="67.0" prefWidth="86.0" style="-fx-background-color: #E6E6E6;" text="พิจารณารายงานนี้สมเหตุสมผลหรือไม่" wrapText="true" />
+      <Pane layoutX="263.0" layoutY="79.0" prefHeight="46.0" prefWidth="200.0" style="-fx-background-color: #d1f4d6; -fx-background-radius: 30;">
+         <children>
+            <Label layoutX="-32.0" layoutY="-11.0" prefHeight="67.0" prefWidth="218.0" text="              ระบบรายงานความไม่เหมาะสม" textFill="#2f2d2d">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

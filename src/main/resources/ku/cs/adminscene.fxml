@@ -12,7 +12,7 @@
    <children>
       <ListView fx:id="userListView" layoutX="28.0" layoutY="106.0" prefHeight="455.0" prefWidth="389.0" />
       <ImageView fx:id="rainbow" fitHeight="292.0" fitWidth="211.0" layoutX="614.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true" />
-      <Pane layoutX="442.0" layoutY="229.0" prefHeight="186.0" prefWidth="344.0" style="-fx-background-color: #d1f4d6; -fx-background-radius: 30;">
+      <Pane layoutX="433.0" layoutY="175.0" prefHeight="186.0" prefWidth="344.0" style="-fx-background-color: #d1f4d6; -fx-background-radius: 30;">
          <children>
             <Label layoutX="32.0" layoutY="14.0" text="ชื่อ">
                <font>
@@ -56,12 +56,12 @@
             </Label>
          </children>
       </Pane>
-      <Button layoutX="456.0" layoutY="482.0" mnemonicParsing="false" onAction="#handleAdminComplaint" prefHeight="25.0" prefWidth="62.0" text="รายงาน" />
-      <Button layoutX="455.0" layoutY="515.0" mnemonicParsing="false" onAction="#handleManageBan" prefHeight="32.0" prefWidth="125.0" text="รายงานความไม่เหมาะสม" />
+      <Button layoutX="456.0" layoutY="482.0" mnemonicParsing="false" onAction="#handleAdminComplaint" prefHeight="25.0" prefWidth="125.0" text="รายงานความไม่เหมาะสม" />
+      <Button layoutX="455.0" layoutY="515.0" mnemonicParsing="false" onAction="#handleManageBan" prefHeight="32.0" prefWidth="125.0" text="จัดการการระงับ" />
 
-      <Pane layoutX="453.0" layoutY="158.0" prefHeight="39.0" prefWidth="211.0" style="-fx-background-color: #0d8637; -fx-background-radius: 30;">
+      <Pane layoutX="433.0" layoutY="106.0" prefHeight="39.0" prefWidth="211.0" style="-fx-background-color: #0d8637; -fx-background-radius: 30;">
          <children>
-            <Label layoutX="34.0" layoutY="-6.0" prefHeight="40.0" prefWidth="161.0" text="รายละเอียดผู้ใช้" textFill="#f6f1f1">
+            <Label layoutX="36.0" prefHeight="40.0" prefWidth="161.0" text="รายละเอียดผู้ใช้" textFill="#f6f1f1">
                <font>
                   <Font size="24.0" />
                </font>
