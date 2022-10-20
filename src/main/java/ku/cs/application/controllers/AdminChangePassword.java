@@ -20,6 +20,7 @@ public class AdminChangePassword {
     @FXML private TextField confirmPasswordTextField;
     @FXML private DataSource<UserList> dataSource;
     private Users user;
+    private Users admin;
     private UserList userList;
     @FXML private Label promptOldPassword;
     @FXML private Label promptNewPassword;
@@ -29,6 +30,8 @@ public class AdminChangePassword {
     public void initialize() {
         dataSource = new UserListDataSource("data","user.csv");
         userList = dataSource.readData();
+        admin = (Users) FXRouter.getData();
+
         if (userList == null) {
             System.err.println("AdminChangePasswordController : Cannot read file");
         } else {
@@ -81,7 +84,7 @@ public class AdminChangePassword {
     @FXML
     public void handleBackButton(ActionEvent actionEvent) {
         try {
-            FXRouter.goTo("admin_account",user);
+            FXRouter.goTo("admin_account",admin);
 
         } catch (IOException e) {
             System.err.println("ไปที่หน้า admin_account ไม่ได้");

@@ -3,13 +3,12 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.AdminManageBanController">
    <children>
-      <ListView layoutX="72.0" layoutY="124.0" prefHeight="353.0" prefWidth="200.0" />
+      <ListView fx:id="banListView" layoutX="72.0" layoutY="124.0" prefHeight="353.0" prefWidth="200.0" />
       <Label layoutX="334.0" layoutY="34.0" text="Manage Ban">
          <font>
             <Font size="24.0" />
@@ -45,12 +44,26 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <TextArea fx:id="reasonTextArea" layoutX="514.0" layoutY="250.0" prefHeight="166.0" prefWidth="200.0" />
       <Button layoutX="593.0" layoutY="485.0" mnemonicParsing="false" onAction="#handleUnBanButton" text="UnBan">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
       <Button layoutX="46.0" layoutY="39.0" mnemonicParsing="false" onAction="#handleBack" text="Back" />
+      <Label fx:id="reasonLabel" layoutX="537.0" layoutY="251.0" text="reasonLabel">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="427.0" layoutY="301.0" text="Req">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="reqLabel" layoutX="537.0" layoutY="302.0" text="reqLabel">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
