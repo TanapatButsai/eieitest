@@ -61,6 +61,13 @@ public class LoginController {
             System.out.println("Can read file");
         }
     }
+    @FXML public void handleTutorial(ActionEvent event) {
+        try {
+            FXRouter.goTo("tutorial_student");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     @FXML
     public void handleSignIn(ActionEvent actionEvent) {

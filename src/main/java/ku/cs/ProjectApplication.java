@@ -52,6 +52,7 @@ public class ProjectApplication extends Application {
         FXRouter.when("admin_signup_officer",packageStr+"admin_signup_officer.fxml");
         FXRouter.when("user_request_unban",packageStr+"user_request_unban.fxml");
         FXRouter.when("officer_change_picture",packageStr+"officer_change_picture.fxml");
+        FXRouter.when("tutorial_student",packageStr+"tutorial_student.fxml");
     }
 
     public static void main(String[] args) {

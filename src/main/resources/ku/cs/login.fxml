@@ -70,5 +70,10 @@
             <Font name="Corbel" size="10.0" />
          </font>
       </Button>
+      <Button layoutX="507.0" layoutY="17.0" mnemonicParsing="false" onAction="#handleTutorial" prefHeight="20.0" prefWidth="92.0" style="-fx-background-color: #d1f4d6;" stylesheets="@common_button_reactive.css" text="แนะนำโปรแกรม">
+         <font>
+            <Font name="Corbel" size="10.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
