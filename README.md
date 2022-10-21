@@ -35,6 +35,7 @@
 ## การวงโครงสร้างไฟล์
 - data
   - images
+    - complaint
     - profile
   - bans.csv
   - complaint.csv
