@@ -3,6 +3,7 @@ package ku.cs.application.controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import com.github.saacsos.FXRouter;
@@ -49,6 +50,8 @@ public class UserRequestUnbanController {
         inputUsername.setEditable(false);
         inputReason.setText(ban.getBannedReason());
         inputReason.setEditable(false);
+        String url = getClass().getResource("/ku/cs/login_images/tree.png").toExternalForm();
+        image_view_login.setImage(new Image(url));
 
     }
     @FXML
