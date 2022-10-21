@@ -188,21 +188,27 @@
 
 ## วิธีการติ้งตั้งและรันโปรแกรม
 1) กดปุ่ม code สีเขียวแล้วก็ Download as zip
+
 ![1](https://user-images.githubusercontent.com/98452252/197146204-bfba90de-8630-42a2-8b62-9bd79cbd6141.PNG)
 
 2) กดคลิกขวาที่ไฟล์ zip ที่โหลดมาแล้วกด Extract Here
+
 ![2](https://user-images.githubusercontent.com/98452252/197146403-3ebb65bc-7715-4f8b-b1b3-faab2e02695a.PNG)
 
 3) กดเข้าไปในโฟลเดอร์ที่เราแตกไฟล์มาแล้วเข้าไปที่โฟลเดอร์ project อีกที
+
 ![65](https://user-images.githubusercontent.com/98452252/197155707-bf2cc789-edfc-4b11-9c13-d9dd58bc333a.PNG)
 
 4) กดคลิกขวาที่ไฟล์ zip ชื่อ application DingTwo แล้วกด Extract Here
+
 ![66](https://user-images.githubusercontent.com/98452252/197156021-bcb2d61c-80c2-4d01-97d8-98b6c0d31254.PNG)
 
 5) จะได้โฟลเดอร์ที่มีชื่อว่า application DingTwo กดเข้าไปในโฟลเดอร์นั้น
+
 ![33](https://user-images.githubusercontent.com/98452252/197156689-ae4b3fcd-816b-4be9-a9ac-a26595539751.PNG)
 
 6) กดเปิดไฟล์ที่ชื่อว่า DingTwoProjectApplication ก็จะเป็นการเข้าสู่โปรแกรมเรียบร้อยครับ
+
 ![final](https://user-images.githubusercontent.com/98452252/197157043-649c3b82-4ac6-490c-be5e-b94dd4296448.PNG)
 
 
