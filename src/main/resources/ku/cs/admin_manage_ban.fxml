@@ -9,64 +9,64 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.AdminManageBanController">
+<AnchorPane prefHeight="600.0" prefWidth="787.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.AdminManageBanController">
    <children>
-      <ListView fx:id="banListView" layoutX="42.0" layoutY="119.0" prefHeight="417.0" prefWidth="333.0" />
-      <Pane layoutX="417.0" layoutY="110.0" prefHeight="450.0" prefWidth="432.0" style="-fx-background-color: #d1f4d6; -fx-background-radius: 30;">
+      <ListView fx:id="banListView" layoutX="24.0" layoutY="119.0" prefHeight="417.0" prefWidth="307.0" />
+      <Pane layoutX="357.0" layoutY="98.0" prefHeight="450.0" prefWidth="417.0" style="-fx-background-color: #d1f4d6; -fx-background-radius: 30;">
          <children>
-            <Label fx:id="reasonLabel" layoutX="202.0" layoutY="200.0" text="reasonLabel">
+            <Label fx:id="reasonLabel" layoutX="213.0" layoutY="252.0" text="reasonLabel">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label fx:id="reqLabel" alignment="TOP_LEFT" layoutX="202.0" layoutY="252.0" prefHeight="94.0" prefWidth="192.0" wrapText="true">
+            <Label fx:id="reqLabel" alignment="TOP_LEFT" layoutX="212.0" layoutY="290.0" prefHeight="94.0" prefWidth="192.0" wrapText="true">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label fx:id="promptLabel" layoutX="40.0" layoutY="251.0" prefHeight="26.0" prefWidth="118.0">
+            <Label fx:id="promptLabel" layoutX="55.0" layoutY="290.0" prefHeight="26.0" prefWidth="118.0">
                <font>
                   <Font size="17.0" />
                </font>
             </Label>
+            <Button layoutX="141.0" layoutY="404.0" mnemonicParsing="false" onAction="#handleUnBanButton" text="คืนสิทธ์การใช้งาน">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Label layoutX="132.0" layoutY="48.0" text="จัดการการระงับ">
+      
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="60.0" layoutY="128.0" text="ชื่อ-นามสกุล">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="nameLabel" layoutX="217.0" layoutY="128.0" text="nameLabel">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="55.0" layoutY="188.0" text="พยายามเข้าสู่ระบบ">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="55.0" layoutY="243.0" text="เหตุผล">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="tryLogInLabel" layoutX="212.0" layoutY="189.0" text="tryLogInLabel">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
          </children></Pane>
-      <Label layoutX="530.0" layoutY="130.0" text="จัดการการระงับ">
-
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <Label layoutX="458.0" layoutY="210.0" text="ชื่อ-นามสกุล">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </Label>
-      <Label layoutX="458.0" layoutY="261.0" text="พยายามเข้าสู่ระบบ">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </Label>
-      <Label layoutX="458.0" layoutY="311.0" text="เหตุผล">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </Label>
-      <Label fx:id="nameLabel" layoutX="615.0" layoutY="210.0" text="nameLabel">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
-      <Label fx:id="tryLogInLabel" layoutX="615.0" layoutY="261.0" text="tryLogInLabel">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
-      <Button layoutX="593.0" layoutY="485.0" mnemonicParsing="false" onAction="#handleUnBanButton" text="UnBan">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Button>
-      <Button layoutX="46.0" layoutY="39.0" mnemonicParsing="false" onAction="#handleBack" text="Back" />
+      <Button layoutX="46.0" layoutY="39.0" mnemonicParsing="false" onAction="#handleBack" text="กลับ" />
       <MenuButton layoutX="46.0" layoutY="85.0" mnemonicParsing="false" text="MenuButton">
         <items>
           <MenuItem fx:id="handleShowAllBan" mnemonicParsing="false" text="บัญชีทั้งหมดที่ถูกระงับ" />

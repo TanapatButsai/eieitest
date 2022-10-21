@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #D8D8D8;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.CreditController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #d1f4d6;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.CreditController">
    <children>
       <ImageView fx:id="image1" fitHeight="150.0" fitWidth="200.0" layoutX="25.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -29,45 +29,45 @@
             <Image url="@credit_images/creditmember4.jpg" />
          </image>
       </ImageView>
-      <Label layoutX="252.0" layoutY="323.0" prefHeight="32.0" prefWidth="167.0" text="พีรพัฒน์ ภักดีพงษ์">
+      <Label layoutX="225.0" layoutY="323.0" prefHeight="32.0" prefWidth="167.0" text="พีรพัฒน์ ภักดีพงษ์">
          <font>
-            <Font size="22.0" />
+            <Font size="13.0" />
          </font>
       </Label>
-      <Label layoutX="262.0" layoutY="53.0" text="ธนาภัทร บุตรใส">
+      <Label layoutX="276.0" layoutY="66.0" text="ธนาภัทร บุตรใส">
          <font>
-            <Font size="22.0" />
+            <Font size="13.0" />
          </font>
       </Label>
-      <Label layoutX="336.0" layoutY="181.0" text="นภกมล ปินตาพรหม">
+      <Label layoutX="422.0" layoutY="193.0" text="นภกมล ปินตาพรหม">
          <font>
-            <Font size="22.0" />
+            <Font size="13.0" />
          </font>
       </Label>
-      <Label layoutX="353.0" layoutY="229.0" text="6410451113">
+      <Label layoutX="428.0" layoutY="224.0" text="6410451113">
          <font>
-            <Font size="22.0" />
+            <Font size="13.0" />
          </font>
       </Label>
-      <Label layoutX="267.0" layoutY="367.0" text="6410451229">
+      <Label layoutX="217.0" layoutY="355.0" text="6410451229">
          <font>
-            <Font size="22.0" />
+            <Font size="13.0" />
          </font>
       </Label>
-      <Label layoutX="344.0" layoutY="470.0" text="ธนภัทร ตันเจริญ">
+      <Label layoutX="423.0" layoutY="473.0" text="ธนภัทร ตันเจริญ">
          <font>
-            <Font size="22.0" />
+            <Font size="13.0" />
          </font>
       </Label>
-      <Button layoutX="708.0" layoutY="28.0" mnemonicParsing="false" onAction="#handleBackButton" text="Back" />
-      <Label layoutX="353.0" layoutY="524.0" text="6410451024">
+      <Button layoutX="708.0" layoutY="28.0" mnemonicParsing="false" onAction="#handleBackButton" text="กลับ" />
+      <Label layoutX="422.0" layoutY="500.0" text="6410451024">
          <font>
-            <Font size="22.0" />
+            <Font size="13.0" />
          </font>
       </Label>
       <Label layoutX="276.0" layoutY="94.0" text="6410451059">
          <font>
-            <Font size="22.0" />
+            <Font size="13.0" />
          </font>
       </Label>
    </children>
