@@ -97,42 +97,91 @@
     - resources
       - ku.cs
         - admin_scene_images
+          - rainbow.png
         - button_css
+          - add_picture_image.css
+          - normal_button_reactive.css
+        - complaint_images
+          - default_complaint.png
         - corruptcomplaint_images
+          - kukuku.jpeg
         - credit_Image
+          - creditmemver1.jpg
+          - creditmemver2.jpg
+          - creditmemver3.jpg
+          - creditmemver4.jpg
         - enrollcomplaint_images
+          - scsc.jpeg
         - home_images
+          - logout-logo-icon-png-svg.png
         - login_images
+          - image_circle_grean.png
+          - KU_SubLogo_Thai.png
+          - ku_view.jpg
         - normalcomplaint_images
+          - head.jpg
+          - Kasetsart.jpeg
+          - kasetsarts.jpeg
         - officer_images
+          - changebg.jpg
+          - logoku.png
         - pass_images
+          - kuimage.jpeg
+          - logoku.png
+          - scku.jpeg
         - placecomplaint_images
+          - kuku.jpeg
         - reg_images
+          - bg001.png
+          - bg002.jpg
+          - logo001.jpg
+        - student_image
+          - default.png
         - teachercomplaint_images
+          - KU_9non.jpeg
         - user_account_scene_image
-          - admin_account.fxml
-          - admin_ban_reason.fxml
-          - admin_change_password.fxml
-          - admin_manage_ban.fxml
-          - admin_report_scene.fxml
-          - admin_scene.fxml
-          - admin_selected_report_complaint.fxml
-          - admin_signup_officer.fxml
-          - common_button_reactive.css
-          - credit.fxml
-          - login.fxml
-          - officer_change_password.fxml
-          - officer_home.fxml
-          - officer_list_member.fxml
-          - project_opening_scene.fxml
-          - user_account.fxml
-          - user_change_password.fxml
-          - user_complaint.fxml
-          - user_complaint_list.fxml
-          - user_home.fxml
-          - user_register.fxml
-          - user_report_complaint.fxml
-          - user_request_unban.fxml
-          - user_selected_complaint_detail.fxml
+          - announce.png
+          - background.png
+          - bird.png
+          - greenposter.png
+          - logoku.png
+          - minimal.png
+          - scku.jpeg
+        - admin_account.fxml
+        - admin_ban_reason.fxml
+        - admin_change_password.fxml
+        - admin_manage_ban.fxml
+        - admin_report_scene.fxml
+        - admin_scene.fxml
+        - admin_selected_report_complaint.fxml
+        - admin_signup_officer.fxml
+        - common_button_reactive.css
+        - credit.fxml
+        - login.fxml
+        - officer_change_password.fxml
+        - officer_home.fxml
+        - officer_list_member.fxml
+        - project_opening_scene.fxml
+        - user_account.fxml
+        - user_change_password.fxml
+        - user_complaint.fxml
+        - user_complaint_list.fxml
+        - user_home.fxml
+        - user_register.fxml
+        - user_report_complaint.fxml
+        - user_request_unban.fxml
+        - user_selected_complaint_detail.fxml
       - home.css
       - home2.css
+
+## ตัวอย่างข้อมูลผู้ใช้ระบบ
+* (Admin) (AdminMao) (12345)
+* (User)  (maomao)   (1122)
+* (User)  (tangmo)   (123456)
+* (User)  (papeepee) (123456)
+* (User)  (benben)   (123456)
+* (Officer) (officerNor1) (1234) (ทั่วไป)
+* (Officer) (officerPlace1) (1234) (อาคารและสภานที่)
+* (Officer) (officerEnroll1) (1234) (ลงทะเบียนเรียน)
+* (Officer) (officerCorrupt1) (1234) (การทุจริต)
+* (Officer) (officerTeacher1) (1234) (อาจารย์/บุคลากร)
