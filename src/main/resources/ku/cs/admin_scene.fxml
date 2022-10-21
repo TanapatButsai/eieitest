@@ -54,6 +54,16 @@
                   <Font size="16.0" />
                </font>
             </Label>
+            <Label fx:id="showIsOfficeLabel" layoutX="32.0" layoutY="160.0" prefHeight="25.0" prefWidth="79.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="officeLabel" layoutX="131.0" layoutY="160.0" prefHeight="25.0" prefWidth="193.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
       <Button layoutX="456.0" layoutY="482.0" mnemonicParsing="false" onAction="#handleAdminComplaint" prefHeight="25.0" prefWidth="125.0" text="รายงานความไม่เหมาะสม" />

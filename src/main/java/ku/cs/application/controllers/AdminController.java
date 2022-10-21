@@ -8,9 +8,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import ku.cs.application.models.OfficeList;
 import ku.cs.application.models.UserList;
 import ku.cs.application.models.Users;
 import ku.cs.application.services.DataSource;
+import ku.cs.application.services.OfficeListDataSource;
 import ku.cs.application.services.UserListDataSource;
 import com.github.saacsos.FXRouter;
 import java.io.IOException;
@@ -27,13 +29,16 @@ public class AdminController {
     private DataSource<UserList> dataSource;
     private UserList userList;
     private Users admin;
-
-
-
+    @FXML private Label showIsOfficeLabel;
+    @FXML private Label officeLabel;
+    private DataSource<OfficeList> officeListDataSource;
+    private OfficeList officeList;
     @FXML
     public void initialize() {
         admin = (Users) FXRouter.getData();
         dataSource = new UserListDataSource("data","user.csv");
+        officeListDataSource = new OfficeListDataSource("data","officer.csv");
+        officeList = officeListDataSource.readData();
         userList = dataSource.readData();
         System.out.println(userList);
         showListView();
@@ -67,6 +72,7 @@ public class AdminController {
                     @Override
                     public void changed(ObservableValue<? extends Users> observableValue, Users users, Users t1) {
                         System.out.println(t1 + " is selected");
+                        clearSelectedUser();
                         showSelectedUser(t1);
                     }
                 });
@@ -83,6 +89,22 @@ public class AdminController {
         }else {
             userImage.setImage(new Image(getClass().getResource("/ku/cs/student_image/default.png").toExternalForm()));
         }
+        if (user.isOfficer()){
+            showIsOfficeLabel.setText("หน่วยงาน");
+            String role = officeList.findOfficerRole(user.getUsername());
+            if (role.equals("normal")){
+                role = "งานบริหารทั่วไป";
+            } else if (role.equals("teacher")){
+                role = "กองบริหารงานบุคคล";
+            }else if (role.equals("enroll")){
+                role = "สำนักงานการทะเบียน";
+            }else if (role.equals("place")){
+                role = "งานอาคารและสถานที่";
+            }else if (role.equals("corrupt")){
+                role = "หน่วยงานตรวจสอบการทุจริต";
+            }
+            officeLabel.setText(role);
+        }
     }
 
 
@@ -91,6 +113,8 @@ public class AdminController {
         intuitionLabel.setText("");
         usernameLabel.setText("");
         lastLoginLabel.setText("");
+        showIsOfficeLabel.setText("");
+        officeLabel.setText("");
         userImage.setImage(null);
 
     }

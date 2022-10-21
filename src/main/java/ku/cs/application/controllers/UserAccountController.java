@@ -32,7 +32,7 @@ public class UserAccountController {
     @FXML private Label idLabel;
     @FXML private Label usernameLabel;
     private UserList userList;
-    DataSource<UserList> dataSource = new UserListDataSource("data","user.csv");
+    private DataSource<UserList> dataSource = new UserListDataSource("data","user.csv");
     @FXML private void initialize(){
         user = (Users)FXRouter.getData();
         String url = getClass().getResource("/ku/cs/user_account_scene_image/bird.png").toExternalForm();

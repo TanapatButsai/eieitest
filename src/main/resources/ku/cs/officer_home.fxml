@@ -33,6 +33,7 @@
                   <Font name="Cambria Bold" size="10.0" />
                </font>
             </Button>
+            <Button layoutX="108.0" layoutY="11.0" mnemonicParsing="false" onAction="#handleAccount" prefHeight="39.0" prefWidth="78.0" stylesheets="@common_button_reactive.css" text="บัญชีผู้ใช้" />
          </children>
       </Pane>
       <Label layoutX="14.0" layoutY="63.0" prefHeight="30.0" prefWidth="108.0" text="List of Complaint " textFill="#2e2e2e">

@@ -96,6 +96,14 @@ public class OfficerController {
                 });
 
     }
+    @FXML
+    void handleAccount(ActionEvent event) {
+        try {
+            FXRouter.goTo("officer_change_picture",userOfficer);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     private void showSelectedOfficerData(Complaint data) {
         statusLabel.setText(data.getStatus());

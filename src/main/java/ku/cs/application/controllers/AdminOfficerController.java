@@ -145,7 +145,7 @@ public class AdminOfficerController {
             return false;
         }
         Users newUser = new Users(newUserFullName,newUserID,newUserUsername,newUserPasswordUsername
-                ,false,"0-0-0-0-0-0","data\\images\\profile\\default.png",false
+                ,false,"0-0-0-0-0-0","/ku/cs/student_image/default.png",false
                 ,true);
         officeList.addOfficerINOffice(newUser.getUsername(),officerRole);
         officeListDataSource.writeData(officeList);
