@@ -185,3 +185,16 @@
 * (Officer) (officerEnroll1) (1234) (ลงทะเบียนเรียน)
 * (Officer) (officerCorrupt1) (1234) (การทุจริต)
 * (Officer) (officerTeacher1) (1234) (อาจารย์/บุคลากร)
+
+## วิธีการติ้งตั้งและรันโปรแกรม
+1) กดปุ่ม code สีเขียวแล้วก็ Download as zip
+![1](https://user-images.githubusercontent.com/98452252/197146204-bfba90de-8630-42a2-8b62-9bd79cbd6141.PNG)
+
+2) กดคลิกขวาที่ไฟล์ zip ที่โหลดมาแล้วกด Extract Here
+![2](https://user-images.githubusercontent.com/98452252/197146403-3ebb65bc-7715-4f8b-b1b3-faab2e02695a.PNG)
+
+3) กดเข้าไปในโฟลเดอร์ที่เราแตกไฟล์มา
+
+4) กดเข้าไปในโฟลเดอร์ target ที่เราแตกไฟล์ออกมาแล้วกดเข้าไปที่ไฟล์ชื่อ (CS211-Project-1.0-SNAPSHOT-shaded)
+![4](https://user-images.githubusercontent.com/98452252/197147638-d21487c0-1305-4ea5-afdc-a6d507c8f0e6.PNG)
+
