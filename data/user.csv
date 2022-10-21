@@ -1,5 +1,5 @@
-fullName,ID,username,password,isAdmin,lastTimeLogin,image,isBan
-ธนาภัทร,6410451059,maomao,123456,false,0-0-0-0-0-0,/ku/cs/student_image/default.png,false,false
+fullName,ID,username,password,isAdmin,lastTimeLogin,image,isBan,isOfficer
+ธนาภัทร,6410451059,maomao,123456,false,13-49-12-21-10-22,/ku/cs/student_image/default.png,false,false
 napakamol,6410459999,tangmo,123456,false,0-0-0-0-0-0,/ku/cs/student_image/default.png,false,false
 peerapat,6410456969,papeepee,123456,false,03-41-23-21-10-22,/ku/cs/student_image/default.png,false,false
 kritchawat,6410459595,markmark,123456,false,0-0-0-0-0-0,/ku/cs/student_image/default.png,false,false
@@ -29,3 +29,9 @@ LLL,1234567890,officerCorrupt2,1234,false,03-41-32-21-10-22,/ku/cs/student_image
 LLL,1234567890,officerCorrupt3,1234,false,03-41-32-21-10-22,/ku/cs/student_image/default.png,false,true
 123,1234567890,qwdqwwdq,123,false,0-0-0-0-0-0,/ku/cs/student_image/default.png,false,true
 2ewqsa,1111111111,aaaaa,123,false,13-08-15-21-10-22,data\images\profile\2022-10-21_1666332510847.jpg,false,true
+1,1111111111,admin,123,true,21-06-45-20-10-22,data\images\profile\2022-10-20_1666274813761.jpg,false,false
+dqw,1234567890,dqwd,dqw,false,0-0-0-0-0-0,/ku/cs/student_image/default.png,false,false
+1,1234567890,1,1,false,23-15-02-20-10-22,/ku/cs/student_image/default.png,true,false
+หัวหน้าป๋าพีพี,0000000001,normal,123,false,23-20-22-20-10-22,/ku/cs/student_image/default.png,false,true
+123345,1234567890,aaa,12345,false,11-39-19-21-10-22,/ku/cs/student_image/default.png,false,false
+napakamol,6410451113,tmnpkm,12,false,11-35-58-21-10-22,/ku/cs/student_image/default.png,false,false
