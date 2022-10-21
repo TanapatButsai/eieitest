@@ -1,16 +1,7 @@
-<<<<<<< HEAD
-fullName,ID,username,password,isAdmin,lastTimeLogin,image,isBan
-1,1111111111,admin,123,true,21-06-45-20-10-22,data\images\profile\2022-10-20_1666274813761.jpg,false,false
-dqw,1234567890,dqwd,dqw,false,0-0-0-0-0-0,/ku/cs/student_image/default.png,false,false
-1,1234567890,1,1,false,23-15-02-20-10-22,/ku/cs/student_image/default.png,true,false
-หัวหน้าป๋าพีพี,0000000001,normal,123,false,23-20-22-20-10-22,data\images\profile\default.png,false,true
-123345,1234567890,aaa,12345,false,11-39-19-21-10-22,/ku/cs/student_image/default.png,false,false
-napakamol,6410451113,tmnpkm,12,false,11-35-58-21-10-22,/ku/cs/student_image/default.png,false,false
-=======
 fullName,ID,username,password,isAdmin,lastTimeLogin,image,isBan,isOfficer
 ธนาภัทร,6410451059,maomao,1122,false,06-47-38-21-10-22,data\images\profile\2022-10-21_1666302355911.jpg,false,false
 Napakamol,6410459999,tangmo,123456,false,05-09-35-21-10-22,data\images\profile\2022-10-21_1666303825272.jPG,false,false
-Peerapat,6410456969,papeepee,123456,false,13-17-42-21-10-22,data\images\profile\2022-10-21_1666303853815.jpg,false,false
+Peerapat,6410456969,papeepee,123456,false,14-44-43-21-10-22,data\images\profile\2022-10-21_1666303853815.jpg,false,false
 Kritchawat,6410459595,markmark,123456,false,05-11-07-21-10-22,data\images\profile\2022-10-21_1666303882603.jpg,false,false
 Jedsadakorn,6410451069,ballball,123456,false,05-11-43-21-10-22,data\images\profile\2022-10-21_1666303918035.jpg,false,false
 Nattawat,6410459123,toontoon,123456,false,05-12-24-21-10-22,data\images\profile\2022-10-21_1666303952849.jpg,false,false
@@ -39,4 +30,3 @@ Kayson Clark,1234567890,officerCorrupt3,1234,false,03-41-32-21-10-22,data\images
 Fern,1234567890,officerTeacher1,1122,false,06-27-56-21-10-22,data\images\profile\default.png,false,true
 Roxie,1234567890,officerTeacher2,1122,false,0-0-0-0-0-0,data\images\profile\default.png,false,true
 Tinker,1234567890,officerTeacher3,1122,false,0-0-0-0-0-0,data\images\profile\default.png,false,true
->>>>>>> 2a66da0e4c2e4b52aa2a12271cdbc88b9e222f30

@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-topic,body,detail,category,usernameWriter,time,isDone,isInProgress,isUnmanaged,vote,isBan,isOfficer
-123,123,123,corrupt,1,23-15-08-20-10-22,false,false,true,0,false,no,/ku/cs/complaint_images/default_complaint.png
-3rfwegdrfher5tg,fhnj3e4rftgdbh edr5gtfb,edr5gtfbv ws3xedfr4vv,normal,aaa,23-38-54-20-10-22,false,false,true,0,false,no,/ku/cs/complaint_images/default_complaint.png
-dqwd,qwdqw,ddqww,place,aaa,02-05-38-21-10-22,false,false,true,0,false,no,/ku/cs/complaint_images/default_complaint.png
-หิวข้าว,อาจารย์ปล่อยเลท,ตึกคณะวิทย์,teacher,tmnpkm,11-37-39-21-10-22,false,false,true,1,false,no,data\images\complaint\2022-10-21_1666327057814.jpg
-=======
 topic,body,detail,category,usernameWriter,time,isDone,isInProgress,isUnmanaged,vote,isBan,processDetail,image
 อาจารย์ตัดสินไม่ยุติธรรม,อาจารย์ดูเหมือนเข้าข้างนิสิตบางกลุ่ม,อาจารย์ สมชาย,teacher,maomao,04-34-43-21-10-22,false,false,true,1,false,no,/ku/cs/complaint_images/default_complaint.png
 อาจารย์เอาเปรียบนิสิต,อาจารย์หักคะแนนโดยไม่มีสาเหตุ,อาจารย์ สมจิต,teacher,maomao,04-35-16-21-10-22,false,false,true,1,false,no,/ku/cs/complaint_images/default_complaint.png
@@ -52,4 +45,3 @@ topic,body,detail,category,usernameWriter,time,isDone,isInProgress,isUnmanaged,v
 สนามบาสเกตบอล,สนามบาสเกตบอลพื้นไม่เท่ากัน,สนามบาสเกตบอล,place,benben,04-52-39-21-10-22,true,false,false,0,false,ซ่อมแซมเรียบร้อย,/ku/cs/complaint_images/default_complaint.png
 แอร์ห้องเรียน 203 มีปัญหา,แอร์มีน้ำหยด และ ไม่ปล่อยความเย็น,ห้องเรียน 203,place,benben,04-53-01-21-10-22,true,false,false,0,false,ซ่อมแซมเรียบร้อย,/ku/cs/complaint_images/default_complaint.png
 ห้องน้ำไม่ค่อยสะอาด,มีคราบสกปรกบริเวณอ่างน้ำ,ห้องน้ำใต้ตึก,place,ninjaninja,05-02-20-21-10-22,true,false,false,0,false,ติดต่อผฝ่ายทำความสะอาดแล้ว,/ku/cs/complaint_images/default_complaint.png
->>>>>>> 2a66da0e4c2e4b52aa2a12271cdbc88b9e222f30
