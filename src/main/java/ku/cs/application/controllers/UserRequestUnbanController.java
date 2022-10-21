@@ -37,7 +37,6 @@ public class UserRequestUnbanController {
     @FXML
     private Label textError;
     private Users user;
-    private UserList userList;
     private BanList banList;
     private Ban ban;
     @FXML private DataSource<UserList> dataSource = new UserListDataSource("data","user.csv");

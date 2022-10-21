@@ -38,13 +38,6 @@ public class BanListDataSource implements DataSource<BanList>{
         }
     }
 
-    public BanList getBanList() {
-        return banList;
-    }
-
-    public void setBanList(BanList banList) {
-        this.banList = banList;
-    }
 
     @Override
     public BanList readData() {

@@ -1,5 +1,55 @@
+<<<<<<< HEAD
 topic,body,detail,category,usernameWriter,time,isDone,isInProgress,isUnmanaged,vote,isBan,isOfficer
 123,123,123,corrupt,1,23-15-08-20-10-22,false,false,true,0,false,no,/ku/cs/complaint_images/default_complaint.png
 3rfwegdrfher5tg,fhnj3e4rftgdbh edr5gtfb,edr5gtfbv ws3xedfr4vv,normal,aaa,23-38-54-20-10-22,false,false,true,0,false,no,/ku/cs/complaint_images/default_complaint.png
 dqwd,qwdqw,ddqww,place,aaa,02-05-38-21-10-22,false,false,true,0,false,no,/ku/cs/complaint_images/default_complaint.png
 หิวข้าว,อาจารย์ปล่อยเลท,ตึกคณะวิทย์,teacher,tmnpkm,11-37-39-21-10-22,false,false,true,1,false,no,data\images\complaint\2022-10-21_1666327057814.jpg
+=======
+topic,body,detail,category,usernameWriter,time,isDone,isInProgress,isUnmanaged,vote,isBan,processDetail,image
+อาจารย์ตัดสินไม่ยุติธรรม,อาจารย์ดูเหมือนเข้าข้างนิสิตบางกลุ่ม,อาจารย์ สมชาย,teacher,maomao,04-34-43-21-10-22,false,false,true,1,false,no,/ku/cs/complaint_images/default_complaint.png
+อาจารย์เอาเปรียบนิสิต,อาจารย์หักคะแนนโดยไม่มีสาเหตุ,อาจารย์ สมจิต,teacher,maomao,04-35-16-21-10-22,false,false,true,1,false,no,/ku/cs/complaint_images/default_complaint.png
+มีกลุ่มนิสิตโกงข้อสอบ,นิสิตโกงข้อสอบวิชา 01411123,นาย กรชัย,corrupt,maomao,04-40-54-21-10-22,false,false,true,1,false,no,/ku/cs/complaint_images/default_complaint.png
+กิจกรรมในมหาวิทยาลัยน้อยไป,อยากให้จัดกิจกรรมมากขึ้น,ฝ่ายกิจกรรม,normal,maomao,04-43-01-21-10-22,false,false,true,1,false,no,/ku/cs/complaint_images/default_complaint.png
+ลืมหูฟังในห้องสมุด,ผมลืมไว้บริเวณห้องสมุดแถวโต๊ะคอม,ห้องสมุด,place,benben,04-51-52-21-10-22,false,false,true,0,false,no,/ku/cs/complaint_images/default_complaint.png
+ลืมapple pencil ในห้องเรียน,ลืมapple pencil บริเวณหลังห้องมุมซ้าย,ห้องเรียน 201,place,benben,04-52-17-21-10-22,false,false,true,0,false,no,/ku/cs/complaint_images/default_complaint.png
+มีนิสิตโกงข้อสอบวิชา 0141224,นิสิตโกงข้อสอบวิชาโดยการแอบติดต่อกับบุคคลภายนอก,กลุ่มเพื่อนนาย สมหมี 6410441885,corrupt,benben,04-36-13-21-10-22,false,false,true,0,false,no,/ku/cs/complaint_images/default_complaint.png
+ทำเงินหาย,เงินหายบริเวณโรงอาหาร ประมาณ 500บาท,โรงอาหาร,place,ninjaninja,05-03-02-21-10-22,false,false,true,0,false,no,/ku/cs/complaint_images/default_complaint.png
+ร้านอาหารให้น้อยไป,อาหารให้มาไม่อื่มพอ,ร้านข้าวมันไก่,normal,ninjaninja,05-05-56-21-10-22,false,false,true,1,false,no,/ku/cs/complaint_images/default_complaint.png
+ราคาวินมอเตอร์ไซค์ไม่เหมือนกัน,วินมอเตอร์ไซค์ราคาไม่เท่ากันแต่ระยะทางเหมือนกัน,starbuck หน้าตึกคอม,normal,maomao,04-41-24-21-08-22,false,true,false,0,false,กำลังตรวจสอบ,/ku/cs/complaint_images/default_complaint.png
+ราคาวินมอเตอร์ไซค์แพงไป,วินคิดค่าเดินทางที่แพงไปไม่สมเหตุสมผล,หน้า bank scb,normal,ninjaninja,05-05-07-21-08-22,false,true,false,0,false,กำลังตรวจสอบ,/ku/cs/complaint_images/default_complaint.png
+อาหารรสแปลกๆ,ร้านลาบอาหารมีรสชาติแปลกๆ,ร้ายลาบ101,normal,ninjaninja,05-07-39-21-10-22,false,true,false,0,false,กำลังตรวจสอบ,/ku/cs/complaint_images/default_complaint.png
+ปัญหาชมรม,ต้องให้ชมรมสามารถรับคนได้มากขึ้น,อาจารย์ที่ปรึษาชมรม,normal,ninjaninja,05-09-07-21-10-22,true,false,false,0,false,ติดต่ออาจารย์แล้ว,/ku/cs/complaint_images/default_complaint.png
+ของบประมาณเพิ่ม,งบประมาณของชมรมฟุตบอลไม่พอ,หน่วยการเงิน,normal,ninjaninja,05-04-47-21-10-22,false,true,false,0,false,รอคำตอบจากฝ่าย,/ku/cs/complaint_images/default_complaint.png
+ร้านอาหารมีราคาแพงเกินไป,ราคากับปริมาณไม่ค่อยสมราคา,โรงอาหาร,normal,maomao,04-42-27-21-10-22,false,true,false,0,false,กำลังตรวจสอบ,/ku/cs/complaint_images/default_complaint.png
+ร้านอาหารมีน้อยเกินไป,ร้านอาหารไม่ค่อยมีความหลากหลาย,โรงอาหาร,normal,maomao,04-42-11-21-10-22,false,true,false,0,false,กำลังจัดหา,/ku/cs/complaint_images/default_complaint.png
+ร้านอาหารไม่ค่อยสะอาด,ร้านอาหารมีแมลงวันตอม,โรงอาหาร,normal,maomao,04-41-57-21-09-22,true,false,false,0,false,จีดแล้วแล้ว,/ku/cs/complaint_images/default_complaint.png
+อาจารย์สอนเข้าใจยาก,อาจารย์อธิบายรายระเอียดไม่ชัดเจนพอ,อาจารย์ห้อง 102,teacher,maomao,03-59-26-21-10-22,true,false,false,0,false,ติดด่อแล้ว,/ku/cs/complaint_images/default_complaint.png
+อาจารย์เข้าห้องไม่ตรงเวลา,อาจารย์ขึ้นห้องสายหลายครั้งทำให้เรียนไม่ทัน,อาจารย์ห้อง 211,teacher,maomao,04-22-24-21-10-22,true,false,false,0,false,ติดด่อแล้ว,/ku/cs/complaint_images/default_complaint.png
+อาจารย์ไม่รับฟังความเห็นนิสิต,อาจารย์ไม่รับฟังความเห็นนิสิตเวลานิสิตแย้งเพื่อความถูกต้อง,อาจารย์ สมจิต,teacher,maomao,04-32-43-21-10-22,true,false,false,0,false,ติดด่อแล้ว,/ku/cs/complaint_images/default_complaint.png
+มีปัญหาการลงทะเบียนเรียนวิชา 0141123,ลงทะเบียนแล้วไม่ขึ้นใน My ku,วิชา 0141123,enroll,benben,04-47-32-21-08-22,true,false,false,0,false,จัดการเรียบร้อยแล้ว,/ku/cs/complaint_images/default_complaint.png
+มีปัญหาการลงทะเบียนเรียนวิชา 0132021,วิชาที่ลงทะเบียนขึ้นว่าเต็มแต่ว่าไม่เต็ม,วิชา 0132021,enroll,benben,04-48-23-21-08-22,true,false,false,0,false,จัดการเรียบร้อยแล้ว,/ku/cs/complaint_images/default_complaint.png
+มีปัญหาการลงทะเบียนเรียนวิชา 0199120,วิชาขึ้นว่าไม่เต็มแต่ไม่สามารถลงทะเบียนได้,วิชา 0199120,enroll,benben,04-49-17-21-08-22,true,false,false,0,false,จัดการเรียบร้อยแล้ว,/ku/cs/complaint_images/default_complaint.png
+มีปัญหาการลงทะเบียนเรียนวิชา 0191235,ลงทะเบียนแล้วไม่ขึ้นใน My ku,วิชา 0191235,enroll,benben,04-49-42-21-08-22,true,false,false,0,false,จัดการเรียบร้อยแล้ว,/ku/cs/complaint_images/default_complaint.png
+มีปัญหาการลงทะเบียนเรียนวิชา 0185127,วิชาขึ้นว่าไม่เต็มแต่ไม่สามารถลงทะเบียนได้,วิชา 0185127,enroll,benben,04-50-04-21-08-22,true,false,false,0,false,จัดการเรียบร้อยแล้ว,/ku/cs/complaint_images/default_complaint.png
+มีปัญหาการลงทะเบียนเรียนวิชา 0141123,วิชาที่ลงทะเบียนขึ้นว่าเต็มแต่ว่าไม่เต็ม,วิชา 0141123,enroll,ninjaninja,04-59-23-21-08-22,true,false,false,0,false,จัดการเรียบร้อยแล้ว,/ku/cs/complaint_images/default_complaint.png
+มีปัญหาการลงทะเบียนเรียนวิชา 0132021,ลงทะเบียนแล้วไม่ขึ้นใน My ku,วิชา 0132021,enroll,ninjaninja,04-59-48-21-08-22,true,false,false,0,false,จัดการเรียบร้อยแล้ว,/ku/cs/complaint_images/default_complaint.png
+มีปัญหาการลงทะเบียนเรียนวิชา 0199120,วิชาขึ้นว่าไม่เต็มแต่ไม่สามารถลงทะเบียนได้,วิชา 0199120,enroll,ninjaninja,05-00-03-21-08-22,true,false,false,0,false,จัดการเรียบร้อยแล้ว,/ku/cs/complaint_images/default_complaint.png
+มีปัญหาการลงทะเบียนเรียนวิชา 0185127,วิชาที่ลงทะเบียนขึ้นว่าเต็มแต่ว่าไม่เต็ม,วิชา 0185127,enroll,ninjaninja,05-00-26-21-08-22,true,false,false,0,false,จัดการเรียบร้อยแล้ว,/ku/cs/complaint_images/default_complaint.png
+มีปัญหาการลงทะเบียนเรียนวิชา 0117234,ววิชาขึ้นว่าไม่เต็มแต่ไม่สามารถลงทะเบียนได้,วิชา 0117234,enroll,ninjaninja,05-00-42-21-08-22,true,false,false,0,false,จัดการเรียบร้อยแล้ว,/ku/cs/complaint_images/default_complaint.png
+มีปัญหาการลงทะเบียนเรียนวิชา 0141123,วิชาขึ้นว่าไม่เต็มแต่ไม่สามารถลงทะเบียนได้,วิชา 0141123,enroll,tangmo,05-10-03-21-08-22,true,false,false,0,false,จัดการเรียบร้อยแล้ว,/ku/cs/complaint_images/default_complaint.png
+มีกลุ่มนิสิตโกงข้อสอบ,นิสิตโกงข้อสอบวิชา 0141224,กลุ่มเพื่อนนาย สมชาย 6410441665,corrupt,maomao,04-23-21-21-10-22,false,true,false,0,false,กำลังสอบสวด,/ku/cs/complaint_images/default_complaint.png
+มีนิสิตโกงข้อสอบวิชา 0141224,นิสิตโกงข้อสอบวิชาโดยการแอบติดต่อกับบุคคลภายนอก,กลุ่มเพื่อนนาย สมหมี 6410441885,corrupt,maomao,04-36-13-21-10-22,false,true,false,0,false,กำลังสอบสวด,/ku/cs/complaint_images/default_complaint.png
+มีนิสิตโกงข้อสอบวิชา 0132124,นิสิตโกงข้อสอบวิชาโดยนำเอกสารเข้าห้องสอบ,นาย พรชัย 6256418974,corrupt,maomao,04-38-45-21-10-22,false,true,false,0,false,กำลังสอบสวด,/ku/cs/complaint_images/default_complaint.png
+มีกลุ่มนิสิตโกงข้อสอบ,นิสิตโกงข้อสอบวิชา 01411123,นาย กรชัย,corrupt,benben,04-40-54-21-10-22,false,true,false,0,false,กำลังสอบสวด,/ku/cs/complaint_images/default_complaint.png
+อาจารย์เข้าข้างนิสิต,อาจารย์ดูมีท่าทางเข้าข้างเกินไป,อ. สมพร,corrupt,maomao,04-37-07-21-10-22,true,false,false,0,false,จัดการแล้ว,/ku/cs/complaint_images/default_complaint.png
+มีกลุ่มนิสิตมีการโกงข้อสอบ,นิสิตโกงข้อสอบวิชา 0141224,กลุ่มเพื่อนนาย สมชาย 6410441665,corrupt,benben,04-23-21-21-10-22,true,false,false,0,false,จัดการแล้ว,/ku/cs/complaint_images/default_complaint.png
+อาจารย์เข้าข้างนิสิต,อาจารย์ดูมีท่าทางเข้าข้างเกินไป,อ. สมพร,corrupt,benben,04-37-07-21-10-22,true,false,false,0,false,จัดการแล้ว,/ku/cs/complaint_images/default_complaint.png
+มีนิสิตโกงข้อสอบวิชา 0132124,นิสิตโกงข้อสอบวิชาโดยนำเอกสารเข้าห้องสอบ,นาย พรชัย 6256418974,corrupt,benben,04-38-45-21-10-22,false,true,false,0,false,กำลังสอบสวด,/ku/cs/complaint_images/default_complaint.png
+ห้องเรียน 205 เก้าอี้ไม่พอ,เก้าอี้ไม่พอใช้ในการเรียน,ห้องเรียน 205,place,ninjaninja,05-03-52-21-10-22,false,true,false,0,false,รับทราบแล้ว,/ku/cs/complaint_images/default_complaint.png
+สระน้ำกระเบื้องแตก,กระเบื้องสระน้ำแตกอาจทำให้เกิดอันตรายได้,สระน้ำ,place,ninjaninja,05-03-23-21-10-22,true,false,false,0,false,ซ่อมแซมเรียบร้อย,/ku/cs/complaint_images/default_complaint.png
+ฟุตบาทเป็นหลุม,ฟุตบาทเป็นหลุมในหลายๆที่บริเวณรอบๆสนามบอล,รอบๆสนามฟุตบอล,place,ninjaninja,05-02-39-21-10-22,true,false,false,0,false,ซ่อมแซมเรียบร้อย,/ku/cs/complaint_images/default_complaint.png
+ห้องตึก sc 45 มีกลิ่นเหม็น,กลิ่นเหม็นมาก,ห้อง 145 ตึก sc 45,place,benben,04-51-24-21-10-22,true,false,false,0,false,จัดการแล้ว,/ku/cs/complaint_images/default_complaint.png
+สนามบาสเกตบอล,สนามบาสเกตบอลพื้นไม่เท่ากัน,สนามบาสเกตบอล,place,benben,04-52-39-21-10-22,true,false,false,0,false,ซ่อมแซมเรียบร้อย,/ku/cs/complaint_images/default_complaint.png
+แอร์ห้องเรียน 203 มีปัญหา,แอร์มีน้ำหยด และ ไม่ปล่อยความเย็น,ห้องเรียน 203,place,benben,04-53-01-21-10-22,true,false,false,0,false,ซ่อมแซมเรียบร้อย,/ku/cs/complaint_images/default_complaint.png
+ห้องน้ำไม่ค่อยสะอาด,มีคราบสกปรกบริเวณอ่างน้ำ,ห้องน้ำใต้ตึก,place,ninjaninja,05-02-20-21-10-22,true,false,false,0,false,ติดต่อผฝ่ายทำความสะอาดแล้ว,/ku/cs/complaint_images/default_complaint.png
+>>>>>>> 2a66da0e4c2e4b52aa2a12271cdbc88b9e222f30

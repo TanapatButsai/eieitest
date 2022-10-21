@@ -4,11 +4,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import com.github.saacsos.FXRouter;
-import javafx.scene.paint.ImagePattern;
 import javafx.stage.FileChooser;
 import ku.cs.application.models.UserList;
 import ku.cs.application.models.Users;
@@ -26,28 +24,21 @@ public class UserAccountController {
     @FXML
     private ImageView imageBackGroundUrl;
     @FXML
-    private ImageView logoku;
+    private ImageView logoKU;
     @FXML private ImageView userImage;
-    @FXML
-    private Label promptNewPassword;
-    @FXML
-    private Label promptPassword;
-    @FXML
-    private Label promptUsername;
+    @FXML private Label promptPassword;
     @FXML private Button updateInfoButton;
-
     @FXML private Label nameLabel;
     @FXML private Label idLabel;
     @FXML private Label usernameLabel;
     private UserList userList;
-    private String imageUrl;
     DataSource<UserList> dataSource = new UserListDataSource("data","user.csv");
     @FXML private void initialize(){
         user = (Users)FXRouter.getData();
         String url = getClass().getResource("/ku/cs/user_account_scene_image/bird.png").toExternalForm();
         String url1 = getClass().getResource("/ku/cs/user_account_scene_image/greenposter.png").toExternalForm();
         imageBackGroundUrl.setImage(new Image(url1));
-        logoku.setImage(new Image(url));
+        logoKU.setImage(new Image(url));
         userList = dataSource.readData();
         showStudentInfo();
     }
@@ -107,7 +98,6 @@ public class UserAccountController {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
             showStudentImage();
         }
     }
@@ -129,7 +119,6 @@ public class UserAccountController {
                 userImage.setImage(new Image(im));
             }
         }
-//            userImage.setImage(new Image("file:"+user.getUserImage()));
 
     }
     @FXML void handleGoToUserComplaint(){

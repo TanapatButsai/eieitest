@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="573.0" prefWidth="802.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.UserComplaintController">
+<AnchorPane prefHeight="573.0" prefWidth="802.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.cs.application.controllers.UserComplaintController">
    <children>
       <ImageView fx:id="kasetsartImage" fitHeight="550.0" fitWidth="350.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true" />
       <Pane layoutX="377.0" layoutY="87.0" prefHeight="496.0" prefWidth="401.0" style="-fx-background-color: #d1f4d6; -fx-background-radius: 30;" />
@@ -26,7 +26,7 @@
          </font>
       </Label>
       <Button layoutX="673.0" layoutY="549.0" mnemonicParsing="false" onAction="#handlePushComplaint" text="ส่งคำร้องเรียน" />
-      <Label layoutX="390.0" layoutY="368.0" text="สถานที่เกิดเหตุ">
+      <Label fx:id="detailLabel" layoutX="390.0" layoutY="368.0" text="สถานที่เกิดเหตุ">
          <font>
             <Font size="16.0" />
          </font>

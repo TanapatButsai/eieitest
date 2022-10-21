@@ -95,7 +95,7 @@ public class UserListDataSource implements DataSource<UserList> {
         try {
             writer = new FileWriter(file, StandardCharsets.UTF_8);
             buffer = new BufferedWriter(writer);
-            String header = "fullName,ID,username,password,isAdmin,lastTimeLogin,image,isBan";
+            String header = "fullName,ID,username,password,isAdmin,lastTimeLogin,image,isBan,isOfficer";
             buffer.append(header);
             buffer.newLine();
             for (Users user : userList.getAllCards()) {

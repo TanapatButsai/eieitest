@@ -34,7 +34,6 @@ public class UserComplaintListController {
 
     private DataSource<ComplaintList> dataSource;
     private Users user;
-    private Complaint complaint;
     private ComplaintList complaintList;
     @FXML private void initialize(){
         user = (Users) com.github.saacsos.FXRouter.getData();

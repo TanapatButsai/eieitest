@@ -19,7 +19,6 @@ public class UserSelectedComplaintDetailController {
     private List<Object> userAndComplaint;
     private Users user;
     private Complaint complaint;
-    private Complaint complaintTemp;
 
     @FXML
     private Label bodyLabel;

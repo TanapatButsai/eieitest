@@ -9,7 +9,6 @@ import java.nio.charset.StandardCharsets;
 public class ComplaintListDataSource implements DataSource<ComplaintList>{
     private String directoryName;
     private String fileName;
-    private ComplaintList complaintList;
     public ComplaintListDataSource(String directoryName, String fileName) {
         this.directoryName = directoryName;
         this.fileName = fileName;
@@ -97,7 +96,7 @@ public class ComplaintListDataSource implements DataSource<ComplaintList>{
         try {
             writer = new FileWriter(file, StandardCharsets.UTF_8);
             buffer = new BufferedWriter(writer);
-            String header = "topic,body,detail,category,usernameWriter,time,isDone,isInProgress,isUnmanaged,vote,isBan,isOfficer";
+            String header = "topic,body,detail,category,usernameWriter,time,isDone,isInProgress,isUnmanaged,vote,isBan,processDetail,image";
             buffer.append(header);
             buffer.newLine();
             for (Complaint complaint : complaintList.getAllComplaint()) {
@@ -129,10 +128,6 @@ public class ComplaintListDataSource implements DataSource<ComplaintList>{
                 "directoryName='" + directoryName + '\'' +
                 ", fileName='" + fileName + '\'' +
                 '}';
-    }
-
-    public ComplaintList getComplaintList() {
-        return complaintList;
     }
     //--------
 
